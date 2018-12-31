@@ -1,3 +1,5 @@
+Open an ssh in your Debian 9 “stretch”
+
 echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
 
 apt-get update -y
