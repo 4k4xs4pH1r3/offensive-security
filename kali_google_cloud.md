@@ -58,13 +58,13 @@ Create bucket at Google Cloud
 
     https://console.cloud.google.com/storage/browser
 
-Upload kali.raw (4,2 GB) to your bucket
+Upload Kali disk.raw (4,2 GB) to your GCP bucket
 
-    gsutil cp kali.tar.gz gs://bucket-name/kali.tar.gz
+    gsutil cp kali.tar.gz gs://bucket-name/disk.tar.gz
 
 Create image for Kali Linux in GCP
 
-     gcloud compute --project=name images create kg --source-uri=https://storage.googleapis.com/bucket-name.appspot.com/kali/disk.tar.gz
+     gcloud compute --project=name images create kali --source-uri=https://storage.googleapis.com/bucket-name.appspot.com/kali/disk.tar.gz
 
 Start Kali Linux virtual machine in GCP
 
