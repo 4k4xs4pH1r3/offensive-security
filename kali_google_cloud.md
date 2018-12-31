@@ -44,11 +44,11 @@ Turn off the Kali Linux virtual machine.
 
 Convert vdi (11 GB) to raw file (85,9 GB).
 
-    vboxmanage clonehd kali.vdi kali.raw --format raw
+    vboxmanage clonehd kali.vdi disk.raw --format raw
 
 Convert raw into tar.gz format
 
-    tar –zcvf kali.tar.gz kali.raw
+    tar –zcvf kali.tar.gz disk.raw
 
 Create bucket at Google Cloud
 
@@ -60,9 +60,10 @@ Upload kali.raw (4,2 GB) to your bucket
 
 Start Kali Linux virtual machine
 
-    gcloud compute images create kali –source-uri gs://bucket-name//kali/kali.tar.gz
+     gcloud compute --project=name images create kg --source-uri=https://storage.google
+apis.com/bucket-name.appspot.com/kali/disk.tar.gz gcloud compute images create kali –source-uri 
 
-    gcloud compute instances create kali –image kali –machine-type n1-highmem-4 –zone us-central1-f
+    gcloud compute --project=name instances create kali –image kali –machine-type n1-highmem-4 –zone us-central1-f
     
 Connect via SSH
 
