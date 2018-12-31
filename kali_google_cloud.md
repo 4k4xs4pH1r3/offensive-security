@@ -24,11 +24,7 @@ Let’s start!
 
 It’s easy to create a Kali Linux Virtualbox virtual machine so in this post, I will use Kali VirtualBox image that I downloaded from Kali Linux download page.
 
-    Configure kali sshd service
-
-Extract and import Kali Virtual Image. Turn on the Kali Linux virtual machine to install and configure openssh-server.
-
-Install openssh-server
+Extract and import Kali Virtual Image. Turn on the Kali Linux virtual machine to install and configure openssh-server:
 
     apt-get install openssh-server -y
 
@@ -37,6 +33,7 @@ Change the configuration file
     nano /etc/ssh/sshd_config
 
 Add or set the below line in this config file
+
     #PermitRootLogin yes
 
 Set ssh run on the boot
@@ -68,4 +65,5 @@ Start Kali Linux virtual machine
     gcloud compute instances create kali –image kali –machine-type n1-highmem-4 –zone us-central1-f
     
 Connect via SSH
+
     gcloud compute --project "project_name" ssh --zone "us-central1-f" "kali"
