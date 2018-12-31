@@ -18,13 +18,13 @@ Requirements:
     Grab a cofee or beers
     
 
-Let’s start!
-    
-    Create VirtualBox virtual machine
+Let’s start! Create VirtualBox virtual machine
 
 It’s easy to create a Kali Linux Virtualbox virtual machine so in this post, I will use Kali VirtualBox image that I downloaded from Kali Linux download page.
 
-Extract and import Kali Virtual Image. Turn on the Kali Linux virtual machine to install and configure openssh-server:
+Import kali-linux-2018.4-vbox-amd64.ova in Virtual Box (The virtual size of the hdd is 80GB)
+
+Turn on the Kali Linux virtual machine to install and configure openssh-server:
 
     apt-get install openssh-server -y
 
@@ -42,11 +42,11 @@ Set ssh run on the boot
 
 Turn off the Kali Linux virtual machine.
 
-Convert vdi to raw file.
+Convert vdi (11 GB) to raw file (85,9 GB).
 
     vboxmanage clonehd kali.vdi kali.raw --format raw
 
-Convert into tar format
+Convert raw into tar.gz format
 
     tar –zcvf kali.tar.gz kali.raw
 
@@ -54,7 +54,7 @@ Create bucket at Google Cloud
 
     https://console.cloud.google.com/storage/browser
 
-Upload kali.raw to your bucket
+Upload kali.raw (4,2 GB) to your bucket
 
     gsutil cp kali.tar.gz gs://bucket-name/kali.tar.gz
 
