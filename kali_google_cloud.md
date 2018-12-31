@@ -5,13 +5,17 @@ On this post, I am going to guide you how to install & upload your Kali Linux in
 
 Requirements:
     
-    Google Cloud Account https://console.cloud.google.com/
+    Google Cloud Account 
+    https://console.cloud.google.com/
     
-    Google Cloud SDK Installed and Configured https://cloud.google.com/sdk/install
+    Google Cloud SDK Installed and Configured 
+    https://cloud.google.com/sdk/install
     
-    VirtualBox https://www.virtualbox.org/wiki/Downloads
+    VirtualBox 
+    https://www.virtualbox.org/wiki/Downloads
     
-    Kali Linux ISO (or VirtualBox images) https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/
+    Kali Linux ISO (or VirtualBox images) 
+    https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/
     
     150 GB Free Space in your machine
     
@@ -58,9 +62,11 @@ Upload kali.raw (4,2 GB) to your bucket
 
     gsutil cp kali.tar.gz gs://bucket-name/kali.tar.gz
 
-Start Kali Linux virtual machine
+Create image for Kali Linux in GCP
 
-     gcloud compute --project=name images create kg --source-uri=https://storage.googleapis.com/bucket-name.appspot.com/kali/disk.tar.gz gcloud compute images create kali –source-uri 
+     gcloud compute --project=name images create kg --source-uri=https://storage.googleapis.com/bucket-name.appspot.com/kali/disk.tar.gz
+
+Start Kali Linux virtual machine in GCP
 
     gcloud compute --project=name instances create kali –image kali –machine-type n1-highmem-4 –zone us-central1-f
     
