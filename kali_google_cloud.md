@@ -60,16 +60,18 @@ Create bucket at Google Cloud
 
 Upload Kali disk.raw (4,2 GB) to your GCP bucket
 
-    gsutil cp kali.tar.gz gs://bucket-name/disk.tar.gz
+    gsutil cp kali.tar.gz gs://bucket-name/kali/disk.tar.gz
 
 Create image for Kali Linux in GCP
 
      gcloud compute --project=name images create kali --source-uri=https://storage.googleapis.com/bucket-name.appspot.com/kali/disk.tar.gz
 
-Start Kali Linux virtual machine in GCP
+Start Kali Linux virtual machine in GCP and create Firewall
 
-    gcloud compute --project=name instances create kali –image kali –machine-type n1-highmem-4 –zone us-central1-f
-    
+gcloud beta compute --project=project-name instances create kali --zone=us-central1-f --machine-type=n1-highmem-4 --subnet=default --network-tier=PREMIUM --maintenance-policy=MIGRATE --service-account=name-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append --tags=http-server,https-server --image=kali --image-project=project-name --boot-disk-size=80GB --boot-disk-type=pd-ssd --boot-disk-device-name=kali
+
+gcloud compute --project=projet-name firewall-rules create default-allow-http --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http-server    
+
 Connect via SSH
 
     gcloud compute --project "project_name" ssh --zone "us-central1-f" "kali"
