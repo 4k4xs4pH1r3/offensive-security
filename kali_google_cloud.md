@@ -84,5 +84,5 @@ Connect via SSH with debugg mode
     
     or
     
-    ssh --ssh-flag="-vvv" kali.us-central1-f.project-name -vvv
+    ssh kali.us-central1-f.project-name -vvv
 
