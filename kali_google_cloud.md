@@ -73,6 +73,16 @@ gcloud beta compute --project=project-name instances create kali --zone=us-centr
 
 gcloud compute --project=projet-name firewall-rules create default-allow-http --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http-server    
 
-Connect via SSH
 
+Update the ssh keys in your metadata
+
+    gcloud compute config-ssh
+    
+Connect via SSH
+     
     gcloud compute --project "project_name" ssh --zone "us-central1-f" "kali"
+    
+    or
+    
+    ssh kali.us-central1-f.project-name
+
