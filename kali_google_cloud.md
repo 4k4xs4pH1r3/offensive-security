@@ -78,11 +78,11 @@ Update the ssh keys in your metadata
 
     gcloud compute config-ssh
     
-Connect via SSH
+Connect via SSH with debugg mode
      
-    gcloud compute --project "project_name" ssh --zone "us-central1-f" "kali"
+    gcloud compute --project "project_name" ssh --ssh-flag="-vvv" --zone "us-central1-f" "kali"
     
     or
     
-    ssh kali.us-central1-f.project-name
+    ssh --ssh-flag="-vvv" kali.us-central1-f.project-name -vvv
 
