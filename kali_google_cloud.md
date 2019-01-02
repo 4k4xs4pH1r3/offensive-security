@@ -9,6 +9,7 @@ Requirements:
     https://console.cloud.google.com/
     
     Google Cloud SDK Installed and Configured 
+    curl https://sdk.cloud.google.com | bash
     https://cloud.google.com/sdk/install
     
     VirtualBox 
