@@ -1,5 +1,5 @@
 
-How to install Kali Linux on Google Cloud
+How to install Kali Linux 2019.1.1 on Google Cloud
 
 On this post, I am going to guide you how to install & upload your Kali Linux into Google Cloud Platform.
 
@@ -44,6 +44,38 @@ Add or set the below line in this config file
 Set ssh run on the boot
 
     update-rc.d –f ssh enable 2 3 4 5
+    
+Installing the GCP Linux Guest Environment and Upgrade Kali Linux
+    
+    sudo apt-get install jq
+    
+    gcloud config set compute/zone [ZONE]
+    gcloud config set compute/region [REGION]
+    gcloud config set project [PROJECT]
+
+    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+    nano /etc/apt/sources.list.d/google-cloud.list
+    
+    deb http://packages.cloud.google.com/apt google-compute-engine-sid main
+    deb http://packages.cloud.google.com/apt google-cloud-packages-archive-keyring-sid main
+    
+    Ctrl + x 
+    yes
+    Enter
+
+    sudo apt-get update && sudo apt-get dist-upgrade -y
+    sudo apt-get autoclean $$ apt-get clear cache
+    apt-get install software-properties-common -y
+    apt-get install apt-file -y
+    apt-file update
+    sudo apt-get update --fix-missing
+    sudo apt-get install --fix-broken && sudo apt-get autoremove && sudo apt-get update -y
+    apt-get install curl -y
+    sudo apt-get install aptitude -y && sudo aptitude safe-upgrade -y
+    sudo dpkg --configure -a
+    sudo grub-mkconfig
+    sudo reboot
 
 Turn off the Kali Linux virtual machine.
 
