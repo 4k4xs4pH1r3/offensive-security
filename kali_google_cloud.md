@@ -75,6 +75,18 @@ Installing the GCP Linux Guest Environment and Upgrade Kali Linux
     sudo apt-get install aptitude -y && sudo aptitude safe-upgrade -y
     sudo dpkg --configure -a
     sudo grub-mkconfig
+    
+    declare -a PKG_LIST=(google-cloud-packages-archive-keyring \
+````python-google-compute-engine \
+````python3-google-compute-engine \
+````google-compute-engine-oslogin \``
+    google-compute-engine)
+    for pkg in ${PKG_LIST[@]}; do
+       sudo apt install -y $pkg
+    done
+    
+Restart the instance and inspect its console to make sure the Guest Environment loads as it starts back up.
+
     sudo reboot
 
 Turn off the Kali Linux virtual machine.
