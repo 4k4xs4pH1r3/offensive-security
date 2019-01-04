@@ -117,6 +117,11 @@ gcloud beta compute --project=project-name instances create kali --zone=us-centr
 
 gcloud compute --project=projet-name firewall-rules create default-allow-http --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http-server    
 
+Actually for connect via ssh, only works via web browser option.
+
+
+
+Work in Progress: Connect with Cloud Shell or using third-party tools (like kali liux terminal, remmina, etc...)
 
 Update the ssh keys in your metadata
 
@@ -130,3 +135,30 @@ Connect via SSH with debugg mode
     
     ssh kali.us-central1-f.project-name -vvv
 
+
+
+
+Install Azure CLI + VS Code 
+
+    sudo apt-get install apt-transport-https lsb-release software-properties-common dirmngr -y
+    
+    nano /etc/apt/sources.list
+    
+    deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ stretch main
+    deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+    
+    Ctrl + x 
+    yes
+    Enter
+    
+    sudo apt-key --keyring /etc/apt/trusted.gpg.d/Microsoft.gpg adv \
+     --keyserver packages.microsoft.com \
+     --recv-keys BC528686B50D79E339D3721CEB3E94ADBE1229CF
+     
+     rm -r /etc/apt/sources.list.d/vscode.list
+     
+     sudo apt-get update -y
+     sudo apt-get install azure-cli code -y
+     
+     
+     az login
