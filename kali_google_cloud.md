@@ -162,3 +162,7 @@ Install Azure CLI + VS Code
      
      
      az login
+     
+     
+     
+If your installation starts up to a command line, enter the command “startx”. If this results in a command not found message, install the desktop GUI by running “aptinstall kali-linux-full” or “apt install gnome gdm3” then editing your .xinitrc file and add the line “exec startx”.
