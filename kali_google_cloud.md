@@ -1,5 +1,5 @@
 
-How to install Kali Linux 2019.1.1 on Google Cloud
+How to install Kali Linux 2019.1.1 on Google Cloud Platform - GCP
 
 On this post, I am going to guide you how to install & upload your Kali Linux into Google Cloud Platform.
 
@@ -77,9 +77,9 @@ Installing the GCP Linux Guest Environment and Upgrade Kali Linux
     sudo grub-mkconfig
     
     declare -a PKG_LIST=(google-cloud-packages-archive-keyring \
-````python-google-compute-engine \
-````python3-google-compute-engine \
-````google-compute-engine-oslogin \``
+     python-google-compute-engine \
+    python3-google-compute-engine \
+    google-compute-engine-oslogin \
     google-compute-engine)
     for pkg in ${PKG_LIST[@]}; do
        sudo apt install -y $pkg
@@ -113,9 +113,9 @@ Create image for Kali Linux in GCP
 
 Start Kali Linux virtual machine in GCP and create Firewall
 
-gcloud beta compute --project=project-name instances create kali --zone=us-central1-f --machine-type=n1-highmem-4 --subnet=default --network-tier=PREMIUM --maintenance-policy=MIGRATE --service-account=name-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append --tags=http-server,https-server --image=kali --image-project=project-name --boot-disk-size=80GB --boot-disk-type=pd-ssd --boot-disk-device-name=kali
+    gcloud beta compute --project=project-name instances create kali --zone=us-central1-f --machine-type=n1-highmem-4 --subnet=default      --network-tier=PREMIUM --maintenance-policy=MIGRATE --service-account=name-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append --tags=http-server,https-server --image=kali --image-project=project-name --boot-disk-size=80GB --boot-disk-type=pd-ssd --boot-disk-device-name=kali
 
-gcloud compute --project=projet-name firewall-rules create default-allow-http --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http-server    
+    gcloud compute --project=projet-name firewall-rules create default-allow-http --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http-server    
 
 Actually for connect via ssh, only works via web browser option.
 
@@ -158,11 +158,26 @@ Install Azure CLI + VS Code
      rm -r /etc/apt/sources.list.d/vscode.list
      
      sudo apt-get update -y
+     rm -r /etc/apt/sources.list.d/vscode.list
      sudo apt-get install azure-cli code -y
-     
-     
+     rm -r /etc/apt/sources.list.d/vscode.list
+     sudo apt-get update -y
      az login
      
      
      
-If your installation starts up to a command line, enter the command “startx”. If this results in a command not found message, install the desktop GUI by running “aptinstall kali-linux-full” or “apt install gnome gdm3” then editing your .xinitrc file and add the line “exec startx”.
+If your installation starts up to a command line, enter the command 
+     
+     startx    
+    
+If this results in a command not found message, install the desktop GUI by running 
+
+    apt install kali-linux-full kali-linux-all gnome gdm3 -y
+    
+then editing your file
+
+     .xinitrc 
+
+and add the line 
+
+    exec startx
