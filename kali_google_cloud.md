@@ -1,5 +1,5 @@
 
-How to install Kali Linux 2019.1.1 on Google Cloud Platform - GCP
+How to install Kali Linux 2019.1 on Google Cloud Platform - GCP
 
 On this post, I am going to guide you how to install & upload your Kali Linux into Google Cloud Platform.
 
@@ -10,15 +10,15 @@ Requirements:
     
     Google Cloud SDK Installed and Configured 
     curl https://sdk.cloud.google.com | bash
-    https://cloud.google.com/sdk/install
+    gcloud init
     
     VirtualBox 
     https://www.virtualbox.org/wiki/Downloads
     
-    Kali Linux ISO (or VirtualBox images) 
+    Kali Linux VirtualBox Image
     https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/
     
-    150 GB Free Space in your machine
+    100 GB Free Space in your machine
     
     Grab a cofee or beers
     
@@ -49,10 +49,6 @@ Installing the GCP Linux Guest Environment and Upgrade Kali Linux
     
     sudo apt-get install jq
     
-    gcloud config set compute/zone [ZONE]
-    gcloud config set compute/region [REGION]
-    gcloud config set project [PROJECT]
-
     curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
     nano /etc/apt/sources.list.d/google-cloud.list
@@ -168,7 +164,7 @@ If your installation starts up to a command line, enter the command
      
      startx    
     
-If this results in a command not found message, install the desktop GUI by running 
+If this results in a command not found message, install the Kali Linux desktop GUI, running: 
 
     apt install kali-linux-full kali-linux-all gnome gdm3 -y
     
