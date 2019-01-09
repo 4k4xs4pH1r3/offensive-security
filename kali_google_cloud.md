@@ -113,12 +113,11 @@ Start Kali Linux virtual machine in GCP and create Firewall
 
     gcloud compute --project=projet-name firewall-rules create default-allow-http --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http-server    
 
-Actually for connect via ssh, only works via web browser option.
 
+Actually for connect via ssh, only works via web browser 
 
-
-Work in Progress: Connect with Cloud Shell or using third-party tools (like kali liux terminal, remmina, etc...)
-
+And using PowerShell
+ 
 Update the ssh keys in your metadata
 
     gcloud compute config-ssh
@@ -132,6 +131,7 @@ Connect via SSH with debugg mode
     ssh kali.us-central1-f.project-name -vvv
 
 
+Work in Progress: Connect with Cloud Shell or using third-party tools (like kali liux terminal, remmina, etc...)
 
 
 Install Azure CLI + VS Code 
