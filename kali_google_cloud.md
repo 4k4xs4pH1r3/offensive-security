@@ -155,10 +155,8 @@ Install Azure CLI + VS Code
      --keyserver packages.microsoft.com \
      --recv-keys BC528686B50D79E339D3721CEB3E94ADBE1229CF
      
-     rm -r /etc/apt/sources.list.d/vscode.list
      
      sudo apt-get update -y
-     rm -r /etc/apt/sources.list.d/vscode.list
      sudo apt-get install azure-cli code -y
      rm -r /etc/apt/sources.list.d/vscode.list
      sudo apt-get update -y
