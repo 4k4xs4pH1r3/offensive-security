@@ -39,11 +39,11 @@ Change the configuration file
 
 Add or set the below line in this config file
 
-    #PermitRootLogin yes
+    PermitRootLogin yes
 
 Set ssh run on the boot
 
-    update-rc.d –f ssh enable 2 3 4 5
+    update-rc.d -f ssh enable 2 3 4 5
     
 Installing the GCP Linux Guest Environment and Upgrade Kali Linux
     
