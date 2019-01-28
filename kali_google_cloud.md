@@ -93,7 +93,7 @@ Convert Kali linux vdi (11 GB) to raw file (85,9 GB).
 
 Convert raw into tar.gz format
 
-    tar –zcvf disk.tar.gz disk.raw
+    tar -zcvf disk.tar.gz disk.raw
 
 Create bucket at Google Cloud
 
