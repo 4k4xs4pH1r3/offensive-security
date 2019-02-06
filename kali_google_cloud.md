@@ -60,7 +60,7 @@ Installing the GCP Linux Guest Environment and Upgrade Kali Linux
     yes
     Enter
 
-    sudo apt-get update && sudo apt-get dist-upgrade -y
+    sudo apt-get update && sudo apt-get full-upgrade -y
     sudo apt-get autoclean $$ apt-get clear cache
     apt-get install software-properties-common -y
     apt-get install apt-file -y
