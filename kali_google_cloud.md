@@ -137,6 +137,11 @@ Work in Progress: Connect with Cloud Shell or using third-party tools (like kali
 Install Azure CLI + VS Code 
 
     sudo apt-get install apt-transport-https lsb-release software-properties-common dirmngr -y
+    apt-get install --fix-missing
+    apt-get update --fix-missing
+    sudo apt-get update && apt-get full-upgrade -y
+    sudo apt-get install aptitude -y && sudo aptitude safe-upgrade
+    sudo dpkg --configure -a && sudo grub-mkconfig
     
     nano /etc/apt/sources.list
     
