@@ -162,7 +162,9 @@ Install Azure CLI + VS Code + PowerShell + MSSQL Cli
      
      
      sudo apt-get update -y
-     sudo apt-get install azure-cli code libicu57 powershell mssql-cli -y
+     wget http://ftp.us.debian.org/debian/pool/main/i/icu/libicu57_57.1-9_amd64.deb
+     dpkg -i libicu57_57.1-9_amd64.deb
+     sudo apt-get install azure-cli code libicu57 powershell mssql-cli dotnet-runtime-deps-2.1 dotnet-runtime-2.1 aspnetcore-runtime-2.1 dotnet-sdk-2.1 - y
      rm -r /etc/apt/sources.list.d/vscode.list
      sudo apt-get update -y
      az login
