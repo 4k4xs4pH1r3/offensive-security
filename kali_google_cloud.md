@@ -134,7 +134,7 @@ Connect via SSH with debugg mode
 Work in Progress: Connect with Cloud Shell or using third-party tools (like kali liux terminal, remmina, etc...)
 
 
-Install Azure CLI + VS Code + PowerShell + MSSQL Cli
+Install Azure CLI + VS Code + PowerShell + MS SQL cli
 
     sudo apt-get install apt-transport-https lsb-release software-properties-common dirmngr -y
     apt-get install --fix-missing
@@ -164,7 +164,7 @@ Install Azure CLI + VS Code + PowerShell + MSSQL Cli
      sudo apt-get update -y
      wget http://ftp.us.debian.org/debian/pool/main/i/icu/libicu57_57.1-9_amd64.deb
      dpkg -i libicu57_57.1-9_amd64.deb
-     sudo apt-get install azure-cli code powershell mssql-cli dotnet-runtime-deps-2.1 dotnet-runtime-2.1 aspnetcore-runtime-2.1 dotnet-sdk-2.1 - y
+     sudo apt-get install azure-cli code powershell mssql-cli dotnet-runtime-deps-2.1 dotnet-runtime-2.1 aspnetcore-runtime-2.1 dotnet-sdk-2.1 -y
      rm -r /etc/apt/sources.list.d/vscode.list
      sudo apt-get update -y
      az login
