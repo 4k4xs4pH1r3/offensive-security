@@ -83,7 +83,7 @@ Ctrl + x + y + Enter
     sudo apt-get install aptitude -y && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get autoclean $$ apt-get clear cache && sudo apt-get update && apt-get full-upgrade && apt-get autoremove -y &&     apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig && sudo reboot
     
 
-If all works as expected Kali restared now correctly, now login as root and execute:
+If all works as expected Kali Linux restarted, correctly, now login as root and execute:
 
     declare -a PKG_LIST=(google-cloud-packages-archive-keyring \
      python-google-compute-engine \
