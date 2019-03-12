@@ -20,7 +20,7 @@ Kali Linux ISO
     
     137 GB Free Space in your machine
     
-    Grab a cofee or beers
+    Grab a tea/cofee/beer
     
 
 Let’s start! Create VirtualBox virtual machine, using the ISO downloaded from Kali Linux.
@@ -119,7 +119,7 @@ Restart the instance and inspect its console to make sure the Guest Environment 
 
 Turn off the Kali Linux virtual machine.
 
-Convert Kali linux vdi (11 GB) to raw file (85,9 GB).
+Convert Kali linux vdi (37 GB) to raw file (85,9 GB).
 
     vboxmanage clonehd kali.vdi disk.raw --format raw
 
