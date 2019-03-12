@@ -140,13 +140,12 @@ If Kali Linux only show's the command line after boot, enter the below command
      
      startx    
       
-then edit your file open a terminal
+then edit the below file in a terminal
 
-     sudo nano .xinitrc 
+     sudo nano .xinitrc
 
-and add this 
+Adding this 
 
     exec startx
-    
     
 Ctrl + x + y + Enter
