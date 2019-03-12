@@ -68,7 +68,11 @@ Ctrl + x + y + Enter
     
 Install Google Cloud SDK & GCP Linux Guest Environment
 
-    curl https://sdk.cloud.google.com | bash && gcloud init && gcloud init beta --console-only && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && nano /etc/apt/sources.list.d/google-cloud.list
+    curl https://sdk.cloud.google.com | bash
+    
+Close the terminal and open again
+
+    gcloud init && gcloud init beta --console-only && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && nano /etc/apt/sources.list.d/google-cloud.list
     
     deb http://packages.cloud.google.com/apt google-compute-engine-sid main
     deb http://packages.cloud.google.com/apt google-cloud-packages-archive-keyring-sid main
