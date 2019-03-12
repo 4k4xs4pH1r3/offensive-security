@@ -18,9 +18,9 @@ Kali Linux ISO
 
     https://images.offensive-security.com/kali-linux-2019.1a-amd64.iso.torrent
     
-    137 GB Free Space in your machine
+137 GB Free Space in your machine
     
-    Grab a tea/cofee/beer
+Grab a tea/cofee/beer!!!
     
 
 Let’s start! Create VirtualBox virtual machine, using the ISO downloaded from Kali Linux.
