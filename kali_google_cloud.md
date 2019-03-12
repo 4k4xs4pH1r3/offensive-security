@@ -9,13 +9,7 @@ Requirements:
 A Google Cloud Account 
     
     https://console.cloud.google.com/
-    
-Google Cloud SDK Installed and Configured 
-
-    curl https://sdk.cloud.google.com | bash
-    gcloud init
-    gcloud beta
-    
+      
 VirtualBox 
 
     https://www.virtualbox.org/wiki/Downloads
@@ -85,7 +79,11 @@ Ctrl + x + y + Enter
      
      
     
-Install the GCP Linux Guest Environment
+Install Google Cloud SDK && GCP Linux Guest Environment
+
+    curl https://sdk.cloud.google.com | bash
+    gcloud init
+    gcloud beta
    
     curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
