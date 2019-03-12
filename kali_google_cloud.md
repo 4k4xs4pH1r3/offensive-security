@@ -97,8 +97,8 @@ Ctrl + x + y + Enter
 
     sudo apt-get install aptitude -y && sudo aptitude safe-upgrade -y
     sudo apt-get install --fix-broken && apt-get update --fix-missing
-    sudo apt-get update && apt-get full-upgrade && apt-get autoremove -y
     sudo apt-get autoclean $$ apt-get clear cache
+    sudo apt-get update && apt-get full-upgrade && apt-get autoremove -y
     apt-get install apt-file -y
     apt-get install -y
     sudo dpkg --configure -a && sudo grub-mkconfig
