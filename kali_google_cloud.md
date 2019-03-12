@@ -113,7 +113,7 @@ Ctrl + x + y + Enter
        sudo apt install -y $pkg
     done
     
-Restart the instance and inspect its console to make sure the Guest Environment loads as it starts back up.
+Restart the instance and inspect its console to make sure the Guest Environment load correctly
 
     sudo reboot
 
