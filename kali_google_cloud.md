@@ -27,15 +27,8 @@ Let’s start! Create VirtualBox virtual machine, using the ISO downloaded from 
 
 Deploy a Kali Linux Ninja inside of Virtualbox with desktop GUI with UEFI and SSD Storage of 337 GB, once you installed execute: 
 
-    sudo apt install kali-linux-full kali-linux-all gnome gdm3 neofetch screenfetch synaptic curl apt-transport-https lsb-release software-properties-common dirmngr openssh-server jq -y
-    sudo apt-get install aptitude -y && sudo aptitude safe-upgrade -y
-    sudo apt-get install --fix-broken && apt-get update --fix-missing
-    sudo apt-get update && apt-get full-upgrade && apt-get autoremove -y
-    sudo apt-get autoclean $$ apt-get clear cache
-    apt-get install apt-file -y
-    apt-get install -y
-    sudo dpkg --configure -a && sudo grub-mkconfig
-    sudo reboot
+    sudo apt install kali-linux-full kali-linux-all gnome gdm3 neofetch screenfetch synaptic curl apt-transport-https lsb-release software-properties-common dirmngr openssh-server jq -y && sudo apt-get install aptitude -y && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get update && apt-get full-upgrade && apt-get autoremove -y
+    sudo apt-get autoclean $$ apt-get clear cache && apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig && sudo reboot
 
 Change the configuration file of openssh-server
 
@@ -66,28 +59,15 @@ Ctrl + x + y + Enter
      --recv-keys BC528686B50D79E339D3721CEB3E94ADBE1229CF
      
      
-     sudo apt-get update -y
-     wget http://mirror.edatel.net.co/deepin/pool/main/i/icu/libicu57_57.1-9_amd64.deb
-     dpkg -i libicu57_57.1-9_amd64.deb
-     sudo apt-get install azure-cli code powershell mssql-cli dotnet-runtime-deps-2.2 dotnet-runtime-2.2 aspnetcore-runtime-2.2 dotnet-sdk-2.2 -y
-     rm -r /etc/apt/sources.list.d/vscode.list
-     sudo apt-get update -y
-     sudo dpkg --configure -a && sudo grub-mkconfig
-     sudo reboot
+     sudo apt-get update -y && wget http://mirror.edatel.net.co/deepin/pool/main/i/icu/libicu57_57.1-9_amd64.deb && dpkg -i libicu57_57.1-9_amd64.deb && sudo apt-get install azure-cli code powershell mssql-cli dotnet-runtime-deps-2.2 dotnet-runtime-2.2 aspnetcore-runtime-2.2 dotnet-sdk-2.2 -y && rm -r /etc/apt/sources.list.d/vscode.list && sudo apt-get update -y && sudo dpkg --configure -a && sudo grub-mkconfig && sudo reboot
      
      az login
      
      
     
-Install Google Cloud SDK && GCP Linux Guest Environment
+Install Google Cloud SDK & GCP Linux Guest Environment
 
-    curl https://sdk.cloud.google.com | bash
-    gcloud init
-    gcloud beta
-   
-    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-
-    nano /etc/apt/sources.list.d/google-cloud.list
+    curl https://sdk.cloud.google.com | bash && gcloud init && gcloud init beta --console-only && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && nano /etc/apt/sources.list.d/google-cloud.list
     
     deb http://packages.cloud.google.com/apt google-compute-engine-sid main
     deb http://packages.cloud.google.com/apt google-cloud-packages-archive-keyring-sid main
@@ -95,14 +75,7 @@ Install Google Cloud SDK && GCP Linux Guest Environment
 Ctrl + x + y + Enter
 
 
-    sudo apt-get install aptitude -y && sudo aptitude safe-upgrade -y
-    sudo apt-get install --fix-broken && apt-get update --fix-missing
-    sudo apt-get autoclean $$ apt-get clear cache
-    sudo apt-get update && apt-get full-upgrade && apt-get autoremove -y
-    apt-get install apt-file -y
-    apt-get install -y
-    sudo dpkg --configure -a && sudo grub-mkconfig
-    sudo reboot
+    sudo apt-get install aptitude -y && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get autoclean $$ apt-get clear cache && sudo apt-get update && apt-get full-upgrade && apt-get autoremove -y &&     apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig && sudo reboot
     
     declare -a PKG_LIST=(google-cloud-packages-archive-keyring \
      python-google-compute-engine \
@@ -119,13 +92,9 @@ Restart the instance and inspect its console to make sure the Guest Environment 
 
 Turn off the Kali Linux virtual machine.
 
-Convert Kali linux vdi (37 GB) to raw file (85,9 GB).
+Convert Kali linux vdi (37 GB) to raw file (85,9 GB) & Convert raw into tar.gz format
 
-    vboxmanage clonehd kali.vdi disk.raw --format raw
-
-Convert raw into tar.gz format
-
-    tar -zcvf disk.tar.gz disk.raw
+    vboxmanage clonehd kali.vdi disk.raw --format raw && tar -zcvf disk.tar.gz disk.raw
 
 Create bucket at Google Cloud
 
@@ -171,10 +140,13 @@ If Kali Linux only show's the command line after boot, enter the below command
      
      startx    
       
-then edit your file
+then edit your file open a terminal
 
-     nano .xinitrc 
+     sudo nano .xinitrc 
 
-and add the line 
+and add this 
 
     exec startx
+    
+    
+Ctrl + x + y + Enter
