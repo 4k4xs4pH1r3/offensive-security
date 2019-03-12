@@ -6,20 +6,22 @@ On this post, I am going to guide you how to install & upload your Kali Linux in
 Requirements:
 
   
-A Google Cloud Account 
+A Google Cloud Platform Account with credits
     
     https://console.cloud.google.com/
       
-VirtualBox with VirtualBox Guest Additions enabled bidirectional
+VirtualBox with VirtualBox Guest Additions (bidirectional enabled)
 
     https://www.virtualbox.org/wiki/Downloads
     
 Kali Linux ISO
 
     https://images.offensive-security.com/kali-linux-2019.1a-amd64.iso.torrent
-    
+
+
 137 GB Free Space in your machine
-    
+
+
 Grab a tea/cofee/beer!!!
     
 
@@ -30,7 +32,7 @@ Deploy a Kali Linux Ninja (gnome) inside of Virtualbox with UEFI and SSD Storage
     sudo apt install kali-linux-full kali-linux-all gnome gdm3 neofetch screenfetch synaptic curl apt-transport-https lsb-release software-properties-common dirmngr openssh-server jq -y && sudo apt-get install aptitude -y && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get update && apt-get full-upgrade && apt-get autoremove -y &&
     sudo apt-get autoclean && apt-get clear cache && apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig && sudo reboot
 
-Change the configuration file of openssh-server
+Change configuration of openssh-server
 
     nano /etc/ssh/sshd_config
 
