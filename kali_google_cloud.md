@@ -10,7 +10,7 @@ A Google Cloud Account
     
     https://console.cloud.google.com/
       
-VirtualBox 
+VirtualBox with VirtualBox Guest Additions enabled bidirectional
 
     https://www.virtualbox.org/wiki/Downloads
     
