@@ -4,40 +4,50 @@ How to install Kali Linux 2019.1 on Google Cloud Platform - GCP
 On this post, I am going to guide you how to install & upload your Kali Linux into Google Cloud Platform.
 
 Requirements:
+
+  
+A Google Cloud Account 
     
-    Google Cloud Account 
     https://console.cloud.google.com/
     
-    Google Cloud SDK Installed and Configured 
+Google Cloud SDK Installed and Configured 
+
     curl https://sdk.cloud.google.com | bash
     gcloud init
+    gcloud beta
     
-    VirtualBox 
+VirtualBox 
+
     https://www.virtualbox.org/wiki/Downloads
     
-    Kali Linux VirtualBox Image
-    https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/
+Kali Linux ISO
+
+    https://images.offensive-security.com/kali-linux-2019.1a-amd64.iso.torrent
     
-    100 GB Free Space in your machine
+    137 GB Free Space in your machine
     
     Grab a cofee or beers
     
 
-Let’s start! Create VirtualBox virtual machine
+Let’s start! Create VirtualBox virtual machine, using the ISO downloaded from Kali Linux.
 
-It’s easy to create a Kali Linux Virtualbox virtual machine so in this post, I will use Kali VirtualBox image that I downloaded from Kali Linux download page.
+Deploy a Kali Linux Ninja inside of Virtualbox with desktop GUI with UEFI and SSD Storage of 337 GB, once you installed execute: 
 
-Import kali-linux-2018.4-vbox-amd64.ova in Virtual Box (The virtual size of the hdd is 80GB)
+    sudo apt install kali-linux-full kali-linux-all gnome gdm3 neofetch screenfetch synaptic curl apt-transport-https lsb-release software-properties-common dirmngr openssh-server jq -y
+    sudo apt-get install aptitude -y && sudo aptitude safe-upgrade -y
+    sudo apt-get install --fix-broken && apt-get update --fix-missing
+    sudo apt-get update && apt-get full-upgrade && apt-get autoremove -y
+    sudo apt-get autoclean $$ apt-get clear cache
+    apt-get install apt-file -y
+    apt-get install -y
+    sudo dpkg --configure -a && sudo grub-mkconfig
+    sudo reboot
 
-Turn on the Kali Linux virtual machine to install and configure openssh-server:
-
-    apt-get install openssh-server -y
-
-Change the configuration file
+Change the configuration file of openssh-server
 
     nano /etc/ssh/sshd_config
 
-Add or set the below line in this config file
+Set the below value:
 
     PermitRootLogin yes
 
@@ -45,10 +55,38 @@ Set ssh run on the boot
 
     update-rc.d -f ssh enable 2 3 4 5
     
-Installing the GCP Linux Guest Environment and Upgrade Kali Linux
+Install Azure CLI + VS Code + PowerShell + MS SQL cli
     
-    sudo apt-get install jq
+    nano /etc/apt/sources.list
     
+    deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ stretch main
+    deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+    deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main
+    deb [arch=amd64] https://packages.microsoft.com/debian/9/prod stretch main
+
+    
+Ctrl + x + y + Enter
+    
+    sudo apt-key --keyring /etc/apt/trusted.gpg.d/Microsoft.gpg adv \
+     --keyserver packages.microsoft.com \
+     --recv-keys BC528686B50D79E339D3721CEB3E94ADBE1229CF
+     
+     
+     sudo apt-get update -y
+     wget http://mirror.edatel.net.co/deepin/pool/main/i/icu/libicu57_57.1-9_amd64.deb
+     dpkg -i libicu57_57.1-9_amd64.deb
+     sudo apt-get install azure-cli code powershell mssql-cli dotnet-runtime-deps-2.1 dotnet-runtime-2.1 aspnetcore-runtime-2.1 dotnet-sdk-2.1 -y
+     rm -r /etc/apt/sources.list.d/vscode.list
+     sudo apt-get update -y
+     sudo dpkg --configure -a && sudo grub-mkconfig
+     sudo reboot
+     
+     az login
+     
+     
+    
+Install the GCP Linux Guest Environment
+   
     curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
     nano /etc/apt/sources.list.d/google-cloud.list
@@ -56,21 +94,17 @@ Installing the GCP Linux Guest Environment and Upgrade Kali Linux
     deb http://packages.cloud.google.com/apt google-compute-engine-sid main
     deb http://packages.cloud.google.com/apt google-cloud-packages-archive-keyring-sid main
     
-    Ctrl + x 
-    yes
-    Enter
+Ctrl + x + y + Enter
 
-    sudo apt-get update && sudo apt-get full-upgrade -y
-    sudo apt-get autoclean $$ apt-get clear cache
-    apt-get install software-properties-common -y
-    apt-get install apt-file -y
-    apt-file update
-    sudo apt-get update --fix-missing
-    sudo apt-get install --fix-broken && sudo apt-get autoremove && sudo apt-get update -y
-    apt-get install curl -y
+
     sudo apt-get install aptitude -y && sudo aptitude safe-upgrade -y
-    sudo dpkg --configure -a
-    sudo grub-mkconfig
+    sudo apt-get install --fix-broken && apt-get update --fix-missing
+    sudo apt-get update && apt-get full-upgrade && apt-get autoremove -y
+    sudo apt-get autoclean $$ apt-get clear cache
+    apt-get install apt-file -y
+    apt-get install -y
+    sudo dpkg --configure -a && sudo grub-mkconfig
+    sudo reboot
     
     declare -a PKG_LIST=(google-cloud-packages-archive-keyring \
      python-google-compute-engine \
@@ -131,57 +165,17 @@ Connect via SSH with debugg mode
     ssh kali.us-central1-f.project-name -vvv
 
 
-Work in Progress: Connect with Cloud Shell or using third-party tools (like kali liux terminal, remmina, etc...)
 
 
-Install Azure CLI + VS Code + PowerShell + MS SQL cli
 
-    sudo apt-get install apt-transport-https lsb-release software-properties-common dirmngr -y
-    apt-get install --fix-missing
-    apt-get update --fix-missing
-    sudo apt-get update && apt-get full-upgrade -y
-    sudo apt-get install aptitude -y && sudo aptitude safe-upgrade
-    sudo dpkg --configure -a && sudo grub-mkconfig
-    
-    nano /etc/apt/sources.list
-    
-    deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ stretch main
-    deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
-    deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main
-    deb [arch=amd64] https://packages.microsoft.com/debian/9/prod stretch main
-
-    
-    
-    Ctrl + x 
-    yes
-    Enter
-    
-    sudo apt-key --keyring /etc/apt/trusted.gpg.d/Microsoft.gpg adv \
-     --keyserver packages.microsoft.com \
-     --recv-keys BC528686B50D79E339D3721CEB3E94ADBE1229CF
      
-     
-     sudo apt-get update -y
-     wget http://mirror.edatel.net.co/deepin/pool/main/i/icu/libicu57_57.1-9_amd64.deb
-     dpkg -i libicu57_57.1-9_amd64.deb
-     sudo apt-get install azure-cli code powershell mssql-cli dotnet-runtime-deps-2.1 dotnet-runtime-2.1 aspnetcore-runtime-2.1 dotnet-sdk-2.1 -y
-     rm -r /etc/apt/sources.list.d/vscode.list
-     sudo apt-get update -y
-     az login
-     
-     
-     
-If your installation starts up to a command line, enter the command 
+If Kali Linux only show's the command line after boot, enter the below command 
      
      startx    
-    
-If this results in a command not found message, install the Kali Linux desktop GUI, running: 
+      
+then edit your file
 
-    apt install kali-linux-full kali-linux-all gnome gdm3 -y
-    
-then editing your file
-
-     .xinitrc 
+     nano .xinitrc 
 
 and add the line 
 
