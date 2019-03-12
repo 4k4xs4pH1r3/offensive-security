@@ -42,7 +42,7 @@ Set ssh run on the boot
 
     update-rc.d -f ssh enable 2 3 4 5
     
-Install Azure CLI + VS Code + PowerShell + MS SQL cli
+Install Azure CLI + VS Code + PowerShell + MS SQL Cli + .Net Core
     
     nano /etc/apt/sources.list
     
