@@ -64,7 +64,17 @@ Ctrl + x + y + Enter
      
      az login
      
-     
+Install VirtualBox 6
+
+    su
+    
+    nano /etc/apt/sources.list
+
+    deb https://download.virtualbox.org/virtualbox/debian stretch contrib
+    
+    sudo apt remove libcurl4 -y
+    
+    cd /root/Downloads && wget http://ftp.br.debian.org/debian/pool/main/c/curl/libcurl3_7.52.1-5+deb9u9_amd64.deb && wget http://ftp.br.debian.org/debian/pool/main/libv/libvpx/libvpx4_1.6.1-3+deb9u1_amd64.deb && chmod +x libcurl3_7.52.1-5+deb9u9_amd64.deb libvpx4_1.6.1-3+deb9u1_amd64.deb && dpkg -i libcurl3_7.52.1-5+deb9u9_amd64.deb libvpx4_1.6.1-3+deb9u1_amd64.deb && sudo apt-get install virtualbox-6.0 -y && apt autoremove -y && rm -r lib* && sudo apt-get update -y && apt full-upgrade && sudo dpkg --configure -a && sudo grub-mkconfig && sudo reboot
     
 Install Google Cloud SDK & GCP Linux Guest Environment
 
