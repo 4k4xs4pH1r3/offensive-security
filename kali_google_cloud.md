@@ -10,7 +10,7 @@ A Google Cloud Platform Account with credits
     
     https://console.cloud.google.com/
       
-VirtualBox with VirtualBox Guest Additions (bidirectional enabled)
+VirtualBox 6 with VirtualBox Guest Additions (bidirectional enabled)
 
     https://www.virtualbox.org/wiki/Downloads
     
