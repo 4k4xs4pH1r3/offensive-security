@@ -29,7 +29,7 @@ Let’s start! Create VirtualBox virtual machine, using the ISO downloaded from 
 
 Deploy a Kali Linux Ninja (gnome) inside of Virtualbox with UEFI and SSD Storage of 337 GB, once you installed this OS, execute: 
 
-    sudo apt update && apt install kali-linux-full kali-linux-all gnome gdm3 neofetch screenfetch synaptic curl apt-transport-https lsb-release software-properties-common dirmngr openssh-server jq -y && sudo apt-get install aptitude -y && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get update && apt-get full-upgrade && apt-get autoremove -y && sudo apt-get autoclean && apt-get clean cache && apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig && sudo reboot
+    sudo apt-get autoclean && apt-get clean cache && sudo apt update && apt install kali-linux-full kali-linux-all gnome gdm3 neofetch screenfetch synaptic lsb-release software-properties-common curl dirmngr apt-transport-https openssh-server jq -y && sudo apt-get install aptitude -y && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get update && apt-get full-upgrade && apt-get autoremove -y && apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig && sudo reboot
 
 Change configuration of openssh-server
 
@@ -88,7 +88,7 @@ Close the terminal and open again
 Ctrl + x + y + Enter
 
 
-    sudo apt-get install aptitude -y && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get autoclean $$ apt-get clear cache && sudo apt-get update && apt-get full-upgrade && apt-get autoremove -y &&     apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig && sudo reboot
+    sudo apt-get autoclean && apt-get clean cache && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get update && apt-get full-upgrade && apt-get autoremove -y && apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig && sudo reboot
     
 
 If all works as expected Kali Linux restarted, correctly, now login as root and execute:
