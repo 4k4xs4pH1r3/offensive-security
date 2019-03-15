@@ -141,10 +141,6 @@ Connect via SSH with debugg mode
     
     ssh kali.us-central1-f.project-name -vvv
 
-
-
-
-
      
 If Kali Linux only show's the command line after boot, enter the below command 
      
@@ -159,3 +155,9 @@ Adding this
     exec startx
     
 Ctrl + x + y + Enter
+
+
+For copy files from Google Bucket
+
+    
+    gsutil cp -r gs://proyect_name.appspot.com/folder /root/
