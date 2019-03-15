@@ -60,7 +60,7 @@ Ctrl + x + y + Enter
      --recv-keys BC528686B50D79E339D3721CEB3E94ADBE1229CF
      
      
-     sudo apt-get update -y && wget http://mirror.edatel.net.co/deepin/pool/main/i/icu/libicu57_57.1-9_amd64.deb && dpkg -i libicu57_57.1-9_amd64.deb && sudo apt-get install azure-cli code powershell mssql-cli dotnet-runtime-deps-2.2 dotnet-runtime-2.2 aspnetcore-runtime-2.2 dotnet-sdk-2.2 -y && rm -r /etc/apt/sources.list.d/vscode.list && sudo apt-get update -y && sudo dpkg --configure -a && sudo grub-mkconfig && sudo reboot
+     sudo apt-get update -y && wget http://mirror.edatel.net.co/deepin/pool/main/i/icu/libicu57_57.1-9_amd64.deb && dpkg -i libicu57_57.1-9_amd64.deb && wget http://security-cdn.debian.org/debian-security/pool/updates/main/o/openssl1.0/libssl1.0.2_1.0.2r-1~deb9u1_amd64.deb && chmod +x libssl1.0.2_1.0.2r-1~deb9u1_amd64.deb && dpkg -i libssl1.0.2_1.0.2r-1~deb9u1_amd64.deb && sudo apt-get install azure-cli code powershell mssql-cli dotnet-runtime-deps-2.2 dotnet-runtime-2.2 aspnetcore-runtime-2.2 dotnet-sdk-2.2 -y && rm -r /etc/apt/sources.list.d/vscode.list && sudo apt-get update -y && sudo dpkg --configure -a && sudo grub-mkconfig && sudo reboot
      
      az login
      
