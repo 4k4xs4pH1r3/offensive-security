@@ -129,11 +129,11 @@ Actually for connect via ssh, only works via web browser
 
 And using PowerShell
  
-Update the ssh keys in your metadata
+Connect via ssh keys in your metadata
 
     gcloud compute config-ssh
     
-Connect via SSH in Linux or PowerShell + Putty in Windows with debugg mode
+Connect via SSH in Linux or PowerShell + Putty in Windows with debugg mode (OS Login Mode)
      
     gcloud compute --project "project_name" ssh --ssh-flag="-vvv" --zone "us-central1-f" "kali"
 #
