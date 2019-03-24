@@ -125,9 +125,12 @@ Start Kali Linux virtual machine in GCP and create Firewall
     gcloud compute --project=projet-name firewall-rules create default-allow-http --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http-server    
 
 
-Actually for connect via ssh, only works via web browser 
+Actually for connect you can do it via web, ssh & PowerShell
+ 
+    nano ~/.ssh/config
 
-And using PowerShell
+    Host *
+        IPQoS=lowdelay throughput
  
 Connect via ssh keys in your metadata
 
