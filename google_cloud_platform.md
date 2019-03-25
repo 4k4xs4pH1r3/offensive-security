@@ -1,5 +1,5 @@
 
-How to install Kali Linux 2019.2.2 on Google Cloud Platform - GCP
+How to install Kali Linux 2019.2.3 on Google Cloud Platform - GCP
 
 On this post, I am going to guide you how to install & upload your Kali Linux into Google Cloud Platform.
 
