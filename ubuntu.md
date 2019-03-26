@@ -115,11 +115,11 @@ Update and Check Metasploit Framework 5:
 
 #   
 
-# 4. Create and Save your workspace
+# 4. Create and Save your workspace with real time notifier enabled
 
     workspace -a tls
     
-    setg Prompt akax(%whi%H/%grn%U/%whi%L%grn%D/%whi%T/%grn%W/%whiS%S/%grnJ%J)
+    setg Prompt tls (%grn%W/%whiS%S/%grnJ%J)
     setg ConsoleLogging y
     setg LogLevel 5
     setg SessionLogging y
