@@ -15,6 +15,15 @@ to The CyberNinja passion of https://github.com/sh1nta & https://github.com/Dani
 [!] legal disclaimer: Usage of this for attacking targets without prior mutual consent is illegal.
 It is the end user's responsibility to obey all applicable local, state and federal laws. 
 Developers assume no liability and are not responsible for any misuse or damage caused by this program.
+
+
+#
+For do this more dynamic let's see in parallel some https://nmap.org/movies/
+
+The main objective of this automation were designed Extrictly and Limited only for educational purposes.
+
+#
+Only authorized DevSecOps, can use this due to your client/target boundary concerns.
 #
 # Pre-Requisites:
  
@@ -54,13 +63,6 @@ Set DNS
     options rotate
        
 
-#
-For do this more dynamic let's see in parallel some https://nmap.org/movies/
-
-The main objective of this automation were designed Extrictly and Limited only for educational purposes.
-
-#
-Only authorized DevSecOps, can use this due to your client/target boundary concerns.
 
 #
 #
@@ -73,7 +75,7 @@ This PoC include
 
 
 
-# Configure Metasploit Framework 5 
+# 2. Configure Metasploit Framework 5 
 
 (omnibus Nightly):
 
@@ -115,7 +117,7 @@ Update and Check Metasploit Framework 5:
 
 #   
 
-# 4. Create and Save your workspace with real time notifier enabled
+# 3. Create and Save your workspace with real time notifier enabled
 
     workspace -a tls
     
@@ -155,13 +157,16 @@ Print host interfaces and routes (for debugging)
 
      db_nmap --iflist
     
-#
-Scan Types
+#   
+#   
+# Scan Types
 
 Full & Polite recorded in the msf db with verbosity enabled for an domain/ip
 
     db_nmap --save --privileged -sY -sZ -g 20 --script=auth,banner,broadcast,brute,default,discovery,dos,exploit,external,intrusive,malware,safe,smb-vuln-regsvc-dos.nse,version,vuln,nmap-vulners,vulscan --script-args vulscandb=cve.csv,exploitdb.csv,openvas.csv,osvdb.csv,scipvuldb.csv,securityfocus.csv,securitytracker.csv,xforce.csv,randomseed,smbbasic,smbport,smbsign,smbdomain,smbhash,smbnoguest,smbpassword,smbtype,smbusername -A -f -D RND -sV -sC --script-updatedb --script-trace -O --osscan-guess -vvv --max-retries 0 --min-hostgroup 7 --max-hostgroup 1337 --max-parallelism 137 --min-parallelism 2 --max-rtt-timeout 100ms --host-timeout 30m --randomize-hosts -sN -Pn -p443 --allports --version-all --mtu 8 --version-trace --open --reason  -O --osscan-guess --traceroute --packet-trace -T2 -v yourdomain.com -vv -dd -oA /root/new_r7nmapScan -oS /root/new_r7nmapScan_sk
 
+
+#
 Default 
         
      -sS -sV -O -T4 -v --traceroute
