@@ -26,11 +26,12 @@ The main objective of this automation were designed Extrictly and Limited only f
 Only authorized DevSecOps, can use this due to your client/target boundary concerns.
 #
 # Pre-Requisites:
- 
-Storage: 500 GB 
-Memory RAM: 16 GB
-CPU: 1 Socket - 4 Cores (AMD Pro A10 / Intel i5 7th gen)
-GPU: 1 GB
+
+    Ubuntu Cosmic or Bionic Beaver (Installed)
+    Storage: 500 GB 
+    Memory RAM: 16 GB
+    CPU: 1 Socket - 4 Cores (AMD Pro A10 / Intel i5 7th gen)
+    GPU: 1 GB
 
 # 1. Let's convert you in an Ninja Hacker
 
