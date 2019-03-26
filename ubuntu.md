@@ -117,7 +117,9 @@ Update and Check Metasploit Framework 5:
 
 #   
 
-# 3. Create and Save your workspace with real time notifier enabled
+# 3. Prepare your your workspace
+
+With real time notifier, enabled
 
     workspace -a tls
     
