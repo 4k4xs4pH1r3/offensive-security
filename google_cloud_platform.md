@@ -138,7 +138,7 @@ Connect via ssh keys in your metadata
     
 Connect via SSH in Linux or PowerShell + Putty in Windows with debugg mode (OS Login Mode)
      
-    gcloud compute --project "project_name" ssh --ssh-flag="-vvv" --zone "us-central1-f" "kali"
+    gcloud compute --project "project_name" ssh --zone "us-east1-b" "roo@kali"
 #
 #
 #
