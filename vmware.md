@@ -1,18 +1,18 @@
 ### How to Install VMware 15 in Kali GNU/Linux Rolling x 
 Kernel: 4.18.0-kali2-amd64                
 #
-wget https://www.vmware.com/go/getworkstation-linux
+    wget https://www.vmware.com/go/getworkstation-linux
 #
-apt install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib -y
+    apt install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib -y
 #
-sudo apt-get install linux-headers-$(uname -r) -y
+    sudo apt-get install linux-headers-$(uname -r) -y
 #
-chmod +x getworkstation-linux
+    chmod +x getworkstation-linux
 #
-./getworkstation-linux
+    ./getworkstation-linux
 #
-sudo dpkg --configure -a
+    sudo dpkg --configure -a
 #
-sudo grub-mkconfig
+    sudo grub-mkconfig
 #
 Open VMware and enjoy ;)  
