@@ -1,5 +1,4 @@
-### How to Install VMware 15 in Kali GNU/Linux Rolling x 
-Kernel: 4.18.0-kali2-amd64                
+### How to Install VMware 15 in Linux with Kernel: 4              
 #
     wget https://www.vmware.com/go/getworkstation-linux
 #
