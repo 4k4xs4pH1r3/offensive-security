@@ -1,4 +1,4 @@
-### How to Install VMware 15 in Linux with Kernel: 4              
+### How to Install VMware Workstation in Linux with Kernel 4              
 #
     wget https://www.vmware.com/go/getworkstation-linux
 #
