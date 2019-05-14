@@ -7,9 +7,9 @@ apt install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib -y
 #
 sudo apt-get install linux-headers-$(uname -r) -y
 #
-chmod +x VMware-Workstation-Full-15.0.2-10952284.x86_64.bundle 
+chmod +x getworkstation-linux
 #
-./VMware-Workstation-Full-15.0.2-10952284.x86_64.bundle 
+./getworkstation-linux
 #
 sudo dpkg --configure -a
 #
