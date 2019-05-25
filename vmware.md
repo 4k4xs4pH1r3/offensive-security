@@ -1,4 +1,4 @@
-### How to Install VMware Workstation in Linux with Kernel 4              
+### How to Install VMware Workstation in Linux            
 #
     sudo apt install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib -y
 #
