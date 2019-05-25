@@ -42,6 +42,11 @@ Set the below value:
 Set ssh run on the boot
 #
     update-rc.d -f ssh enable 2 3 4 5
+
+#
+# Install Crome
+
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && chmod +x *.deb && dpkg -i *.deb
     
 # Install Azure CLI + VS Code + PowerShell + MS SQL Cli + .Net Core
 #    
