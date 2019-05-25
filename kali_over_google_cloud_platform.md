@@ -51,6 +51,10 @@ Set ssh run on the boot
     deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
     deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main
     deb [arch=amd64] https://packages.microsoft.com/debian/9/prod stretch main
+    deb [arch=amd64] https://packages.microsoft.com/ubuntu/19.04/mssql-server-2017 disco main
+    deb [arch=amd64] https://packages.microsoft.com/ubuntu/19.04/mssql-server-preview disco main
+   
+    
 #
     
 Ctrl + x + y + Enter
@@ -60,7 +64,7 @@ Ctrl + x + y + Enter
      --recv-keys BC528686B50D79E339D3721CEB3E94ADBE1229CF
 #  
 #     
-     sudo apt-get update -y && wget http://mirror.edatel.net.co/deepin/pool/main/i/icu/libicu57_57.1-9_amd64.deb && dpkg -i libicu57_57.1-9_amd64.deb && wget http://security-cdn.debian.org/debian-security/pool/updates/main/o/openssl1.0/libssl1.0.2_1.0.2r-1~deb9u1_amd64.deb && wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu6.2_amd64.deb && wget http://security.ubuntu.com/ubuntu/pool/main/i/icu/libicu55_55.1-7ubuntu0.4_amd64.deb && chmod +x l*.deb && dpkg -i l*.deb && sudo apt-get install azure-cli code powershell mssql-cli dotnet-runtime-deps-2.2 dotnet-runtime-2.2 aspnetcore-runtime-2.2 dotnet-sdk-2.2 -y && rm -r /etc/apt/sources.list.d/vscode.list && sudo apt-get update -y && sudo dpkg --configure -a && sudo grub-mkconfig
+     sudo apt-get update -y && wget http://mirror.edatel.net.co/deepin/pool/main/i/icu/libicu57_57.1-9_amd64.deb && dpkg -i libicu57_57.1-9_amd64.deb && wget http://security-cdn.debian.org/debian-security/pool/updates/main/o/openssl1.0/libssl1.0.2_1.0.2r-1~deb9u1_amd64.deb && wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu6.2_amd64.deb && wget http://security.ubuntu.com/ubuntu/pool/main/i/icu/libicu55_55.1-7ubuntu0.4_amd64.deb && chmod +x l*.deb && dpkg -i l*.deb && sudo apt-get update && sudo apt install azure-cli code powershell  dotnet-runtime-deps-2.2 dotnet-runtime-2.2 aspnetcore-runtime-2.2 dotnet-sdk-2.2 mssql-cli mssql-tools mssql-server unixodbc-dev -y && sudo /opt/mssql/bin/mssql-conf setup && rm -r /etc/apt/sources.list.d/*.list && sudo apt-get update -y && sudo dpkg --configure -a && sudo grub-mkconfig
 #
      sudo reboot
 #     
