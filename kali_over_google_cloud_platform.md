@@ -25,9 +25,9 @@ Kali Linux ISO
 Grab a tea/cofee/beer!!!
     
 
-Let’s start! Create VirtualBox virtual machine, using the ISO downloaded from Kali Linux.
+# Create VirtualBox virtual machine, 
 
-Deploy a Kali Linux Ninja (gnome) inside of Virtualbox with UEFI and SSD Storage of 337 GB, once you installed this OS, execute: 
+using the ISO downloaded from Kali Linux. Deploy a Kali Linux Ninja (gnome) inside of Virtualbox with UEFI and SSD Storage of 337 GB, once you installed this OS, execute: 
 
     sudo apt-get autoclean && apt-get clean cache && sudo apt update && apt install kali-linux-full kali-linux-all gnome gdm3 neofetch screenfetch synaptic lsb-release software-properties-common curl dirmngr apt-transport-https openssh-server openvpn network-manager-openvpn-gnome resolvconf jq -y && sudo apt-get install aptitude -y && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get update && apt-get full-upgrade && apt-get autoremove -y && apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig && sudo reboot
 
@@ -43,7 +43,7 @@ Set ssh run on the boot
 
     update-rc.d -f ssh enable 2 3 4 5
     
-Install Azure CLI + VS Code + PowerShell + MS SQL Cli + .Net Core
+# Install Azure CLI + VS Code + PowerShell + MS SQL Cli + .Net Core
     
     nano /etc/apt/sources.list
     
@@ -60,15 +60,17 @@ Ctrl + x + y + Enter
      --recv-keys BC528686B50D79E339D3721CEB3E94ADBE1229CF
      
      
-     sudo apt-get update -y && wget http://mirror.edatel.net.co/deepin/pool/main/i/icu/libicu57_57.1-9_amd64.deb && dpkg -i libicu57_57.1-9_amd64.deb && wget http://security-cdn.debian.org/debian-security/pool/updates/main/o/openssl1.0/libssl1.0.2_1.0.2r-1~deb9u1_amd64.deb && chmod +x libssl1.0.2_1.0.2r-1~deb9u1_amd64.deb && dpkg -i libssl1.0.2_1.0.2r-1~deb9u1_amd64.deb && sudo apt-get install azure-cli code powershell mssql-cli dotnet-runtime-deps-2.2 dotnet-runtime-2.2 aspnetcore-runtime-2.2 dotnet-sdk-2.2 -y && rm -r /etc/apt/sources.list.d/vscode.list && sudo apt-get update -y && sudo dpkg --configure -a && sudo grub-mkconfig && sudo reboot
-     
+     sudo apt-get update -y && wget http://mirror.edatel.net.co/deepin/pool/main/i/icu/libicu57_57.1-9_amd64.deb && dpkg -i libicu57_57.1-9_amd64.deb && wget http://security-cdn.debian.org/debian-security/pool/updates/main/o/openssl1.0/libssl1.0.2_1.0.2r-1~deb9u1_amd64.deb && wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu6.2_amd64.deb && wget http://security.ubuntu.com/ubuntu/pool/main/i/icu/libicu55_55.1-7ubuntu0.4_amd64.deb && chmod +x l*.deb && dpkg -i l*.deb && sudo apt-get install azure-cli code powershell mssql-cli dotnet-runtime-deps-2.2 dotnet-runtime-2.2 aspnetcore-runtime-2.2 dotnet-sdk-2.2 -y && rm -r /etc/apt/sources.list.d/vscode.list && sudo apt-get update -y && sudo dpkg --configure -a && sudo grub-mkconfig
+#
+     sudo reboot
+#     
      az login
-     
-Install VirtualBox 6
+#     
+# Install VirtualBox 6
 
     echo "deb https://download.virtualbox.org/virtualbox/debian stretch contrib" | sudo tee -a /etc/apt/sources.list && apt remove libcurl4 -y && mkdir /root/Downloads && cd /root/Downloads && wget http://ftp.br.debian.org/debian/pool/main/c/curl/libcurl3_7.52.1-5+deb9u9_amd64.deb && wget http://ftp.br.debian.org/debian/pool/main/libv/libvpx/libvpx4_1.6.1-3+deb9u1_amd64.deb && wget http://ftp.us.debian.org/debian/pool/main/libs/libssh2/libssh2-1_1.7.0-1_amd64.deb && chmod +x libcurl3_7.52.1-5+deb9u9_amd64.deb libvpx4_1.6.1-3+deb9u1_amd64.deb libssh2-1_1.7.0-1_amd64.deb && dpkg -i libcurl3_7.52.1-5+deb9u9_amd64.deb libvpx4_1.6.1-3+deb9u1_amd64.deb libssh2-1_1.7.0-1_amd64.deb && wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add - && wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add - && sudo apt update && sudo apt-get install virtualbox-6.0 -y && apt autoremove -y && rm -r lib* && sudo apt-get update -y && apt full-upgrade && sudo dpkg --configure -a && sudo grub-mkconfig && sudo reboot
     
-Install Google Cloud SDK & GCP Linux Guest Environment
+# Install Google Cloud SDK & GCP Linux Guest Environment
 
     curl https://sdk.cloud.google.com | bash
     
