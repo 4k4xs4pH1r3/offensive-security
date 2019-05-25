@@ -56,6 +56,7 @@ Set ssh run on the boot
 For Ubuntu Disco
 #
     deb [arch=amd64] https://packages.microsoft.com/ubuntu/18.10/prod cosmic main
+    deb [arch=amd64] https://packages.microsoft.com/ubuntu/18.04/prod bionic main
 #    
 #
     
