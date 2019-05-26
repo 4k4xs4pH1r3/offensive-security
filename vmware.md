@@ -4,7 +4,7 @@
 #
     sudo apt-get install linux-headers-$(uname -r) -y
 #
-    sudo apt-get install libcanberra-gtk-module libcanberra-gtk-module:i386 libcanberra-gtk-module && wget https://www.vmware.com/go/getworkstation-linux && chmod +x getworkstation-linux && ./getworkstation-linux
+    sudo apt-get install libcanberra-gtk-module libcanberra-gtk-module:i386 libcanberra-gtk-module && wget https://www.vmware.com/go/getworkstation-linux && chmod +x getworkstation-linux && ./getworkstation-linux && vmware-modconfig --console --install-all
 #
     sudo dpkg --configure -a
 #
