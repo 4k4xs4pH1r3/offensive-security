@@ -20,10 +20,12 @@ Generate a key
 You'll see info that it did it ok.
 
 Install the drivers modules
-
+#
     sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./VMWARE15.priv ./VMWARE15.der $(modinfo -n vmmon)
+#
     sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./VMWARE15.priv ./VMWARE15.der $(modinfo -n vmnet)
-
+#
+#
 This does not give any feedback
 
 Check the modules installed
