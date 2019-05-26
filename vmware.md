@@ -1,4 +1,4 @@
-### How to Install VMware Workstation in Linux            
+### How to Install VMware Workstation in Ubuntu Disco       
 #
     sudo apt install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib -y
 #
@@ -60,9 +60,4 @@ All credits to OP.
 #
     sudo grub-mkconfig
 #
-Open VMware and enjoy ;)  
-
-
-https://kb.vmware.com/s/article/2146460
-
-https://askubuntu.com/questions/1096052/vmware-15-error-on-ubuntu-18-4-could-not-open-dev-vmmon-no-such-file-or-dire
+Open VMware and enjoy ;)
