@@ -4,15 +4,21 @@
 #
     sudo apt-get install linux-headers-$(uname -r) -y
 #
-    sudo apt-get install libcanberra-gtk-module libcanberra-gtk-module:i386 libcanberra-gtk-module && wget https://www.vmware.com/go/getworkstation-linux && chmod +x getworkstation-linux && ./getworkstation-linux && vmware-modconfig --console --install-all
+    sudo apt-get install libcanberra-gtk-module libcanberra-gtk-module:i386 libcanberra-gtk-module && wget https://www.vmware.com/go/getworkstation-linux && chmod +x getworkstation-linux && ./getworkstation-linux
 #
-    openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -nodes -days 36500 -subj "/CN=VMware/"
+#   
+    sudo vmware-modconfig --console --install-all
 #
-    sudo /usr/src/linux-headers-`uname -r`/scripts/sign-file sha256 ./MOK.priv ./MOK.der $(modinfo -n vmmon)
+    openssl req -new -x509 -newkey rsa:2048 -keyout VMWARE.priv -outform DER -out VMWARE.der -nodes -days 36500 -subj "/CN=VMWARE/"
 #
-    sudo /usr/src/linux-headers-`uname -r`/scripts/sign-file sha256 ./MOK.priv ./MOK.der $(modinfo -n vmnet)
+    sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./VMWARE.priv ./VMWARE.der $(modinfo -n vboxdrv)
 #
-    mokutil --import MOK.der
+    sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./VMWARE.priv ./VMWARE.der $(modinfo -n vboxdrv)
+mokutil --import MOK.der
+
+    tail $(modinfo -n vboxdrv) | grep "Module signature appended"
+    
+    sudo mokutil --import VMWARE.der
 #    
     sudo dpkg --configure -a
 #
@@ -22,3 +28,5 @@ Open VMware and enjoy ;)
 
 
 https://kb.vmware.com/s/article/2146460
+
+https://askubuntu.com/questions/1096052/vmware-15-error-on-ubuntu-18-4-could-not-open-dev-vmmon-no-such-file-or-dire
