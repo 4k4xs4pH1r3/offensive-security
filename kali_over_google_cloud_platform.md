@@ -58,9 +58,7 @@ Set ssh run on the boot
     deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main
     deb [arch=amd64] https://packages.microsoft.com/debian/9/prod stretch main
     deb [arch=amd64] https://packages.microsoft.com/ubuntu/19.04/prod disco main
-    deb [arch=amd64] https://packages.microsoft.com/ubuntu/16.04/prod xenial main
-    deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main
-    
+    deb [arch=amd64] https://packages.microsoft.com/ubuntu/16.04/prod xenial main    
 #    
 #
     
