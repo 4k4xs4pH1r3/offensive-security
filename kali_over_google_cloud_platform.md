@@ -52,11 +52,15 @@ Set ssh run on the boot
 #    
     nano /etc/apt/sources.list
 #    
+    deb [arch=amd64] https://packages.microsoft.com/ubuntu/16.04/mssql-server-2017 xenial main
     deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ stretch main
     deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
     deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main
     deb [arch=amd64] https://packages.microsoft.com/debian/9/prod stretch main
     deb [arch=amd64] https://packages.microsoft.com/ubuntu/19.04/prod disco main
+    deb [arch=amd64] https://packages.microsoft.com/ubuntu/16.04/prod xenial main
+    deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main
+    
 #    
 #
     
@@ -65,11 +69,17 @@ Ctrl + x + y + Enter
     sudo apt-key --keyring /etc/apt/trusted.gpg.d/Microsoft.gpg adv \
      --keyserver packages.microsoft.com \
      --recv-keys BC528686B50D79E339D3721CEB3E94ADBE1229CF
+     
+#    
+    wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+    
 #  
+
+
 #     
-    sudo apt-get update -y && rm -r l*.deb && wget http://mirror.edatel.net.co/deepin/pool/main/i/icu/libicu57_57.1-9_amd64.deb && chmod +x l*.deb && dpkg -i l*.deb && wget http://security-cdn.debian.org/debian-security/pool/updates/main/o/openssl1.0/libssl1.0.2_1.0.2r-1~deb9u1_amd64.deb && wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu6.2_amd64.deb && wget http://security.ubuntu.com/ubuntu/pool/main/i/icu/libicu55_55.1-7ubuntu0.4_amd64.deb && chmod +x l*.deb && dpkg -i l*.deb && sudo apt-get update && sudo apt -f install && sudo apt install azure-cli code powershell dotnet-runtime-deps-2.2 dotnet-runtime-2.2 aspnetcore-runtime-2.2 dotnet-sdk-2.2 mssql-cli && sudo /opt/mssql/bin/mssql-conf setup && rm -r l*.deb && sudo apt-get update -y && sudo dpkg --configure -a && sudo grub-mkconfig
+    sudo apt-get update -y && rm -r l*.deb && wget https://mirrors.edge.kernel.org/ubuntu/pool/universe/j/jemalloc/libjemalloc1_3.6.0-9ubuntu1_amd64.deb chmod +x l*.deb && dpkg -i l*.deb && http://mirror.edatel.net.co/deepin/pool/main/i/icu/libicu57_57.1-9_amd64.deb && chmod +x l*.deb && dpkg -i l*.deb && wget http://security-cdn.debian.org/debian-security/pool/updates/main/o/openssl1.0/libssl1.0.2_1.0.2r-1~deb9u1_amd64.deb && wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu6.2_amd64.deb && wget http://security.ubuntu.com/ubuntu/pool/main/i/icu/libicu55_55.1-7ubuntu0.4_amd64.deb && chmod +x l*.deb && dpkg -i l*.deb && sudo apt-get update && sudo apt -f install && sudo apt install azure-cli code powershell dotnet-runtime-deps-2.2 dotnet-runtime-2.2 aspnetcore-runtime-2.2 dotnet-sdk-2.2 mssql-cli mssql-server mssql-tools && rm -r l*.deb && sudo /opt/mssql/bin/mssql-conf setup && sudo apt-get update -y && sudo dpkg --configure -a && sudo grub-mkconfig && neofetch && systemctl status mssql-server --no-pager
 #
-    rm -r /etc/apt/sources.list.d/*.list    
+    rm -r /etc/apt/sources.list.d/*.list
 #
      sudo reboot
 #     
@@ -176,4 +186,4 @@ For copy files from Google Bucket
 
 
 
-WIP= mssql-server 
+WIP=  
