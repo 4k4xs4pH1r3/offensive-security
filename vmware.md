@@ -52,7 +52,14 @@ You should get
 
 and that means VMWare now is working, with UEFI
 
-Note: (Secure Boot is not working by now).
+Note: (Secure Boot is working only for Linux Guests by now).
+
+#
+Install the VMware Host modules
+
+    wget https://github.com/mkubecek/vmware-host-modules/archive/workstation-15.1.0.tar.gz && tar -xzf workstation-15.1.0.tar.gz && cd vmware-host-modules-workstation-15.1.0 && make && make install
+
+    /etc/init.d/vmware restart
 
 All credits to OP.
 #    
