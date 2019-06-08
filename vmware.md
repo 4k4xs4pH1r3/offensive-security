@@ -50,21 +50,16 @@ You should get
     
     VMWARE15.der is already enrolled
 
-and that means VMWare now is working, with UEFI
+That means the VMWare keys now are signed.
 
-Note: (Secure Boot is working only for Linux Guests by now).
+Note: UEFI Secure Boot is working only for Linux Guests by now.
 
 #
 Install the VMware Host modules
 
-    wget https://github.com/mkubecek/vmware-host-modules/archive/workstation-15.1.0.tar.gz && tar -xzf workstation-15.1.0.tar.gz && cd vmware-host-modules-workstation-15.1.0 && make && make install
-
-    /etc/init.d/vmware restart
+    wget https://github.com/mkubecek/vmware-host-modules/archive/workstation-15.1.0.tar.gz && tar -xzf workstation-15.1.0.tar.gz && cd vmware-host-modules-workstation-15.1.0 && make && make install && /etc/init.d/vmware restart && sudo dpkg --configure -a && sudo grub-mkconfig
 
 All credits to OP.
-#    
-    sudo dpkg --configure -a
-#
-    sudo grub-mkconfig
+    
 #
 Open VMware and enjoy ;)
