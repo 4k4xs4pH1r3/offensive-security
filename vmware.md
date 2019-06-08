@@ -33,14 +33,14 @@ Check the modules installed
     tail $(modinfo -n vmmon) | grep "Module signature appended"
 
 You should get Binary file (standard input) matches
-
-Have key signed on reboot
+#
+Request the VMware 15 sign key enrollment 
 
     sudo mokutil --import VMWARE15.der
 
-This will ask you for a password, enter some new password a bit long like 1515vmware. Reenter same password
-
-Reboot, When reboot you should be presented with a menu with blue screen background, you have to make your way to enroll the key and enter the password you just created, this happens only once, then continue to boot / reboot.
+This will ask you for set a new password
+#
+Reboot, once restarted should be presented with a menu with blue screen background, you have to make your way to enroll the key and enter the password you just created, this happens only once, then continue to boot / reboot.
 
 To test the driver / module installed correctly enter the command
 
