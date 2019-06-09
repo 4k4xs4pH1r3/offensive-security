@@ -32,7 +32,9 @@ Check the modules installed
 
     tail $(modinfo -n vmmon) | grep "Module signature appended"
 
-You should get Binary file (standard input) matches
+You should get:
+
+    Binary file (standard input) matches
 #
 Request the VMware 15 sign key enrollment 
 
