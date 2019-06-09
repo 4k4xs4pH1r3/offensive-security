@@ -86,7 +86,7 @@ You should get
 
 That means the VMWare keys now are signed.
 
-Note: UEFI Secure Boot is working only for Linux Guests by now.
+Note: UEFI Secure Boot is working only for Linux VM's by now.
 
 #
 
