@@ -1,6 +1,9 @@
 ### How to Install VMware Workstation in Linux with Kernel 5.0.0-16-generic
 
-Verify that you have this exact Kernel
+Testet and verifed in Ubuntu Disco on 8 June 2019
+#
+
+Verify that you have this exact Kernel= 5.0.0-16-generic
 
     uname -r
 #
@@ -36,6 +39,8 @@ Generate a key MOK
     openssl req -new -x509 -newkey rsa:2048 -keyout VMWARE15.priv -outform DER -out VMWARE15.der -nodes -days 36500 -subj "/CN=VMWARE/"
 
 You'll see info that it did it ok.
+#
+#
 
 Install the drivers modules
 #
@@ -45,7 +50,10 @@ Install the drivers modules
 #
 #
 This does not give any feedback
-
+#
+#
+#
+#
 Check the modules installed
 
     tail $(modinfo -n vmmon) | grep "Module signature appended"
@@ -60,6 +68,8 @@ Request the VMware 15 sign key enrollment MOK
 
 This will ask you for set a new password
 #
+# Update Grub
+
     sudo dpkg --configure -a && sudo grub-mkconfig
 #
 #
