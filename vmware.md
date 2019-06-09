@@ -97,4 +97,4 @@ All credits to OP.
 Open VMware and enjoy ;)
 
 
-More info here= https://github.com/mkubecek/vmware-host-modules/blob/master/INSTALL
+
