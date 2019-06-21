@@ -1,9 +1,9 @@
-### How to Install VMware Workstation in Linux with Kernel 5.0.0-16-generic
+### How to Install VMware Workstation in Linux with Kernel 5.x.x-x-generic
 
-Testet and verifed in Ubuntu Disco on 8 June 2019
+Testet and verifed in Ubuntu Disco on 21 June 2019
 #
 
-Verify that you have this exact Kernel= 5.0.0-16-generic
+Identify your actual Kernel version
 
     uname -r
 #
