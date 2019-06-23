@@ -1,6 +1,6 @@
 # Kali Linux WSL Ninja
 
-1. Install Kali Linux fron Windows Store 
+1. Install Kali Linux WSL fron Windows Store 
 
         https://www.microsoft.com/en-us/p/kali-linux/9pkr34tncv07?activetab=pivot:overviewtab
     
