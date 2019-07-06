@@ -24,10 +24,12 @@ The below cycle will use 13.37 GB more in your disk. Repeat it until you see tha
     
 # Add GUI xfce 
 
-After execute this command
-- Select lightdm and allow in the Windows firewall the traffic on port 3389 in your private network to grant RDP access
-
--In Mobaxterm, edit WSL-Kali session under Advanced WSL settings
-
     sudo apt install xfce4 xrdp -y && sudo /etc/init.d/xrdp start
 
+1. Select lightdm and allow in the Windows firewall the traffic on port 3389 in your private network to grant RDP access
+
+2. In the Mobaxterm application, edit the "WSL-Kali" session,got to "Advanced WSL settings" and select "XFCE4 desktop"
+
+3. Open a new session for access Kali Linux WSL via RDP.
+
+enjoy :)
