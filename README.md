@@ -32,4 +32,5 @@
 
 3. Open a new session for access Kali Linux WSL via RDP.
 
-enjoy :)
+enjoy
+:)
