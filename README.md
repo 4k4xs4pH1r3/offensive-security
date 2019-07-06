@@ -22,7 +22,9 @@ The below cycle will use 13.37 GB more in your disk. Repeat it until you see tha
 #
     sudo apt full-upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove -y
     
-# Add GUI xfce (select lightdm after execute this command)
+# Add GUI xfce 
+
+(select lightdm after execute this command)
 
     sudo apt install xfce4 xrdp -y && sudo /etc/init.d/xrdp start
 
