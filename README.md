@@ -24,5 +24,5 @@ The below cycle will use 13.37 GB more in your disk. Repeat it until you see tha
     
 # Add GUI xfce
 
-    sudo apt-get install xfce4 xrdp - y && sudo /etc/init.d/xrdp start
+    sudo apt install xfce4 xrdp -y && sudo /etc/init.d/xrdp start
 
