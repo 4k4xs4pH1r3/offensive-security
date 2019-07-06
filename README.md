@@ -13,7 +13,7 @@
         C:\Users\usuario\AppData\Local\Packages\KaliLinux.*
 
 #
-The below cycle will use 33.37 GB more in your disk. Repeat it until you see that really were installed successfully at 100%.
+33.37 GB free space required in your disk. Repeat it until you see that really were installed successfully at 100%.
 
     sudo apt-get autoclean && apt-get clean cache && sudo apt update && apt install kali-linux-full kali-linux-all && sudo apt full-upgrade -y
 #    
