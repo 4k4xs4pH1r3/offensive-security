@@ -31,12 +31,7 @@
 2. In the Mobaxterm application, edit the "WSL-Kali" session, go to "Advanced WSL settings" and select "XFCE4 desktop"
 
 3. Open a new session for access Kali Linux WSL via RDP.
-
-
-# Install stego-toolkit
-
-    wget https://raw.githubusercontent.com/4k4xs4pH1r3/offensive-security/master/58118E89F3A912897C070ADBF76221572C52609D.key && sudo apt-key add 58118E89F3A912897C070ADBF76221572C52609D.key && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7EA0A9C3F273FCD8 && echo 'deb [arch=amd64] https://download.docker.com/linux/debian buster stable' > /etc/apt/sources.list.d/docker.list && apt-get update && apt-get remove docker docker-engine docker.io -y && apt-get install docker-ce -y && sudo usermod -aG docker $USER
-    
+ 
 
 enjoy
 :)
