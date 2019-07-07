@@ -30,7 +30,7 @@
 
 2. In the Mobaxterm application, edit the "WSL-Kali" session, go to "Advanced WSL settings" and select "XFCE4 desktop"
 
-3. Open a new session for access Kali Linux WSL via RDP.
+3. Open a new session for access Kali Linux WSL via RDP using port 3389.
  
 
 enjoy
