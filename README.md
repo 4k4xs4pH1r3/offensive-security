@@ -35,41 +35,7 @@
 
 # Install stego-toolkit
 
-    nano 58118E89F3A912897C070ADBF76221572C52609D.key
-
-----------
-
------BEGIN PGP PUBLIC KEY BLOCK-----
-Version: SKS 1.1.5+
-Comment: Hostname: aes.keys.peer.sh
-
-mQINBFWln24BEADrBl5p99uKh8+rpvqJ48u4eTtjeXAWbslJotmC/CakbNSqOb9oddfzRvGV
-eJVERt/Q/mlvEqgnyTQy+e6oEYN2Y2kqXceUhXagThnqCoxcEJ3+KM4RmYdoe/BJ/J/6rHOj
-q7Omk24z2qB3RU1uAv57iY5VGw5p45uZB4C4pNNsBJXoCvPnTGAs/7IrekFZDDgVraPx/hdi
-wopQ8NltSfZCyu/jPpWFK28TR8yfVlzYFwibj5WKdHM7ZTqlA1tHIG+agyPf3Rae0jPMsHR6
-q+arXVwMccyOi+ULU0z8mHUJ3iEMIrpTX+80KaN/ZjibfsBOCjcfiJSB/acn4nxQQgNZigna
-32velafhQivsNREFeJpzENiGHOoyC6qVeOgKrRiKxzymj0FIMLru/iFF5pSWcBQB7PYlt8J0
-G80lAcPr6VCiN+4cNKv03SdvA69dCOj79PuO9IIvQsJXsSq96HB+TeEmmL+xSdpGtGdCJHHM
-1fDeCqkZhT+RtBGQL2SEdWjxbF43oQopocT8cHvyX6Zaltn0svoGs+wX3Z/H6/8P5anog43U
-65c0A+64Jj00rNDr8j31izhtQMRo892kGeQAaaxg4Pz6HnS7hRC+cOMHUU4HA7iMzHrouAdY
-eTZeZEQOA7SxtCME9ZnGwe2grxPXh/U/80WJGkzLFNcTKdv+rwARAQABtDdEb2NrZXIgUmVs
-ZWFzZSBUb29sIChyZWxlYXNlZG9ja2VyKSA8ZG9ja2VyQGRvY2tlci5jb20+iQI4BBMBAgAi
-BQJVpZ9uAhsvBgsJCAcDAgYVCAIJCgsEFgIDAQIeAQIXgAAKCRD3YiFXLFJgnbRfEAC9Uai7
-Rv20QIDlDogRzd+Vebg4ahyoUdj0CH+nAk40RIoq6G26u1e+sdgjpCa8jF6vrx+smpgd1HeJ
-dmpahUX0XN3X9f9qU9oj9A4I1WDalRWJh+tP5WNv2ySy6AwcP9QnjuBMRTnTK27pk1sEMg9o
-JHK5p+ts8hlSC4SluyMKH5NMVy9c+A9yqq9NF6M6d6/ehKfBFFLG9BX+XLBATvf1ZemGVHQu
-sCQebTGv0C0V9yqtdPdRWVIEhHxyNHATaVYOafTj/EF0lDxLl6zDT6trRV5n9F1VCEh4Aal8
-L5MxVPcIZVO7NHT2EkQgn8CvWjV3oKl2GopZF8V4XdJRl90U/WDv/6cmfI08GkzDYBHhS8UL
-WRFwGKobsSTyIvnbk4NtKdnTGyTJCQ8+6i52s+C54PiNgfj2ieNn6oOR7d+bNCcG1CdOYY+Z
-XVOcsjl73UYvtJrO0Rl/NpYERkZ5d/tzw4jZ6FCXgggA/Zxcjk6Y1ZvIm8Mt8wLRFH9Nww+F
-VsCtaCXJLP8DlJLASMD9rl5QS9Ku3u7ZNrr5HWXPHXITX660jglyshch6CWeiUATqjIAzkEQ
-om/kEnOrvJAtkypRJ59vYQOedZ1sFVELMXg2UCkD/FwojfnVtjzYaTCeGwFQeqzHmM241iuO
-mBYPeyTY5veF49aBJA1gEJOQTvBR8Q==                                                                                                          =Fm3p                                                                                                                                   -----END PGP PUBLIC KEY BLOCK-----
-
-----------      
-
-
-    sudo apt-key add 58118E89F3A912897C070ADBF76221572C52609D.key && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7EA0A9C3F273FCD8 && echo 'deb [arch=amd64] https://download.docker.com/linux/debian buster stable' > /etc/apt/sources.list.d/docker.list && apt-get update && apt-get remove docker docker-engine docker.io -y && apt-get install docker-ce -y && sudo usermod -aG docker $USER
+    git clone https://raw.githubusercontent.com/4k4xs4pH1r3/offensive-security/master/58118E89F3A912897C070ADBF76221572C52609D.key && sudo apt-key add 58118E89F3A912897C070ADBF76221572C52609D.key && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7EA0A9C3F273FCD8 && echo 'deb [arch=amd64] https://download.docker.com/linux/debian buster stable' > /etc/apt/sources.list.d/docker.list && apt-get update && apt-get remove docker docker-engine docker.io -y && apt-get install docker-ce -y && sudo usermod -aG docker $USER
     
 
 enjoy
