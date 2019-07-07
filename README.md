@@ -28,7 +28,7 @@
 
 1. Select lightdm and allow in the Windows firewall the traffic on port 3389 in your private network to grant RDP access.
 
-2. In the Mobaxterm application, edit the "WSL-Kali" session, go to "Advanced WSL settings" and select "XFCE4 desktop".
+2. In the Mobaxterm application, edit the "WSL-Kali" session, go to "Advanced WSL settings" and select "XFCE4 desktop"
 
 3. Open a new session for access Kali Linux WSL via RDP.
  
