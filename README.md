@@ -35,7 +35,7 @@
 
 # Install stego-toolkit
 
-    git clone https://raw.githubusercontent.com/4k4xs4pH1r3/offensive-security/master/58118E89F3A912897C070ADBF76221572C52609D.key && sudo apt-key add 58118E89F3A912897C070ADBF76221572C52609D.key && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7EA0A9C3F273FCD8 && echo 'deb [arch=amd64] https://download.docker.com/linux/debian buster stable' > /etc/apt/sources.list.d/docker.list && apt-get update && apt-get remove docker docker-engine docker.io -y && apt-get install docker-ce -y && sudo usermod -aG docker $USER
+    wget https://raw.githubusercontent.com/4k4xs4pH1r3/offensive-security/master/58118E89F3A912897C070ADBF76221572C52609D.key && sudo apt-key add 58118E89F3A912897C070ADBF76221572C52609D.key && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7EA0A9C3F273FCD8 && echo 'deb [arch=amd64] https://download.docker.com/linux/debian buster stable' > /etc/apt/sources.list.d/docker.list && apt-get update && apt-get remove docker docker-engine docker.io -y && apt-get install docker-ce -y && sudo usermod -aG docker $USER
     
 
 enjoy
