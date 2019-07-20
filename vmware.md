@@ -31,7 +31,7 @@ Verify your kernel version
 
         uname -r
 
-Based on the result replace the value in the below line "VM_UNAME"
+Based on the result replace the value in the below line "VM_UNAME" and execute
 
     make VM_UNAME='5.0.0-16-generic' && make install && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig
 #
@@ -77,7 +77,9 @@ This will ask you for set a new password
 #
 #
 #
-Reboot your Linux, once restarted should be presented with a menu with blue screen background, you have to make your way to enroll the key and enter the password you just created, this happens only once, then continue to boot / reboot.
+## Reboot your Linux
+
+Once restarted should be presented with a menu with blue screen background, you have to make your way to enroll the key and enter the password you just created, this happens only once, then continue to boot / reboot.
 
 Test the driver/module installed correctly enter the command
 
