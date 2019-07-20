@@ -11,7 +11,7 @@ Close VMware
     
 ## For Debian Buster
     
-    sudo apt install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib -y && sudo apt-get install linux-headers-$(uname -r) -y && wget http://ftp.br.debian.org/debian/pool/main/libc/libcanberra/libcanberra-gtk-module_0.30-7_i386.deb && wget http://ftp.br.debian.org/debian/pool/main/libc/libcanberra/libcanberra-gtk-module_0.30-7_amd64.deb && chmod +x *.deb && dpk -i *deb %% wget https://www.vmware.com/go/getworkstation-linux && chmod +x getworkstation-linux && ./getworkstation-linux
+    sudo apt install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib aptitude -y && sudo apt-get install linux-headers-$(uname -r) -y && wget http://ftp.br.debian.org/debian/pool/main/libc/libcanberra/libcanberra-gtk-module_0.30-7_i386.deb && chmod +x *.deb && dpkg -i *deb && sudo aptitude install libcanberra-gtk-module && wget https://www.vmware.com/go/getworkstation-linux && chmod +x getworkstation-linux && ./getworkstation-linux
     
 #
 #   
