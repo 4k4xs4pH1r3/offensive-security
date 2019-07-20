@@ -1,17 +1,13 @@
-### How to Install VMware Workstation in Linux with Kernel 5.x.x-x-generic
+### How to Install VMware Workstation
 
 Last test and verifed: 20 July 2019
 #
 
-Identify your actual Kernel version
-
-    uname -r
-#
 Close VMware
 #
 #
 #
-## Ubuntu Disco
+## For Ubuntu Disco
 
     sudo apt install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module:i386 -y && wget https://www.vmware.com/go/getworkstation-linux && chmod +x getworkstation-linux && ./getworkstation-linux
     
