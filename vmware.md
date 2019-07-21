@@ -72,8 +72,9 @@ Check the modules installed
 You should get:
 
     Binary file (standard input) matches
-#
-Request the VMware 15 sign key enrollment MOK
+    
+# Only for UEFI
+Request the VMware 15 sign key enrollment MOK 
 
     sudo mokutil --import VMWARE15.der
 
@@ -89,6 +90,7 @@ This will ask you for set a new password
 
 Once restarted should be presented with a menu with blue screen background, you have to make your way to enroll the key and enter the password you just created, this happens only once, then continue to boot / reboot.
 
+## Only for UEFI
 Test the driver/module installed correctly enter the command
 
     mokutil --test-key VMWARE15.der
