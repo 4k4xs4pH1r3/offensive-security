@@ -33,7 +33,7 @@ You'll see that there are issues with monitor and net, thas ok.
 #
 Install the VMware Host modules
 
-    wget https://github.com/mkubecek/vmware-host-modules/archive/workstation-15.1.0.tar.gz && tar -xzf workstation-15.1.0.tar.gz && cd vmware-host-modules-workstation-15.1.0 && make && make install && /etc/init.d/vmware restart && sudo dpkg --configure -a && sudo grub-mkconfig && tar -cf vmmon.tar vmmon-only && tar -cf vmnet.tar vmnet-only && cp -v vmmon.tar vmnet.tar /usr/lib/vmware/modules/source/ && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig 
+    cd && wget https://github.com/mkubecek/vmware-host-modules/archive/workstation-15.1.0.tar.gz && tar -xzf workstation-15.1.0.tar.gz && cd vmware-host-modules-workstation-15.1.0 && make && make install && /etc/init.d/vmware restart && sudo dpkg --configure -a && sudo grub-mkconfig && tar -cf vmmon.tar vmmon-only && tar -cf vmnet.tar vmnet-only && cp -v vmmon.tar vmnet.tar /usr/lib/vmware/modules/source/ && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig 
     
 Verify your kernel version
 
@@ -93,7 +93,7 @@ Once restarted should be presented with a menu with blue screen background, you 
 ## Only for UEFI
 Test the driver/module installed correctly enter the command
 
-    mokutil --test-key VMWARE15.der
+    cd /root/vmware-host-modules-workstation-15.1.0 && mokutil --test-key VMWARE15.der && cd
 
 You should get 
     
