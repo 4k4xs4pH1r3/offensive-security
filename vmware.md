@@ -1,6 +1,6 @@
 ### How to Install VMware Workstation
 
-Last test and verifed: 20 July 2019
+Last test and verifed: 21 Agust 2019
 #
 
 Close VMware
@@ -93,7 +93,7 @@ Once restarted should be presented with a menu with blue screen background, you 
 ## Only for UEFI
 Test the driver/module installed correctly enter the command
 
-    cd /root/vmware-host-modules-workstation-15.1.0 && mokutil --test-key VMWARE15.der && cd
+    cd /root/vmware-host-modules-workstation-15.1.0 && mokutil --test-key VMWARE15.der
 
 You should get 
     
