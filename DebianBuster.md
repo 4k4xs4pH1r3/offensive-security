@@ -12,13 +12,13 @@ On a standard, clean install of Debian Distro Based Linux, you should have the f
 For Parrot Security add here
 
       nano /etc/apt/sources.list.d/parrot.list
-       
-deb http://http.kali.org/kali kali-rolling main contrib non-free
-deb-src http://http.kali.org/kali kali-rolling main contrib non-free
-       
-       sudo apt-key adv --recv-keys --keyserver keys.gnupg.net 7D8D0BF6
+#       
+      deb http://http.kali.org/kali kali-rolling main contrib non-free
+      deb-src http://http.kali.org/kali kali-rolling main contrib non-free
+ #      
+    sudo apt-key adv --recv-keys --keyserver keys.gnupg.net 7D8D0BF6
        
 
 ### Integrate Kali with Debian
 
-       apt-get clean && apt-get update && apt-get upgrade && apt-get dist-upgrade
+    apt-get clean && apt-get update && apt-get upgrade && apt-get dist-upgrade
