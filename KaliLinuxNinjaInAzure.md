@@ -34,9 +34,9 @@ Filesystem Size Used Avail Use% Mounted on
 
     az vm deallocate --resource-group y --name y
 
-    az disk show --name y_741d336ac0aa4affacf0f56b54800ad3 --resource-group y
+    az disk show --name y --resource-group y
 
-    az disk update --name y_741d336ac0aa4affacf0f56b54800ad3 --resource-group y --size-gb 337
+    az disk update --name y --resource-group y --size-gb 337
 
     az vm start --resource-group y --name y
 
