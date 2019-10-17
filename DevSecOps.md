@@ -19,6 +19,5 @@ pip install --ignore-installed localstack[full]
 ```
 #
 ## Install Terraforming
-```ShellSession
-gem install terraforming
-```
+https://github.com/dtan4/terraforming
+
