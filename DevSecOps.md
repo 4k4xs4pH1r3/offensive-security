@@ -1,4 +1,4 @@
-## Install Commander for Amazon AWS in Linux
+### Install Commander for Amazon AWS in Linux
 
 ```ShellSession
 pip install --upgrade pip
@@ -13,7 +13,7 @@ Download from https://getcommandeer.com/ for Linux and install with
 ```ShellSession
 dpkg -i commandeer_0.2.5_amd64.deb
 ```
-# Install LocalStack (Full)
+## Install LocalStack (Full)
 ```ShellSession
 pip install --ignore-installed localstack[full]
 ```
