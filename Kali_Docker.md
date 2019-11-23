@@ -8,7 +8,7 @@ Deploy Portainer tool for manage your Containers through a Web Intranet Portal
 
 Deploy & Run Kali Linux image in Docker
 
-    docker run -t -i kalilinux/kali-linux-docker /bin/bash
+    docker run -t -i kalilinux/kali-rolling /bin/bash
 
 List actual Docker images 
 
