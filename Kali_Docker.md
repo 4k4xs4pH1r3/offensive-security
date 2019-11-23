@@ -20,7 +20,7 @@ or
 
     docker container ls
 
-Start Portainer
+Start Portainer * only after reboot your physical machine 
 
     sudo docker start portainer
 #
@@ -28,6 +28,6 @@ or
 
     docker start xxxxxxxxxxxx
 
-Start Kali Linux
+Start Kali Linux * only after reboot your physical machine 
 
     docker start xxxxxxxxxxxx
