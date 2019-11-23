@@ -17,6 +17,7 @@ List actual Docker images
     docker ps -a
 #
 or
+
     docker container ls
 
 Start Portainer
@@ -24,6 +25,7 @@ Start Portainer
     sudo docker start portainer
 #
 or
+
     docker start xxxxxxxxxxxx
 
 Start Kali Linux
