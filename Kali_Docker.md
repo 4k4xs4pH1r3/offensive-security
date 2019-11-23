@@ -29,3 +29,7 @@ or
 Start Kali Linux * only after reboot your physical machine 
 
     docker start xxxxxxxxxxxx
+
+For open Portainer go to
+
+    http://localhost:9000
