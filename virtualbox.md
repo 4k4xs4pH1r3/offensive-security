@@ -1,5 +1,10 @@
 Install virtualbox in Ubuntu Eoan 19.10
 
+    su
+    
+    cd ~/ && mkdir Downloads
+#
+
     nano /etc/apt/sources.list
 
 
