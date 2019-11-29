@@ -17,7 +17,7 @@ Close VMware
     
     
 ## For Debian Buster i386
-sudo -
+    sudo -
 #    
     export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin && sudo apt-get install aptitude -y && sudo aptitude install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib linux-headers-$(uname -r) -y && cd /var/cache/debconf && rm *.dat && wget http://ftp.us.debian.org/debian/pool/main/libc/libcanberra/libcanberra-gtk-module_0.30-7_i386.deb && chmod +x *.deb && dpkg -i *deb && wget https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-15.5.1-15018445.x86_64.bundle && chmod +x VMware-Workstation-Full-15.5.1-15018445.x86_64.bundle && ./VMware-Workstation-Full-15.5.1-15018445.x86_64.bundle
     
@@ -37,7 +37,7 @@ Install the VMware Host modules
     
 Verify your kernel version
 
-        uname -r
+    uname -r
 
 Based on the result replace the value in the below line "VM_UNAME" and execute
 
