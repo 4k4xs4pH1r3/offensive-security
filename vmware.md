@@ -41,7 +41,7 @@ Verify your kernel version
 
 Based on the result replace the value in the below line "VM_UNAME" and execute
 
-    make VM_UNAME='5.0.0-16-generic' && make install && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig
+    make VM_UNAME='5.3.0-23-generic' && make install && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig
 #
     
 
