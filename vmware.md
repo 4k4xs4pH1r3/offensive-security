@@ -1,4 +1,4 @@
-### How to Install VMware Workstation
+### How to Install VMware Workstation 15.5.1
 
 Last test and verifed: 30 November 2019
 #
