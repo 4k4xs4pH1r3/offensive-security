@@ -47,7 +47,7 @@ Based on the result replace the value in the below line "VM_UNAME" and execute
 
 Generate a key MOK
 
-    openssl req -new -x509 -newkey rsa:2048 -keyout VMWARE15.priv -outform DER -out VMWARE15.der -nodes -days 36500 -subj "/CN=VMWARE/"
+    cd /root && openssl req -new -x509 -newkey rsa:2048 -keyout VMWARE15.priv -outform DER -out VMWARE15.der -nodes -days 36500 -subj "/CN=VMWARE/"
 
 You'll see info that it did it ok.
 #
@@ -93,7 +93,7 @@ Once restarted should be presented with a menu with blue screen background, you 
 ## Only for UEFI
 Test the driver/module installed correctly enter the command
 
-    cd /root/vmware-host-modules-workstation-15.5.1 && mokutil --test-key VMWARE15.der
+    cd /root && mokutil --test-key VMWARE15.der
 
 You should get 
     
