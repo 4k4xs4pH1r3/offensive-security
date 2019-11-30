@@ -1,4 +1,6 @@
-Install virtualbox in Ubuntu Eoan 19.10
+Install virtualbox in Ubuntu
+
+Supported falvors= Focal | Eoan | Disco
 
     su
     
