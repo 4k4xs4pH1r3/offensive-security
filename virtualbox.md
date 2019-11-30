@@ -1,6 +1,6 @@
 Install virtualbox in Ubuntu
 
-Supported falvors= Focal | Eoan | Disco
+Supported versions= Focal | Eoan | Disco
 
     su
     
