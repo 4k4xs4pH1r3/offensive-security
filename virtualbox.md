@@ -19,8 +19,5 @@ Install virtualbox in Ubuntu Eoan 19.10
 
     cd ~/Downloads && wget https://download.virtualbox.org/virtualbox/6.0.14/virtualbox-6.0_6.0.14-133895~Ubuntu~bionic_amd64.deb && chmod +x virtualbox-*.deb && dpkg -i virtualbox-*.deb && apt install -f -y
     
-    
-    Reboot
-    
-    
-    Done
+#    
+    Reboot and Enjoy
