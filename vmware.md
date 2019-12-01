@@ -6,7 +6,7 @@ Tested and verifed: 30 November 2019
 Close VMware
 #
 ## For Ubuntu
-Supported versions= Focal | Eoan | Disco
+Supported versions= Focal Fossa | Eoan | Disco
 
     sudo apt install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module:i386 -y && wget https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-15.5.1-15018445.x86_64.bundle && chmod +x VMware-Workstation-Full-15.5.1-15018445.x86_64.bundle && ./VMware-Workstation-Full-15.5.1-15018445.x86_64.bundle
     
