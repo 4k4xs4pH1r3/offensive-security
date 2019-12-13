@@ -3,9 +3,9 @@ This guide will install and prepare your Windows for DevSecOps just execute step
 #
 1. Close PowerShell
 
-2. Download & Install PowerShell 6
+2. Download & Install PowerShell
 
-    https://github.com/PowerShell/PowerShell/releases/download/v6.2.3/PowerShell-6.2.3-win-x64.msi
+    https://github.com/PowerShell/PowerShell/releases/
 
 3. Open PowerShell as administrator
 
