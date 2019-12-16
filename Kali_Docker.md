@@ -33,7 +33,7 @@ Start Kali Linux * only after reboot your physical machine
 #
 Start Portainer * only after reboot your physical machine 
 
-    sudo docker start portainer
+    docker start portainer
 #
 or
 
