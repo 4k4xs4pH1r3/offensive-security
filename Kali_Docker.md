@@ -20,7 +20,7 @@ or
     docker container ls
 
 #
-Start Kali Linux *  physical machine 
+I a future when you like start the same Kali Linux Docker Container that you installed execute:
 
     docker exec -it <container_name> bash
 
