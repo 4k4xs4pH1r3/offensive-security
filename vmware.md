@@ -1,6 +1,6 @@
 ### How to Install VMware Workstation 15.5.1
 
-Tested and verifed: 30 November 2019
+Tested and verifed: 8 Jan 2020
 #
 
 Close VMware
