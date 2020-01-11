@@ -1,6 +1,4 @@
-# Install virtualbox in Ubuntu
-
-Supported versions= Focal Fossa | Eoan | Disco
+# Ubuntu Focal | Eoan | Disco
 
 Tested and verifed: 30 November 2019
 
