@@ -94,3 +94,8 @@ Tested and verifed: 8 January 2020
 #    
 
 Reboot and Enjoy
+
+
+# Uninstall
+
+sudo apt-get remove virtualbox-\* -y && sudo apt-get purge virtualbox-\* -y
