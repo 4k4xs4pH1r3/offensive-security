@@ -29,11 +29,9 @@ Reboot and Enjoy
     
     
     
-    Install virtualbox in Ubuntu
+# Ubuntu Bionic
 
-Supported versions= Focal Fossa | Eoan | Disco
-
-Tested and verifed: 30 November 2019
+Tested and verifed: 10 January 2020
 
     su
     
@@ -43,8 +41,8 @@ Tested and verifed: 30 November 2019
     nano /etc/apt/sources.list
 
 
-    deb http://cz.archive.ubuntu.com/ubuntu disco main
-    deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian disco contrib
+    deb http://cz.archive.ubuntu.com/ubuntu bionic main
+    deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bionic contrib
 
 #
 
