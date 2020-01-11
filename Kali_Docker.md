@@ -102,7 +102,7 @@ Select lightdm=
     sudo apt install xfce4 xrdp -y && sudo /etc/init.d/xrdp start
 
 
-Now you can open a new session for access Kali Linux WSL via RDP.
+Now you can open a new session for access Kali Linux Dockerized via RDP.
  
 
 enjoy
