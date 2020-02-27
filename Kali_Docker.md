@@ -74,7 +74,7 @@ For open Portainer go to
     sudo pip install --no-cache-dir -U crcmod
 #    
 #       
-    sudo apt-get autoclean && sudo apt install -f && sudo apt -f install && sudo apt autoremove -y && apt-get clean cache && sudo apt update && sudo apt-get autoclean && apt-get clean cache && sudo apt update && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && sudo dpkg --configure -a && cd && neofetch
+    sudo apt-get autoclean && sudo apt install -f && sudo apt -f install && sudo apt autoremove -y && apt-get clean cache && sudo apt update && sudo apt-get autoclean && apt-get clean cache && sudo apt install neofetch -y && sudo apt update && sudo apt update -y && sudo apt full-upgrade -y --allow-downgrades && sudo dpkg --configure -a && cd && neofetch
 # 
 #
 ## Set DNS
