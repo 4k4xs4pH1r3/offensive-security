@@ -1,13 +1,13 @@
 ### How to Install VMware Workstation 15.5.1
 
-Tested and verifed: 8 Jan 2020
+Tested and verifed: 13 April 2020
 #
 
 Close VMware
 #
 ## Ubuntu Focal | Eoan | Disco | Bionic
 
-    sudo apt install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module:i386 -y && wget https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-15.5.1-15018445.x86_64.bundle && chmod +x VMware-Workstation-Full-15.5.1-15018445.x86_64.bundle && ./VMware-Workstation-Full-15.5.1-15018445.x86_64.bundle
+    sudo apt install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module:i386 -y && wget https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-15.5.2-15785246.x86_64.bundle && chmod +x VMware-Workstation-Full-15.5.1-15018445.x86_64.bundle && ./VMware-Workstation-Full-15.5.1-15018445.x86_64.bundle
     
 ## Kali Linux
 
@@ -45,7 +45,7 @@ Verify your kernel version
 
 Based on the result replace the value in the below line "VM_UNAME" and execute
 
-    make VM_UNAME='5.3.0-23-generic' && make install && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig
+    make VM_UNAME='5.4.0-21-generic' && make install && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig
 #
     
 
