@@ -80,7 +80,7 @@ You should get:
 # Only for UEFI
 Request the VMware 15 sign key enrollment MOK 
 
-    sudo mokutil --import VMWARE15.der
+    sudo apt install mokutil -y && mokutil --import VMWARE15.der
 
 This will ask you for set a new password
 #
