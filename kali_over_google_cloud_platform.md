@@ -29,7 +29,7 @@ Grab a tea/cofee/beer!!!
 
 using the ISO downloaded from Kali Linux. Deploy a Kali Linux Ninja (gnome) inside of Virtualbox with UEFI and SSD Storage of 337 GB, once you installed this OS, execute: 
 #
-    sudo apt-get autoclean && apt-get clean cache && sudo apt update && apt install kali-linux-full kali-linux-all gnome gdm3 neofetch screenfetch synaptic lsb-release software-properties-common curl dirmngr apt-transport-https openssh-server openvpn network-manager-openvpn-gnome resolvconf jq -y && sudo apt-get install aptitude -y && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get update && apt-get full-upgrade && apt-get autoremove -y && apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig && sudo reboot
+    apt-get update -y && apt-get full-upgrade -y && apt-get install sudo wget -y && sudo apt-get autoclean && apt-get clean cache && sudo apt update && apt install kali-linux-default kali-linux-everything gnome gdm3 neofetch screenfetch synaptic lsb-release software-properties-common curl dirmngr apt-transport-https openssh-server openvpn network-manager-openvpn-gnome resolvconf jq -y && sudo apt-get install aptitude -y && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get update && apt-get full-upgrade && apt-get autoremove -y && apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig && sudo reboot
 
 Change configuration of openssh-server
 #
