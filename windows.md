@@ -23,15 +23,17 @@ This guide will install and prepare your Windows for DevSecOps just execute step
 
 7. Install Azure Az Module
 
-       Install-Module -Name Az -AllowClobber -Scope AllUsers
+       Install-Module -Name Az -AllowClobber -Scope AllUsers.
+       
+8. Install Visual Code & GitHub Desktop        
 
-8. Install scoope A command-line installer for Windows scoop.sh
+9. Install scoope A command-line installer for Windows scoop.sh
 
        iwr -useb get.scoop.sh | iex
 
-9. Install DevSecOps tools
+10. Install DevSecOps tools
 
-       scoop install wget curl adb apktool aws-iam-authenticator aws-vault aws azure-cli azure-functions-core-tools azure-ps circleci-cli cmake cmder-full composer kompose kubectl minikube cutter dig docker git lua-for-windows make maven neofetch radare2 ruby s3deploy terraform youtube-dl docker-compose docker-machine docker-nightly php go
+        scoop install wget curl adb apktool aws-iam-authenticator aws-vault aws azure-cli azure-functions-core-tools azure-ps circleci-cli cmake cmder-full composer kompose kubectl minikube cutter dig docker git lua-for-windows make maven neofetch radare2 ruby s3deploy terraform youtube-dl docker-compose docker-machine docker-nightly php go
 #
     scoop bucket add extras
 #
