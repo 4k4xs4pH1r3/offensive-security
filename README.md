@@ -2,17 +2,16 @@
 
 1. Enable WSL executing this in powershell as admin
 
-       Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-        
+       Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux   
 
 2. Install Kali Linux WSL from Windows Store
 
-       https://www.microsoft.com/store/apps/9PKR34TNCV07        
+       https://www.microsoft.com/store/apps/9PKR34TNCV07
     
 3. Open Kali Linux, follow the wizard for install define your username and password and reset root password
 
        sudo -i
-    
+
 4. Add this path to Windows Defender as an exception
 
         C:\Users\usuario\AppData\Local\Packages\KaliLinux.*
@@ -20,7 +19,7 @@
 #
 33.37 GB free space required in your disk. ***Repeat it until you see that really were installed successfully at 100%.
 
-    sudo dpkg-reconfigure locales && apt-get update -y && apt-get full-upgrade -y && apt-get install sudo wget -y && sudo apt-get autoclean && apt-get clean cache && sudo apt update && apt install kali-linux-default kali-linux-everything kali-linux-large && apt-get full-upgrade -y
+    apt-get update -y && apt-get full-upgrade -y && apt-get install sudo wget -y && sudo apt-get autoclean && apt-get clean cache && sudo apt update && apt install kali-linux-default kali-linux-everything kali-linux-large && apt-get full-upgrade -y
 
 #
 
@@ -31,7 +30,7 @@
     
 #    
     sudo gem install lolcat nokogiri bundle rails racc
-#    
+#
     sudo gem pristine diff-lcs domain_name erubis httpclient rack rake rest-client rubydns term-ansicolor thin thor tilt racc
 #
     sudo gem update --system
@@ -46,7 +45,7 @@
        
     rm -r /etc/resolv.conf && nano /etc/resolv.conf
 #      
-    #P
+    #
     nameserver 139.99.96.146
     nameserver 37.59.40.15
     nameserver 185.121.177.177
@@ -61,7 +60,7 @@
 #       
 #
 
-# 5. Add GUI xfce 
+# 5. Add GUI xfce
 
     sudo apt install xfce4 xrdp -y && sudo /etc/init.d/xrdp start
 
@@ -70,7 +69,7 @@
 2. In the Mobaxterm application, edit the "WSL-Kali" session, go to "Advanced WSL settings" and select "XFCE4 desktop"
 
 3. Open a new session for access Kali Linux WSL via RDP.
- 
+
 
 enjoy
 :)
