@@ -2,16 +2,16 @@
 
 1. Enable WSL executing this in powershell as admin
 
-        Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+       Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
         
 
 2. Install Kali Linux WSL from Windows Store
 
-        https://www.microsoft.com/store/apps/9PKR34TNCV07        
+       https://www.microsoft.com/store/apps/9PKR34TNCV07        
     
 3. Open Kali Linux, follow the wizard for install define your username and password and reset root password
 
-        sudo -i
+       sudo -i
     
 4. Add this path to Windows Defender as an exception
 
