@@ -20,7 +20,7 @@
 #
 33.37 GB free space required in your disk. ***Repeat it until you see that really were installed successfully at 100%.
 
-    sudo locale-gen && sudo dpkg-reconfigure locales && apt-get update -y && apt-get full-upgrade -y && apt-get install sudo wget -y && sudo apt-get autoclean && apt-get clean cache && sudo apt update && apt install kali-linux-default kali-linux-everything kali-linux-large && apt-get full-upgrade -y
+    sudo dpkg-reconfigure locales && apt-get update -y && apt-get full-upgrade -y && apt-get install sudo wget -y && sudo apt-get autoclean && apt-get clean cache && sudo apt update && apt install kali-linux-default kali-linux-everything kali-linux-large && apt-get full-upgrade -y
 
 #
 
