@@ -1,14 +1,19 @@
 # Kali Linux WSL Ninja
 
-1. Install Kali Linux WSL fron Windows Store 
+1. Enable WSL executing this in powershell as admin
 
-        https://www.microsoft.com/en-us/p/kali-linux/9pkr34tncv07?activetab=pivot:overviewtab
+        Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+        
+
+2. Install Kali Linux WSL from Windows Store
+
+        https://www.microsoft.com/store/apps/9PKR34TNCV07        
     
-2. Open Kali Linux, follow the wizard for install define your username and password and reset root password
+3. Open Kali Linux, follow the wizard for install define your username and password and reset root password
 
         sudo -i
     
-3. Add this path to Windows Defender as an exception
+4. Add this path to Windows Defender as an exception
 
         C:\Users\usuario\AppData\Local\Packages\KaliLinux.*
 
@@ -55,7 +60,8 @@
 #
 #       
 #
-# Add GUI xfce 
+
+# 5. Add GUI xfce 
 
     sudo apt install xfce4 xrdp -y && sudo /etc/init.d/xrdp start
 
