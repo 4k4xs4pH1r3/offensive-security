@@ -14,7 +14,7 @@
 
 4. Add this path to Windows Defender as an exception
 
-        C:\Users\usuario\AppData\Local\Packages\KaliLinux.*
+       C:\Users\usuario\AppData\Local\Packages\KaliLinux.*
 
 #
 33.37 GB free space required in your disk. ***Repeat it until you see that really were installed successfully at 100%.
