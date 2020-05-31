@@ -29,8 +29,6 @@ Reboot and Enjoy
     
 # Ubuntu Bionic
 
-Tested and verifed: 10 January 2020
-
     su
     
     cd ~/ && mkdir Downloads
@@ -66,8 +64,6 @@ Reboot and Enjoy
     
 # Install virtualbox in Kali Linux
 
-Tested and verifed: 8 January 2020
-
     su
     
     cd ~/ && mkdir Downloads
@@ -84,7 +80,7 @@ Tested and verifed: 8 January 2020
 
 #
 
-    cd ~/Downloads && wget https://download.virtualbox.org/virtualbox/6.1.0/virtualbox-6.1_6.1.0-135406~Debian~buster_amd64.deb && chmod +x virtualbox-*.deb && dpkg -i virtualbox-*.deb && apt install -f -y
+    cd ~/Downloads && wget https://download.virtualbox.org/virtualbox/6.1.8/virtualbox-6.1_6.1.8-137981~Debian~buster_amd64.deb && chmod +x virtualbox-*.deb && dpkg -i virtualbox-*.deb && apt install -f -y
     
 #    
 
