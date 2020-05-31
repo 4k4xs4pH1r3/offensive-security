@@ -1,6 +1,6 @@
 # Ubuntu Focal | Eoan | Disco
 
-Tested and verifed: 30 November 2019
+Tested and verifed: 30 May 2020
 
     su
     
@@ -10,7 +10,7 @@ Tested and verifed: 30 November 2019
     nano /etc/apt/sources.list
 
 
-    deb http://cz.archive.ubuntu.com/ubuntu disco main
+    deb http://us.archive.ubuntu.com/ubuntu disco main
     deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian disco contrib
 
 #
@@ -39,7 +39,7 @@ Tested and verifed: 10 January 2020
     nano /etc/apt/sources.list
 
 
-    deb http://cz.archive.ubuntu.com/ubuntu bionic main
+    deb http://us.archive.ubuntu.com/ubuntu bionic main
     deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bionic contrib
 
 #
@@ -76,7 +76,6 @@ Tested and verifed: 8 January 2020
     nano /etc/apt/sources.list
 
 
-    deb http://cz.archive.ubuntu.com/ubuntu disco main
     deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian stretch contrib
 
 #
