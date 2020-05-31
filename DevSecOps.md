@@ -5,7 +5,7 @@ pip install --upgrade pip
 ```
 #
 ```ShellSession
-cd && apt install python3-pip gconf-service gconf-service-backend gconf2 gconf2-common libappindicator1 libgconf-2-4 libindicator7 -y
+cd && apt install python3-pip gconf-service gconf2 gconf2-common libappindicator1 libgconf-2-4 libindicator7 -y
 ```
 #
 ```ShellSession
