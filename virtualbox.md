@@ -68,9 +68,9 @@ Reboot and Enjoy
     
     cd ~/ && mkdir Downloads
 #
+Add Debian repo
 
     nano /etc/apt/sources.list
-
 
     deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian stretch contrib
 
@@ -80,7 +80,7 @@ Reboot and Enjoy
 
 #
 
-    cd ~/Downloads && wget https://download.virtualbox.org/virtualbox/6.1.8/virtualbox-6.1_6.1.8-137981~Debian~buster_amd64.deb && chmod +x virtualbox-*.deb && dpkg -i virtualbox-*.deb && apt install -f -y
+    cd ~/Downloads && wget http://ftp.br.debian.org/debian/pool/main/libv/libvpx/libvpx5_1.7.0-3+deb10u1_amd64.deb && chmopd +x dpkg -i libvpx5_1.7.0-3+deb10u1_amd64.deb && dpkg -i dpkg -i libvpx5_1.7.0-3+deb10u1_amd64.deb && wget https://download.virtualbox.org/virtualbox/6.1.8/virtualbox-6.1_6.1.8-137981~Debian~buster_amd64.deb && chmod +x virtualbox-*.deb && dpkg -i virtualbox-*.deb && apt install -f -y
     
 #    
 
