@@ -15,7 +15,7 @@ pip install 'idna>=2.5,<2.9' --force-reinstall
 Download from https://getcommandeer.com/ for Linux and install with
 
 ```ShellSession
-dpkg -i Commandeer*.deb
+dpkg -i Commandeer_1.1.0_amd64.deb
 ```
 ## Install LocalStack (Full)
 ```ShellSession
