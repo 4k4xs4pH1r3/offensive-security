@@ -10,7 +10,7 @@ Tested and verifed: 5 Jun 2020
     nano /etc/apt/sources.list
 
 
-    deb http://us.archive.ubuntu.com/ubuntu disco main
+    deb http://us.archive.ubuntu.com/ubuntu eoan main
     deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian eoan contrib
 
 #
