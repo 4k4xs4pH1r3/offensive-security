@@ -11,7 +11,7 @@ Tested and verifed: 5 Jun 2020
 
 
     deb http://us.archive.ubuntu.com/ubuntu disco main
-    deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian disco contrib
+    deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian eoan contrib
 
 #
 
