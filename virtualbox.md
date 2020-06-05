@@ -1,6 +1,6 @@
 # Ubuntu Groovy Gorilla | Focal | Eoan | Disco
 
-Tested and verifed: 30 May 2020
+Tested and verifed: 5 Jun 2020
 
     su
     
