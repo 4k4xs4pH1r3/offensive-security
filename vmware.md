@@ -116,4 +116,9 @@ All credits to OP.
 Open VMware and enjoy ;)
 
 
+## Windows
+
+https://www.vmware.com/go/getworkstation-win
+
+
 
