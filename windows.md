@@ -23,7 +23,7 @@ This guide will install and prepare your Windows for DevSecOps just execute step
 
 7. Install Azure Az Module
 
-       Install-Module -Name Az -AllowClobber -Scope AllUsers.
+       Install-Module -Name Az -AllowClobber -Scope AllUsers
        
 8. Install Visual Code & GitHub Desktop        
 
