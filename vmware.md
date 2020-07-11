@@ -1,6 +1,6 @@
 ### How to Install VMware Workstation 15.5.5
 
-Tested and verifed: 2 Jun 2020
+Tested and verifed: 11 July 2020
 #
 
 Close VMware
@@ -45,7 +45,7 @@ Verify your kernel version
 
 Based on the result replace the value in the below line "VM_UNAME" and execute
 
-    make VM_UNAME='5.6.0-kali2-amd64' && make install && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig
+    make VM_UNAME='5.7.0-kali1-amd64' && make install && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig
 #
     
 
