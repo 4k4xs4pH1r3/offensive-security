@@ -25,7 +25,7 @@ This guide will install and prepare your Windows for DevSecOps just execute step
 
        Install-Module -Name Az -AllowClobber -Scope AllUsers
        
-8. Install Visual Code & GitHub Desktop        
+8. Install Visual Code & GitHub Desktop, Bash, SCM & LFS       
 
 9. Install scoope A command-line installer for Windows scoop.sh
 
