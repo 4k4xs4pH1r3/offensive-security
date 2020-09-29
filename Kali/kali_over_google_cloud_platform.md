@@ -1,4 +1,3 @@
-
 How to install Kali Linux 2020.2.19 on Google Cloud Platform - GCP
 
 On this post, I am going to guide you how to install & upload your Kali Linux into Google Cloud Platform.
@@ -98,7 +97,7 @@ Set ssh run on the boot
 
 
 #     
-    sudo apt-get update -y && wget https://mirrors.edge.kernel.org/ubuntu/pool/universe/j/jemalloc/libjemalloc1_3.6.0-9ubuntu1_amd64.deb && chmod +x *.deb && dpkg -i *.deb && wget http://security.debian.org/debian-security/pool/updates/main/i/icu/libicu57_57.1-6+deb9u4_amd64.deb && chmod +x *.deb && dpkg -i *.deb && wget https://deb.sipwise.com/debian/pool/main/o/openssl1.0/libssl1.0.2_1.0.2r-1~deb9u1_amd64.deb && wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.0.0_1.0.2g-1ubuntu4.16_amd64.deb && wget http://security.ubuntu.com/ubuntu/pool/main/i/icu/libicu55_55.1-7ubuntu0.5_amd64.deb && chmod +x *.deb && dpkg -i *.deb && sudo apt-get update && sudo apt -f install && sudo apt install azure-cli code powershell dotnet-runtime-deps-2.2 dotnet-runtime-2.2 aspnetcore-runtime-2.2 dotnet-sdk-2.2 mssql-cli mssql-server mssql-tools && rm -r *.deb && sudo /opt/mssql/bin/mssql-conf setup && sudo apt-get update -y && sudo dpkg --configure -a && sudo grub-mkconfig && neofetch && systemctl status mssql-server --no-pager
+    sudo apt-get update -y && wget https://mirrors.edge.kernel.org/ubuntu/pool/universe/j/jemalloc/libjemalloc1_3.6.0-9ubuntu1_amd64.deb && chmod +x *.deb && dpkg -i *.deb && wget http://security.debian.org/debian-security/pool/updates/main/i/icu/libicu57_57.1-6+deb9u4_amd64.deb && chmod +x *.deb && dpkg -i *.deb && wget https://deb.sipwise.com/debian/pool/main/o/openssl1.0/libssl1.0.2_1.0.2r-1~deb9u1_amd64.deb && wget http://cz.archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.0.0_1.0.2g-1ubuntu4.17_amd64.deb && wget http://security.ubuntu.com/ubuntu/pool/main/i/icu/libicu55_55.1-7ubuntu0.5_amd64.deb && chmod +x *.deb && dpkg -i *.deb && sudo apt-get update && sudo apt -f install && sudo apt install azure-cli code powershell dotnet-runtime-deps-2.2 dotnet-runtime-2.2 aspnetcore-runtime-2.2 dotnet-sdk-2.2 mssql-cli mssql-server mssql-tools && rm -r *.deb && sudo /opt/mssql/bin/mssql-conf setup && sudo apt-get update -y && sudo dpkg --configure -a && sudo grub-mkconfig && neofetch && systemctl status mssql-server --no-pager
     
 #
      sudo reboot
