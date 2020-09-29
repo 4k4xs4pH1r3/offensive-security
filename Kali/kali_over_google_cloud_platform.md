@@ -89,9 +89,7 @@ Set ssh run on the boot
 # Install Azure CLI + VS Code + PowerShell + MS SQL Cli + .Net Core
 #    
 #    
-    sudo apt-key --keyring /etc/apt/trusted.gpg.d/Microsoft.gpg adv \
-     --keyserver packages.microsoft.com \
-     --recv-keys BC528686B50D79E339D3721CEB3E94ADBE1229CF
+    curl -SL "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xEB3E94ADBE1229CF" | sudo apt-key add
      
 #    
     wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
