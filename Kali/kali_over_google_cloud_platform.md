@@ -1,4 +1,4 @@
-How to install Kali Linux 2020.2.19 on Google Cloud Platform - GCP
+How to install Kali Linux 2020.3 on Google Cloud Platform - GCP
 
 On this post, I am going to guide you how to install & upload your Kali Linux into Google Cloud Platform.
 
@@ -15,7 +15,7 @@ VirtualBox 6 with VirtualBox Guest Additions (bidirectional enabled)
     
 Kali Linux ISO
 
-    https://images.offensive-security.com/kali-linux-2019.1a-amd64.iso.torrent
+    https://images.kali.org/kali-linux-2020.3-installer-amd64.iso.torrent
 
 
 137 GB Free Space in your machine
