@@ -7,7 +7,7 @@
     
     
     
-    010-editor                        filebot                           ledger-live                       rotato
+010-editor                        filebot                           ledger-live                       rotato
 4k-video-to-mp3                   fing                              lens                              royal-tsx
 8bitdo-ultimate-software          firefox                           linein                            rstudio
 a-better-finder-attributes        flipper                           loom                              scratch
