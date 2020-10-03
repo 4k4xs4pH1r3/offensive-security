@@ -1,5 +1,5 @@
     
-    brew install subfinder hashcat dnsmap nmap github visual-studio-code telegram telegram-desktop burp-suite
+    brew install subfinder hashcat dnsmap nmap git visual-studio-code telegram telegram-desktop burp-suite newman && brew cask install github visual-studio-code telegram telegram-desktop burp-suite
     
     
     
