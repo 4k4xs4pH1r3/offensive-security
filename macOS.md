@@ -1,5 +1,6 @@
     
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" && brew install cask subfinder hashcat dnsmap nmap git telegram-cli telegram-desktop burp-suite newman istioctl osxfuse && brew cask install github telegram telegram-desktop burp-suite && brew tap snyk/tap && brew install snyk && softwareupdate --all --install --force && brew update-reset && brew update
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" && brew install cask subfinder hashcat dnsmap nmap git telegram-cli burp-suite newman istioctl osxfuse && brew cask install github telegram telegram-desktop && brew tap snyk/tap && brew install snyk && softwareupdate --all --install --force && brew update-reset && brew update
+    
     
     
     
