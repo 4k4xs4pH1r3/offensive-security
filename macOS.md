@@ -1,13 +1,17 @@
     
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" && brew install cask kubectl minikube kops vagrant sqlmap subfinder hashcat dnsmap nmap git telegram-cli burp-suite cmatrix newman istioctl osxfuse && brew cask install github telegram telegram-desktop && brew tap anchore/grype && brew install grype && brew install go && brew install powershell && brew install jq && brew install wget && brew install skaffold && brew install aquasecurity/trivy/trivy && brew install luarocks && brew tap snyk/tap && brew install snyk && softwareupdate --all --install --force && brew update-reset && brew update
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" 
+    
+#
+
+    brew install cask kubectl minikube kops vagrant sqlmap subfinder hashcat dnsmap nmap git telegram-cli burp-suite cmatrix newman istioctl osxfuse && brew cask install github telegram telegram-desktop && brew tap anchore/grype && brew install grype && brew install go && brew install powershell && brew install jq && brew install wget && brew install skaffold && brew install aquasecurity/trivy/trivy && brew install luarocks && brew tap snyk/tap && brew install snyk && softwareupdate --all --install --force && brew update-reset && brew update
     
     
-    
-    
-    
-    
-    
-    
+#
+#
+#   
+#   
+#  
+# 
 010-editor                        filebot                           ledger-live                       rotato
 4k-video-to-mp3                   fing                              lens                              royal-tsx
 8bitdo-ultimate-software          firefox                           linein                            rstudio
