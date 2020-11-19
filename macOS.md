@@ -3,7 +3,7 @@
     
 #
 
-    brew install cask kubectl minikube kops sqlmap subfinder hashcat dnsmap nmap git telegram-cli burp-suite cmatrix newman istioctl osxfuse && brew cask install github telegram telegram-desktop && brew tap anchore/grype && brew install grype && brew install go && brew install powershell && brew install jq && brew install wget && brew install skaffold && brew install aquasecurity/trivy/trivy && brew install luarocks && brew tap snyk/tap && brew install snyk && softwareupdate --all --install --force && brew update-reset && brew update
+    brew install cask kubectl minikube kops sqlmap subfinder hashcat dnsmap nmap git telegram-cli cmatrix newman istioctl osxfuse && brew cask install github telegram telegram-desktop && brew tap anchore/grype && brew install grype && brew install go && brew install powershell && brew install jq && brew install wget && brew install skaffold && brew install aquasecurity/trivy/trivy && brew install luarocks && brew tap snyk/tap && brew install snyk && softwareupdate --all --install --force && brew update-reset && brew update
     
     
 #
