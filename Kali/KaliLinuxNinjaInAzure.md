@@ -22,7 +22,7 @@
 
 In my case is sda1
 
-      df -h
+    df -h
 
 5. To proceed with the partition resize, in my case I will use /dev/sda : 
 
