@@ -48,11 +48,9 @@ this will show partition /dev/sda1
         
        sudo reboot (to reboot the VM so the partition is updated)
 
-6. To finalize the resize, after the reboot, Login to the VM using SSH and execute the command:
+6. To finalize the resize, Login in to the VM using SSH and execute the below command:
         
-       resize2fs /dev/sda1
-        
-       sudo dmesg | grep -i sd* && df -h
+       resize2fs /dev/sda1 && sudo dmesg | grep -i sd* && df -h && read -t 5 -p "Reboot your system to apply the changes ..." && reboot
         
 8. This script will convert your Debian 10 “buster” to a new Kali Linux Ninja in Azure
 
