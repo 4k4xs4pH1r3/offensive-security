@@ -2,7 +2,7 @@ CI/CD IaC Infraestructure as Code
 
 Deployment process: 
 
-Ansible | RabbitMQ | Jenkins
+Basic Components= Ansible | RabbitMQ | Jenkins
 
 In an RHEL-8 or Centos 8 VM
 
