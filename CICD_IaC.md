@@ -1,12 +1,14 @@
-CI/CD IaC Deployment process: 
+CI/CD IaC Infraestructure as Code
+
+Deployment process: 
 
 AWS CodeSuite | Ansible | RabbitMQ | Jenkins | CircleCI | Actions
 
-Create a new EC2 Instance RHEL-8.0.0_HVM-20190618-x86_64-1-Hourly2-GP2
+In an RHEL-8 or Centos 8 VM
 
 Install Jenkins + Java + Dev Tools + Python + RabbitMQ + Ansible following the below procedure:
 
-***** Login in to AWS EC2 / RHEL 8
+***** Login in to AWS EC2 / RHEL 8 (Optional)
     
     ssh -i /root/.ssh/ec2ypcicdiac.pem ec2-user@xxx.xxx.xxx.xxx
 
@@ -30,7 +32,7 @@ Install Jenkins + Java + Dev Tools + Python + RabbitMQ + Ansible following the b
 http://jenkins.yourdomain.org:8080/
 
 
-***** Update RHEL
+***** Update RHEL or Centos
     
     sudo dnf update -y
 
