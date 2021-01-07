@@ -2,7 +2,7 @@ CI/CD IaC Infraestructure as Code
 
 Deployment process: 
 
-AWS CodeSuite | Ansible | RabbitMQ | Jenkins | CircleCI | Actions
+Ansible | RabbitMQ | Jenkins
 
 In an RHEL-8 or Centos 8 VM
 
@@ -94,4 +94,6 @@ https://ansible.yourdomain.org/portal
 
 
 
+
+As optional if you like, the above tools can be automated with AWS CodeSuite | CircleCI | GitHub Actions
 
