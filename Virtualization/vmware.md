@@ -97,11 +97,11 @@ Once restarted should be presented with a menu with blue screen background, you 
 ## Only for UEFI
 Test the driver/module installed correctly enter the command
 
-    cd /root && mokutil --test-key VMWARE15.der
+    cd /root && mokutil --test-key VMWARE16.der
 
 You should get 
     
-    VMWARE15.der is already enrolled
+    VMWARE16.der is already enrolled
 
 That means the VMWare keys now are signed.
 
