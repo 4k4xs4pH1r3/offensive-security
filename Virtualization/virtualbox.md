@@ -1,6 +1,6 @@
 # Ubuntu Groovy Gorilla | Focal | Eoan | Disco
 
-Tested and verifed: 5 Jun 2020
+Tested and verifed: 30 January 2021
 
     su
 #    
@@ -45,13 +45,13 @@ Reboot and Enjoy
 
 #
 
-    cd ~/Downloads && wget https://download.virtualbox.org/virtualbox/6.0.14/virtualbox-6.0_6.0.14-133895~Ubuntu~bionic_amd64.deb && chmod +x virtualbox-*.deb && dpkg -i virtualbox-*.deb && apt install -f -y
+    cd ~/Downloads && wget https://download.virtualbox.org/virtualbox/6.1.16/virtualbox-6.1_6.1.16-140961~Ubuntu~eoan_amd64.deb && chmod +x virtualbox-*.deb && dpkg -i virtualbox-*.deb && apt install -f -y
     
     
-For Install VirtualBox 5.2 in Ubuntu 18.04.3 LTS x86_64 (Kernel 4.15.0-74-generic) use:
-Tested and verifed: 9 January 2020
+For Install VirtualBox 6.1 in Ubuntu 18.04.3 LTS x86_64 use:
+
         
-    cd ~/Downloads && wget https://download.virtualbox.org/virtualbox/5.2.34/virtualbox-5.2_5.2.34-133893~Ubuntu~bionic_amd64.deb && chmod +x virtualbox-*.deb && dpkg -i virtualbox-*.deb && apt install -f -y && sudo apt update -y && sudo apt install --reinstall linux-headers-$(uname -r) virtualbox-dkms dkms
+    cd ~/Downloads && wget https://download.virtualbox.org/virtualbox/6.1.16/virtualbox-6.1_6.1.16-140961~Ubuntu~eoan_amd64.deb && chmod +x virtualbox-*.deb && dpkg -i virtualbox-*.deb && apt install -f -y && sudo apt update -y && sudo apt install --reinstall linux-headers-$(uname -r) virtualbox-dkms dkms
 
 Then reboot your system and after reboot run this command:
 
