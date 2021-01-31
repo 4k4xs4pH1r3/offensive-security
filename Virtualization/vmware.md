@@ -59,9 +59,9 @@ You'll see info that it did it ok.
 
 Install the drivers modules
 #
-    sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./VMWARE15.priv ./VMWARE15.der $(modinfo -n vmmon)
+    sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./VMWARE16.priv ./VMWARE16.der $(modinfo -n vmmon)
 #
-    sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./VMWARE15.priv ./VMWARE15.der $(modinfo -n vmnet)
+    sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./VMWARE16.priv ./VMWARE16.der $(modinfo -n vmnet)
 #
 #
 This does not give any feedback
@@ -78,7 +78,7 @@ You should get:
     Binary file (standard input) matches
     
 # Only for UEFI
-Request the VMware 15 sign key enrollment MOK 
+Request the VMware 16 sign key enrollment MOK 
 
     sudo apt install mokutil -y && mokutil --import VMWARE15.der
 
