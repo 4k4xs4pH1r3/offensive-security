@@ -1,4 +1,4 @@
-### How to Install VMware Workstation 15.5.6
+### How to Install VMware Workstation 16.1.0
 
 Tested and verifed: 30 January 2021
 #
@@ -7,7 +7,7 @@ Close VMware
 #
 ## Ubuntu Groovy Gorilla | Focal | Eoan | Disco | Bionic
 
-    sudo apt install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module:i386 -y && wget https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-15.5.6-16341506.x86_64.bundle && ./VMware-Workstation-Full-15.5.6-16341506.x86_64.bundle
+    sudo apt install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module:i386 -y && wget https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-16.1.0-17198959.x86_64.bundle && ./VMware-Workstation-Full-16.1.0-17198959.x86_64.bundle
     
 ## Kali Linux
 
