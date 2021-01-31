@@ -45,7 +45,7 @@ Verify your kernel version
 
 Based on the result replace the value in the below line "VM_UNAME" and execute
 
-    make VM_UNAME='5.7.0-kali1-amd64' && make install && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig
+    make VM_UNAME='5.9.0-2parrot1-amd64' && make install && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig
 #
     
 
