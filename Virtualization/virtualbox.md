@@ -61,7 +61,7 @@ Then reboot your system and after reboot run this command:
 
 Reboot and Enjoy
     
-# Install virtualbox in Kali Linux
+# Install virtualbox in Kali Linux or Parrot Security
 
     su
     
