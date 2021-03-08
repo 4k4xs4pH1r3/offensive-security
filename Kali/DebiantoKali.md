@@ -1,3 +1,16 @@
+----------
+
+Edit APT Repo
+----------
+```
+nano /etc/apt/sources.list
+```
+Add this repo
+```
+deb http://ftp.debian.org/debian/ stretch main contrib non-free
+```
+
+
 ## Debian Buster Ninja
 
     apt install sudo gdebi dirmngr aptitude -y && sudo apt-get autoclean && apt-get clean cache && sudo apt update && apt full-upgrade -y
