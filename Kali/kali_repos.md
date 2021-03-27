@@ -23,3 +23,7 @@
     deb https://ftp.jaist.ac.jp/pub/Linux/kali kali-rolling main non-free contrib
     deb https://hlzmel.fsmg.org.nz/kali kali-rolling main non-free contrib
     deb https://wlglam.fsmg.org.nz/kali kali-rolling main non-free contrib
+    
+    
+    deb http://kali.mirror.garr.it/mirrors/kali kali-rolling main non-free contrib
+    deb-src http://kali.mirror.garr.it/mirrors/kali kali-rolling main non-free contrib
