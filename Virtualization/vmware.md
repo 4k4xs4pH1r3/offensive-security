@@ -80,7 +80,7 @@ You should get:
 # Only for UEFI
 Request the VMware 16 sign key enrollment MOK 
 
-    sudo apt install mokutil -y && mokutil --import VMWARE15.der
+    sudo apt install mokutil -y && mokutil --import VMWARE16.der
 
 This will ask you for set a new password
 #
@@ -119,6 +119,3 @@ Open VMware and enjoy ;)
 ## Windows
 
 https://www.vmware.com/go/getworkstation-win
-
-
-
