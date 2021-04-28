@@ -115,6 +115,11 @@ All credits to OP.
 #
 Open VMware and enjoy ;)
 
+-----------------
+For mount a Windows Disk with read+write rigths inside Linux machine run the below commmand
+
+    sudo mount -o remount,uid=1000,gid=1000,rw /dev/sdb3
+
 
 ## Windows
 
