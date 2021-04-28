@@ -116,9 +116,9 @@ All credits to OP.
 Open VMware and enjoy ;)
 
 -----------------
-For mount a Windows Disk with read+write rigths inside Linux machine run the below commmand
+How to Mount NTFS Partition in Linux as read-write permissions
 
-    sudo mount -o remount,uid=1000,gid=1000,rw /dev/sdb3
+    sudo apt install fuse ntfs-3g -y && sudo mkdir /mnt/x && sudo ntfs-3g -o remove_hiberfile /dev/sdb3 /mnt/x && sudo sudo umount /mnt/x && sudo mount -t ntfs-3g /dev/sdb3 /mnt/x && cd /mnt/x
 
 
 ## Windows
