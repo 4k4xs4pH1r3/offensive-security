@@ -11,7 +11,7 @@ Close VMware
     
 ## Kali Linux & Parrot Security
 
-    sudo apt install build-essential -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module* mokutil -y && wget https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-16.1.1-17801498.x86_64.bundle && chmod +x VMware-Workstation-Full-16.1.0-17198959.x86_64.bundle && ./VMware-Workstation-Full-16.1.1-17801498.x86_64.bundle
+    sudo apt install build-essential -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module* mokutil -y && wget https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-16.1.1-17801498.x86_64.bundle && chmod +x VMware-Workstation-Full-16.1.1-17801498.x86_64.bundle && ./VMware-Workstation-Full-16.1.1-17801498.x86_64.bundle
     
 ## Debian Buster amd64
     
