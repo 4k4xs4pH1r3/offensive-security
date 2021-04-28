@@ -37,7 +37,7 @@ You'll see that there are issues with monitor and net, thas ok.
 #
 Install the VMware Host modules
 
-    wget https://github.com/mkubecek/vmware-host-modules/archive/refs/tags/w16.1.1-k5.12.tar.gz && tar -xzf vmware-host-modules-w16.1.1-k5.12.tar.gz && cd vmware-host-modules-w16.1.1-k5.12 && make && make install && /etc/init.d/vmware restart && sudo dpkg --configure -a && sudo grub-mkconfig && tar -cf vmmon.tar vmmon-only && tar -cf vmnet.tar vmnet-only && cp -v vmmon.tar vmnet.tar /usr/lib/vmware/modules/source/ && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig 
+    wget https://github.com/mkubecek/vmware-host-modules/archive/refs/tags/w16.1.1-k5.12.tar.gz && tar -xzf w16.1.1-k5.12.tar.gz && cd vmware-host-modules-w16.1.1-k5.12 && make && make install && /etc/init.d/vmware restart && sudo dpkg --configure -a && sudo grub-mkconfig && tar -cf vmmon.tar vmmon-only && tar -cf vmnet.tar vmnet-only && cp -v vmmon.tar vmnet.tar /usr/lib/vmware/modules/source/ && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig 
     
 Verify your kernel version
 
