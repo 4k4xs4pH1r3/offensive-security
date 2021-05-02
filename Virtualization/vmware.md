@@ -118,7 +118,7 @@ Open VMware and enjoy ;)
 -----------------
 How to Mount NTFS Partition in Linux as read-write permissions
 
-    sudo apt install fuse ntfs-3g -y && sudo mkdir /mnt/x && sudo ntfs-3g -o remove_hiberfile /dev/sdb3 /mnt/x && sudo sudo umount /mnt/x && sudo mount -t ntfs-3g /dev/sdb3 /mnt/x && cd /mnt/x
+    sudo apt install fuse ntfs-3g -y && sudo mkdir /mnt/x && sudo ntfs-3g -o remove_hiberfile /dev/sdb3 /mnt/x && sudo umount /mnt/x && sudo mount -t ntfs-3g /dev/sdb3 /mnt/x && cd /mnt/x
 
 
 ## Windows
