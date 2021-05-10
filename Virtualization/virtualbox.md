@@ -1,4 +1,4 @@
-# Ubuntu | Kodachi | Hirsute | Groovy | Focal | Eoan | Disco | Bionic | Docker
+# Ubuntu | Debian | Kali | Parrot
 
 Tested and verifed: 10 May 2021
 
