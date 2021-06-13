@@ -48,14 +48,13 @@ http://jenkins.yourdomain.org:8080/
 
 *****Install Ansible 
     
-    sudo dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-    sudo dnf install  --enablerepo epel-playground  ansible
+    sudo dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && sudo dnf install --enablerepo epel-playground ansible
 
 *****Install Rabbitmq
     
     curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
     sudo yum makecache -y --disablerepo='*' --enablerepo='rabbitmq_rabbitmq-server'
-    sudo yum -y install rabbitmq-server
+    sudo yum -y install rabbitmq-server --nobest
     rpm -qi rabbitmq-server
     echo "127.0.0.1 $(hostname -s)" | sudo tee -a /etc/hosts
     sudo systemctl enable --now rabbitmq-server.service
