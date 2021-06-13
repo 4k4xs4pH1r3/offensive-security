@@ -84,7 +84,7 @@ http://rabbitmq.yourdomain.org:15672/
 
 Set the password for Ansible in the below file and save the changes
 
-    vim inventory
+    nano inventory
 
     sudo ./setup.sh
 
