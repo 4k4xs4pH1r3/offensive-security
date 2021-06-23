@@ -33,7 +33,7 @@ This guide will install and prepare your Windows for DevSecOps just execute step
 
 10. Install DevSecOps tools
 
-        scoop install wget curl adb apktool aws-iam-authenticator aws-vault aws azure-cli azure-functions-core-tools azure-ps circleci-cli cmake cmder-full composer kompose kubectl minikube cutter dig docker git lua-for-windows make maven neofetch radare2 ruby s3deploy terraform youtube-dl docker-compose docker-machine docker-nightly php go
+        scoop install wget curl adb apktool aws-iam-authenticator aws-vault aws azure-cli azure-functions-core-tools azure-ps circleci-cli cmake cmder-full composer kompose kubectl minikube cutter dig docker git lua-for-windows make maven neofetch radare2 ruby s3deploy helm terraform youtube-dl docker-compose docker-machine docker-nightly php go
 #
     scoop bucket add extras
 #
