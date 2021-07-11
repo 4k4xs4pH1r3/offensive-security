@@ -1,6 +1,6 @@
 # Ubuntu | Debian | Kali | Parrot
 
-Tested and verifed: 10 May 2021
+Tested and verifed: 11 Jul 2021
 
     su
 #    
