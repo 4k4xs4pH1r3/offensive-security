@@ -116,21 +116,22 @@ Close the terminal and open again
 
     gcloud init && gcloud beta --help && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && nano /etc/apt/sources.list.d/google-cloud.list
 #    
-    deb http://packages.cloud.google.com/apt google-compute-engine-stretch-stable main
-    deb http://packages.cloud.google.com/apt google-cloud-packages-archive-keyring-stretch main
+    deb http://packages.cloud.google.com/apt google-compute-engine-buster-stable main
+    deb http://packages.cloud.google.com/apt google-cloud-packages-archive-keyring-buster main
+
 
 #    
 Ctrl + x + y + Enter
 #
 
-    sudo apt install aptitude -y && apt-get autoclean && apt-get clean cache && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get update -y && apt-get full-upgrade -y && sudo apt-get update -y && apt-get full-upgrade -y && apt-get autoremove -y && apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig
+    sudo apt install -y google-cloud-packages-archive-keyring && sudo apt install aptitude -y && apt-get autoclean && apt-get clean cache && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get update -y && apt-get full-upgrade -y && sudo apt-get update -y && apt-get full-upgrade -y && apt-get autoremove -y && apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig
 #
     sudo reboot
 #
 
 If all works as expected Kali Linux restarted, correctly, now login as root and execute:
 #
-    sudo apt update y && sudo apt install google-cloud-packages-archive-keyring -y && sudo apt remove libcurl4 -y && wget http://security.debian.org/debian-security/pool/updates/main/c/curl/libcurl3_7.52.1-5+deb9u14_amd64.deb && dpkg -i libcurl3_7.52.1-5+deb9u14_amd64.deb && wget http://ftp.us.debian.org/debian/pool/main/j/json-c/libjson-c3_0.12.1+ds-2+deb10u1_amd64.deb && dpkg -i libjson-c3_0.12.1+ds-2+deb10u1_amd64.deb && pip install python-boto && sudo aptitude install google-guest-agent google-compute-engine google-compute-engine-oslogin -y
+    sudo apt update y && sudo apt remove libcurl4 -y && wget http://security.debian.org/debian-security/pool/updates/main/c/curl/libcurl3_7.52.1-5+deb9u14_amd64.deb && dpkg -i libcurl3_7.52.1-5+deb9u14_amd64.deb && wget http://ftp.us.debian.org/debian/pool/main/j/json-c/libjson-c3_0.12.1+ds-2+deb10u1_amd64.deb && dpkg -i libjson-c3_0.12.1+ds-2+deb10u1_amd64.deb && pip install python-boto && sudo apt-get -y install make g++ libcurl4-openssl-dev libjson-c-dev libpam-dev && sudo apt-get -y install debhelper devscripts build-essential && sudo aptitude install google-guest-agent google-compute-engine google-compute-engine-oslogin google-compute-engine google-osconfig-agent -y && sudo apt install aptitude -y && apt-get autoclean && apt-get clean cache && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get update -y && apt-get full-upgrade -y && sudo apt-get update -y && apt-get full-upgrade -y && apt-get autoremove -y && apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig
 #    
 Restart Kali Linux and inspect that no errors ocurred.
 #
