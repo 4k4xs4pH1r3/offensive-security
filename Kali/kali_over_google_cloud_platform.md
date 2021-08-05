@@ -123,7 +123,7 @@ Close the terminal and open again
 Ctrl + x + y + Enter
 #
 
-    sudo apt update -y && sudo apt install -y google-cloud-packages-archive-keyring && sudo apt install aptitude -y && apt-get autoclean && apt-get clean cache && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get update -y && apt-get full-upgrade -y && sudo apt-get update -y && apt-get full-upgrade -y && apt-get autoremove -y && apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig
+    sudo apt update -y && sudo apt install -y google-cloud-packages-archive-keyring && sudo apt install aptitude -y && sudo apt-get autoclean && sudo apt-get clean cache && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && sudo apt-get update --fix-missing && sudo apt-get update -y && sudo apt-get full-upgrade -y && sudo apt-get update -y && sudo apt-get full-upgrade -y && sudo apt-get autoremove -y && sudo apt-get install apt-file -y && sudo apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig
 #
     sudo reboot
 #
