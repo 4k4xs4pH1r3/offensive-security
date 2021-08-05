@@ -29,7 +29,7 @@ For Parrot Security add here
     deb http://http.kali.org/kali kali-rolling main contrib non-free
     deb-src http://http.kali.org/kali kali-rolling main contrib non-free
  #      
-    sudo apt install dirmngr -y && sudo apt-key adv --recv-keys --keyserver keys.gnupg.net 7D8D0BF6
+    sudo apt install dirmngr -y && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ED444FF07D8D0BF6
        
 
 ### Integrate Kali with Debian
