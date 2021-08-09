@@ -148,7 +148,7 @@ Create bucket at Google Cloud
 #
 Upload Kali disk.raw (4,2 GB) to your GCP bucket
 #
-    gsutil cp kali.tar.gz gs://bucket-name/kali/disk.tar.gz
+    gsutil cp disk.tar.gz gs://bucket-name/kali/disk.tar.gz
 #
 Create image for Kali Linux in GCP
 #
