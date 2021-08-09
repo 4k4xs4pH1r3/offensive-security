@@ -152,7 +152,7 @@ Upload Kali disk.raw (4,2 GB) to your GCP bucket
 #
 Create image for Kali Linux in GCP
 #
-     gcloud compute --project=name images create kali --source-uri=https://storage.googleapis.com/bucket-name.appspot.com/kali/disk.tar.gz
+    gcloud compute --project=name images create kali --source-uri=https://storage.googleapis.com/bucket-name.appspot.com/kali/disk.tar.gz
 #
 Start Kali Linux virtual machine in GCP and create Firewall
 #
@@ -180,11 +180,11 @@ Connect via SSH in Linux or PowerShell + Putty in Windows with debugg mode (OS L
 #
 If Kali Linux only show's the command line after boot, enter the below command 
 #     
-     startx    
+    startx    
 #      
 then edit the below file in a terminal
 #
-     sudo nano .xinitrc
+    sudo nano .xinitrc
 #
 Adding this 
 
