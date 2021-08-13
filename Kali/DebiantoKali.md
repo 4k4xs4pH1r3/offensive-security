@@ -13,7 +13,7 @@ deb http://ftp.debian.org/debian/ stretch main contrib non-free
 
 ## Debian Buster Ninja
 
-    apt install sudo gdebi dirmngr aptitude -y && sudo apt-get autoclean && apt-get clean cache && sudo apt update && apt full-upgrade -y
+    apt clean && apt update -y && apt install sudo gdebi dirmngr aptitude -y && sudo apt-get autoclean && apt-get clean cache && sudo apt update && apt full-upgrade -y
 
 
 ### Add Kali Repo for Debian
