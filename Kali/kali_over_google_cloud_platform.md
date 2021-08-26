@@ -114,7 +114,7 @@ Set ssh run on the boot
     
 Close the terminal and open again
 
-    gcloud init && gcloud beta --help &&curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && sudo nano /etc/apt/sources.list.d/google-cloud.list
+    gcloud init && gcloud beta --help && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && sudo nano /etc/apt/sources.list.d/google-cloud.list
 #    
     deb http://packages.cloud.google.com/apt google-compute-engine-buster-stable main
     deb http://packages.cloud.google.com/apt google-cloud-packages-archive-keyring-buster main
