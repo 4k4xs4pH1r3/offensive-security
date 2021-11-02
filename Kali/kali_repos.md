@@ -14,6 +14,9 @@
 
 
     deb https://http.kali.org/kali kali-rolling main non-free contrib
+    deb http://http.kali.org/kali kali-rolling main non-free contrib
+    deb http://http.kali.org/kali kali-last-snapshot main non-free contrib
+    deb http://http.kali.org/kali kali-experimental main non-free contrib
     #deb-src http://http.kali.org/kali kali-rolling main non-free contrib
 
     deb https://mirrors.ocf.berkeley.edu/kali kali-rolling main non-free contrib
