@@ -9,15 +9,15 @@
     sysctl -p
     
     
-    #deb http://http.kali.org/kali kali-last-snapshot main non-free contrib
-    #deb http://http.kali.org/kali kali-experimental main non-free contrib
+    #deb https://http.kali.org/kali kali-last-snapshot main non-free contrib
+    #deb https://http.kali.org/kali kali-experimental main non-free contrib
 
 
     deb https://http.kali.org/kali kali-rolling main non-free contrib
-    deb http://http.kali.org/kali kali-rolling main non-free contrib
-    deb http://http.kali.org/kali kali-last-snapshot main non-free contrib
-    deb http://http.kali.org/kali kali-experimental main non-free contrib
-    #deb-src http://http.kali.org/kali kali-rolling main non-free contrib
+    deb https://http.kali.org/kali kali-rolling main non-free contrib
+    deb https://http.kali.org/kali kali-last-snapshot main non-free contrib
+    deb https://http.kali.org/kali kali-experimental main non-free contrib
+    #deb-src https://http.kali.org/kali kali-rolling main non-free contrib
 
     deb https://mirrors.ocf.berkeley.edu/kali kali-rolling main non-free contrib
 
@@ -42,5 +42,5 @@
     #deb https://wlglam.fsmg.org.nz/kali kali-rolling main non-free contrib
 
 
-    deb http://kali.mirror.garr.it/mirrors/kali kali-rolling main non-free contrib
-    deb-src http://kali.mirror.garr.it/mirrors/kali kali-rolling main non-free contrib
+    deb https://kali.mirror.garr.it/mirrors/kali kali-rolling main non-free contrib
+    deb-src https://kali.mirror.garr.it/mirrors/kali kali-rolling main non-free contrib
