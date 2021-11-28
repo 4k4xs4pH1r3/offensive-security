@@ -28,7 +28,11 @@ In a future when you need start the same Kali Linux Docker Container that you in
     docker exec -it <container_name> bash
 
 #
-Start Kali Linux * only after reboot your physical machine 
+Start Kali Linux * only after close the docker instance or reboot your physical machine 
+
+    docker run -it --rm --mount src=kali-root,dst=/root --mount src=kali-postgres,dst=/var/lib/postgresql kalilinux/kali-rolling /bin/bash
+
+Other docker images=
 
     docker start xxxxxxxxxxxx
 
