@@ -18,6 +18,9 @@ List actual Docker images
 or
 
     docker container ls
+or
+
+    docker ps --filter status=running
 
 #
 In a future when you need start the same Kali Linux Docker Container that you installed, execute:
