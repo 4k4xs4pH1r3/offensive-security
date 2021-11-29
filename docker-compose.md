@@ -1,4 +1,4 @@
-# Upgrade docker-compose to 1.29.2 version
+# Upgrade docker-compose to 2.2.0 version
 
 At the moment the safest way to upgrade docker-compose to last release as root
 
@@ -8,5 +8,9 @@ sudo -i
 
 # Is by deleting it and reinstalling it
 ```ShellSession
-rm /usr/bin/docker-compose && curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` > /usr/bin/docker-compose && chmod +x /usr/bin/docker-compose && docker-compose --version
+rm /usr/bin/docker-compose 
+```
+
+```ShellSession
+curl -L https://github.com/docker/compose/releases/download/v2.2.0/docker-compose-linux-x86_64 > /usr/bin/docker-compose && chmod +x /usr/bin/docker-compose && docker-compose --version
 ```
