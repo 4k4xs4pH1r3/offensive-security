@@ -8,7 +8,7 @@ sudo -i
 
 # Is by deleting it and reinstalling it
 ```ShellSession
-rm /usr/bin/docker-compose 
+sudo rm /usr/bin/docker-compose 
 ```
 
 ```ShellSession
