@@ -18,10 +18,9 @@ Download from https://getcommandeer.com/ for Linux and install with
 ```ShellSession
 dpkg -i Commandeer_1.1.0_amd64.deb
 ```
-## # Execute only as normal user this line / Install LocalStack (Full)
-```ShellSession
-pip install --ignore-installed localstack[full]
-```
+## Follow the below guide to install Localstack
+https://github.com/localstack/localstack
+
 #
 ## Install Terraforming
 https://github.com/dtan4/terraforming
