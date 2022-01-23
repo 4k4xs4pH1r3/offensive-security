@@ -5,7 +5,7 @@ Tested and verifed: 22 January 2022
 
 Close VMware
 #
-## Supports Kodachi | Jammy Jellyfish | Impish | Hirsute | Groovy | Focal | Eoan | Disco | Bionic
+### Ubuntu Kodachi | Jammy Jellyfish | Impish | Hirsute | Groovy | Focal | Eoan | Disco | Bionic
 
     sudo apt install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module:i386 -y && wget https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-16.2.1-18811642.x86_64.bundle && && chmod +x VMware-Workstation-Full-16.2.1-18811642.x86_64.bundle && ./VMware-Workstation-Full-16.2.1-18811642.x86_64.bundle
     
