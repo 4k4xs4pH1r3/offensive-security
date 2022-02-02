@@ -1,10 +1,12 @@
-    
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" 
-    
+```ShellSession
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" 
+```
 #
 
-    brew link cask && brew install cask helm kubectl minikube kops sqlmap subfinder hashcat dnsmap nmap git burp-suite vagrant telegram-cli docker-compose cmatrix newman istioctl && brew cask install osxfuse && brew cask install github telegram telegram-desktop && brew tap anchore/grype && brew install grype && brew install go && brew install powershell && brew install jq && brew install wget && brew cask install remoteviewer && brew install skaffold && brew install aquasecurity/trivy/trivy && brew install luarocks && brew tap snyk/tap && brew install snyk && softwareupdate --all --install --force && brew update-reset && brew update
-    
+```ShellSession
+brew info python && brew link cask && brew install cask helm kubectl minikube kops sqlmap subfinder hashcat dnsmap nmap git burp-suite vagrant telegram-cli docker-compose cmatrix newman istioctl && brew cask install osxfuse && brew cask install github telegram telegram-desktop && brew tap anchore/grype && brew install grype && brew install go && brew install powershell && brew install jq && brew install wget && brew cask install remoteviewer && brew install skaffold && brew install aquasecurity/trivy/trivy && brew install luarocks && brew tap snyk/tap && brew install snyk && softwareupdate --all --install --force && brew update-reset && brew update
+```
+   
     
 #
 #
