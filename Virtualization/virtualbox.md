@@ -13,4 +13,4 @@ Reboot and Enjoy
 
 # Uninstall
 
-sudo apt-get remove virtualbox-\* -y && sudo apt-get purge virtualbox-\* -y
+    sudo apt-get remove virtualbox-\* -y && sudo apt-get purge virtualbox-\* -y
