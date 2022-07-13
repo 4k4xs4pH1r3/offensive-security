@@ -11,15 +11,18 @@ https://apps.apple.com/co/app/xcode/id497799835?l=en&mt=12
 #
 
 ```ShellSession
-brew install cask && brew install python && brew link cask && brew install cask npm node helm kubectl neofetch screenfetch minikube newman kops awscli sqlmap subfinder hashcat dnsmap nmap git mysql burp-suite metasploit vagrant telegram-cli telegram-desktop docker-compose cmatrix neoftech tfenv jython jruby istioctl && tfenv install && tfenv list && tfenv install latest && tfenv use 1.1.5 && tfenv list && terraform -v && brew cask install osxfuse && brew cask install github telegram telegram-desktop && brew tap anchore/grype && brew install grype && brew install go && brew install powershell && brew install jq && brew install wget && brew cask install remoteviewer && brew install skaffold && brew install aquasecurity/trivy/trivy && brew install luarocks && brew tap snyk/tap && brew install snyk && brew install checkov && softwareupdate --all --install --force && brew update-reset && brew update
+brew install cask && brew install python && brew link cask && brew install cask npm node helm kubectl neofetch screenfetch minikube newman kops awscli sqlmap subfinder hashcat dnsmap nmap git mysql burp-suite metasploit vagrant telegram-cli telegram-desktop docker-compose cmatrix neoftech tfenv jython jruby istioctl aom fb303 helm libnghttp2 newman six apr fbthrift icu4c libpng nmap snappy apr-util fdupes imath libpq node snyk argon2 fizz isl libpython-tabulate  oniguruma sqlite aspell fmt istioctl libsodium openexr sqlmap autoconf folly jansson libssh2 openjdk subfinder awscli fontconfig jenv libtasn1 openldap telegram-cli bash-completion freetds jpeg libtiff openssl@1.1 telnet bdw-gc freetype jpeg-xl libtool p11-kit boost gcc jruby libunistring pcre tfenv brotli gd jython libuv pcre2 tidy-html5 c-ares gdb kops libvmaf php unbound ca-certificates gdbm krb5 libzip pipx unixodbc cask gettext kubernetes-cli lua@5.3 pkg-config wangle checkov gflags libavif lz4 protobuf watchman cmatrix giflib libcbor m4 pv webp composer libconfig minikube python-tabulate wget coreutils glog libevent mpdecimal python@3.10 xz curl gmp libffi mpfr python@3.9 yarn dnsmap gnutls libfido2 mycli readline zstd docker-compose grep libidn2 mysql rtmpdump double-conversion guile liblinear neofetch screenfetch emacs hashcat libmpc nettle screenresolution && tfenv install && tfenv list && tfenv install latest && tfenv use 1.1.5 && tfenv list && terraform -v && brew cask install osxfuse && brew cask install github telegram telegram-desktop && brew tap anchore/grype && brew install grype && brew install go && brew install powershell && brew install jq && brew install wget && brew cask install remoteviewer && brew install skaffold && brew install aquasecurity/trivy/trivy && brew install luarocks && brew tap snyk/tap && brew install snyk && brew install checkov && softwareupdate --all --install --force && brew update-reset && brew update
 ```
-   
+
+#
+
+# To upgrade the packages
+```ShellSession
+softwareupdate --all --install --force && brew update-reset && brew update && brew upgrade
+```
     
 #
-#
-#   
-#   
-#  
+
 # To see the full list of available packages
 ```ShellSession
 brew list
