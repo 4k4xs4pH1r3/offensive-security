@@ -20,7 +20,7 @@ sudo gem install xcode-install && xcversion update && xcversion list && brew ins
 
 4. Upgrade the Apple + Brew packages
 ```ShellSession
-brew unlink tfenv && softwareupdate --all --install --force && brew update-reset && brew update && brew upgrade && brew unlink terraform && brew link tfenv && tfenv install && tfenv list && tfenv install latest && tfenv install 1.1.5 && tfenv use 1.1.5 && tfenv list && terraform -v && sudo gem install xcode-install && xcversion update && xcversion list
+brew unlink tfenv && softwareupdate --all --install --force && brew update-reset && brew update && brew upgrade && brew unlink terraform && brew link tfenv && tfenv install && tfenv list && tfenv install latest && tfenv install 1.1.5 && tfenv use 1.1.5 && tfenv list && terraform -v && sudo gem install xcode-install && xcversion install 14 && xcversion update && xcversion list
 ```
 
 Enjoy.
