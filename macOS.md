@@ -2,7 +2,7 @@
 
 # Pre-Requisite
 
-Install [Xcode - Apple Developer](https://apps.apple.com/co/app/xcode/id497799835?l=en&mt=12))
+Install [Xcode - Apple Developer](https://apps.apple.com/co/app/xcode/id497799835?l=en&mt=12)
 
 ```ShellSession
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" 
