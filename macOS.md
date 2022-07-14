@@ -2,6 +2,8 @@
 
 # Pre-Requisite
 
+This will take up to a few minutes, now is a great time to go for a coffee ☕...
+
 1. Install [Xcode - Apple Developer](https://apps.apple.com/co/app/xcode/id497799835?l=en&mt=12)
 
 
@@ -29,7 +31,7 @@ brew unlink tfenv && softwareupdate --all --install --force && brew update-reset
 sudo gem install xcode-install && xcversion install 14 && xcversion update && xcversion list && xcversion simulators --install='iOS 15.4' && xcversion simulators --install='watchOS 8.3' && xcversion simulators --install='tvOS 15.2' && xcversion simulators 
 ```
 
-Enjoy.
+Enjoy ✅ 🎧
 
 #
 
