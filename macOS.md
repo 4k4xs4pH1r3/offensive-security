@@ -18,7 +18,7 @@ sudo gem install xcode-install && xcversion update && xcversion list && brew ins
 
 #
 
-4. Upgrade the Apple Store + Apple Developer + Brew packages
+4. Upgrade Apple Store + Apple Developer + Brew packages
 ```ShellSession
 brew unlink tfenv && softwareupdate --all --install --force && brew update-reset && brew update && brew upgrade && brew unlink terraform && brew link tfenv && tfenv install && tfenv list && tfenv install latest && tfenv install 1.1.5 && tfenv use 1.1.5 && tfenv list && terraform -v 
 ```
