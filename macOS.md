@@ -33,7 +33,7 @@ Enjoy.
 
 #
 
-# To see the full list of available packages
+# See full list of available Brew packages online
 ```ShellSession
 brew list 
 ```
