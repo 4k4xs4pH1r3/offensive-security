@@ -19,7 +19,7 @@ sudo gem install xcode-install && xcversion update && xcversion list && brew ins
 #
 
 4. Upgrade the Apple Store + Apple Developer + Brew packages and Install Apple 🍎 🍏 Developer Simulators for iOS, watchOS and tvOS
-5. 
+
 ```ShellSession
 brew unlink tfenv && softwareupdate --all --install --force && brew update-reset && brew update && brew upgrade && brew unlink terraform && brew link tfenv && tfenv install && tfenv list && tfenv install latest && tfenv install 1.1.5 && tfenv use 1.1.5 && tfenv list && terraform -v && sudo gem install xcode-install && xcversion install 14 && xcversion update && xcversion list && xcversion simulators --install='iOS 15.4' && xcversion simulators --install='watchOS 8.3' && xcversion simulators --install='tvOS 15.2' && xcversion simulators
 ```
