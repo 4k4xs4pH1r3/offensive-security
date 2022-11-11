@@ -1,6 +1,6 @@
 ### How to Install VMware Workstation 16.2.1
 
-Tested and verifed: 22 January 2022
+Tested and verifed: 11 November 2022
 #
 
 Close VMware
@@ -11,7 +11,7 @@ Close VMware
     
 ## Kali Linux & Parrot Security
 
-    sudo apt install build-essential -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module* mokutil -y && wget https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-16.2.1-18811642.x86_64.bundle && chmod +x VMware-Workstation-Full-16.2.1-18811642.x86_64.bundle && ./VMware-Workstation-Full-16.2.1-18811642.x86_64.bundle
+    sudo apt install build-essential -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module* mokutil -y && wget https://download3.vmware.com/software/WKST-1624-LX/VMware-Workstation-Full-16.2.4-20089737.x86_64.bundle && chmod +x VMware-Workstation-Full-16.2.4-20089737.x86_64.bundle && ./VMware-Workstation-Full-16.2.4-20089737.x86_64.bundle
     
 ## Debian Sid | BullsEye | Buster (amd64)
     
@@ -37,7 +37,7 @@ You'll see that there are issues with monitor and net, thas ok.
 #
 Install the VMware Host modules
 
-    wget https://github.com/mkubecek/vmware-host-modules/archive/refs/tags/w16.2.1-k5.16.tar.gz && tar -xzf w16.2.1-k5.16.tar.gz && cd vmware-host-modules-w16.2.1-k5.16 && make && make install && /etc/init.d/vmware restart && sudo dpkg --configure -a && sudo grub-mkconfig && tar -cf vmmon.tar vmmon-only && tar -cf vmnet.tar vmnet-only && cp -v vmmon.tar vmnet.tar /usr/lib/vmware/modules/source/ && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig 
+    wget https://github.com/mkubecek/vmware-host-modules/archive/refs/tags/w16.2.4-k5.19.tar.gz && tar -xzf w16.2.4-k5.19.tar.gz && cd vmware-host-modules-w16.2.4-k5.19 && make && make install && /etc/init.d/vmware restart && sudo dpkg --configure -a && sudo grub-mkconfig && tar -cf vmmon.tar vmmon-only && tar -cf vmnet.tar vmnet-only && cp -v vmmon.tar vmnet.tar /usr/lib/vmware/modules/source/ && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig 
     
 Verify your kernel version
 
