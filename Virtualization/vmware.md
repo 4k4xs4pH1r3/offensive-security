@@ -78,9 +78,9 @@ You should get:
     Binary file (standard input) matches
     
 # Only for UEFI
-Request the VMware 16 sign key enrollment MOK 
+Request the VMware 17 sign key enrollment MOK 
 
-    sudo apt install mokutil -y && mokutil --import VMWARE16.der
+    sudo apt install mokutil -y && mokutil --import VMWARE17.der
 
 This will ask you for set a new password
 #
