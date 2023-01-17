@@ -35,7 +35,7 @@ You'll see that there are issues with monitor and net, thas ok.
 #
 #
 #
-Install the VMware Host modules
+Install the VMware Host modules as root
 
     wget https://github.com/mkubecek/vmware-host-modules/archive/refs/tags/w17.0.0.tar.gz && tar -xzf w17.0.0.tar.gz && cd vmware-host-modules-w17.0.0 && make && make install && /etc/init.d/vmware restart && sudo dpkg --configure -a && sudo grub-mkconfig && tar -cf vmmon.tar vmmon-only && tar -cf vmnet.tar vmnet-only && cp -v vmmon.tar vmnet.tar /usr/lib/vmware/modules/source/ && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig 
     
