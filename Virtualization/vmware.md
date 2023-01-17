@@ -51,7 +51,7 @@ Based on the result replace the value in the below line "VM_UNAME" and execute
 
 Generate a key MOK
 
-    cd /root && openssl req -new -x509 -newkey rsa:2048 -keyout VMWARE16.priv -outform DER -out VMWARE16.der -nodes -days 36500 -subj "/CN=VMWARE/"
+    cd /root && openssl req -new -x509 -newkey rsa:2048 -keyout VMWARE17.priv -outform DER -out VMWARE17.der -nodes -days 36500 -subj "/CN=VMWARE/"
 
 You'll see info that it did it ok.
 #
@@ -59,9 +59,9 @@ You'll see info that it did it ok.
 
 Install the drivers modules
 #
-    sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./VMWARE16.priv ./VMWARE16.der $(modinfo -n vmmon)
+    sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./VMWARE17.priv ./VMWARE17.der $(modinfo -n vmmon)
 #
-    sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./VMWARE16.priv ./VMWARE16.der $(modinfo -n vmnet)
+    sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./VMWARE17.priv ./VMWARE17.der $(modinfo -n vmnet)
 #
 #
 This does not give any feedback
@@ -97,11 +97,11 @@ Once restarted should be presented with a menu with blue screen background, you 
 ## Only for UEFI
 Test the driver/module installed correctly enter the command
 
-    cd /root && mokutil --test-key VMWARE16.der
+    cd /root && mokutil --test-key VMWARE17.der
 
 You should get 
     
-    VMWARE16.der is already enrolled
+    VMWARE17.der is already enrolled
 
 That means the VMWare keys now are signed.
 
