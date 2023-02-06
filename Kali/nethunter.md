@@ -2,6 +2,7 @@
 
 https://www.kali.org/docs/nethunter/building-nethunter/
 
+### Example to create installer for Xiaomi 9T Pro aka davinci / Code Name: raphael/raphaelin
 
 ```ShellSession
 python3 build.py -d davinci-miui --ten -f -u -nf -su -fs full -r ni
