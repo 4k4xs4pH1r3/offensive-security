@@ -8,7 +8,7 @@ https://www.kali.org/docs/nethunter/building-nethunter/
 python3 build.py -d davinci-miui --ten -f -u -nf -su -fs full -r ni
 ```
 
-## Install NetHunter Ninja
+## Activate NetHunter Ninja
 
 
 ```ShellSession
