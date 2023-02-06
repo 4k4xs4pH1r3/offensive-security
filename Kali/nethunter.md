@@ -1,5 +1,9 @@
 ## Create NetHunter Installer
 
+Tested 6 Feb 2023
+
+Last Version linux-image-6.0.0-kali6-arm64 (6.0.12-1kali1)
+
 https://www.kali.org/docs/nethunter/building-nethunter/
 https://gitlab.com/kalilinux/nethunter/build-scripts/kali-nethunter-devices
 
