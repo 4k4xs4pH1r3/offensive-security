@@ -1,11 +1,23 @@
-## Building NetHunter
+## Create NetHunter Installer
 
 https://www.kali.org/docs/nethunter/building-nethunter/
+https://gitlab.com/kalilinux/nethunter/build-scripts/kali-nethunter-devices
 
-### Example to create installer for Xiaomi 9T Pro aka davinci / Code Name: raphael/raphaelin
+### for Xiaomi 9T Pro aka davinci 
+Code Name: raphael/raphaelin 
+Android 13 / Rom = Evolution X
 
 ```ShellSession
 python3 build.py -d davinci-miui --ten -f -u -nf -su -fs full -r ni
+```
+
+### for Samsung Galaxy S20 FE 5G (Snapdragon) aka r8q 
+Android 13 / Rom = ProjectX
+arch = arm64
+author = Svirusx
+
+```ShellSession
+python3 build.py -d r8q-thirteen --thirteen -f -u -nf -su -fs full -r ni
 ```
 
 ## Activate NetHunter Ninja
