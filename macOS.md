@@ -25,7 +25,7 @@ brew unlink tfenv && softwareupdate --all --install --force && brew update-reset
 (Optional) Install Apple 🍎 🍏 Developer Beta + Apple Simulators for iOS, watchOS and tvOS
 
 ```ShellSession
-sudo gem install xcode-install && xcversion install 14 && xcversion update && xcversion list && xcversion simulators --install='iOS 15.4' && xcversion simulators --install='watchOS 8.3' && xcversion simulators --install='tvOS 15.2' && xcversion simulators 
+sudo gem install xcode-install && xcversion install 14.3 && xcversion update && xcversion list && xcversion simulators --install='iOS 16.4' && xcversion simulators --install='watchOS 9.4' && xcversion simulators --install='tvOS 16.4' && xcversion simulators 
 ```
 
 Enjoy ✅ 🎧
