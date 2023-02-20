@@ -1,5 +1,7 @@
 √
 
+🍎
+
 # Pre-Requisite
 
 This will take up to a few minutes, now is a great time to go for a coffee ☕...
@@ -22,7 +24,7 @@ sudo softwareupdate --install-rosetta && sudo gem install xcode-install && xcver
 brew unlink tfenv && softwareupdate --all --install --force && brew update-reset && brew update && brew upgrade && brew install terraform && brew unlink terraform && brew link tfenv && tfenv install && tfenv list && tfenv install latest && tfenv install 1.1.5 && tfenv use 1.1.5 && tfenv list && terraform -v 
 ```
 
-(Optional) Install Apple 🍎 🍏 Developer Beta + Apple Simulators for iOS, watchOS and tvOS
+(Optional) Install Apple 🍏 Developer Beta + Apple Simulators for iOS, watchOS and tvOS
 
 ```ShellSession
 sudo gem install xcode-install && xcversion install 14.3 && xcversion update && xcversion list && xcversion simulators --install='iOS 16.4' && xcversion simulators --install='watchOS 9.4' && xcversion simulators --install='tvOS 16.4' && xcversion simulators 
