@@ -19,7 +19,7 @@
 #
 33.37 GB free space required in your disk. ***Repeat it until you see that really were installed successfully at 100% as root.
 
-    apt-get update -y && apt-get full-upgrade -y && apt-get install sudo wget aptitude -y && sudo apt-get autoclean && apt-get clean cache && sudo apt update && aptitude install kali-linux-default -y && apt-get full-upgrade -y
+    apt-get update -y && apt-get full-upgrade -y && apt-get install sudo wget aptitude -y && sudo apt-get autoclean && apt-get clean cache && sudo apt update -y && apt-get full-upgrade -y
 
 #
 
