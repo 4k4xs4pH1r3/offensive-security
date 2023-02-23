@@ -21,7 +21,7 @@ sudo softwareupdate --install-rosetta --agree-to-license && sudo gem install xco
 
 4. Upgrade Apple Store + Apple Developer + Brew packages
 ```ShellSession
-brew unlink tfenv && softwareupdate --all --install --force && brew update-reset && brew update && brew upgrade && brew install terraform && brew unlink terraform && brew link tfenv && tfenv install && tfenv list && tfenv install latest && tfenv install 1.1.5 && tfenv use 1.1.5 && tfenv list && terraform -v 
+brew unlink tfenv && softwareupdate --all --install --force && brew update-reset && brew update && brew upgrade && brew install terraform && brew unlink terraform && brew link tfenv && tfenv install && tfenv list && tfenv install latest && tfenv install 1.3.9 && tfenv use 1.3.9 && tfenv list && terraform -v 
 ```
 
 (Optional) Install Apple 🍏 Developer Beta + Apple Simulators for iOS, watchOS and tvOS
