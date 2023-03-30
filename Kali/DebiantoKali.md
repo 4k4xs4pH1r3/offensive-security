@@ -17,8 +17,6 @@ deb https://security.debian.org/debian-security bookworm-security main
 deb-src https://security.debian.org/debian-security bookworm-security main
 deb https://deb.debian.org/debian/ bookworm-updates main
 deb-src https://deb.debian.org/debian/ bookworm-updates main
-
-
 ```
 
 
