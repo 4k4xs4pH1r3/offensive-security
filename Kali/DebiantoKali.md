@@ -11,7 +11,7 @@ sudo nano /etc/apt/sources.list
 ```
 Add this repos
 ```
-deb https://deb.debian.org/debian/ bookworm main contrib non-free
+deb https://deb.debian.org/debian/ bookworm main contrib non-free non-free-firmware
 deb-src https://deb.debian.org/debian/ bookworm main
 deb https://security.debian.org/debian-security bookworm-security main
 deb-src https://security.debian.org/debian-security bookworm-security main
@@ -39,8 +39,8 @@ For Parrot Security add here
 sudo nano /etc/apt/sources.list.d/parrot.list
 ```
 #       
-    deb http://http.kali.org/kali kali-rolling main contrib non-free
-    deb-src http://http.kali.org/kali kali-rolling main contrib non-free
+    deb https://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware
+    deb-src https://http.kali.org/kali kali-rolling main contrib non-free
  #      
 ```
 sudo apt install dirmngr -y && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ED444FF07D8D0BF6
