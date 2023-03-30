@@ -43,10 +43,11 @@ sudo nano /etc/apt/sources.list.d/parrot.list
     deb-src https://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware
  #      
 ```
-sudo apt install dirmngr -y && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ED444FF07D8D0BF6
+sudo apt install dirmngr -y && apt-key adv --keyserver hkp://keys.gnupg.net --recv-keys 7D8D0BF6 && wget https://http.kali.org/pool/main/k/kali-archive-keyring/kali-archive-keyring_2022.1_all.deb && apt --fix-broken install && dpkg -i ./kali-archive-keyring_2022.1_all.deb && rm kali-archive-keyring_2022.1_all.deb && apt-get update -y && apt-get install neofetch lolcat -y 
+echo "Activated Kali Ninja Repos"
 ```      
 
-### Convert Debian to Kali
+### Convert Debian Bookworm Ninja to Kali Ninja
 ```
 sudo apt install aptitude -y && apt-get autoclean && apt-get clean cache && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get update -y && apt-get dist-upgrade -y && apt-get full-upgrade -y && sudo apt-get update -y && apt-get full-upgrade -y && apt-get autoremove -y && apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig
 ```
