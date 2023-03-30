@@ -40,7 +40,7 @@ sudo nano /etc/apt/sources.list.d/parrot.list
 ```
 #       
     deb https://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware
-    deb-src https://http.kali.org/kali kali-rolling main contrib non-free
+    deb-src https://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware
  #      
 ```
 sudo apt install dirmngr -y && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ED444FF07D8D0BF6
