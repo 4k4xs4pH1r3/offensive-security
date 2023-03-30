@@ -9,13 +9,20 @@ Edit APT Repo
 ```
 sudo nano /etc/apt/sources.list
 ```
-Add this repo
+Add this repos
 ```
-deb http://ftp.debian.org/debian/ stretch main contrib non-free
+deb https://deb.debian.org/debian/ bookworm main contrib non-free
+deb-src https://deb.debian.org/debian/ bookworm main
+deb https://security.debian.org/debian-security bookworm-security main
+deb-src https://security.debian.org/debian-security bookworm-security main
+deb https://deb.debian.org/debian/ bookworm-updates main
+deb-src https://deb.debian.org/debian/ bookworm-updates main
+
+
 ```
 
 
-## Debian Buster Ninja
+## Debian Bookworm Ninja
 ```
 apt clean && apt update -y && apt install sudo gdebi dirmngr aptitude -y && sudo apt-get autoclean && apt-get clean cache && sudo apt update && apt full-upgrade -y
 ```
