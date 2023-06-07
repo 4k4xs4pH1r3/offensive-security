@@ -12,7 +12,7 @@ This will take up to a few minutes, now is a great time to go for a coffee ☕..
 ```
 #
 
-3. Install Xcode + Brew including Formulae and Casks (215 packages)
+3. Install Xcode + Brew including Formulae and Casks (218 packages)
 ```ShellSession
 sudo softwareupdate --install-rosetta --agree-to-license && sudo gem install xcode-install && xcversion update && xcversion list
 ```
