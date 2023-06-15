@@ -1,29 +1,29 @@
 ### How to Install VMware Workstation 17
 
-Tested and verifed: 17 January 2023
+Tested and verifed: 14 June 2023
 #
 
 Close VMware
 #
 ### Ubuntu Kodachi | Jammy Jellyfish | Impish | Hirsute | Groovy | Focal | Eoan | Disco | Bionic
 
-    sudo apt install build-essential gcc-12 gcc-12-base gcc-12-base gcc-12-multilib -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module:i386 -y && wget https://download3.vmware.com/software/WKST-1700-LX/VMware-Workstation-Full-17.0.0-20800274.x86_64.bundle && chmod +x VMware-Workstation-Full-17.0.0-20800274.x86_64.bundle && sudo ./VMware-Workstation-Full-17.0.0-20800274.x86_64.bundle
+    sudo apt install build-essential gcc-12 gcc-12-base gcc-12-base gcc-12-multilib -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module:i386 -y && wget https://download3.vmware.com/software/WKST-1702-LX/VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle && sudo ./VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
     
 ## Kali Linux & Parrot Security
 
-    sudo apt install build-essential -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module* mokutil -y && wget https://download3.vmware.com/software/WKST-1700-LX/VMware-Workstation-Full-17.0.0-20800274.x86_64.bundle && chmod +x VMware-Workstation-Full-17.0.0-20800274.x86_64.bundle && sudo ./VMware-Workstation-Full-17.0.0-20800274.x86_64.bundle
+    sudo apt install build-essential -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module* mokutil -y && wget https://download3.vmware.com/software/WKST-1702-LX/VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle && sudo ./VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
     
 ## Debian Sid | BullsEye | Buster (amd64)
     
     sudo -
 #    
-    export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin && sudo apt-get install aptitude -y && sudo aptitude install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib linux-headers-$(uname -r) -y && cd /var/cache/debconf && rm *.dat &&  wget http://ftp.us.debian.org/debian/pool/main/libc/libcanberra/libcanberra-gtk-module_0.30-7_amd64.deb && chmod +x *.deb && dpkg -i *deb && wget https://download3.vmware.com/software/WKST-1700-LX/VMware-Workstation-Full-17.0.0-20800274.x86_64.bundle && chmod +x VMware-Workstation-Full-17.0.0-20800274.x86_64.bundle && sudo ./VMware-Workstation-Full-17.0.0-20800274.x86_64.bundle
+    export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin && sudo apt-get install aptitude -y && sudo aptitude install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib linux-headers-$(uname -r) -y && cd /var/cache/debconf && rm *.dat &&  wget http://ftp.us.debian.org/debian/pool/main/libc/libcanberra/libcanberra-gtk-module_0.30-7_amd64.deb && chmod +x *.deb && dpkg -i *deb && wget https://download3.vmware.com/software/WKST-1702-LX/VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle && sudo ./VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
     
     
 ## Debian Sid | BullsEye | Buster (i386)
     sudo -
 #    
-    export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin && sudo apt-get install aptitude -y && sudo aptitude install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib linux-headers-$(uname -r) -y && cd /var/cache/debconf && rm *.dat && wget http://ftp.us.debian.org/debian/pool/main/libc/libcanberra/libcanberra-gtk-module_0.30-7_i386.deb && chmod +x *.deb && dpkg -i *deb && wget https://download3.vmware.com/software/WKST-1700-LX/VMware-Workstation-Full-17.0.0-20800274.x86_64.bundle && chmod +x VMware-Workstation-Full-17.0.0-20800274.x86_64.bundle && ./VMware-Workstation-Full-17.0.0-20800274.x86_64.bundle
+    export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin && export PATH=$PATH:/usr/local/sbin:/usr/local/bin && sudo apt-get install aptitude -y && sudo aptitude install build-essential gcc-7 gcc-7-base gcc-7-base gcc-7-multilib linux-headers-$(uname -r) -y && cd /var/cache/debconf && rm *.dat && wget http://ftp.us.debian.org/debian/pool/main/libc/libcanberra/libcanberra-gtk-module_0.30-7_i386.deb && chmod +x *.deb && dpkg -i *deb && wget https://download3.vmware.com/software/WKST-1702-LX/VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle && sudo ./VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
     
 #
 #   
@@ -37,7 +37,7 @@ You'll see that there are issues with monitor and net, thas ok.
 #
 Install the VMware Host modules as root
 
-    wget https://github.com/mkubecek/vmware-host-modules/archive/refs/tags/w17.0.0.tar.gz && tar -xzf w17.0.0.tar.gz && cd vmware-host-modules-w17.0.0 && make && make install && /etc/init.d/vmware restart && sudo dpkg --configure -a && sudo grub-mkconfig && tar -cf vmmon.tar vmmon-only && tar -cf vmnet.tar vmnet-only && cp -v vmmon.tar vmnet.tar /usr/lib/vmware/modules/source/ && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig 
+    wget https://github.com/mkubecek/vmware-host-modules/archive/refs/tags/w17.0.2.tar.gz && tar -xzf w17.0.2.tar.gz && cd vmware-host-modules-w17.0.2 && make && make install && /etc/init.d/vmware restart && sudo dpkg --configure -a && sudo grub-mkconfig && tar -cf vmmon.tar vmmon-only && tar -cf vmnet.tar vmnet-only && cp -v vmmon.tar vmnet.tar /usr/lib/vmware/modules/source/ && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig 
     
 Verify your kernel version
 
@@ -45,7 +45,7 @@ Verify your kernel version
 
 Based on the result replace the value in the below line "VM_UNAME" and execute
 
-    make VM_UNAME='5.15.0-kali2-amd64' && make install && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig
+    make VM_UNAME='6.1.0-kali9-amd64' && make install && vmware-modconfig --console --install-all && sudo dpkg --configure -a && sudo grub-mkconfig
 #
     
 
