@@ -10,4 +10,4 @@
 #
     clear && sudo pacman -Syyu --needed gnome guake --disable-download-timeout --noprogressbar --overwrite y
 #
-    clear && sudo pacman -Syyu --needed blackarch yay --disable-download-timeout --noconfirm --noprogressbar --overwrite='*  
+    clear && sudo pacman -Syyu --needed blackarch yay pamac --disable-download-timeout --noconfirm --noprogressbar --overwrite='*  
