@@ -8,6 +8,6 @@
 #    
     clear && sudo pacman -Syyu --needed --disable-download-timeout --noprogressbar --overwrite y
 #
-    clear && sudo pacman -Syyu --needed gnome --disable-download-timeout --noprogressbar --overwrite y
+    clear && sudo pacman -Syyu --needed gnome guake --disable-download-timeout --noprogressbar --overwrite y
 #
     clear && sudo pacman -Syyu --needed blackarch yay --disable-download-timeout --noconfirm --noprogressbar --overwrite='*  
