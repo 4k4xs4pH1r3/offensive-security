@@ -1,3 +1,5 @@
+    sudo pacman-key --populate archlinux blackarch
+#    
     sudo pacman -Syyu --needed --disable-download-timeout --noprogressbar --overwrite y
 #
     sudo pacman -Syyu --needed gnome --disable-download-timeout --noprogressbar --overwrite y
