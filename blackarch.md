@@ -1,4 +1,4 @@
-    sudo pacman-key --populate archlinux blackarch
+    sudo pacman-key --populate archlinux blackarch && gpg --recv-keys D4A753468A5A5B67 && sudo pacman -Scc
 #    
     sudo pacman -Syyu --needed --disable-download-timeout --noprogressbar --overwrite y
 #
