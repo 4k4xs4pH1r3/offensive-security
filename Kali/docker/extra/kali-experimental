@@ -1,0 +1,7 @@
+ARG CI_REGISTRY_IMAGE
+ARG VERSION
+FROM $CI_REGISTRY_IMAGE/kali-rolling:$VERSION
+
+RUN echo "deb http://http.kali.org/kali kali-experimental main contrib non-free" >/etc/apt/sources.list.d/kali-experimental.list
+
+CMD ["bash"]
