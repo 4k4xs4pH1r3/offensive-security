@@ -1,0 +1,17 @@
+wordlists filter=lfs diff=lfs merge=lfs -text
+wordlists/fasttrack.txt filter=lfs diff=lfs merge=lfs -text
+wordlists/amass filter=lfs diff=lfs merge=lfs -text
+wordlists/dnsmap.txt filter=lfs diff=lfs merge=lfs -text
+wordlists/legion filter=lfs diff=lfs merge=lfs -text
+wordlists/rockyou.txt.gz filter=lfs diff=lfs merge=lfs -text
+wordlists/fern-wifi filter=lfs diff=lfs merge=lfs -text
+wordlists/wfuzz filter=lfs diff=lfs merge=lfs -text
+wordlists/wifite.txt filter=lfs diff=lfs merge=lfs -text
+wordlists/brutespray filter=lfs diff=lfs merge=lfs -text
+wordlists/dirbuster filter=lfs diff=lfs merge=lfs -text
+wordlists/metasploit filter=lfs diff=lfs merge=lfs -text
+wordlists/nmap.lst filter=lfs diff=lfs merge=lfs -text
+wordlists/seclists filter=lfs diff=lfs merge=lfs -text
+wordlists/sqlmap.txt filter=lfs diff=lfs merge=lfs -text
+wordlists/dirb filter=lfs diff=lfs merge=lfs -text
+wordlists/john.lst filter=lfs diff=lfs merge=lfs -text
