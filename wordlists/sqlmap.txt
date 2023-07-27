@@ -1,1 +1,0 @@
-/usr/share/sqlmap/data/txt/wordlist.txt
