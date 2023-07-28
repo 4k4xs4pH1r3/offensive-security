@@ -18,6 +18,9 @@ Install Jenkins + Java + Dev Tools + Python + RabbitMQ + Ansible following the b
 dnf --disablerepo '*' --enablerepo extras swap centos-linux-repos centos-stream-repos
 dnf distro-sync
 ```
+```
+sudo yum update -y
+```
 
 ***** Install Java 8
     
