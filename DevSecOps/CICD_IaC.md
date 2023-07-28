@@ -13,6 +13,12 @@ Install Jenkins + Java + Dev Tools + Python + RabbitMQ + Ansible following the b
     ssh -i /root/.ssh/ec2ypcicdiac.pem ec2-user@xxx.xxx.xxx.xxx
 
 
+****
+```
+dnf --disablerepo '*' --enablerepo extras swap centos-linux-repos centos-stream-repos
+dnf distro-sync
+```
+
 ***** Install Java 8
     
     sudo yum install -y java-1.8.0-openjdk.x86_64
@@ -20,6 +26,7 @@ Install Jenkins + Java + Dev Tools + Python + RabbitMQ + Ansible following the b
     sudo /usr/sbin/alternatives --set javac /usr/lib/jvm/jre-1.8.0-openjdk.x86_64/bin/javac
 
 ***** Install Jenkins
+
     
     sudo yum install wget -y
     sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
