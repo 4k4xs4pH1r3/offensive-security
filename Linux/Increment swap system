@@ -1,18 +1,25 @@
 
-#Creando el Archivo
+# Creando el Archivo
+```
+dd if=/dev/zero of=/swap bs=4096 count=4096000
+```
 
-  dd if=/dev/zero of=/swap bs=4096 count=4096000
+# Make swap file
+```   
+mkswap /swap
+```
 
-#Pmake swap file
-   
-   mkswap /swap
-
-"user permission
-    chown root:disk /swap
+user permission
+```
+chown root:disk /swap
+```
 
 #File Permission
-    chmod +600 swap
+```
+chmod +600 swap
+```
 
-#Load file swap to system
-
-  swapon /swap
+#Enable swap
+```
+swapon /swap
+```
