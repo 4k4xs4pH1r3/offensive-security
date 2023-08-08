@@ -2,9 +2,13 @@
 
 0. Enable WSL executing this in powershell as Administrator
 
-       Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux   
+       Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 
-1. Download the Linux kernel update package
+1. Enable Virtual Machine feature executing this in powershell as Administrator
+
+       dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+   
+2. Download the Linux kernel update package
 
 This package will install the most recent version of the WSL 2 Linux kernel
 
@@ -13,12 +17,14 @@ This package will install the most recent version of the WSL 2 Linux kernel
 3. Install Kali Linux WSL from Windows Store
 
        https://www.microsoft.com/store/apps/9PKR34TNCV07
+
+4. Restart Your device   
     
-4. Open Kali Linux, follow the wizard for installation define your username and password and reset the root password
+5. Open Kali Linux, follow the wizard for installation define your username and password and reset the root password
 
        sudo -i
 
-5. Add this path to Windows Defender as an exception
+6. Add this path to Windows Defender as an exception
 
        C:\Users\usuario\AppData\Local\Packages\KaliLinux.*
 
@@ -66,7 +72,7 @@ This package will install the most recent version of the WSL 2 Linux kernel
 #       
 #
 
-# 5. Add GUI xfce
+# 7. Add GUI xfce
 
     sudo apt install xfce4 xrdp -y && sudo /etc/init.d/xrdp start
 
