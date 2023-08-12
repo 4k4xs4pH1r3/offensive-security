@@ -321,7 +321,7 @@ EACCES error when connecting to docker on Ubuntu
 Supports version 9.x and older versions.
 
 ```
-sudo dnf clean all && sudo dnf install dnf-plugins-core -y && sudo dnf install neofetch kernel-devel-`uname -r` -y && sudo dnf autoremove -y && sudo dnf clean all && sudo dnf update -y && sudo dnf autoremove -y && sudo dnf upgrade --allowerasing -y && sudo grubby --update-kernel=ALL --args="audit=1" && sudo grub2-mkconfig -o /boot/grub2/grub.cfg && neofetch
+sudo dnf clean all && sudo dnf install dnf-plugins-core -y && sudo dnf install kernel-devel-`uname -r` -y && sudo dnf autoremove -y && sudo dnf clean all && sudo dnf update -y && sudo dnf autoremove -y && sudo dnf upgrade --allowerasing -y && sudo grubby --update-kernel=ALL --args="audit=1" && sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
 
 
