@@ -1,10 +1,9 @@
 ## Create NetHunter Installer
 
-Tested 6 Feb 2023
+Tested 24 August 2023
 
-Kali Linux Last Version 2023.1.2
-
-Linux-image-6.0.0-kali6-arm64 (6.0.12-1kali1)
+Kali Linux Last Version 2023.3 arm64
+Kernel: 4.19.215-PrimeKernel
 
 https://www.kali.org/docs/nethunter/building-nethunter/
 https://gitlab.com/kalilinux/nethunter/build-scripts/kali-nethunter-devices
@@ -22,7 +21,7 @@ Android 13 / Rom = ProjectX / arch = arm64 / author = Svirusx
 ```ShellSession
 python3 build.py -d r8q-thirteen --thirteen -f -u -nf -su -fs full -r ni
 ```
-
+Or download from here https://www.kali.org/get-kali/#kali-mobile the NetHunter Lite ARM64 (Full)
 
 ## Upgrade Kali Linux Nethunter
 
