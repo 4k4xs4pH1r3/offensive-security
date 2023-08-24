@@ -21,7 +21,7 @@ Android 13 / Rom = ProjectX / arch = arm64 / author = Svirusx
 ```ShellSession
 python3 build.py -d r8q-thirteen --thirteen -f -u -nf -su -fs full -r ni
 ```
-Or download from here https://www.kali.org/get-kali/#kali-mobile the NetHunter Lite ARM64 (Full)
+Or download from here https://www.kali.org/get-kali/#kali-mobile the NetHunter Lite ARM64 (Full) and flash it as a module with Magisk
 
 ## Upgrade Kali Linux Nethunter
 
