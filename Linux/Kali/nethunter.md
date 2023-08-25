@@ -27,7 +27,7 @@ Or download from here https://www.kali.org/get-kali/#kali-mobile the NetHunter L
 ## Upgrade Kali Linux Nethunter
 
 ```
-apt-get autoclean && apt install -f && apt install aptitude -y && apt install neofetch grub-mkconfig -y && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update -y && apt full-upgrade -y --allow-downgrades && dpkg --configure -a && grub-mkconfig && cd && aptitude upgrade --full-resolver -y && apt autoremove -y && neofetch
+apt-get autoclean && apt install -f && apt install aptitude -y && apt install neofetch -y && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update -y && apt full-upgrade -y --allow-downgrades && dpkg --configure -a && grub-mkconfig && cd && aptitude upgrade --full-resolver -y && apt autoremove -y && neofetch
 ```
 
 ## Activate Kali Linux Nethunter Ninja
