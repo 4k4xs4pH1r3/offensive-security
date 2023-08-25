@@ -6,6 +6,10 @@ Kali GNU/Linux Rolling | 2023.3 arm64
 
 Linux kali 4.19.215-PrimeKernel v8.5 #1 SMP PREEMPT Mon Jul 17 11:16:15 CST 2023 aarch64
 
+Packages: 5554 (dpkg)
+
+Space Required = 65 GB
+
 https://www.kali.org/docs/nethunter/building-nethunter/
 
 https://gitlab.com/kalilinux/nethunter/build-scripts/kali-nethunter-devices
