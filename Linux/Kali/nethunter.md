@@ -7,6 +7,7 @@ Kali GNU/Linux Rolling v8.5 | 2023.3 arm64
 Kernel: 4.19.215-PrimeKernel
 
 https://www.kali.org/docs/nethunter/building-nethunter/
+
 https://gitlab.com/kalilinux/nethunter/build-scripts/kali-nethunter-devices
 
 ### Xiaomi 9T Pro aka davinci 
