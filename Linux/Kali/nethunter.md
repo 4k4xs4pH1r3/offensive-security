@@ -13,7 +13,9 @@ Space Required = 65 GB
 Storage Capacity Recommended = 256 GB or 128 GB minimum
 
 
-## 1. Download from here https://www.kali.org/get-kali/#kali-mobile
+## 1. Download from here 
+
+https://www.kali.org/get-kali/#kali-mobile
 
 The NetHunter Lite ARM64 (Full) and flash it as a module with Magisk
 
