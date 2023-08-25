@@ -2,9 +2,9 @@
 
 Tested 24 August 2023
 
-Kali GNU/Linux Rolling v8.5 | 2023.3 arm64
+Kali GNU/Linux Rolling | 2023.3 arm64
 
-Kernel: 4.19.215-PrimeKernel
+Linux kali 4.19.215-PrimeKernel v8.5 #1 SMP PREEMPT Mon Jul 17 11:16:15 CST 2023 aarch64
 
 https://www.kali.org/docs/nethunter/building-nethunter/
 
