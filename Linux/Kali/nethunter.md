@@ -13,18 +13,18 @@ Space Required = 65 GB
 Storage Capacity Recommended = 256 GB or 128 GB minimum
 
 
-Download from here https://www.kali.org/get-kali/#kali-mobile
+## 1. Download from here https://www.kali.org/get-kali/#kali-mobile
 
 The NetHunter Lite ARM64 (Full) and flash it as a module with Magisk
 
 
-## Upgrade Kali Linux Nethunter
+## 2. Upgrade Kali Linux Nethunter
 
 ```
 apt-get autoclean && apt install -f && apt install aptitude -y && apt install neofetch -y && apt -f install && apt autoremove -y && apt-get clean cache && apt update && apt-get autoclean && apt-get clean cache && apt update -y && apt full-upgrade -y --allow-downgrades && dpkg --configure -a && grub-mkconfig && cd && aptitude upgrade --full-resolver -y && apt autoremove -y && neofetch
 ```
 
-## Activate Kali Linux Nethunter Ninja
+## 3. Activate Kali Linux Nethunter Ninja
 
 
 ```ShellSession
@@ -32,20 +32,20 @@ echo -ne "\033]0;Updating\007" && clear;apt update && apt install kali-linux-net
 ```
 
 
-## Create NetHunter Installer
+### Create NetHunter Installer Manully (Optional)
 
 https://www.kali.org/docs/nethunter/building-nethunter/
 
 https://gitlab.com/kalilinux/nethunter/build-scripts/kali-nethunter-devices
 
-### Xiaomi 9T Pro aka davinci 
+#### Xiaomi 9T Pro aka davinci 
 Code Name: raphael/raphaelin / Android 13 / Rom = Evolution X
 
 ```ShellSession
 python3 build.py -d davinci-miui --ten -f -u -nf -su -fs full -r ni
 ```
 
-### Samsung Galaxy S20 FE 5G (Snapdragon or Qualcomm KONA) aka r8q 
+#### Samsung Galaxy S20 FE 5G (Snapdragon or Qualcomm KONA) aka r8q 
 Android 13 / Rom = ProjectX / arch = arm64 / author = Svirusx
 
 ```ShellSession
