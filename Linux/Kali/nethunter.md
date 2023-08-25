@@ -17,7 +17,7 @@ Code Name: raphael/raphaelin / Android 13 / Rom = Evolution X
 python3 build.py -d davinci-miui --ten -f -u -nf -su -fs full -r ni
 ```
 
-### Samsung Galaxy S20 FE 5G (Snapdragon) aka r8q 
+### Samsung Galaxy S20 FE 5G (Snapdragon or Qualcomm KONA) aka r8q 
 Android 13 / Rom = ProjectX / arch = arm64 / author = Svirusx
 
 ```ShellSession
