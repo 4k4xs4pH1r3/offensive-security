@@ -10,6 +10,8 @@ Packages: 5554 (dpkg)
 
 Space Required = 65 GB
 
+Storage Capacity Recommended = 256 GB or 128 GB minimum
+
 https://www.kali.org/docs/nethunter/building-nethunter/
 
 https://gitlab.com/kalilinux/nethunter/build-scripts/kali-nethunter-devices
