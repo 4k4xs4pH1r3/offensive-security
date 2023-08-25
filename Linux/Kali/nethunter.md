@@ -36,7 +36,8 @@ echo -ne "\033]0;Updating\007" && clear;apt update && apt install kali-linux-net
 #
 #
 
-### Create NetHunter Installer Manully (Optional)
+## (Optional)
+### Create NetHunter Installer Manully
 
 https://www.kali.org/docs/nethunter/building-nethunter/
 
