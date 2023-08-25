@@ -6,9 +6,9 @@ Kali GNU/Linux Rolling | 2023.3.5 arm64
 
 Linux kali 4.19.215-PrimeKernel v8.5 #1 SMP PREEMPT Mon Jul 17 11:16:15 CST 2023 aarch64
 
-Packages: 5555 (dpkg)
+Packages: 5558 (dpkg)
 
-Space Required = 65 GB
+Space Required = 73 GB
 
 Storage Capacity Recommended = 256 GB or 128 GB minimum
 
