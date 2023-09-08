@@ -371,7 +371,7 @@ Acquire the Licenses that require neXpose
 
  <https://www.rapid7.com/try/insight/>
  <https://www.rapid7.com/try/insightvm/>
- <https://www.rapid7.com/products/nexpose/download/>
+ <https://www.rapid7.com/products/nexpose/request-download/>
  <https://www.rapid7.com/products/insightvm/download/>
 
 - <https://www.rapid7.com/products/insightvm/download/virtual-appliance/>
