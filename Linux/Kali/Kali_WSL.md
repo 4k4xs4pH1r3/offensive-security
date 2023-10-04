@@ -1,6 +1,6 @@
 # Kali Linux WSL 2 Ninja
 
-0. Enable WSL feature, execute this in Powershell as Administrator
+0. Enable WSL feature, executing this in Powershell as Administrator
 
        Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 
@@ -17,12 +17,17 @@ This package will install the most recent version of the WSL 2 Linux kernel
 3. Set WSL version 2 as the default
 
        wsl --set-default-version 2
+   
 
-5.   Install Kali Linux WSL from the Windows Store
+4. Update WSL to the latest version
 
-       https://www.microsoft.com/store/apps/9PKR34TNCV07
+       wsl --update
+   
+5. Install Kali Linux WSL from the Windows Store
 
-6. Restart Your device   
+https://www.microsoft.com/store/apps/9PKR34TNCV07
+
+6. Restart Windows Operating System to apply changes   
     
 7. Open Kali Linux, follow the wizard for installation define your username and password, and reset the root password
 
@@ -30,7 +35,7 @@ This package will install the most recent version of the WSL 2 Linux kernel
 
 8. Add this path to Windows Defender as an exception
 
-       C:\Users\usuario\AppData\Local\Packages\KaliLinux.*
+       C:\Users\yourusername\AppData\Local\Packages\KaliLinux.*
 
 #
 33.37 GB of free space is required on your disk. ***Repeat it until you see that really was installed successfully at 100% as root.
