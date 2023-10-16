@@ -6,7 +6,7 @@ Deploy Portainer tool for manage your Containers through a Web Intranet Portal
     docker volume create portainer_data && docker run -d -p 9000:9000 -p 8000:8000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
 
 #
-Deploy & Run Kali Linux image in Docker with storeage persistence
+Deploy & Run Kali Linux image in Docker with storage persistence
 
     docker run -it --rm --mount src=kali-root,dst=/root --mount src=kali-postgres,dst=/var/lib/postgresql kalilinux/kali-rolling /bin/bash
 
