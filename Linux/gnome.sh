@@ -1,4 +1,5 @@
 #!/bin/sh
+cd Downloads && mkdir gnome && cd gnome
 wget -c https://kali.download/kali/pool/main/libc/libcbor/libcbor0.10_0.10.2-1.1_amd64.deb
 wget -c https://kali.download/kali/pool/main/f/fwupd/libfwupd2_1.9.6-1_amd64.deb
 wget -c https://kali.download/kali/pool/main/f/fwupd/fwupd_1.9.6-1_amd64.deb
@@ -44,3 +45,8 @@ wget -c https://kali.download/kali/pool/main/k/kali-meta/kali-tools-vulnerabilit
 wget -c https://kali.download/kali/pool/main/k/kali-meta/kali-tools-web_2023.4.3_amd64.deb
 wget -c https://kali.download/kali/pool/main/k/kali-meta/kali-tools-windows-resources_2023.4.3_amd64.deb
 wget -c https://kali.download/kali/pool/main/k/kali-meta/kali-tools-wireless_2023.4.3_amd64.deb
+dpkg -i *.deb
+apt --fix-broken install -y
+dpkg -i *.deb
+apt install aptitude -y && aptitude install locales -y && locale-gen en_US.UTF-8 && localedef -i en_US -f UTF-8 en_US.UTF-8 && export LANGUAGE=en_US.UTF-8 && export LANG=en_US.UTF-8 && export LC_ALL=en_US.UTF-8 && locale-gen en_US.UTF-8 && apt-get update -y && apt-get full-upgrade -y && aptitude install wget -y && apt-get install python3 python3-venv python3-pip -y && apt-get autoclean && apt-get clean cache && apt update -y && apt-get full-upgrade -y
+reboot
