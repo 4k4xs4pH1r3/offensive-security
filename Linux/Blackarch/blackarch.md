@@ -9,5 +9,7 @@
     clear && sudo pacman -Syyu --needed --disable-download-timeout --noprogressbar --overwrite y
 #
     clear && sudo pacman -Syyu --needed gnome guake --disable-download-timeout --noprogressbar --overwrite y
+
+    curl -O https://blackarch.org/strap.sh && echo 5ea40d49ecd14c2e024deecf90605426db97ea0c strap.sh | sha1sum -c && chmod +x strap.sh && sudo ./strap.sh
 #
-    clear && sudo pacman -Syyu --needed blackarch yay --disable-download-timeout --noconfirm --noprogressbar --overwrite='*' 
+    clear && sudo pacman -Syyu --needed blackarch yay --disable-download-timeout --noprogressbar --overwrite='*' 
