@@ -7,7 +7,7 @@ Close VMware
 #
 ### Ubuntu Kodachi | Jammy Jellyfish | Impish | Hirsute | Groovy | Focal | Eoan | Disco | Bionic
 
-    sudo apt install build-essential gcc-12 gcc-12-base gcc-12-base gcc-12-multilib -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module:i386 -y && wget https://download3.vmware.com/software/WKST-1702-LX/VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle && sudo ./VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
+    sudo apt install build-essential gcc-12 gcc-12-base gcc-12-base gcc-12-multilib -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module:i386 -y && wget https://download3.vmware.com/software/WKST-1702-LX/VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle && chmod +x VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle && sudo ./VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
     
 ## Kali Linux & Parrot Security
 
