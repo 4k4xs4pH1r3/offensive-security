@@ -11,7 +11,7 @@ Close VMware
     
 ## Kali Linux & Parrot Security
 
-    sudo apt install build-essential -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install libcanberra-gtk* libcanberra-gtk-module* mokutil -y && wget https://download3.vmware.com/software/WKST-1750-LX/VMware-Workstation-Full-17.5.0-22583795.x86_64.bundle && chmod +x VMware-Workstation-Full-17.5.0-22583795.x86_64.bundle && sudo ./VMware-Workstation-Full-17.5.0-22583795.x86_64.bundle
+    sudo apt install build-essential -y && sudo apt-get install linux-headers-$(uname -r) -y && sudo apt-get install mokutil -y && wget http://ftp.us.debian.org/debian/pool/main/libc/libcanberra/libcanberra-gtk-module_0.30-10_amd64.deb && sudo dpkg -i libcanberra-gtk-module_0.30-10_amd64.deb && wget https://download3.vmware.com/software/WKST-1750-LX/VMware-Workstation-Full-17.5.0-22583795.x86_64.bundle && chmod +x VMware-Workstation-Full-17.5.0-22583795.x86_64.bundle && sudo ./VMware-Workstation-Full-17.5.0-22583795.x86_64.bundle
     
 ## Debian Sid | BullsEye | Buster (amd64)
     
