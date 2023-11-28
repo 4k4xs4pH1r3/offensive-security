@@ -1,16 +1,16 @@
     #------------------------------------------------------------------------------#
-    #                   OFFICIAL DEBIAN REPOS                    
+    #                   OFFICIAL cdn-fastly DEBIAN REPOS                    
     #------------------------------------------------------------------------------#
 
-    ###### Debian Main Repos
-    deb http://deb.debian.org/debian/ stable main contrib non-free
-    deb-src http://deb.debian.org/debian/ stable main contrib non-free
+If You are not using Tails, just remove this part "tor+" from each line
 
-    deb http://deb.debian.org/debian/ stable-updates main contrib non-free
-    deb-src http://deb.debian.org/debian/ stable-updates main contrib non-free
+```
+deb [arch=amd64] tor+https://cdn-fastly.deb.debian.org/debian/ stable main contrib non-free
+deb-src [arch=amd64] tor+https://cdn-fastly.deb.debian.org/debian/ stable main contrib non-free
 
-    deb http://deb.debian.org/debian-security stable/updates main
-    deb-src http://deb.debian.org/debian-security stable/updates main
+deb [arch=amd64] tor+https://cdn-fastly.deb.debian.org/debian/ stable-updates main contrib non-free
+deb-src [arch=amd64] tor+https://cdn-fastly.deb.debian.org/debian/ stable-updates main contrib non-free
 
-    deb http://ftp.debian.org/debian buster-backports main
-    deb-src http://ftp.debian.org/debian buster-backports main
+deb [arch=amd64] tor+https://cdn-fastly.deb.debian.org/debian-security stable-security main contrib non-free
+deb-src [arch=amd64] tor+https://cdn-fastly.deb.debian.org/debian-security stable-security main contrib non-free
+```  
