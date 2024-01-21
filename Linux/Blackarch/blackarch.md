@@ -17,4 +17,5 @@
 #
     clear && sudo pacman -Syyu --needed --noconfirm --disable-download-timeout --noprogressbar --overwrite '*'
 #
-    clear && sudo pacman -Syyu --needed blackarch yay --disable-download-timeout --noprogressbar --overwrite='*'
+    clear && sudo pacman -Syuu --needed --noconfirm --disable-download-timeout --noprogressbar --overwrite '*' blackarch
+
