@@ -24,7 +24,7 @@ brew install --cask gitfinder powershell dotnet && brew install cask && brew ins
 
 4. Upgrade Apple Store + Apple Developer + Brew packages
 ```ShellSession
-clear && { brew unlink tfenv && softwareupdate --all --install --force && brew update-reset && brew update -q && brew upgrade -q && brew install terraform -q && brew unlink terraform && brew link tfenv && tfenv install && tfenv list && tfenv install latest && tfenv install 1.4.6 && tfenv use 1.4.6 && tfenv list && terraform -v; } >/dev/null 2>&1 && clear && echo "Upgrading All Brew packages..." && echo "All Brew packages were upgraded successfully."
+clear && { brew unlink tfenv && softwareupdate --all --install --force && brew update-reset && brew update -q && brew upgrade -q && brew install terraform -q && brew unlink terraform && brew link tfenv && tfenv install && tfenv list && tfenv install latest && tfenv install 1.7.1 && tfenv use 1.7.1 && tfenv list && terraform -v; } >/dev/null 2>&1 && clear && echo "Upgrading All Brew packages..." && echo "All Brew packages were upgraded successfully."
 ```
 
 (Optional) Install Apple 🍏 Developer Beta + Apple Simulators for iOS, watchOS and tvOS
