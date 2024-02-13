@@ -13,7 +13,7 @@
 #
     clear && sudo pacman -Syyu --needed gnome guake --disable-download-timeout --noprogressbar --overwrite y
 #
-    curl -O https://blackarch.org/strap.sh && echo 3f121404fd02216a053f7394b8dab67f105228e3 strap.sh | sha1sum -c && chmod +x strap.sh && sudo ./strap.sh
+    curl -O https://blackarch.org/strap.sh && echo 26849980b35a42e6e192c6d9ed8c46f0d6d06047 strap.sh | sha1sum -c && chmod +x strap.sh && sudo ./strap.sh
 #
     clear && sudo pacman -Syyu --needed --noconfirm --disable-download-timeout --noprogressbar --overwrite '*'
 #
