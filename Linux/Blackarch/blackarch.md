@@ -17,5 +17,12 @@
 #
     clear && sudo pacman -Syyu --needed --noconfirm --disable-download-timeout --noprogressbar --overwrite '*'
 #
-    clear && sudo pacman -Syuu --needed --noconfirm --disable-download-timeout --noprogressbar --overwrite '*' blackarch blackarch-webapp blackarch-fuzzer blackarch-scanner blackarch-proxy blackarch-windows blackarch-dos blackarch-disassembler blackarch-cracker blackarch-voip blackarch-exploitation blackarch-recon blackarch-spoof blackarch-forensic blackarch-crypto blackarch-backdoor blackarch-networking blackarch-misc blackarch-defensive blackarch-wireless blackarch-automation blackarch-sniffer blackarch-binary blackarch-packer blackarch-reversing blackarch-mobile blackarch-malware blackarch-code-audit blackarch-social blackarch-honeypot blackarch-hardware blackarch-fingerprint blackarch-decompiler blackarch-config blackarch-debugger blackarch-firmware blackarch-bluetooth blackarch-database blackarch-automobile blackarch-webap blackarch-nfc blackarch-tunnel blackarch-drone blackarch-unpacker blackarch-radio blackarch-keylogger blackarch-stego blackarch-anti-forensic blackarch-ids blackarch-gpu
+    clear && sudo pacman -Syuu --needed --noconfirm --disable-download-timeout --noprogressbar --overwrite '*' blackarch
+
+#
+    clear && sudo pacman -Syuu --needed --noconfirm --disable-download-timeout --noprogressbar --overwrite '*' blackarch-anti-forensic blackarch-automation blackarch-backdoor blackarch-binary blackarch-bluetooth blackarch-code-audit blackarch-config blackarch-cracker blackarch-crypto blackarch-database blackarch-debugger blackarch-decompiler blackarch-disassembler blackarch-dos blackarch-drone blackarch-exploitation blackarch-forensic blackarch-fingerprint blackarch-firmware blackarch-fuzzer blackarch-gpu blackarch-hardware blackarch-honeypot blackarch-ids blackarch-keylogger blackarch-malware blackarch-misc blackarch-mobile blackarch-networking blackarch-nfc blackarch-packer blackarch-proxy blackarch-radio blackarch-recon blackarch-reversing blackarch-scanner blackarch-sniffer blackarch-social blackarch-spoof blackarch-stego blackarch-tunnel blackarch-unpacker blackarch-voip blackarch-webap blackarch-webapp blackarch-windows blackarch-wireless
+
+#
+
+    clear && sudo pacman -Syuu --ignore capstone rizin python-capstone --needed --noconfirm --disable-download-timeout --noprogressbar --overwrite blackarch-reversing
 
