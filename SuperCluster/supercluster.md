@@ -1,5 +1,7 @@
 ## Creating a supercluster
 
+### Tested with mpirun (Open MPI) 5.0.2
+
 https://docs.open-mpi.org/en/main/getting-help.html
 
 https://www-lb.open-mpi.org/software/ompi/

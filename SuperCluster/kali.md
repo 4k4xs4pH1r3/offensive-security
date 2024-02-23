@@ -1,3 +1,5 @@
+### Tested with mpirun (Open MPI) 5.0.2
+
 1. Install Kali Linux on each device: You can download the latest Kali Linux ISO file from the official website and create a bootable USB drive. Then, install Kali Linux on each device by booting from the USB drive.
 
 2. Install the required software packages: After installing Kali Linux, you need to install the necessary software packages for cluster computing. Open a terminal and type the following command to install OpenMPI and Cockpit:
