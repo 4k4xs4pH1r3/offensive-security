@@ -61,8 +61,6 @@ Steps to create a small cluster using multiple devices:
    nano pi_value.py
    ```
 ```
-from mpi4py import MPI
-
 def pi_leibniz(n):
     """
     Approximates pi using the Leibniz series with n terms.
@@ -79,14 +77,17 @@ def pi_leibniz(n):
 comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
 
+# Debugging output to see the rank of each process
+print(f"Process {rank}: MPI Initialized")
+
 # Calculate pi with 10000 terms
 pi_approx = pi_leibniz(10000)
 
-# Print the result to the screen from each process
+# Debugging output to see the rank and the result from each process
 print(f"Process {rank}: Pi approximation (Leibniz, 10000 terms): {pi_approx:.10f}")
 
 # Finalize MPI
-comm.Barrier()
+MPI.Finalize()
   
 ```
 
