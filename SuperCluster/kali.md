@@ -4,7 +4,7 @@
 
    ```
    sudo apt-get update
-   sudo apt-get install openmpi-bin openmpi-common libopenmpi-dev cockpit -y
+   sudo apt-get install openmpi-bin openmpi-common libopenmpi-dev cockpit* -y
    ```
 
 3. Configure the network: You need to configure the network settings for each laptop to be able to communicate with each other. You can connect them using a network switch or a router. Alternatively, you can use Wi-Fi if all devices support it.
