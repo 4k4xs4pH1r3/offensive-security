@@ -1,5 +1,7 @@
 ## Creating a supercluster
 
+https://docs.open-mpi.org/en/main/getting-help.html
+
 A tool that crawls through networks and systems, analyzing their vulnerabilities and identifying potential attack vectors. It also suggests the use of data analytics to generate actionable insights and recommendations for improving security.
 
 Clear! In short, he set out to create an all-in-one solution for the automation of IT security, from vulnerability scanning to reporting and creating JIRA tickets. The solution would be based on popular security tools such as Metasploit, Nmap, Shodan, Maltego, Burp Suite, among others, and would use techniques such as port scanning, vulnerability search, vulnerability exploitation, reporting and generation. of JIRA tickets.
@@ -86,17 +88,17 @@ comm.Barrier()
    python3 -m pip install --upgrade pip && pip install mpi4py
    ```
    ```
-   mpirun --hostfile hostfile -np 4 python ./pi_value.py
+   mpirun --hostfile hostfile -np 4 -d python ./pi_value.py
    ```
    ```
-   mpirun --use-hwthread-cpus python ./pi_value.py
+   mpirun --use-hwthread-cpus -d python ./pi_value.py
    ```
 
 You can also compile and run your own parallel applications using OpenMPI.
 
 You can also test locally 
    ```
-mpirun -np 4 python ./pi_value.py 
+mpirun -np 4 -d python ./pi_value.py 
    ```
 
 That's it! You have now created a small cluster using 5 devices with Linux.
