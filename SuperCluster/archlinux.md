@@ -5,7 +5,7 @@
 2. Install the required software packages: After installing ArchLinux, you need to install the necessary software packages for cluster computing. Open a terminal and type the following command to install OpenMPI and Cockpit:
 
    ```
-   clear && sudo pacman -Syuu --needed --noconfirm --disable-download-timeout --noprogressbar --overwrite '*' openssh openmpi openmpi-docs cockpit cockpit-machines cockpit-packagekit cockpit-pcp cockpit-podman cockpit-storaged && sudo systemctl enable cockpit.socket && sudo systemctl start cockpit.socket && mpirun -V
+   clear && sudo pacman -Syuu --needed --noconfirm --disable-download-timeout --noprogressbar --overwrite '*' openssh openmpi openmpi-docs cockpit cockpit-machines cockpit-packagekit cockpit-pcp cockpit-podman cockpit-storaged && sudo groupadd cockpit && sudo usermod -aG cockpit $USER && sudo systemctl enable cockpit.socket && sudo systemctl start cockpit.socket && mpirun -V
    ```
 
 3. Configure the network: You need to configure the network settings for each device to be able to communicate with each other. You can connect them using a network switch or a router. Alternatively, you can use Wi-Fi if all devices support it.
