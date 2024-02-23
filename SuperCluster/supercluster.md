@@ -47,22 +47,66 @@ Steps to create a small cluster using multiple devices:
    192.168.1.5 slots=1
    ```
 
-8. Test the cluster: Test the cluster by running some simple parallel applications, such as calculating the value of pi or matrix multiplication. For example, type the following command to calculate the value of pi using 4 processors:
+8. Test the cluster: Test the cluster by running some simple parallel applications, such as calculating the value of pi with python. For example, type the following command to calculate the value of pi using 4 and also all the available processors:
 
    ```
-   mpirun -np 4 ./pi
+   nano pi_value.py
+   ```
+```
+from mpi4py import MPI
+
+def pi_leibniz(n):
+    """
+    Approximates pi using the Leibniz series with n terms.
+    """
+    result = 0.0
+    for i in range(n):
+        if i % 2 == 0:
+            result += 4.0 / (2 * i + 1)
+        else:
+            result -= 4.0 / (2 * i + 1)
+    return result
+
+# Initialize MPI
+comm = MPI.COMM_WORLD
+rank = comm.Get_rank()
+
+# Calculate pi with 10000 terms
+pi_approx = pi_leibniz(10000)
+
+# Print the result to the screen from each process
+print(f"Process {rank}: Pi approximation (Leibniz, 10000 terms): {pi_approx:.10f}")
+
+# Finalize MPI
+comm.Barrier()
+  
+```
+
+   ```
+   python3 -m pip install --upgrade pip && pip install mpi4py
+   ```
+   ```
+   mpirun --hostfile hostfile -np 4 python ./pi_value.py
+   ```
+   ```
+   mpirun --use-hwthread-cpus python ./pi_value.py
    ```
 
-   You can also compile and run your own parallel applications using OpenMPI.
+You can also compile and run your own parallel applications using OpenMPI.
 
-That's it! You have now created a small cluster using 5 devices with Kali Linux.
+You can also test locally 
+   ```
+mpirun -np 4 python ./pi_value.py 
+   ```
+
+That's it! You have now created a small cluster using 5 devices with Linux.
 
 
 ## Run metasploit on it
 
-Running Metasploit on a small cluster with Kali Linux is not recommended, as Metasploit is a framework for developing and executing exploit code against vulnerable targets. It is designed to be run on a single machine and is not intended to be distributed across multiple machines.
+Running Metasploit on a small cluster with Linux is not recommended, as Metasploit is a framework for developing and executing exploit code against vulnerable targets. It is designed to be run on a single machine and is not intended to be distributed across multiple machines.
 
-However, if you still want to try running Metasploit on a small cluster, you can install Metasploit on each device and use the cluster for load balancing or distributed scanning. Here are the steps to install Metasploit on Kali Linux:
+However, if you still want to try running Metasploit on a small cluster, you can install Metasploit on each device and use the cluster for load balancing or distributed scanning. Here are the steps to install Metasploit on Linux:
 
 1. Open a terminal and update the package list by typing the following command:
 
@@ -86,7 +130,7 @@ However, if you still want to try running Metasploit on a small cluster, you can
 
 4. You can use the cluster for distributed scanning by setting up multiple instances of Metasploit and assigning each instance to scan a different range of IP addresses. You can also use the cluster for load balancing by distributing the load across multiple instances of Metasploit.
 
-It is important to note that running Metasploit on a small cluster with Kali Linux is not recommended for production use and should only be used for testing and educational purposes. Additionally, you should always use Metasploit with caution and only on systems that you have permission to test.
+It is important to note that running Metasploit on a small cluster with Linux is not recommended for production use and should only be used for testing and educational purposes. Additionally, you should always use Metasploit with caution and only on systems that you have permission to test.
 
 To use the cluster for distributed scanning, you can set up multiple instances of Metasploit and assign each instance to scan a different range of IP addresses. Here are the steps:
 
@@ -847,7 +891,7 @@ Mix all the above in all in one solution
 
 Mixing all the above into a single solution would require a significant amount of development time and effort. However, I can provide you with an outline of how you can combine the different tools and techniques mentioned above into a single security solution:
 
-1. Use Kali Linux as the base operating system for your security solution.
+1. Use Linux as the base operating system for your security solution.
 
 2. Use MPI and parallel processing to create a supercluster of five devices that can perform distributed scanning and exploitation.
 
