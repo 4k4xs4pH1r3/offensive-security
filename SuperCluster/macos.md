@@ -11,7 +11,7 @@ Open a terminal and run the following commands:
 brew update
 
 # Install OpenMPI
-brew install open-mpi
+brew install open-mpi && sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist && sudo launchctl list | grep ssh
 ```
 
 ### Step 3: Verify the installation

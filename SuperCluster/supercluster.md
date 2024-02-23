@@ -91,6 +91,9 @@ comm.Barrier()
    mpirun --hostfile hostfile -np 4 -d python ./pi_value.py
    ```
    ```
+   mpirun --hostfile hostfile -d --mca btl tcp,self -x DISPLAY=localhost:0 python ./pi_value.py
+   ```
+   ```
    mpirun --use-hwthread-cpus -d python ./pi_value.py
    ```
 
