@@ -29,40 +29,9 @@ Here are the basic steps to create a simple cluster using 5 devices:
 It is important to note that creating a supercluster with just 5 devices will not be as powerful as a real supercomputer. However, it can still provide you with a good learning experience in parallel computing and cluster management.
 
 
-Sure, here are the steps to create a small cluster using 5 devices with Kali Linux:
+Steps to create a small cluster using multiple devices:
 
-1. Install Kali Linux on each laptop: You can download the latest Kali Linux ISO file from the official website and create a bootable USB drive. Then, install Kali Linux on each laptop by booting from the USB drive.
-
-2. Install the required software packages: After installing Kali Linux, you need to install the necessary software packages for cluster computing. Open a terminal and type the following command to install OpenMPI:
-
-   ```
-   sudo apt-get update
-   sudo apt-get install openmpi-bin openmpi-common libopenmpi-dev
-   ```
-
-3. Configure the network: You need to configure the network settings for each laptop to be able to communicate with each other. You can connect them using a network switch or a router. Alternatively, you can use Wi-Fi if all devices support it.
-
-4. Set up SSH: Secure Shell (SSH) is a network protocol that allows you to access and control one computer from another over a secure channel. You need to set up SSH on each laptop to enable remote access and control. Type the following command to install SSH:
-
-   ```
-   sudo apt-get install ssh
-   ```
-
-   Then, generate SSH keys on each laptop by typing the following command:
-
-   ```
-   ssh-keygen
-   ```
-
-   This will create a public and private key pair. Copy the public key to each laptop by typing the following command:
-
-   ```
-   ssh-copy-id user@ip_address
-   ```
-
-   Replace `user` with your username and `ip_address` with the IP address of each laptop.
-
-5. Configure the cluster: Configure the cluster by creating a hostfile that contains the IP addresses of each laptop and the number of processors available on each laptop. Type the following command to create a hostfile:
+7. Configure the cluster: Configure the cluster by creating a hostfile that contains the IP addresses of each laptop and the number of processors available on each laptop. Type the following command to create a hostfile:
 
    ```
    nano hostfile
@@ -78,7 +47,7 @@ Sure, here are the steps to create a small cluster using 5 devices with Kali Lin
    192.168.1.5 slots=1
    ```
 
-6. Test the cluster: Test the cluster by running some simple parallel applications, such as calculating the value of pi or matrix multiplication. For example, type the following command to calculate the value of pi using 4 processors:
+8. Test the cluster: Test the cluster by running some simple parallel applications, such as calculating the value of pi or matrix multiplication. For example, type the following command to calculate the value of pi using 4 processors:
 
    ```
    mpirun -np 4 ./pi
