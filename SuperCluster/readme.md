@@ -108,7 +108,7 @@ You can also compile and run your own parallel applications using OpenMPI.
 
 You can also test locally in Linux or MacOS by running
    ```
-mpirun -np 4 -d python ./pi_value.py 
+mpirun -np 4 -v python ./pi_value.py 
    ```
 
 That's it! You have now created a small cluster using 5 devices with Linux.
