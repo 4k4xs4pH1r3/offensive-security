@@ -95,13 +95,13 @@ MPI.Finalize()
    python3 -m pip install --upgrade pip && pip install mpi4py
    ```
    ```
-   mpirun --hostfile hostfile -np 4 -d python ./pi_value.py
+   mpirun --hostfile hostfile -np 4 -v python ./pi_value.py
    ```
    ```
-   mpirun --hostfile hostfile -d --mca btl tcp,self -x DISPLAY=localhost:0 python ./pi_value.py
+   mpirun --hostfile hostfile -v --mca btl tcp,self -x DISPLAY=localhost:0 python ./pi_value.py
    ```
    ```
-   mpirun --use-hwthread-cpus -d python ./pi_value.py
+   mpirun --use-hwthread-cpus -v python ./pi_value.py
    ```
 
 You can also compile and run your own parallel applications using OpenMPI.
@@ -113,13 +113,13 @@ mpirun -np 4 -d python ./pi_value.py
 
 You can also test locally in MacOS by running
    ```
-mpirun -np 4 python ./pi_value.py 
+mpirun -np 4 -v python ./pi_value.py 
    ```
 
 That's it! You have now created a small cluster using 5 devices with Linux.
 
 
-## Run metasploit on it
+## Run Metasploit on it
 
 Running Metasploit on a small cluster with Linux is not recommended, as Metasploit is a framework for developing and executing exploit code against vulnerable targets. It is designed to be run on a single machine and is not intended to be distributed across multiple machines.
 
