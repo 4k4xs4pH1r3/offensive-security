@@ -4,10 +4,12 @@
 
    ```
    sudo apt-get update
-   sudo apt-get install openmpi-bin openmpi-common libopenmpi-dev cockpit* -y
+   sudo apt-get install openmpi-bin openmpi-common libopenmpi-dev cockpit* -y && sudo systemctl enable cockpit.socket && sudo systemctl start cockpit.socket
    ```
 
 3. Configure the network: You need to configure the network settings for each laptop to be able to communicate with each other. You can connect them using a network switch or a router. Alternatively, you can use Wi-Fi if all devices support it.
+
+   http://localhost:9090/ (Cockpit)
 
 4. Set up SSH: Secure Shell (SSH) is a network protocol that allows you to access and control one computer from another over a secure channel. You need to set up SSH on each laptop to enable remote access and control. Type the following command to install SSH:
 
