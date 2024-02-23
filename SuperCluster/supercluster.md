@@ -2,6 +2,8 @@
 
 https://docs.open-mpi.org/en/main/getting-help.html
 
+https://www-lb.open-mpi.org/software/ompi/
+
 A tool that crawls through networks and systems, analyzing their vulnerabilities and identifying potential attack vectors. It also suggests the use of data analytics to generate actionable insights and recommendations for improving security.
 
 Clear! In short, he set out to create an all-in-one solution for the automation of IT security, from vulnerability scanning to reporting and creating JIRA tickets. The solution would be based on popular security tools such as Metasploit, Nmap, Shodan, Maltego, Burp Suite, among others, and would use techniques such as port scanning, vulnerability search, vulnerability exploitation, reporting and generation. of JIRA tickets.
@@ -99,9 +101,14 @@ comm.Barrier()
 
 You can also compile and run your own parallel applications using OpenMPI.
 
-You can also test locally 
+You can also test locally in Linux by running
    ```
 mpirun -np 4 -d python ./pi_value.py 
+   ```
+
+You can also test locally in MacOS by running
+   ```
+mpirun -np 4 python ./pi_value.py 
    ```
 
 That's it! You have now created a small cluster using 5 devices with Linux.

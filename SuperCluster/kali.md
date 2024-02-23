@@ -3,8 +3,7 @@
 2. Install the required software packages: After installing Kali Linux, you need to install the necessary software packages for cluster computing. Open a terminal and type the following command to install OpenMPI and Cockpit:
 
    ```
-   sudo apt-get update
-   sudo apt-get install openmpi-bin openmpi-common libopenmpi-dev cockpit* -y && sudo systemctl enable cockpit.socket && sudo systemctl start cockpit.socket
+   sudo apt-get update -y && sudo apt-get install openmpi-bin openmpi-common libopenmpi-dev cockpit* -y && wget https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.2.tar.bz2 && tar -xjf openmpi-5.0.2.tar.bz2 && cd cd openmpi-5.0.2 && ./configure --prefix=/usr/bin/ && sudo make clean && sudo make && sudo make install && sudo systemctl enable cockpit.socket && sudo systemctl start cockpit.socket && sudo systemctl status cockpit.socket
    ```
 
 3. Configure the network: You need to configure the network settings for each device to be able to communicate with each other. You can connect them using a network switch or a router. Alternatively, you can use Wi-Fi if all devices support it.
