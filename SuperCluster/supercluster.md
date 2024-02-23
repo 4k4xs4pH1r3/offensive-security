@@ -18,11 +18,11 @@ Here are the basic steps to create a simple cluster using 5 devices:
 
 2. Install required software: Install the necessary software packages for cluster computing, such as OpenMPI or MPICH. These packages allow you to write and execute parallel code across multiple nodes.
 
-3. Configure the network: You need to configure the network settings for each laptop to be able to communicate with each other. You can connect them using a network switch or a router. Alternatively, you can use Wi-Fi if all devices support it.
+3. Configure the network: You need to configure the network settings for each device to be able to communicate with each other. You can connect them using a network switch or a router. Alternatively, you can use Wi-Fi if all devices support it.
 
-4. Set up SSH: Secure Shell (SSH) is a network protocol that allows you to access and control one computer from another over a secure channel. You need to set up SSH on each laptop to enable remote access and control.
+4. Set up SSH: Secure Shell (SSH) is a network protocol that allows you to access and control one computer from another over a secure channel. You need to set up SSH on each device to enable remote access and control.
 
-5. Configure the cluster: Configure the cluster by creating a file that contains the IP addresses of each laptop and the number of processors available on each laptop. You can use the MPI tool to launch and run parallel jobs across the cluster.
+5. Configure the cluster: Configure the cluster by creating a file that contains the IP addresses of each device and the number of processors available on each device. You can use the MPI tool to launch and run parallel jobs across the cluster.
 
 6. Test the cluster: Test the cluster by running some simple parallel applications, such as calculating the value of pi or matrix multiplication.
 
@@ -31,13 +31,13 @@ It is important to note that creating a supercluster with just 5 devices will no
 
 Steps to create a small cluster using multiple devices:
 
-7. Configure the cluster: Configure the cluster by creating a hostfile that contains the IP addresses of each laptop and the number of processors available on each laptop. Type the following command to create a hostfile:
+7. Configure the cluster: Configure the cluster by creating a hostfile that contains the IP addresses of each device and the number of processors available on each device. Type the following command to create a hostfile:
 
    ```
    nano hostfile
    ```
 
-   Then, add the IP addresses of each laptop and the number of processors available on each laptop, like this:
+   Then, add the IP addresses of each device and the number of processors available on each device, like this:
 
    ```
    192.168.1.1 slots=2
@@ -62,7 +62,7 @@ That's it! You have now created a small cluster using 5 devices with Kali Linux.
 
 Running Metasploit on a small cluster with Kali Linux is not recommended, as Metasploit is a framework for developing and executing exploit code against vulnerable targets. It is designed to be run on a single machine and is not intended to be distributed across multiple machines.
 
-However, if you still want to try running Metasploit on a small cluster, you can install Metasploit on each laptop and use the cluster for load balancing or distributed scanning. Here are the steps to install Metasploit on Kali Linux:
+However, if you still want to try running Metasploit on a small cluster, you can install Metasploit on each device and use the cluster for load balancing or distributed scanning. Here are the steps to install Metasploit on Kali Linux:
 
 1. Open a terminal and update the package list by typing the following command:
 
@@ -90,7 +90,7 @@ It is important to note that running Metasploit on a small cluster with Kali Lin
 
 To use the cluster for distributed scanning, you can set up multiple instances of Metasploit and assign each instance to scan a different range of IP addresses. Here are the steps:
 
-a. Open a terminal on each laptop and launch a separate instance of Metasploit by typing the following command:
+a. Open a terminal on each device and launch a separate instance of Metasploit by typing the following command:
 
    ```
    sudo msfconsole
@@ -130,7 +130,7 @@ f. You can monitor the scanning progress and results by typing the following com
 
    This will display a list of the hosts that have been scanned and their status.
 
-Note that the scanning process can be resource-intensive, so make sure that you have enough processing power and memory on each laptop to handle the load. Also, keep in mind that scanning networks without permission is illegal and can result in severe consequences. Make sure that you have the necessary permissions and authorization before conducting any network scanning activities.
+Note that the scanning process can be resource-intensive, so make sure that you have enough processing power and memory on each device to handle the load. Also, keep in mind that scanning networks without permission is illegal and can result in severe consequences. Make sure that you have the necessary permissions and authorization before conducting any network scanning activities.
 
 g. To run Metasploit from a central point and scan a network, you can install Metasploit on one of the devices and use it as a central point to control the scanning process on the other devices. Here are the steps:
 
@@ -189,7 +189,7 @@ To execute the scan from the supercluster, you can use a parallel processing too
    cat ip_list.txt | parallel -j5 'sudo msfconsole -q -x "db_nmap -sS {}"'
    ```
 
-   This will distribute the scanning workload across all the devices in the cluster and run the `db_nmap` command with the IP address argument specified in `ip_list.txt` on each laptop. The `-j5` option specifies the number of jobs to run in parallel, which in this case is 5.
+   This will distribute the scanning workload across all the devices in the cluster and run the `db_nmap` command with the IP address argument specified in `ip_list.txt` on each device. The `-j5` option specifies the number of jobs to run in parallel, which in this case is 5.
 
 4. You can monitor the scanning progress and results by typing the following command in Metasploit:
 
@@ -199,7 +199,7 @@ To execute the scan from the supercluster, you can use a parallel processing too
 
    This will display a list of the hosts that have been scanned and their status.
 
-Note that the scanning process can be resource-intensive, so make sure that you have enough processing power and memory on each laptop to handle the load. Also, keep in mind that scanning networks without permission is illegal and can result in severe consequences. Make sure that you have the necessary permissions and authorization before conducting any network scanning activities.
+Note that the scanning process can be resource-intensive, so make sure that you have enough processing power and memory on each device to handle the load. Also, keep in mind that scanning networks without permission is illegal and can result in severe consequences. Make sure that you have the necessary permissions and authorization before conducting any network scanning activities.
 
 
 mpirun can be used to execute metasploit from the supercluster ?
