@@ -92,7 +92,7 @@ MPI.Finalize()
 ```
 
    ```
-   python3 -m pip install --upgrade pip && pip install mpi4py
+   chmod +x pi_value.py && python3 -m pip install --upgrade pip && pip install mpi4py
    ```
    ```
    mpirun --hostfile hostfile -np 4 -v python ./pi_value.py
