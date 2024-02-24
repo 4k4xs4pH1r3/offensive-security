@@ -119,16 +119,16 @@ finally:
 ```
 
    ```
-   clear && chmod +x pi_value.py && python3 -m pip install --upgrade pip && pip install mpi4py 
+  chmod +x pi_value.py && python3 -m pip install --upgrade pip && pip install mpi4py 
    ```
    ```
-   clear && mpirun -v --hostfile hostfile -np 4 python ./pi_value.py
+   mpirun -v --hostfile hostfile -np 4 python ./pi_value.py
    ```
    ```
-   clear && mpirun -v --hostfile hostfile --mca btl tcp,self -x DISPLAY=localhost:0 python ./pi_value.py
+   mpirun -v --hostfile hostfile --mca btl tcp,self -x DISPLAY=localhost:0 python ./pi_value.py
    ```
    ```
-   clear && mpirun -v --use-hwthread-cpus python ./pi_value.py
+   pirun -v --use-hwthread-cpus python ./pi_value.py
    ```
 
 You can also compile and run your own parallel applications using OpenMPI.
