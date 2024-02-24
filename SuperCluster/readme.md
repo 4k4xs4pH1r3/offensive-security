@@ -61,6 +61,10 @@ Steps to create a small cluster using multiple devices:
    nano pi_value.py
    ```
 ```
+from mpi4py import MPI
+import os
+import subprocess
+
 def pi_leibniz(n):
     """
     Approximates pi using the Leibniz series with n terms.
@@ -73,42 +77,59 @@ def pi_leibniz(n):
             result -= 4.0 / (2 * i + 1)
     return result
 
-# Initialize MPI
-comm = MPI.COMM_WORLD
-rank = comm.Get_rank()
+try:
+    # Guess MPI_HOME by finding the location of mpirun
+    mpi_location = subprocess.check_output(['which', 'mpirun'], universal_newlines=True).strip()
+    mpi_home = os.path.dirname(os.path.dirname(mpi_location))
 
-# Debugging output to see the rank of each process
-print(f"Process {rank}: MPI Initialized")
+    # Set MPI_HOME to the guessed MPI location
+    os.environ['MPI_HOME'] = mpi_home
 
-# Calculate pi with 10000 terms
-pi_approx = pi_leibniz(10000)
+    if 'LD_LIBRARY_PATH' not in os.environ:
+        # Add MPI library path to LD_LIBRARY_PATH
+        mpi_lib_path = os.path.join(os.environ['MPI_HOME'], 'lib')
+        os.environ['LD_LIBRARY_PATH'] = mpi_lib_path
 
-# Debugging output to see the rank and the result from each process
-print(f"Process {rank}: Pi approximation (Leibniz, 10000 terms): {pi_approx:.10f}")
+    # Initialize MPI
+    comm = MPI.COMM_WORLD
+    rank = comm.Get_rank()
 
-# Finalize MPI
-MPI.Finalize()
-  
+    # Debugging output to see the rank of each process
+    print(f"Process {rank}: MPI Initialized")
+
+    # Calculate pi with 10000 terms
+    pi_approx = pi_leibniz(10000)
+
+    # Debugging output to see the rank and the result from each process
+    print(f"Process {rank}: Pi approximation (Leibniz, 10000 terms): {pi_approx:.10f}")
+
+except Exception as e:
+    # Print the exception if an error occurs during MPI initialization or calculation
+    print(f"An error occurred: {e}")
+
+finally:
+    # Finalize MPI
+    MPI.Finalize()
 ```
 
    ```
    chmod +x pi_value.py && python3 -m pip install --upgrade pip && pip install mpi4py
    ```
    ```
-   mpirun --hostfile hostfile -np 4 -v python ./pi_value.py
+   mpirun -v --hostfile hostfile -np 4 python ./pi_value.py
    ```
    ```
-   mpirun --hostfile hostfile -v --mca btl tcp,self -x DISPLAY=localhost:0 python ./pi_value.py
+   mpirun -v --hostfile hostfile --mca btl tcp,self -x DISPLAY=localhost:0 python ./pi_value.py
    ```
    ```
-   mpirun --use-hwthread-cpus -v python ./pi_value.py
+   mpirun -v --use-hwthread-cpus python ./pi_value.py
    ```
 
 You can also compile and run your own parallel applications using OpenMPI.
 
 You can also test locally in Linux or MacOS by running
    ```
-mpirun -np 4 -v python ./pi_value.py 
+mpirun -v -np 4 python ./pi_value.py 
    ```
 
 That's it! You have now created a small cluster using 5 devices with Linux.
