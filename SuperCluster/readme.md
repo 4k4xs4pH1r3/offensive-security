@@ -58,7 +58,7 @@ Steps to create a small cluster using multiple devices:
 8. Test the cluster: Test the cluster by running some simple parallel applications, such as calculating the value of pi with python. For example, type the following command to calculate the value of pi using 4 and also all the available processors:
 
    ```
-   nano pi_value.py
+   clear && nano pi_value.py
    ```
 ```
 from mpi4py import MPI
@@ -119,23 +119,23 @@ finally:
 ```
 
    ```
-   chmod +x pi_value.py && python3 -m pip install --upgrade pip && pip install mpi4py
+   clear && chmod +x pi_value.py && python3 -m pip install --upgrade pip && pip install mpi4py 
    ```
    ```
-   mpirun -v --hostfile hostfile -np 4 python ./pi_value.py
+   clear && mpirun -v --hostfile hostfile -np 4 python ./pi_value.py
    ```
    ```
-   mpirun -v --hostfile hostfile --mca btl tcp,self -x DISPLAY=localhost:0 python ./pi_value.py
+   clear && mpirun -v --hostfile hostfile --mca btl tcp,self -x DISPLAY=localhost:0 python ./pi_value.py
    ```
    ```
-   mpirun -v --use-hwthread-cpus python ./pi_value.py
+   clear && mpirun -v --use-hwthread-cpus python ./pi_value.py
    ```
 
 You can also compile and run your own parallel applications using OpenMPI.
 
 You can also test locally in Linux or MacOS by running
    ```
-mpirun -v -np 4 python ./pi_value.py 
+clear && mpirun -v -np 4 python ./pi_value.py 
    ```
 
 That's it! You have now created a small cluster using 5 devices with Linux.
