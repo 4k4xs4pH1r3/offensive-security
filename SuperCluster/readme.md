@@ -1,6 +1,6 @@
-## Creating a supercluster
+## Creating a SuperCluster
 
-### Tested with mpirun (Open MPI) 5.0.2 in MacOS, Kali Linux, and ArchLinux
+### Tested with (Open MPI) version 5.0.2 - In MacOS, Kali Linux, and ArchLinux
 
 https://docs.open-mpi.org/en/main/getting-help.html
 
@@ -8,59 +8,60 @@ https://www-lb.open-mpi.org/software/ompi/
 
 https://github.com/open-mpi/ompi
 
-A tool that crawls through networks and systems, analyzing their vulnerabilities and identifying potential attack vectors. It also suggests the use of data analytics to generate actionable insights and recommendations for improving security.
+#### Project Overview:
+The project aims to automate CyberSecurity processes.
 
-Clear! In short, he set out to create an all-in-one solution for the automation of IT security, from vulnerability scanning to reporting and creating JIRA tickets. The solution would be based on popular security tools such as Metasploit, Nmap, Shodan, Maltego, Burp Suite, among others, and would use techniques such as port scanning, vulnerability search, vulnerability exploitation, reporting and generation. of JIRA tickets.
+Leveraging popular security tools like Metasploit, Nmap, Shodan, Maltego, BurpSuite, and others, employing techniques such as port scanning, vulnerability search, exploitation, reporting, and ticket generation.
 
-To implement the solution, a CI/CD pipeline would be used and deployed to GitHub using a supercluster. Crawling and fuzzing techniques would be used to expand the scope of the solution through the detection of vulnerabilities in different operating systems and IoT devices.
+#### Implementation Strategy:
 
-The creation of a sales model for this solution was proposed, and a simulation of costs and benefits was carried out to determine the feasibility of the project. Although the initial cost could be high due to the need to hire developers and information security experts, it is expected that the solution would generate income in the long term by being sold as a service to different companies and organizations.
+Utilizes a CI/CD pipeline and GitHub deployment through a SuperCluster.
+Employs crawling and fuzzing techniques to enhance solution scope, identifying vulnerabilities across various operating systems and IoT / OT devices.
 
-In general, the proposed solution aims to increase the efficiency of computer security through automation, which would allow companies to detect and fix vulnerabilities more quickly.
+#### Business Model:
 
-With just some devices might be a bit challenging, as supercomputers generally require a large number of high-performance computing nodes with specialized hardware and networking infrastructure. However, it is possible to create a small cluster with the available resources.
+Proposes a sales model, projecting long-term income by offering the solution as a service to organizations.
+Initial costs involve hiring developers and security experts, with simulations indicating feasibility.
 
-Here are the basic steps to create a simple cluster using 5 devices:
+#### Automation for Efficiency:
+This solution enhances computer security efficiency by automating vulnerability detection and resolution for swift response.
 
-1. Choose a suitable operating system: You need to choose an operating system that is suitable for cluster computing, such as Linux. You may need to install the operating system on all five devices.
+Creating a Small Cluster:
+For a basic cluster using five devices:
 
-2. Install required software: Install the necessary software packages for cluster computing, such as OpenMPI or MPICH. These packages allow you to write and execute parallel code across multiple nodes.
+1. Choose a suitable OS (e.g., Linux) and install it on all devices.
 
-3. Configure the network: You need to configure the network settings for each device to be able to communicate with each other. You can connect them using a network switch or a router. Alternatively, you can use Wi-Fi if all devices support it.
+2. Install cluster computing software like OpenMPI or MPICH.
 
-4. Set up SSH: Secure Shell (SSH) is a network protocol that allows you to access and control one computer from another over a secure channel. You need to set up SSH on each device to enable remote access and control.
+3. Configure network settings for communication.
 
-5. Configure the cluster: Configure the cluster by creating a file that contains the IP addresses of each device and the number of processors available on each device. You can use the MPI tool to launch and run parallel jobs across the cluster.
+4. Set up SSH for remote access and control.
 
-6. Test the cluster: Test the cluster by running some simple parallel applications, such as calculating the value of pi or matrix multiplication.
+5. Configure the cluster using a hostfile containing device IPs and processor details.
 
-It is important to note that creating a supercluster with just 5 devices will not be as powerful as a real supercomputer. However, it can still provide you with a good learning experience in parallel computing and cluster management.
+6. Configure the cluster to execute the following command to create a hostfile: that contains the IP addresses of each device and the number of processors available on each device.
 
-
-Steps to create a small cluster using multiple devices:
-
-7. Configure the cluster: Configure the cluster by creating a hostfile that contains the IP addresses of each device and the number of processors available on each device. Type the following command to create a hostfile:
-
-   ```
-   nano hostfile
-   ```
-
-   Then, add the IP addresses of each device and the number of processors available on each device, like this:
-
-   ```
-   192.168.1.1 slots=2
-   192.168.1.2 slots=2
-   192.168.1.3 slots=1
-   192.168.1.4 slots=1
-   192.168.1.5 slots=1
-   ```
-
-8. Test the cluster: Test the cluster by running some simple parallel applications, such as calculating the value of pi with python. For example, type the following command to calculate the value of pi using 4 and also all the available processors:
-
-   ```
-   clear && nano pi_value.py
-   ```
 ```
+nano hostfile
+```
+
+Then, add the IP addresses of each device and the number of processors available on each device, like this:
+
+```
+192.168.1.1 slots=2
+192.168.1.2 slots=2
+192.168.1.3 slots=1
+192.168.1.4 slots=1
+192.168.1.5 slots=1
+```
+
+7. Test the cluster: Test the cluster by running some simple parallel applications, such as calculating the value of pi with Python. For example, type the following command to calculate the value of pi using 4 processors, and also all the available processors:
+
+```
+clear && nano pi_value.py
+```
+
+```python
 from mpi4py import MPI
 import os
 import subprocess
@@ -90,52 +91,50 @@ try:
     print(f"PATH: {os.environ['PATH']}")
     print(f"LD_LIBRARY_PATH: {os.environ['LD_LIBRARY_PATH']}")
 
-    # Check if the MPI_HOME path is correct
-    if not os.path.exists(os.path.join(mpi_home, 'bin', 'mpirun')):
-        raise FileNotFoundError(f"mpirun not found in {mpi_home}/bin. Check MPI installation.")
+    # Specify the mpirun command
+    mpirun_command = [
+        'mpirun',
+        '--hostfile', 'hostfile',
+        '-d',
+        '--mca', 'btl', 'tcp,self',
+        '-x', 'DISPLAY=localhost:0',
+        'python', './pi_value.py'
+    ]
 
-    # Initialize MPI
-    comm = MPI.COMM_WORLD
-    rank = comm.Get_rank()
+    # Run mpirun command
+    subprocess.run(mpirun_command, check=True)
 
-    # Debugging output to see the rank of each process
-    print(f"Process {rank}: MPI Initialized")
-
-    # Calculate pi with 10000 terms
-    pi_approx = pi_leibniz(10000)
-
-    # Debugging output to see the rank and the result from each process
-    print(f"Process {rank}: Pi approximation (Leibniz, 10000 terms): {pi_approx:.10f}")
+except subprocess.CalledProcessError as e:
+    # Handle the case where mpirun returns a non-zero exit code
+    print(f"mpirun command failed with exit code {e.returncode}")
 
 except Exception as e:
-    # Print the exception and traceback for detailed debugging
-    import traceback
+    # Print the exception if an error occurs during MPI initialization or calculation
     print(f"An error occurred: {e}")
-    traceback.print_exc()
 
 finally:
     # Finalize MPI
     MPI.Finalize()
 ```
 
-   ```
-   clear && chmod +x pi_value.py && python3 -m pip install --upgrade pip && pip install mpi4py 
-   ```
-   ```
-   mpirun -v --hostfile hostfile -np 4 python ./pi_value.py
-   ```
-   ```
-   mpirun -v --hostfile hostfile --mca btl tcp,self -x DISPLAY=localhost:0 python ./pi_value.py
-   ```
-   ```
-   mpirun -v --use-hwthread-cpus python ./pi_value.py
-   ```
+```
+clear && chmod +x pi_value.py && python3 -m pip install --upgrade pip && pip install mpi4py 
+```
+```
+mpirun -v --hostfile hostfile -np 4 python ./pi_value.py
+```
+```
+mpirun -v --hostfile hostfile --mca btl tcp,self -x DISPLAY=localhost:0 python ./pi_value.py
+```
+```
+mpirun -v --use-hwthread-cpus python ./pi_value.py
+```
 
 You can also compile and run your own parallel applications using OpenMPI.
 
 You can also test locally in Linux or MacOS by running
-   ```
+```
 mpirun -v -np 4 python ./pi_value.py 
-   ```
+```
 
-That's it! You have now created a small cluster using 5 devices with Linux.
+That's it! You have now created Your own SuperCluster and it's working like a charm.
