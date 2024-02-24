@@ -91,26 +91,28 @@ try:
     print(f"PATH: {os.environ['PATH']}")
     print(f"LD_LIBRARY_PATH: {os.environ['LD_LIBRARY_PATH']}")
 
-    # Specify the mpirun command
-    mpirun_command = [
-        'mpirun',
-        '--hostfile', 'hostfile',
-        '-d',
-        '--mca', 'btl', 'tcp,self',
-        '-x', 'DISPLAY=localhost:0',
-        'python', './pi_value.py'
-    ]
+    # Check if the MPI_HOME path is correct
+    if not os.path.exists(os.path.join(mpi_home, 'bin', 'mpirun')):
+        raise FileNotFoundError(f"mpirun not found in {mpi_home}/bin. Check MPI installation.")
 
-    # Run mpirun command
-    subprocess.run(mpirun_command, check=True)
+    # Initialize MPI
+    comm = MPI.COMM_WORLD
+    rank = comm.Get_rank()
 
-except subprocess.CalledProcessError as e:
-    # Handle the case where mpirun returns a non-zero exit code
-    print(f"mpirun command failed with exit code {e.returncode}")
+    # Debugging output to see the rank of each process
+    print(f"Process {rank}: MPI Initialized")
+
+    # Calculate pi with 10000 terms
+    pi_approx = pi_leibniz(10000)
+
+    # Debugging output to see the rank and the result from each process
+    print(f"Process {rank}: Pi approximation (Leibniz, 10000 terms): {pi_approx:.10f}")
 
 except Exception as e:
-    # Print the exception if an error occurs during MPI initialization or calculation
+    # Print the exception and traceback for detailed debugging
+    import traceback
     print(f"An error occurred: {e}")
+    traceback.print_exc()
 
 finally:
     # Finalize MPI
