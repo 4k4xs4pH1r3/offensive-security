@@ -1,6 +1,6 @@
 ## Creating a supercluster
 
-### Tested with mpirun (Open MPI) 5.0.2
+### Tested with mpirun (Open MPI) 5.0.2 in MacOS, Kali Linux, and ArchLinux
 
 https://docs.open-mpi.org/en/main/getting-help.html
 
@@ -66,9 +66,6 @@ import os
 import subprocess
 
 def pi_leibniz(n):
-    """
-    Approximates pi using the Leibniz series with n terms.
-    """
     result = 0.0
     for i in range(n):
         if i % 2 == 0:
@@ -82,13 +79,20 @@ try:
     mpi_location = subprocess.check_output(['which', 'mpirun'], universal_newlines=True).strip()
     mpi_home = os.path.dirname(os.path.dirname(mpi_location))
 
-    # Set MPI_HOME to the guessed MPI location
-    os.environ['MPI_HOME'] = mpi_home
+    # Print MPI_HOME for debugging
+    print(f"MPI_HOME: {mpi_home}")
 
-    if 'LD_LIBRARY_PATH' not in os.environ:
-        # Add MPI library path to LD_LIBRARY_PATH
-        mpi_lib_path = os.path.join(os.environ['MPI_HOME'], 'lib')
-        os.environ['LD_LIBRARY_PATH'] = mpi_lib_path
+    # Set MPI environment variables
+    os.environ['PATH'] = f"{mpi_home}/bin:{os.environ.get('PATH', '')}"
+    os.environ['LD_LIBRARY_PATH'] = f"{mpi_home}/lib:{os.environ.get('LD_LIBRARY_PATH', '')}"
+
+    # Print paths for debugging
+    print(f"PATH: {os.environ['PATH']}")
+    print(f"LD_LIBRARY_PATH: {os.environ['LD_LIBRARY_PATH']}")
+
+    # Check if the MPI_HOME path is correct
+    if not os.path.exists(os.path.join(mpi_home, 'bin', 'mpirun')):
+        raise FileNotFoundError(f"mpirun not found in {mpi_home}/bin. Check MPI installation.")
 
     # Initialize MPI
     comm = MPI.COMM_WORLD
@@ -104,8 +108,10 @@ try:
     print(f"Process {rank}: Pi approximation (Leibniz, 10000 terms): {pi_approx:.10f}")
 
 except Exception as e:
-    # Print the exception if an error occurs during MPI initialization or calculation
+    # Print the exception and traceback for detailed debugging
+    import traceback
     print(f"An error occurred: {e}")
+    traceback.print_exc()
 
 finally:
     # Finalize MPI
