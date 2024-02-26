@@ -31,7 +31,7 @@ And provide the report of what harvested and the vulnerabilities
 # 
 In Kali
 
-    wpscan --url http://yourtarget.com --ignore-main-redirect --detection-mode aggressive --interesting-findings-detection aggressive  --wp-version-all --wp-version-detection aggressive --ua --rua -t 10 --throttle 10 --disable-tls-checks --force --update --wp-content-dir /wp-content -e --enumerate vp,vt,tt,cb,dbe,u,m --db-exports-detection aggressive --config-backups-detection aggressive  --main-theme-detection aggressive --themes-detection aggressive --medias-detection aggressive --plugins-version-detection aggressive -v --verbose --no-banner --users-detection aggressive -U ~/users -P /usr/share/dirbuster/wordlists/darkc0de.lst --password-attack wp-login -o ./wpscandebuglog.txt
+   wpscan --url https://yourtaget.com/ --ignore-main-redirect --detection-mode aggressive --interesting-findings-detection aggressive  --wp-version-all --wp-version-detection aggressive --ua --rua -t 10 --throttle 10 --disable-tls-checks --force --update --wp-content-dir /wp-content -e --enumerate vp,vt,tt,cb,dbe,u,m --db-exports-detection aggressive --config-backups-detection aggressive  --main-theme-detection aggressive --themes-detection aggressive --medias-detection aggressive --plugins-version-detection aggressive -v --verbose --no-banner --users-detection aggressive -U ~/users -P /usr/share/wordlists/darkc0de.lst --password-attack wp-login --exclude-content-based --api-token  -o ./wpscandebuglog.txt
 
 #
 #
