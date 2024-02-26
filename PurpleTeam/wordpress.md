@@ -26,12 +26,20 @@ And provide the report of what harvested and the vulnerabilities
 
 # wpscan 
 
-    sudo apt-get install libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev -y && cd /usr/share/wpscan && sudo bundle update && gem update && gem env && gem install wpscan && wpscan --update && wpscan --version && mkdir /usr/share/wordlists && cd /usr/share/wordlists && git clone https://github.com/4k4xs4pH1r3/bbh.git && cd bbh && mv dirbuster /usr/share/ && mv wordlists /usr/share/ && cd /usr/share/dirbuster && mkdir wordlists && cd wordlists && sudo wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/darkc0de.txt && mv darkc0de.txt darkc0de.lst &&  cd /usr/share/wpscan && sudo mkdir cache
+    sudo apt-get install libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev -y && gem install wpscan && wpscan --update && wpscan --version
+
+# Install SecList
+
+https://github.com/4k4xs4pH1r3/SecLists
+    
     
 # 
 In Kali
 
-   wpscan --url https://yourtaget.com/ --ignore-main-redirect --detection-mode aggressive --interesting-findings-detection aggressive  --wp-version-all --wp-version-detection aggressive --ua --rua -t 10 --throttle 10 --disable-tls-checks --force --update --wp-content-dir /wp-content -e --enumerate vp,vt,tt,cb,dbe,u,m --db-exports-detection aggressive --config-backups-detection aggressive  --main-theme-detection aggressive --themes-detection aggressive --medias-detection aggressive --plugins-version-detection aggressive -v --verbose --no-banner --users-detection aggressive -U ~/users -P /usr/share/wordlists/darkc0de.lst --password-attack wp-login --exclude-content-based --api-token  -o ./wpscandebuglog.txt
+   wpscan --api-token yourtoken --url https://yourtaget.com/ --exclude-content-based --random-user-agent --force --stealthy --ignore-main-redirect --detection-mode aggressive --interesting-findings-detection aggressive --wp-version-all --wp-version-detection aggressive --ua --rua -t 10 --throttle 10 --disable-tls-checks --force --update --wp-content-dir /wp-content -e --enumerate vp,vt,tt,cb,dbe,u,m --db-exports-detection aggressive --config-backups-detection aggressive --main-theme-detection aggressive --themes-detection aggressive --medias-detection aggressive --plugins-detection aggressive --plugins-version-detection aggressive -v --verbose --no-banner --users-detection aggressive -U ~/users -P /usr/share/wordlists/darkc0de.lst --password-attack wp-login -o ./wpscandebuglog.txt
+
+#
+   wpscan --api-token yourtoken --url https://yourtaget.com/ --exclude-content-based --random-user-agent --force --stealthy --ignore-main-redirect --wp-version-all --ua --rua -t 10 --throttle 10 --disable-tls-checks --force --update --wp-content-dir /wp-content -e --enumerate vp,vt,tt,cb,dbe,u,m --db-exports-detection aggressive --config-backups-detection aggressive -v --verbose --no-banner --users-detection aggressive -U ~/users -P /usr/share/wordlists/darkc0de.lst --password-attack wp-login -o ./wpscandebuglog.txt
 
 #
 #
