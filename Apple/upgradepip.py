@@ -3,6 +3,24 @@ import re
 from tqdm import tqdm
 from colorama import Fore, Style
 import shutil
+import sys
+
+# Install missing type stubs as a prerequisite
+def install_missing_stubs():
+    try:
+        # Check if types-tqdm is installed
+        subprocess.run([sys.executable, '-m', 'pip', 'show', 'types-tqdm'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, check=True)
+    except subprocess.CalledProcessError:
+        print(f"{Fore.YELLOW}Installing types-tqdm stubs...{Style.RESET_ALL}")
+        subprocess.run([sys.executable, '-m', 'pip', 'install', 'types-tqdm'], check=True)
+
+    try:
+        # Check if types-colorama is installed
+        subprocess.run([sys.executable, '-m', 'pip', 'show', 'types-colorama'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, check=True)
+    except subprocess.CalledProcessError:
+        print(f"{Fore.YELLOW}Installing types-colorama stubs...{Style.RESET_ALL}")
+        subprocess.run([sys.executable, '-m', 'pip', 'install', 'types-colorama'], check=True)
+
 
 # Function to determine the installation method and upgrade a specific package
 def upgrade_package(package):
