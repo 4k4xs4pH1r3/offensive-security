@@ -2,8 +2,7 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+Use this section to inform users about which versions of your project are currently supported with security updates.
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -14,8 +13,21 @@ currently being supported with security updates.
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+We take the security of our project seriously. If you discover a security vulnerability, we appreciate your help in disclosing it to us in a responsible manner.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+### Where to Report
+
+Please report security vulnerabilities to our [security team](mailto:x.bogged207@passinbox.com). If you don't receive a response within 48 hours, you can escalate to our primary contact [John Doe](mailto:x.bogged207@passinbox.com).
+
+### Expectations
+
+- Our security team will acknowledge your report within 48 hours.
+- We will strive to provide regular updates on the status of the vulnerability.
+- If the vulnerability is accepted, we will work on addressing it and provide an estimated timeline for a fix.
+- If the vulnerability is declined, we will provide reasons for our decision.
+
+### Coordinated Disclosure
+
+We follow a coordinated disclosure process to ensure that any reported vulnerabilities are addressed responsibly. We appreciate your cooperation and adherence to responsible disclosure practices.
+
+Thank you for helping us keep our project secure.
