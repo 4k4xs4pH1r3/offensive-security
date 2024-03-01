@@ -15,3 +15,8 @@ updates:
     directory: /
     schedule:
       interval: daily
+
+  - package-ecosystem: pip
+    directory: /SuperCluster/Python
+    schedule:
+      interval: daily
