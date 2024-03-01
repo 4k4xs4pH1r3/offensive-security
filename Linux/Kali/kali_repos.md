@@ -37,3 +37,5 @@
     #deb https://wlglam.fsmg.org.nz/kali kali-rolling main non-free contrib
     #deb https://kali.mirror.garr.it/mirrors/kali kali-rolling main non-free contrib
     #deb-src https://kali.mirror.garr.it/mirrors/kali kali-rolling main non-free contrib
+    #deb http://mirror.fsmg.org.nz/kali kali-rolling main contrib non-free
+    #deb-src http://mirror.fsmg.org.nz/kali kali-rolling main contrib non-free
