@@ -14,7 +14,7 @@ def install_missing_stubs():
         if result.stderr and 'No such file or directory' not in result.stderr:
             print(f"{Fore.YELLOW}Cleaning Python Cache & Installing Python Dependencies...{Style.RESET_ALL}")
             subprocess.run(['pip', 'cache', 'purge'], check=True)
-            subprocess.run(['pip', 'install', '-r', 'requirements.txt', '-U', '-q', '--ignore-installed', '--no-warn-script-location', '--force-reinstall'], check=True)
+            subprocess.run(['pip', 'install', '-r', 'requirements.txt', '-U', '-q', '--index', '--wheel', '--check', '--require-virtualenv', '--python 3.10.11', '--completion', '--upgrade', '--ignore-installed', '--no-warn-script-location', '--force-reinstall'], check=True)
 
     except subprocess.CalledProcessError as e:
         if e.stderr and 'No such file or directory' not in e.stderr:
@@ -170,7 +170,7 @@ def main():
             install_missing_stubs()
 
         # Run the command to install a package and capture the output
-        result = subprocess.run(['pip', 'install', '--no-warn-script-location', '--ignore-installed', '--force-reinstal', '-r', 'requirements.txt'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        result = subprocess.run(['pip', 'install', '-r', 'requirements.txt', '-U', '-q', '--index', '--wheel', '--check', '--require-virtualenv', '--python 3.10.11', '--completion', '--upgrade', '--ignore-installed', '--no-warn-script-location', '--force-reinstall'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
         # Check if the warning message is present in the output
         if "No metadata found" in result.stderr:
