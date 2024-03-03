@@ -630,7 +630,7 @@ Now in the field named "Nmap arguments" when you need to perform a New Discovery
 Let's start the scan via the web:
 
     --privileged -g 20 -sX -f --mtu 8 -A -vvv -ddd -T4 --max-retries 0 --min-hostgroup 7 --max-hostgroup 1337 --max-parallelism 137 --min-parallelism 2 --max-rtt-timeout 100ms --host-timeout 30m --randomize-hosts -Pn --allports --version-all --mtu 8 --version-trace --open --reason -O --osscan-guess --traceroute --packet-trace -D RND --spoof-mac 0 --data-length 0 sniffer-detect
-    
+#       
     --privileged driver -T4 -Pn -sV vuln --allports --version-all --mtu 8 --version-trace --open --reason -O --osscan-guess --traceroute --packet-trace -T4 -vvv -ddd
 
 #
