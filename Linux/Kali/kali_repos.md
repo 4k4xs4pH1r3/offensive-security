@@ -4,7 +4,7 @@
     net.ipv6.conf.default.disable_ipv6=1
     net.ipv6.conf.lo.disable_ipv6=1
 #
-    To make the settings take effect, run command below
+    To make the settings take effect, run the command below
 
     sysctl -p
 #
@@ -39,3 +39,6 @@
     #deb-src https://kali.mirror.garr.it/mirrors/kali kali-rolling main non-free contrib
     #deb http://mirror.fsmg.org.nz/kali kali-rolling main contrib non-free
     #deb-src http://mirror.fsmg.org.nz/kali kali-rolling main contrib non-free
+    deb http://http.kali.org/kali kali-rolling main contrib non-free
+    # For source package access, uncomment the following line
+    # deb-src http://http.kali.org/kali kali-rolling main contrib non-free
