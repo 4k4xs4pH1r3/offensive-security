@@ -1,4 +1,4 @@
-# Upgrade Pip Script
+# Upgrade Pip Script only for MacOS
 
 ## Overview
 
