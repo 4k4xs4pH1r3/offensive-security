@@ -2,15 +2,20 @@ import subprocess
 from tqdm import tqdm
 from colorama import Fore, Style
 import sys
+from multiprocessing import Lock
+
+# Define a lock to prevent conflicts during installation
+install_lock = Lock()
 
 # Install missing type stubs as a prerequisite
 def install_missing_stubs():
     try:
-        # Clean Python Cache & Install Python Dependencies
-        result = subprocess.run(['yay', '-S', 'python-colorama', 'python-tqdm'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, check=True)
-        if result.stderr and 'No such file or directory' not in result.stderr:
-            print(f"{Fore.YELLOW}Cleaning Python Cache & Installing Python Dependencies...{Style.RESET_ALL}")
-            subprocess.run(['yay', '-Scc', '--noconfirm'], check=True)
+        with install_lock:
+            # Clean Python Cache & Install Python Dependencies
+            result = subprocess.run(['yay', '-S', 'python-colorama', 'python-tqdm'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, check=True)
+            if result.stderr and 'No such file or directory' not in result.stderr:
+                print(f"{Fore.YELLOW}Cleaning Python Cache & Installing Python Dependencies...{Style.RESET_ALL}")
+                subprocess.run(['yay', '-Scc', '--noconfirm'], check=True)
 
     except subprocess.CalledProcessError as e:
         if e.stderr and 'No such file or directory' not in e.stderr:
@@ -69,8 +74,9 @@ def upgrade_all_packages():
 
     try:
         # Get a list of installed packages using pacman
-        pacman_list = subprocess.Popen(['pacman', '-Qqe'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        out, err = pacman_list.communicate()
+        with install_lock:
+            pacman_list = subprocess.Popen(['pacman', '-Qqe'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            out, err = pacman_list.communicate()
 
         # Check if the command executed successfully
         if pacman_list.returncode == 0:
