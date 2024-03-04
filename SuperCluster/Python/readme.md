@@ -2,7 +2,7 @@
 
 ## Overview
 
-This script is designed to upgrade Python packages using MPI (Message Passing Interface) for parallel processing. It includes functionality to install missing type stubs, upgrade a specific package, and upgrade all installed packages across multiple CPUs.
+This script is designed to upgrade all installed Python Pip packages, using MPI (Message Passing Interface) for parallel processing. It includes functionality to install missing type stubs and upgrade a specific package, across multiple CPUs.
 
 ## Requirements
 
@@ -10,6 +10,6 @@ Install Python 3.x & MPI (Message Passing Interface) accordingly to Your operati
 
 ## To upgrade Python packages using MPI, execute the following command
 
-   ```bash
-   mpirun -v --use-hwthread-cpus python ./upgradepip.py
-   ```
+```bash
+chmod +x ./upgradepip.py && mpirun -v --use-hwthread-cpus python ./upgradepip.py
+```
