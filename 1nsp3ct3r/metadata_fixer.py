@@ -1,82 +1,141 @@
 import os
-import sys
-import logging
-import warnings
-import importlib.metadata as metadata_module
 import subprocess
-import json
+import sys
+import requests
+import socket
+from urllib.parse import urlparse
 
-def create_metadata_file(package_name, version, metadata_path):
+# Redirect stderr to /dev/null to suppress warnings
+sys.stderr = open(os.devnull, 'w')
+
+# BuiltWith API key (replace 'YOUR_API_KEY' with your actual API key)
+BUILTWITH_API_KEY = "YOUR_API_KEY"
+
+# Restore stderr after import subprocess
+sys.stderr = sys.__stderr__
+
+# Function to extract hostname from URL
+def extract_hostname(url):
+    parsed_url = urlparse(url)
+    hostname = parsed_url.hostname
+    if hostname:
+        return hostname
+    else:
+        print("[-] Error: Could not extract hostname from URL.")
+        sys.exit(1)
+
+# Function to convert URL to IP addresses (both IPv4 and IPv6)
+def url_to_ips(url):
     try:
-        # Create the directory if it doesn't exist
-        os.makedirs(os.path.dirname(metadata_path), exist_ok=True)
-        
-        # Touch the file to create it
-        with open(metadata_path, 'a'):
-            os.utime(metadata_path, None)
-        logging.info(f"Created metadata file for package '{package_name}' version '{version}' at: {metadata_path}")
-    except Exception as e:
-        logging.error(f"An error occurred while creating metadata file: {e}")
+        ipv4_addresses = set()
+        ipv6_addresses = set()
+        # Resolve both IPv4 and IPv6 addresses
+        addr_info = socket.getaddrinfo(url, None)
+        for family, _, _, _, address in addr_info:
+            ip = address[0]
+            if family == socket.AF_INET:
+                ipv4_addresses.add(ip)
+            elif family == socket.AF_INET6:
+                ipv6_addresses.add(ip)
+        return ipv4_addresses, ipv6_addresses
+    except socket.gaierror as e:
+        print(f"Error converting URL to IP: {e}")
+        return set(), set()
 
-def check_metadata_files(package_directory):
-    for package in metadata_module.distributions():
-        package_name = package.metadata['Name']
-        version = package.version
-        metadata_path = os.path.join(package_directory, f"{package_name}-{version}.dist-info", "METADATA")
-
-        if not os.path.exists(metadata_path):
-            logging.info(f"Metadata file does not exist for package '{package_name}' version '{version}' at: {metadata_path}")
-            create_metadata_file(package_name, version, metadata_path)
+# Function to query BuiltWith API
+def query_builtwith_api(url):
+    print("[+] Querying BuiltWith API...")
+    try:
+        response = requests.get(f"https://api.builtwith.com/v18/api.json?KEY={BUILTWITH_API_KEY}&LOOKUP={url}")
+        data = response.json()
+        technologies = data.get("Groups")
+        if technologies:
+            for group in technologies:
+                if group.get("Name") == "Web Servers":
+                    print("[+] Web hosting software determined from BuiltWith API:", group.get("Technologies"))
+                    return
+            print("[+] Web hosting software not found in BuiltWith API response.")
         else:
-            try:
-                # Attempt to read the metadata file to catch any parsing errors
-                with open(metadata_path, 'r') as file:
-                    file.read()
-            except Exception as e:
-                logging.error(f"Error parsing metadata file for package '{package_name}' version '{version}': {e}")
-
-def upgrade_non_standard_packages():
-    # Function to check if a version conforms to PEP 440 standards
-    def is_standard_version(version):
-        # You can implement your own logic here to check if the version conforms to PEP 440
-        return True
-
-    # Get the Python executable path
-    python_executable = sys.executable
-
-    # Get the directory containing the Python packages
-    package_directory = os.path.join(os.path.dirname(python_executable), 'lib', 'site-packages')
-
-    # Get a list of installed packages and their versions
-    try:
-        output = subprocess.check_output([python_executable, '-m', 'pip', 'list', '--format=json'])
-        installed_packages = json.loads(output.decode())
+            print("[+] No technologies found in BuiltWith API response.")
     except Exception as e:
-        logging.error(f"Error retrieving list of installed packages: {e}")
-        return
+        print("[-] Error querying BuiltWith API:", str(e))
 
-    # Iterate through installed packages
-    for package in installed_packages:
-        package_name = package['name']
-        package_version = package['version']
+# Function to perform port scan using Naabu
+def port_scan(url, ipv4_addresses, ipv6_addresses):
+    print("[+] Performing port scan using Naabu...")
+    for ip in ipv4_addresses:
+        subprocess.run(["naabu", "-host", ip])
+    for ip in ipv6_addresses:
+        subprocess.run(["naabu", "-host", ip])
 
-        # Check if the package version is non-standard
-        if not is_standard_version(package_version):
-            # Upgrade the package
-            print(f"Upgrading {package_name} from version {package_version}...")
-            subprocess.call([python_executable, '-m', 'pip', 'install', '--upgrade', package_name])
+# Function to get web hosting software
+def get_web_hosting_software(url):
+    print("[+] Getting web hosting software...")
+    try:
+        response = requests.get(url)
+        server_header = response.headers.get("Server")
+        if server_header:
+            print("[+] Web hosting software determined from HTTP headers: ", server_header)
+        else:
+            print("[+] Web hosting software could not be determined from HTTP headers.")
+            query_builtwith_api(url)
+    except Exception as e:
+        print("[-] Error getting web hosting software:", str(e))
+        query_builtwith_api(url)
 
+# Function to identify WAF
+def identify_waf(url):
+    print("[+] Identifying WAF...")
+    try:
+        # Set SOCKS proxy environment variable
+        env = os.environ.copy()
+        env['SOCKS_PROXY'] = 'socks5://127.0.0.1:9050'
+        
+        # Run WhatWaf with the environment variable set
+        subprocess.run(["whatwaf", "-u", url], env=env)
+    except FileNotFoundError:
+        print("[-] Error: WhatWaf not found. Make sure it's installed and accessible in the PATH.")
+    except subprocess.CalledProcessError as e:
+        print("[-] Error running WhatWaf:", e)
+    
+    try:
+        # Run Wafw00f with the environment variable set
+        subprocess.run(["wafw00f", url], env=env)
+    except FileNotFoundError:
+        print("[-] Error: Wafw00f not found. Make sure it's installed and accessible in the PATH.")
+    except subprocess.CalledProcessError as e:
+        print("[-] Error running Wafw00f:", e)
+
+# Function for content discovery
+def content_discovery(url):
+    print("[+] Performing content discovery...")
+    # Content discovery can be done using tools like DirBuster, Dirsearch, or Gobuster.
+
+# Function to get URLs using WaybackPy
+def get_urls(url):
+    print("[+] Getting URLs from Wayback Machine...")
+    try:
+        # Call WaybackPy as a subprocess
+        result = subprocess.run(["waybackpy", url], capture_output=True, text=True)
+        output = result.stdout.strip()
+        if output:
+            print(output)
+        else:
+            print("[-] No URLs found in Wayback Machine for the given URL.")
+    except Exception as e:
+        print("[-] Error getting URLs from Wayback Machine:", str(e))
+
+# Main function to execute all tasks
 def main():
-    logging.basicConfig(level=logging.INFO)
-
-    # Get the Python executable path
-    python_executable = sys.executable
-
-    # Get the directory containing the Python packages
-    package_directory = os.path.join(os.path.dirname(python_executable), 'lib', 'site-packages')
-
-    check_metadata_files(package_directory)
-    upgrade_non_standard_packages()
+    target_url = "https://enterpriseportal.verizon.com/home/#/notifications"
+    print("### Initial Info Gathering\n")
+    hostname = extract_hostname(target_url)
+    ipv4_addresses, ipv6_addresses = url_to_ips(hostname)
+    port_scan(target_url, ipv4_addresses, ipv6_addresses)
+    get_web_hosting_software(target_url)
+    identify_waf(target_url)
+    content_discovery(target_url)
+    get_urls(target_url)
 
 if __name__ == "__main__":
     main()
