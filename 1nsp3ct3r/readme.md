@@ -2,8 +2,10 @@
 
 ## App Analysis [Slides](https://docs.google.com/presentation/d/1cMSRVlJJ5de6Pyv-09YgzOGS0OYrP6p7ggGl0f42wmw/edit#slide=id.g1228d591bfb_0_278)
 
-### Initial Info Gathering
-
+### Initial Info Gathering 
+```bash
+python p1.py
+```
 - [ ]  Port Scan ([Naabu](https://github.com/projectdiscovery/naabu))
 - [ ]  Web Hosting Software
 - [ ]  Application Framework and Libraries (Wappalyzer, https://github.com/projectdiscovery/httpx)
