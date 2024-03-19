@@ -6,6 +6,22 @@ import shutil
 import sys
 from mpi4py import MPI
 
+# Function to install pip if not already installed
+def install_pip():
+    try:
+        subprocess.run([sys.executable, "-m", "ensurepip", "--upgrade"], check=True)
+        print("Successfully installed pip.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error installing pip: {e}")
+
+# Function to install tqdm if not already installed
+def install_tqdm():
+    try:
+        subprocess.run([sys.executable, "-m", "pip", "install", "tqdm"], check=True)
+        print("Successfully installed tqdm.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error installing tqdm: {e}")
+
 # Install missing type stubs as a prerequisite
 def install_missing_stubs():
     try:
@@ -156,6 +172,18 @@ def upgrade_all_packages(comm, comm_rank=0, comm_size=1):
         print(f"{Fore.RED}An error occurred: {e}{Style.RESET_ALL}")
 
 
+# Function to install prerequisites
+def install_prerequisites():
+    try:
+        # Install tqdm, types-tqdm, types-colorama, mpi4py, and install types with mypy
+        subprocess.run(["python3", "-m", "pip", "install", "tqdm"], check=True)
+        subprocess.run(["python3", "-m", "pip", "install", "types-tqdm"], check=True)
+        subprocess.run(["python3", "-m", "pip", "install", "types-colorama"], check=True)
+        subprocess.run(["python3", "-m", "pip", "install", "mpi4py"], check=True)
+        subprocess.run(["mypy", "--install-types"], check=True)
+        print("Successfully installed prerequisites.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error installing prerequisites: {e}")
 
 # Main function to upgrade all installed packages
 def main():
@@ -165,9 +193,21 @@ def main():
         comm_rank = comm.Get_rank()
         comm_size = comm.Get_size()
 
+        # Install prerequisites
+        install_prerequisites()
+
         # Install missing type stubs as a prerequisite
         if 'requirements.txt' not in sys.argv:
             install_missing_stubs()
+
+        # Install pip and tqdm if not already installed
+        if not shutil.which("pip"):
+            print("Pip is not installed. Installing pip...")
+            install_pip()
+
+        if not shutil.which("tqdm"):
+            print("tqdm is not installed. Installing tqdm...")
+            install_tqdm()
 
         # Run the command to install a package and capture the output
         result = subprocess.run(['pip', 'install', '-r', 'requirements.txt', '-U', '-q', '--index', '--wheel', '--check', '--require-virtualenv', '--python 3.10.11', '--completion', '--upgrade', '--ignore-installed', '--no-warn-script-location', '--force-reinstall'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
