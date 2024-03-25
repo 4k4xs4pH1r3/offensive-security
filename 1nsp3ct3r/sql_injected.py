@@ -1,3 +1,5 @@
+# to execute use mpirun --use-hwthread-cpus python3.10 -m mpi4py ./sql_injected.py --quiet
+
 import logging
 import multiprocessing
 import random
