@@ -40,6 +40,10 @@ irm get.scoop.sh -outfile 'install.ps1'
 .\install.ps1 -RunAsAdmin -ScoopDir 'C:\Base\' -ScoopGlobalDir 'C:\Global' -NoProxy
 ```
 #
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+#
 10. Open a new Powershell Windows without admins privileges and Install tje DevSecOps tools
 ```bash
 scoop install wget curl adb apktool aws-iam-authenticator aws-vault aws azure-cli azure-functions-core-tools azure-ps circleci-cli cmake cmder-full composer kompose kubectl minikube docker git lua-for-windows make maven neofetch radare2 ruby s3deploy helm terraform youtube-dl docker-compose php go grep nano
@@ -58,12 +62,7 @@ scoop update
 ```bash
 powershell -ExecutionPolicy Bypass -NoProfile -Command "& { winget upgrade --all  --include-unknown --include-pinned --accept-source-agreements --disable-interactivity }"
 ```
-
  12. Open PowerShell as administrator to Install scoop project Pentest-Windows PST https://github.com/arch3rPro/PST-Bucket
-```bash
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
-#
 ```bash
 scoop bucket add ar https://github.com/arch3rPro/PST-Bucket
 ```
