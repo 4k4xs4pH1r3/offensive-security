@@ -33,10 +33,12 @@ Install-Module -Name Az -AllowClobber -Scope AllUsers
 
 9. Install scoope A command-line installer for Windows scoop.sh
 ```bash
-iwr -useb get.scoop.sh | iex
+irm get.scoop.sh -outfile 'install.ps1'
 ```
+10. The administrator executes the installation script (change the partition as Your preference).
+.\install.ps1 -RunAsAdmin -ScoopDir 'C:\Base\' -ScoopGlobalDir 'C:\Global' -NoProxy
 
-10. Install DevSecOps tools
+10. Open a new Powershell Windows without admins privileges and Install tje DevSecOps tools
 ```bash
 scoop install wget curl adb apktool aws-iam-authenticator aws-vault aws azure-cli azure-functions-core-tools azure-ps circleci-cli cmake cmder-full composer kompose kubectl minikube docker git lua-for-windows make maven neofetch radare2 ruby s3deploy helm terraform youtube-dl docker-compose php go grep nano
 ```
@@ -45,14 +47,27 @@ scoop install wget curl adb apktool aws-iam-authenticator aws-vault aws azure-cl
 ```bash
 scoop bucket add extras
 ```
-
 #
 ```bash
 scoop update
 ```
 
- 11. Upgrade packages with WinGet
+ 11. Open PowerShell as administrator to Upgrade packages with WinGet
 ```bash
 powershell -ExecutionPolicy Bypass -NoProfile -Command "& { winget upgrade --all  --include-unknown --include-pinned --accept-source-agreements --disable-interactivity }"
 ```
 
+ 12. Open PowerShell as administrator to Install scoop project Pentest-Windows PST https://github.com/arch3rPro/PST-Bucket
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+#
+```bash
+scoop bucket add ar https://github.com/arch3rPro/PST-Bucket
+```
+#
+Add to Windows Defender these two folders C:\Base\ & D:\Global\ to exclude from antivirus scans
+#
+```bash
+scoop install afrog antsword av_evasion_tool bantam behinder beroot broxy burpsuite burpsuite-np cobaltstrike ct dalfox DeimosC2 dig dirbuster dnsx ehole ffuf finalshell fluentsearch fscan girsh gitrob goby godzilla goproxy govenom hetty hackbrowserdata httpx hydra interactsh jar-analyzer jndinjector johnny john-the-ripper katana kscan ksubdomain layerdomainfinder masscan mateuszex maye mdut mimikatz myexploit naabu natpass netsparker nimscan nps nuclei ObserverWard oneforall pagodo peass-ng phpenv platypus portforward postman-cn PowerRun PrintNotifyPotato proguard pyxis quake_rs quasar rad rport rubick rustcat scan4all scaninfo screentogif searchdiggity shellcodeloader skyscorpion sliver socat stowaway subfinder suo5 super-xray termite tidefinger transfer txportmap venom verycapture vscan w3cschool webpathbrute webshell_generate websocat windterm windynamicdesktop xray yakit ysomap yujianportscan -g
+```
