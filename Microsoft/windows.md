@@ -36,8 +36,10 @@ Install-Module -Name Az -AllowClobber -Scope AllUsers
 irm get.scoop.sh -outfile 'install.ps1'
 ```
 10. The administrator executes the installation script (change the partition as Your preference).
+```bash
 .\install.ps1 -RunAsAdmin -ScoopDir 'C:\Base\' -ScoopGlobalDir 'C:\Global' -NoProxy
-
+```
+#
 10. Open a new Powershell Windows without admins privileges and Install tje DevSecOps tools
 ```bash
 scoop install wget curl adb apktool aws-iam-authenticator aws-vault aws azure-cli azure-functions-core-tools azure-ps circleci-cli cmake cmder-full composer kompose kubectl minikube docker git lua-for-windows make maven neofetch radare2 ruby s3deploy helm terraform youtube-dl docker-compose php go grep nano
