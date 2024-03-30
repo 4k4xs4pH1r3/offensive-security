@@ -1,4 +1,4 @@
-This guide will install and prepare your Windows for DevSecOps just execute step by step
+This guide will install and prepare your Windows for Penetration Testing, step-by-step
 
 #
 1. Close PowerShell
@@ -31,7 +31,7 @@ Install-Module -Name Az -AllowClobber -Scope AllUsers
    
 8. Install Visual Code & GitHub Desktop, Bash, SCM & LFS       
 
-9. Install scoope A command-line installer for Windows scoop.sh
+9. Install scoop A command-line installer for Windows scoop.sh
 ```bash
 irm get.scoop.sh -outfile 'install.ps1'
 ```
@@ -44,7 +44,7 @@ irm get.scoop.sh -outfile 'install.ps1'
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 #
-10. Open a new Powershell Windows without admins privileges and Install tje DevSecOps tools
+10. Open a new Powershell Windows without admin privileges and Install the DevSecOps tools
 ```bash
 scoop install wget curl adb apktool aws-iam-authenticator aws-vault aws azure-cli azure-functions-core-tools azure-ps circleci-cli cmake cmder-full composer kompose kubectl minikube docker git lua-for-windows make maven neofetch radare2 ruby s3deploy helm terraform youtube-dl docker-compose php go grep nano
 ```
