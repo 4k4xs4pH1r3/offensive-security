@@ -34,7 +34,7 @@ brew unlink tfenv && softwareupdate --all --install --force && brew update-reset
 (Optional) Install Apple 🍏 Developer Beta + Apple Simulators for iOS, watchOS and tvOS
 
 ```ShellSession
-sudo gem pristine digest-crc --version 0.6.4 && sudo gem pristine unf_ext --version 0.0.8.2 && sudo gem install xcode-install && xcversion install 15 && xcversion update && xcversion list && xcversion simulators
+sudo gem pristine digest-crc --version 0.6.4 && sudo gem pristine unf_ext --version 0.0.8.2 && sudo gem install xcode-install && xcversion install 15.3 && xcversion update && xcversion list && xcversion simulators
 ```
 
 Enjoy ✅ 🎧
