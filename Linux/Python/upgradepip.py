@@ -64,19 +64,17 @@ def upgrade_package_result(package, progress_bar=None):
             if progress_bar:
                 progress_bar.set_postfix({"Status": f"Failed to upgrade {package}"})
             return False, f"{Fore.RED}Failed to upgrade {package}: {result.stderr}{Style.RESET_ALL}"
-        else:
-            if progress_bar:
-                progress_bar.set_postfix({"Status": f"Successfully upgraded {package}"})
-            return True, f"{Fore.GREEN}Successfully upgraded {package}{Style.RESET_ALL}"
+        if progress_bar:
+            progress_bar.set_postfix({"Status": f"Successfully upgraded {package}"})
+        return True, f"{Fore.GREEN}Successfully upgraded {package}{Style.RESET_ALL}"
     except subprocess.CalledProcessError as e:
         if e.stderr and 'No such file or directory' not in e.stderr:
             if progress_bar:
                 progress_bar.set_postfix({"Status": f"Failed to upgrade {package}"})
             return False, f"{Fore.RED}Failed to upgrade {package}: {e.stderr}{Style.RESET_ALL}"
-        else:
-            if progress_bar:
-                progress_bar.set_postfix({"Status": f"Failed to upgrade {package}"})
-            return False, f"{Fore.RED}Failed to upgrade {package}: {e}{Style.RESET_ALL}"
+        if progress_bar:
+            progress_bar.set_postfix({"Status": f"Failed to upgrade {package}"})
+        return False, f"{Fore.RED}Failed to upgrade {package}: {e}{Style.RESET_ALL}"
     except Exception as e:
         if progress_bar:
             progress_bar.set_postfix({"Status": f"An unexpected error occurred while upgrading {package}"})
