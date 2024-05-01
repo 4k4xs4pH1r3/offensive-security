@@ -64,8 +64,6 @@ b6dd44634421475a82aaa642ad562e48d24291c996c27fafd8761d85de87d9fe
 
 Note: On starting the newly imported VM from OVA file in VMware Fusion, you may encounter a message regarding an error with VMWare tools. . By clicking on the OK button you would be able to use the VM as expected.
 
-
-
 Previous Version
 The previous version of the training VM is still available for download from the following address:
 
@@ -128,7 +126,7 @@ Fortiguard_URLCategory,
 MaxMind GeoIP,
 UnshortenLink,
 TalosReputation,
-_URLHaus,
+\_URLHaus,
 Urlscan_io_Search .
 Report templates are preinstalled in all virtual machines.
 

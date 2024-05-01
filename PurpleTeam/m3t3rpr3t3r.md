@@ -1,11 +1,14 @@
-# m3t3rpr3t3r 
+# m3t3rpr3t3r
 
-Is a Linux terminal on the victim's computer. As such, many of our basic Linux commands can be used on the meterpreter even if it's on a Windows or other operating system. Here are some of the core commands we can use on the 
+Is a Linux terminal on the victim's computer. As such, many of our basic Linux commands can be used on the meterpreter even if it's on a Windows or other operating system. Here are some of the core commands we can use on the
+
 #
+
 #
+
 #
-Core Commands
-=============
+
+# Core Commands
 
     Command                   Description
     -------                   -----------
@@ -37,9 +40,6 @@ Core Commands
     use                       Deprecated alias for "load"
     uuid                      Get the UUID for the current session
     write                     Writes data to a channel
-    
-    
-
 
 # File System Commands
 
@@ -59,13 +59,11 @@ Core Commands
     rmdir           remove directory on the victim system
     upload          upload a file from the attacker system to the victim
 
-
 # Networking Commands
 
     ipconfig        displays network interfaces with key information including IP address, etc.
     portfwd         forwards a port on the victim system to a remote service
     route           view or modify the victim routing table
-
 
 # System Commands
 
@@ -84,7 +82,6 @@ Core Commands
     shutdown        shuts down the victim's computer
     steal_token     attempts to steal the token of a specified (PID) process
     sysinfo         gets the details about the victim computer such as OS and name
-
 
 # User Interface Commands
 
@@ -111,8 +108,6 @@ Note that hashdump will often trip AV software, but there are now two scripts th
 # Timestamp Commands
 
     timestamp       manipulates the modify, access, and create attributes of a file
-
-
 
 # Persistence
 

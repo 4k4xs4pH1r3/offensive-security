@@ -1,5 +1,5 @@
     #------------------------------------------------------------------------------#
-    #                   OFFICIAL cdn-fastly DEBIAN REPOS                    
+    #                   OFFICIAL cdn-fastly DEBIAN REPOS
     #------------------------------------------------------------------------------#
 
 If You are not using Tails, just remove this part "tor+" from each line
@@ -13,4 +13,4 @@ deb-src [arch=amd64] tor+https://cdn-fastly.deb.debian.org/debian/ stable-update
 
 deb [arch=amd64] tor+https://cdn-fastly.deb.debian.org/debian-security stable-security main contrib non-free
 deb-src [arch=amd64] tor+https://cdn-fastly.deb.debian.org/debian-security stable-security main contrib non-free
-```  
+```

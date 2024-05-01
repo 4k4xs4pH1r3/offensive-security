@@ -7,10 +7,13 @@ https://docs.open-mpi.org/en/main/getting-help.html
 https://www-lb.open-mpi.org/software/ompi/
 
 https://github.com/open-mpi/ompi
+
 #
+
 #
 
 #### Project Overview:
+
 The project aims to automate CyberSecurity processes.
 
 Leveraging popular security tools like Metasploit, Nmap, Shodan, Maltego, BurpSuite, and others, employing techniques such as port scanning, vulnerability search, exploitation, reporting, and ticket generation.
@@ -26,6 +29,7 @@ Proposes a sales model, projecting long-term income by offering the solution as 
 Initial costs involve hiring developers and security experts, with simulations indicating feasibility.
 
 #### Automation for Efficiency:
+
 This solution enhances computer security efficiency by automating vulnerability detection and resolution for swift response.
 
 Creating a Small Cluster:
@@ -122,14 +126,17 @@ finally:
 ```
 
 ```
-clear && chmod +x pi_value.py && python3 -m pip install --upgrade pip && pip install mpi4py 
+clear && chmod +x pi_value.py && python3 -m pip install --upgrade pip && pip install mpi4py
 ```
+
 ```
 mpirun -v --hostfile hostfile -np 4 python ./pi_value.py
 ```
+
 ```
 mpirun -v --hostfile hostfile --mca btl tcp,self -x DISPLAY=localhost:0 python ./pi_value.py
 ```
+
 ```
 mpirun -v --use-hwthread-cpus python ./pi_value.py
 ```
@@ -137,8 +144,9 @@ mpirun -v --use-hwthread-cpus python ./pi_value.py
 You can also compile and run your own parallel applications using OpenMPI.
 
 You can also test locally in Linux or MacOS by running
+
 ```
-mpirun -v -np 4 python ./pi_value.py 
+mpirun -v -np 4 python ./pi_value.py
 ```
 
 That's it! You have now created Your own SuperCluster and it's working like a charm.

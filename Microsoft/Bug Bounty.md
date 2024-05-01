@@ -1,5 +1,3 @@
-
-
 I think it is the time to get bounty and HOF from Microsoft:-
 
 Bounty range from $500 up to $20,000

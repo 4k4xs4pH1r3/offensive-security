@@ -4,9 +4,10 @@
 
 Windows Subsystem for Linux (WSL 2) is a compatibility layer for running Linux binary executables natively on Windows 10. (Source: [Wikipedia](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux))
 
-# Setup the PowerShell Environment In Windows 10 
+# Setup the PowerShell Environment In Windows 10
 
 Update/Install the AzureRM and pre-requisiste PS1 Modules. Open up a PS Window as Administrator and run:
+
 ```
 Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 install-module PackageManagement -verbose -force
@@ -21,23 +22,27 @@ Download and Install AZ Cli from https://aka.ms/installazurecliwindows
 Once completed close the PS Window.
 
 #
+
 ## Install WSL 2
 
 First, you need to have your Windows 10 updated to the lastest version.
 
-Second, go to *Settings* --> *Apps* --> *Programs and Features* --> *Turn Windows features on or off* and tick the feature "*Windows Subsystem for Linux*".
+Second, go to _Settings_ --> _Apps_ --> _Programs and Features_ --> _Turn Windows features on or off_ and tick the feature "_Windows Subsystem for Linux_".
 
 Now implement WSL 2 following this https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
-Third, go to Microsoft Store search *Ubuntu* and install
+Third, go to Microsoft Store search _Ubuntu_ and install
 
 #
-#
-#
+
 #
 
+#
+
+#
 
 ## Open the Ubuntu WSL 2, Update and set your timezone
+
 Get your WSL 2 to the latest and greatest within the version installed. Run as root:
 
 ```
@@ -57,7 +62,6 @@ Ansible Tower version is 3.2.3 and it runs Ansible version 2.4.2.
 
 To install the Ansible v2.4.2 run
 
-
 ```
 echo 'deb http://ppa.launchpad.net/ansible/ansible/ubuntu zesty main' | \
      sudo tee /etc/apt/sources.list.d/ansible.list
@@ -66,7 +70,7 @@ wget -qO- 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x93C4A3FD7BB9C
 sudo su -c 'apt-get update && apt-get install -y ansible==2.4.2.0-1ppa~zesty && apt-mark hold ansible'
 ```
 
-Keep in mind that package *ansible* is marked on hold to prevent future upgrades.
+Keep in mind that package _ansible_ is marked on hold to prevent future upgrades.
 
 ### Install Ansible + PIP 2 & 3 version by running as root:
 
@@ -76,10 +80,10 @@ apt install python3-pip -y
 apt install ansible -y
 ```
 
-
-
 ### Set-up the WLS Ansible environment
+
 #### Ansible Global Variables
+
 On the file **_/etc/ansible/group_vars/all_**, set the variables as shown below. **It’s important you don’t include the initial “?”/question mark character provided by Azure on the SAS Tokens variables. It's also important to preserve the identation as shown below.**
 
 ```
@@ -120,10 +124,13 @@ ansible_env:
   AZURE_RM_SECRET: "SPN_SECRET"
   AZURE_RM_TENANTID: "id"
 ```
+
 Make sure you replace any text bwtween **< >**a with your personal information.
 
 #### Ansible Config file
+
 On the file **_/etc/ansible/ansible.cfg_**, set the variables as shown below:
+
 ```
 [defaults]
 hash_behaviour = merge
@@ -131,8 +138,10 @@ hash_behaviour = merge
 
 Either add it to the file / default section, add the section if not present or even create the file with the content shown as above.
 
-### Install and Set your default Azure CLI in *Ubuntu*
+### Install and Set your default Azure CLI in _Ubuntu_
+
 As root run:
+
 ```
 AZ_REPO=$(lsb_release -cs)
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | tee /etc/apt/sources.list.d/azure-cli.list
@@ -141,12 +150,10 @@ apt-get install apt-transport-https -y
 apt-get update && apt-get install azure-cli -y
 ```
 
+### Install and Set your default Azure CLI + VS Code + .NET Core SDK 2.1 in _Ubuntu 18.04 LTS_
 
-
-
-
-### Install and Set your default Azure CLI + VS Code + .NET Core SDK 2.1 in *Ubuntu 18.04 LTS*
 As root run:
+
 ```
 rm -r /etc/resolv.conf
 sudo systemctl disable systemd-resolved.service
@@ -188,11 +195,12 @@ sudo apt-get update && sudo apt-get upgrade
 ## Common az cli commands
 
 » For aunthenticate in Azure cli
+
 ```
 az login
 ```
 
-### Example for Set an subscription as default 
+### Example for Set an subscription as default
 
 ```
 az account list
@@ -203,21 +211,22 @@ az account set --subscription "id"
 ```
 
 » For see the guide for use the azure cli
+
 ```
 az --help
 ```
 
-» For start an interactive session in azure cli, like Cloud Shell with autocomplete feature, using TAB key 
+» For start an interactive session in azure cli, like Cloud Shell with autocomplete feature, using TAB key
 
 ```
-az interactive 
+az interactive
 
 ```
-
-
 
 ### Install PowerShell Core on WSL
+
 As root run:
+
 ```
 curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/16.04/prod.list
@@ -225,17 +234,21 @@ apt-get update && apt-get install -y powershell
 ```
 
 Use Power shell as a regular user by running the following command:
+
 ```
 pwsh
 ```
 
 ### Install a Desktop graphical UI (User Interface) and RDP you need to be sure to open port 3389
+
 As root run:
+
 ```
 sudo apt-get install lxde xrdp -y
 ```
 
 #Initialize xrdp
+
 ```
 /etc/init.d/xrdp start
 apt autoremove -y
@@ -245,25 +258,35 @@ You may want to also install the AzureRM's modules. Within a PowerShell prompt a
 
 ```
 Install-Module -Name AzureRM.Netcore
-Import-Module -Name AzureRM.Netcore 
+Import-Module -Name AzureRM.Netcore
 ```
+
 #
+
 #
+
 #
+
 #
+
 #
+
 ### Specially if you are behind of proxies
-## Set the Proxy Server for Shell & APT Repositories  (Optional)
+
+## Set the Proxy Server for Shell & APT Repositories (Optional)
+
 Edit the following files. Make sure you replace with your LDAP credentials.
 
 you may create a config file containing proxy settings as follows:
 
 ## Set your new root password in Ubuntu
+
 ```
 sudo passwd
 ```
 
 ## Login as root
+
 ```
 sudo -su
 ```
@@ -323,9 +346,8 @@ FTP_PROXY=http://proxyip:8080/
 NO_PROXY="localhost,127.0.0.1,youripaddress,.local.domain"
 ```
 
-
 ```
-nano /etc/wgetrc 
+nano /etc/wgetrc
 ```
 
 (Search Proxy Section and add the below)
@@ -338,14 +360,13 @@ ftp_proxy = http://domain\samaccount:yourpassword@proxyip:8080
 
 Uncomment 'use_proxy = on'
 
-
-
-
 ```
 Some valid proxies are:
 ```
+
 domain (ip)
 domain (ip)
+
 ```
 
 #
@@ -360,5 +381,9 @@ domain (ip)
 With a **_privileged user_** run on a command window:
 
 ```
+
 lxrun /uninstall /full /y
+
+```
+
 ```

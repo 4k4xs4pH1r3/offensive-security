@@ -3,9 +3,11 @@
 To install OpenMPI on macOS, you can use the Homebrew package manager. Homebrew simplifies the process of installing various software packages on macOS. Here are the steps to install OpenMPI using Homebrew:
 
 ### Step 1: Install Homebrew (if not already installed)
+
 If you don't have Homebrew installed, you can install it by following the instructions on the Homebrew website: [https://brew.sh/](https://brew.sh/)
 
 ### Step 2: Install OpenMPI
+
 Open a terminal and run the following commands:
 
 ```bash
@@ -17,6 +19,7 @@ brew install open-mpi && sudo launchctl load -w /System/Library/LaunchDaemons/ss
 ```
 
 ### Step 3: Verify the installation
+
 After the installation is complete, you can verify it by checking the OpenMPI version:
 
 ```bash
@@ -26,6 +29,7 @@ mpirun --version
 This command should display the version of OpenMPI that you installed.
 
 ### Step 4: Test MPI
+
 You can test your OpenMPI installation with a simple MPI program. Save the following code into a file named `hello.c`:
 
 ```c
