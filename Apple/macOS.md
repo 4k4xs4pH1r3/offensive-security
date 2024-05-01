@@ -28,7 +28,7 @@ brew install --cask gitfinder powershell dotnet && brew install cask && brew ins
 
 4. Upgrade Apple Store + Apple Developer + Brew packages
 ```ShellSession
-brew unlink tfenv && softwareupdate --all --install --force && brew update-reset && brew update -q && brew upgrade -q && brew install --cask temurin && brew install terraform -q && brew unlink terraform && brew link --overwrite tfenv && tfenv install && tfenv list && tfenv install latest && tfenv install 1.8.0 && tfenv use 1.8.0 && tfenv list && brew link --overwrite terraform && terraform -v
+brew unlink tfenv && softwareupdate --all --install --force && brew update-reset && brew update -q && brew upgrade -q && brew install --cask temurin && brew unlink terraform && brew install terraform -q && brew unlink terraform && brew link --overwrite tfenv && tfenv install && tfenv list && tfenv install latest && tfenv install 1.8.2 && tfenv use 1.8.2 && tfenv list && brew link --overwrite terraform && terraform -v
 ```
 
 (Optional) Install Apple 🍏 Developer Beta + Apple Simulators for iOS, watchOS and tvOS
