@@ -1,5 +1,4 @@
 import subprocess
-import re
 from tqdm import tqdm
 from colorama import Fore, Style
 import sys
