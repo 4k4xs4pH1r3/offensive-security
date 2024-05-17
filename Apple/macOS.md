@@ -37,7 +37,7 @@ brew install --cask gitfinder powershell dotnet && brew install cask && brew ins
 ```ShellSession
 softwareupdate --all --install --force && brew update-reset && brew update -q && brew upgrade
 ```
-## Install Terraform with Tfenv / amd64 for chip Mac
+### Install Terraform with Tfenv / amd64 for chip Mac
 ```ShellSession
 TFENV_ARCH=amd64 tfenv install 1.8.3 && tfenv install && tfenv list && tfenv list && terraform -v
 ```
