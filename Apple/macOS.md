@@ -39,8 +39,10 @@ softwareupdate --all --install --force && brew update-reset && brew update -q &&
 ```
 
 5. Install Terraform with Tfenv / amd64 for chip Mac
+
 ```ShellSession
 TFENV_ARCH=amd64 tfenv install 1.8.3 && tfenv install && tfenv list && tfenv list && terraform -v
+
 ```
 
 (Optional) Install Apple 🍏 Developer Beta + Apple Simulators for iOS, watchOS and tvOS
