@@ -1,8 +1,10 @@
 import configparser
 import logging
+import subprocess
 
 import blackarch_packages
-from blackarch_installer import AUR_HELPERS, is_helper_installed, run_command, PACMAN_CONF  # Assuming blackarch_installer.py is in the same directory
+import utils  # Import the utils module
+
 
 def fix_problematic_packages():
     """
@@ -10,17 +12,17 @@ def fix_problematic_packages():
     then removing from IgnorePkg.
     """
     config = configparser.ConfigParser()
-    config.read(PACMAN_CONF)
+    config.read(utils.PACMAN_CONF)
 
-    problematic_packages = []
+    problematic_packages = []  
     for package in blackarch_packages.PACKAGES_TO_INSTALL:
-        for helper, command in AUR_HELPERS.items():
-            if not is_helper_installed(helper):
+        for helper, command in utils.AUR_HELPERS.items():
+            if not utils.is_helper_installed(helper):
                 continue
 
             install_command = command + [package] + ["--needed", "--noconfirm"]
             try:
-                run_command(install_command)  
+                utils.run_command(install_command)  
                 break  # If successful, move to the next package
             except subprocess.CalledProcessError as e:
                 logging.warning(f"Error installing '{package}' with {helper}: {e.stdout}")
@@ -33,7 +35,7 @@ def fix_problematic_packages():
             config["options"] = {}
         config["options"]["IgnorePkg"] = " ".join(problematic_packages)
 
-        with open(PACMAN_CONF, "w", encoding="utf-8") as configfile:
+        with open(utils.PACMAN_CONF, "w", encoding="utf-8") as configfile:
             config.write(configfile)
 
         fix_problematic_packages()  # Recursively call fix_ignored_packages to attempt fixing them
