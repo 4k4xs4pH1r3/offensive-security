@@ -14,7 +14,7 @@ def fix_problematic_packages():
     config = configparser.ConfigParser()
     config.read(utils.PACMAN_CONF)
 
-    problematic_packages = []  
+    problematic_packages = []
     for package in blackarch_packages.PACKAGES_TO_INSTALL:
         for helper, command in utils.AUR_HELPERS.items():
             if not utils.is_helper_installed(helper):
@@ -22,12 +22,14 @@ def fix_problematic_packages():
 
             install_command = command + [package] + ["--needed", "--noconfirm"]
             try:
-                utils.run_command(install_command)  
+                utils.run_command(install_command)
                 break  # If successful, move to the next package
             except subprocess.CalledProcessError as e:
-                logging.warning(f"Error installing '{package}' with {helper}: {e.stdout}")
-                problematic_packages.append(package)  
-    
+                logging.warning(
+                    f"Error installing '{package}' with {helper}: {e.stdout}"
+                )
+                problematic_packages.append(package)
+
     # If there are problematic packages, add them to IgnorePkg
     if problematic_packages:
         print(f"Found problematic packages: {problematic_packages}")
