@@ -22,8 +22,11 @@ import reflector
 PACMAN_CONF = "/etc/pacman.conf"
 LOG_FILE = "/tmp/blackarch_installer.log"
 
+
 # --- Functions ---
-def run_command(command: list[str], suppress_output=False, retries=3) -> typing.Optional[str]:
+def run_command(
+    command: list[str], suppress_output=False, retries=3
+) -> typing.Optional[str]:
     """Runs a shell command with optional retries and output suppression."""
     for attempt in range(retries):
         try:
@@ -65,7 +68,10 @@ def get_current_country() -> typing.Optional[str]:
     try:
         g = geocoder.ip("me")
         return g.country
-    except (requests.exceptions.RequestException, geocoder.api.exceptions.GeocoderError) as e:
+    except (
+        requests.exceptions.RequestException,
+        geocoder.api.exceptions.GeocoderError,
+    ) as e:
         logging.error("Error getting location: %s", e)
         return None
 
@@ -80,16 +86,20 @@ def install_with_mirror_and_helper(mirror: str, helper: str) -> bool:
         run_command(
             helpers.AUR_HELPERS[helper]
             + blackarch_packages.PACKAGES_TO_INSTALL
-            + ["--needed", "--noconfirm", "--disable-download-timeout", "--noprogressbar"],
+            + [
+                "--needed",
+                "--noconfirm",
+                "--disable-download-timeout",
+                "--noprogressbar",
+            ],
             suppress_output=True,
         )
         print("All packages installed successfully!")
         verify_blackarch_categories()
         reflector.update_mirrorlist(get_current_country())
-        return True  
+        return True
     except subprocess.CalledProcessError:
-        return False  
-
+        return False
 
 
 # --- Main Execution ---
@@ -107,15 +117,13 @@ missing_helpers.main()  # Install any missing helpers
 problematic_packages.fix_problematic_packages()  # Fix problematic packages first
 mirrors = blackarch_repos.fetch_mirrors()
 
-
 for mirror in mirrors:
     logging.info("Trying mirror: %s", mirror)
     for helper in AUR_HELPERS:
         if is_helper_installed(helper):
             print(f"Trying AUR helper: {helper}")
             if install_with_mirror_and_helper(mirror, helper):
-                exit(0)  
+                exit(0)
 
 logging.error("No working mirror found. Check mirrorlist & connection.")
 print("No working mirror found. Check the log file for details.")
-
