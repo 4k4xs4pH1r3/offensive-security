@@ -1,7 +1,5 @@
 import requests
 
-MIRRORLIST_FILE = "/etc/pacman.d/blackarch-mirrorlist"
-
 MIRRORS_URL = "https://github.com/BlackArch/blackarch/blob/master/mirror/mirror.lst"
 
 

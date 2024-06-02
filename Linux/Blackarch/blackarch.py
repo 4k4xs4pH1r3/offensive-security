@@ -1,12 +1,23 @@
 #!/usr/bin/env python3
+"""Automates BlackArch installation on Arch Linux.
+
+Handles problematic packages, mirror selection, and dependency resolution.
+"""
+
+import configparser
+import logging
 import subprocess
 import time
-import logging
-import configparser
-import blackarch_repos
-import blackarch_packages
+import typing
 
-PACMAN_CONF_FILE = "/etc/pacman.conf"
+import geocoder  # Geolocation library
+import requests  # HTTP library for geolocation
+
+import blackarch_packages
+import blackarch_repos
+
+# --- Global Variables ---
+PACMAN_CONF = "/etc/pacman.conf"
 LOG_FILE = "/tmp/blackarch_installer.log"
 
 AUR_HELPERS = {
@@ -16,13 +27,13 @@ AUR_HELPERS = {
     "pacaur": ["pacaur", "-S"],
 }
 
-logging.basicConfig(
-    filename=LOG_FILE,
-    level=logging.DEBUG,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-)
-
-def run_command(command, suppress_output=False, retries=3):
+# --- Functions ---
+def run_command(
+    command: list[str],
+    suppress_output: bool = False,
+    retries: int = 3,
+) -> typing.Optional[str]:
+    """Runs a shell command with optional retries and output suppression."""
     for attempt in range(retries):
         try:
             result = subprocess.run(
@@ -30,13 +41,17 @@ def run_command(command, suppress_output=False, retries=3):
                 check=True,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT if suppress_output else subprocess.PIPE,
+                encoding="utf-8",
             )
-            return result.stdout.decode()
+            return result.stdout  # Return the standard output
         except subprocess.CalledProcessError as e:
             logging.warning(
-                f"Command failed (attempt {attempt + 1}/{retries}): {' '.join(command)}"
+                "Command '%s' failed (attempt %d/%d):",
+                " ".join(command),
+                attempt + 1,
+                retries,
             )
-            logging.warning(f"Error output:\n{e.stdout.decode()}")
+            logging.warning("Error output:\n%s", e.stdout)  # Log error output
 
             if attempt < retries - 1:
                 time.sleep(5)
@@ -44,7 +59,8 @@ def run_command(command, suppress_output=False, retries=3):
                 raise
 
 
-def is_helper_installed(helper):
+def is_helper_installed(helper: str) -> bool:
+    """Checks if the given AUR helper is installed."""
     try:
         subprocess.run([helper, "--version"], check=True, stdout=subprocess.DEVNULL)
         return True
@@ -53,100 +69,128 @@ def is_helper_installed(helper):
 
 
 def fix_ignored_packages():
+    """Fixes packages in pacman.conf's IgnorePkg section."""
     config = configparser.ConfigParser()
-    config.read(PACMAN_CONF_FILE)
+    config.read(PACMAN_CONF)
 
     if "options" not in config or "IgnorePkg" not in config["options"]:
-        return
+        return  # No ignored packages
 
     ignored_packages = config["options"]["IgnorePkg"].split()
-
     for helper, command in AUR_HELPERS.items():
         if not is_helper_installed(helper):
-            logging.warning(f"AUR helper {helper} is not installed. Skipping...")
+            logging.warning("Helper %s not installed. Skipping...", helper)
             continue
 
         for package in ignored_packages:
-            print(f"\nTrying to fix ignored package: {package}")
+            print(f"Fixing ignored package: {package}")
             install_command = command + [package] + ["--needed", "--noconfirm"]
-
             try:
                 run_command(install_command)
-                print(f"Fixed ignored package: {package}")
+                print(f"Fixed: {package}")
                 config.remove_option("options", "IgnorePkg")
-                with open(PACMAN_CONF_FILE, "w") as configfile:
+                with open(PACMAN_CONF, "w", encoding="utf-8") as configfile:
                     config.write(configfile)
             except subprocess.CalledProcessError:
-                pass
+                pass  # Move on to the next helper if this one fails
 
 
 def verify_blackarch_categories():
-    categories = blackarch_packages.CATEGORIES
+    """Verifies BlackArch category installations."""
 
-    for category in categories:
+    for category in blackarch_packages.CATEGORIES:
         try:
             subprocess.run(
                 ["pacman", "-Qs", category], check=True, stdout=subprocess.DEVNULL
             )
-            print(f"Category '{category}' is installed.")
+            print(f"Category '{category}' installed.")
         except subprocess.CalledProcessError:
-            print(
-                f"WARNING: Category '{category}' is not installed or incomplete. Please check the logs for details."
+            msg = (
+                f"WARNING: Category '{category}' not installed or incomplete."
             )
-            logging.warning(f"Category '{category}' is not installed or incomplete.")
+            print(msg)
+            logging.warning(msg)
 
 
-def main():
-    fix_ignored_packages()
+def get_current_country():
+    """Attempts to determine the user's current country using geolocation."""
+    try:
+        g = geocoder.ip("me")
+        return g.country
+    except requests.exceptions.RequestException as e:
+        logging.error("Error getting location: %s", e)
+        return None
 
-    mirrors = blackarch_repos.fetch_mirrors()
 
-    for mirror in mirrors:
-        logging.info(f"Trying mirror: {mirror}")
-        with open(blackarch_repos.MIRRORLIST_FILE, "w") as file:
-            # Uncomment all and then comment all except the current mirror
-            for m in mirrors:
-                if m == mirror:
-                    file.write(f"Server = {m}\n")
-                else:
-                    file.write(f"#Server = {m}\n")
+# Main Execution
+with open(LOG_FILE, "w"):  # Clear log file
+    pass
+
+logging.basicConfig(
+    filename=LOG_FILE,
+    level=logging.DEBUG,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+
+fix_ignored_packages()
+mirrors = blackarch_repos.fetch_mirrors()
+
+current_country = get_current_country()
+
+# Reflector arguments
+reflector_args = [
+    "--latest", "10", "--sort", "rate", "--save", blackarch_repos.MIRRORLIST_FILE,
+    "--protocol", "https", "--age", "24", "--score", "100", "--fastest", "100", "--latest", "50"
+]
+
+# Add country to reflector arguments if detected
+if current_country:
+    reflector_args.extend(["--country", current_country])
+
+for mirror in mirrors:
+    logging.info("Trying mirror: %s", mirror)
+    with open(blackarch_repos.MIRRORLIST_FILE, "w", encoding="utf-8") as file:
+        file.write(f"Server = {mirror}\n")  # Use only the current mirror
+
+    try:
+        run_command(["sudo", "pacman", "-Sy"], retries=3)
+    except subprocess.CalledProcessError:
+        logging.warning("Mirror %s failed, trying next...", mirror)
+        continue  # Go to the next mirror if this one fails
+
+    # If the mirror works, proceed with installations
+    for helper, command in AUR_HELPERS.items():
+        if not is_helper_installed(helper):
+            logging.warning("Helper %s not installed...", helper)
+            continue
+
+        print(f"Trying AUR helper: {helper}")
+        install_command = (
+            command
+            + blackarch_packages.PACKAGES_TO_INSTALL
+            + [
+                "--needed",
+                "--noconfirm",
+                "--disable-download-timeout",
+                "--noprogressbar",
+            ]
+        )
 
         try:
-            run_command(["sudo", "pacman", "-Sy"], retries=3)
+            run_command(install_command, suppress_output=True)
+            print("All packages installed successfully!")
+
+            verify_blackarch_categories()
+
+            # Run reflector to update the mirrorlist using the current country
+            run_command(["sudo", "reflector"] + reflector_args)
+
+            return  # Exit if installation is successful
         except subprocess.CalledProcessError:
-            logging.warning(f"Mirror {mirror} failed, trying the next one...")
-            continue  # Go to the next mirror if this one fails
+            pass  # Move on to the next helper if this one fails
 
-        # If the mirror works, proceed with installations
-        for helper, command in AUR_HELPERS.items():
-            if not is_helper_installed(helper):
-                logging.warning(f"AUR helper {helper} is not installed. Skipping...")
-                continue
+logging.error(
+    "No working mirror found. Please check your mirrorlist and internet connection."
+)
+print("No working mirror found. Check the log file for details.")
 
-            print(f"Trying AUR helper: {helper}")
-            install_command = (
-                command
-                + blackarch_packages.PACKAGES_TO_INSTALL
-                + [
-                    "--needed",
-                    "--noconfirm",
-                    "--disable-download-timeout",
-                    "--noprogressbar",
-                ]
-            )
-
-            try:
-                run_command(install_command, suppress_output=True)
-                print("All packages installed successfully!")
-
-                # Verify BlackArch categories after successful installation
-                verify_blackarch_categories()
-                return  # Exit if installation is successful
-            except subprocess.CalledProcessError:
-                pass  # Move on to the next helper if this one fails
-
-    logging.error("No working mirror found. Please check your mirrorlist and internet connection.")
-    print("No working mirror found. Check the log file for details.")
-
-if __name__ == "__main__":
-    main()
