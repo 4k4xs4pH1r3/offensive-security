@@ -11,12 +11,10 @@ import subprocess
 import time
 import typing
 
-import geocoder  # Geolocation library
-import requests  # HTTP library for geolocation
-
 import blackarch_packages
 import blackarch_repos
-import helpers #Import Helpers
+import helpers
+import reflector
 
 # --- Global Variables ---
 PACMAN_CONF = "/etc/pacman.conf"
@@ -25,11 +23,7 @@ LOG_FILE = "/tmp/blackarch_installer.log"
 AUR_HELPERS = helpers.AUR_HELPERS
 
 # --- Functions ---
-def run_command(
-    command: list[str],
-    suppress_output: bool = False,
-    retries: int = 3,
-) -> typing.Optional[str]:
+def run_command(command: list[str], suppress_output: bool = False, retries: int = 3) -> typing.Optional[str]:
     """Runs a shell command with optional retries and output suppression."""
     for attempt in range(retries):
         try:
@@ -111,16 +105,6 @@ def verify_blackarch_categories():
             logging.warning(msg)
 
 
-def get_current_country():
-    """Attempts to determine the user's current country using geolocation."""
-    try:
-        g = geocoder.ip("me")
-        return g.country
-    except requests.exceptions.RequestException as e:
-        logging.error("Error getting location: %s", e)
-        return None
-
-
 # --- Main Execution ---
 with open(LOG_FILE, "w"):  # Clear log file
     pass
@@ -136,32 +120,6 @@ subprocess.run(["sudo", "python", os.path.join(os.path.dirname(__file__), "helpe
 
 fix_ignored_packages()
 mirrors = blackarch_repos.fetch_mirrors()
-
-current_country = get_current_country()
-
-# Reflector arguments
-reflector_args = [
-    "--latest",
-    "10",
-    "--sort",
-    "rate",
-    "--save",
-    blackarch_repos.MIRRORLIST_FILE,
-    "--protocol",
-    "https",
-    "--age",
-    "24",
-    "--score",
-    "100",
-    "--fastest",
-    "100",
-    "--latest",
-    "50",
-]
-
-# Add country to reflector arguments if detected
-if current_country:
-    reflector_args.extend(["--country", current_country])
 
 for mirror in mirrors:
     logging.info("Trying mirror: %s", mirror)
@@ -188,7 +146,10 @@ for mirror in mirrors:
             print("All packages installed successfully!")
 
             verify_blackarch_categories()
-            run_command(["sudo", "reflector"] + reflector_args)  
+            
+            # Update mirrorlist using reflector
+            reflector.update_mirrorlist()
+
             return  # Exit if installation is successful
         except subprocess.CalledProcessError:
             pass  # Move on to the next helper if this one fails
