@@ -16,8 +16,7 @@ import requests  # HTTP library for geolocation
 
 import blackarch_packages
 import blackarch_repos
-import helpers
-import reflector  # Import the reflector module
+import helpers #Import Helpers
 
 # --- Global Variables ---
 PACMAN_CONF = "/etc/pacman.conf"
@@ -45,7 +44,9 @@ def run_command(
         except subprocess.CalledProcessError as e:
             logging.warning(
                 "Command '%s' failed (attempt %d/%d):",
-                " ".join(command), attempt + 1, retries
+                " ".join(command),
+                attempt + 1,
+                retries,
             )
             logging.warning("Error output:\n%s", e.stdout)  # Log error output
 
@@ -90,7 +91,7 @@ def fix_ignored_packages():
                 with open(PACMAN_CONF, "w", encoding="utf-8") as configfile:
                     config.write(configfile)
             except subprocess.CalledProcessError:
-                pass  
+                pass  # Move on to the next helper if this one fails
 
 
 def verify_blackarch_categories():
@@ -109,6 +110,7 @@ def verify_blackarch_categories():
             print(msg)
             logging.warning(msg)
 
+
 def get_current_country():
     """Attempts to determine the user's current country using geolocation."""
     try:
@@ -117,7 +119,8 @@ def get_current_country():
     except requests.exceptions.RequestException as e:
         logging.error("Error getting location: %s", e)
         return None
-    
+
+
 # --- Main Execution ---
 with open(LOG_FILE, "w"):  # Clear log file
     pass
@@ -136,6 +139,29 @@ mirrors = blackarch_repos.fetch_mirrors()
 
 current_country = get_current_country()
 
+# Reflector arguments
+reflector_args = [
+    "--latest",
+    "10",
+    "--sort",
+    "rate",
+    "--save",
+    blackarch_repos.MIRRORLIST_FILE,
+    "--protocol",
+    "https",
+    "--age",
+    "24",
+    "--score",
+    "100",
+    "--fastest",
+    "100",
+    "--latest",
+    "50",
+]
+
+# Add country to reflector arguments if detected
+if current_country:
+    reflector_args.extend(["--country", current_country])
 
 for mirror in mirrors:
     logging.info("Trying mirror: %s", mirror)
@@ -162,12 +188,10 @@ for mirror in mirrors:
             print("All packages installed successfully!")
 
             verify_blackarch_categories()
-            
-            reflector.update_mirrorlist(current_country)
+            run_command(["sudo", "reflector"] + reflector_args)  
             return  # Exit if installation is successful
         except subprocess.CalledProcessError:
             pass  # Move on to the next helper if this one fails
 
 logging.error("No working mirror found. Check mirrorlist & connection.")
 print("No working mirror found. Check the log file for details.")
-
