@@ -11,19 +11,19 @@ import subprocess
 import time
 import typing
 
-import geocoder  # Geolocation library
-import requests  # HTTP library for geolocation
-
 import blackarch_packages
 import blackarch_repos
+import geocoder  # Geolocation library
 import helpers
 import reflector  # Import the reflector module
+import requests  # HTTP library for geolocation
 
 # --- Global Variables ---
 PACMAN_CONF = "/etc/pacman.conf"
 LOG_FILE = "/tmp/blackarch_installer.log"
 
 AUR_HELPERS = helpers.AUR_HELPERS
+
 
 # --- Functions ---
 def run_command(
@@ -45,7 +45,9 @@ def run_command(
         except subprocess.CalledProcessError as e:
             logging.warning(
                 "Command '%s' failed (attempt %d/%d):",
-                " ".join(command), attempt + 1, retries
+                " ".join(command),
+                attempt + 1,
+                retries,
             )
             logging.warning("Error output:\n%s", e.stdout)  # Log error output
 
@@ -90,7 +92,7 @@ def fix_ignored_packages():
                 with open(PACMAN_CONF, "w", encoding="utf-8") as configfile:
                     config.write(configfile)
             except subprocess.CalledProcessError:
-                pass  
+                pass
 
 
 def verify_blackarch_categories():
@@ -103,11 +105,10 @@ def verify_blackarch_categories():
             )
             print(f"Category '{category}' installed.")
         except subprocess.CalledProcessError:
-            msg = (
-                f"WARNING: Category '{category}' not installed or incomplete."
-            )
+            msg = f"WARNING: Category '{category}' not installed or incomplete."
             print(msg)
             logging.warning(msg)
+
 
 def get_current_country():
     """Attempts to determine the user's current country using geolocation."""
@@ -117,7 +118,8 @@ def get_current_country():
     except requests.exceptions.RequestException as e:
         logging.error("Error getting location: %s", e)
         return None
-    
+
+
 # --- Main Execution ---
 with open(LOG_FILE, "w"):  # Clear log file
     pass
@@ -129,13 +131,15 @@ logging.basicConfig(
 )
 
 # Install any missing helpers
-subprocess.run(["sudo", "python", os.path.join(os.path.dirname(__file__), "helpers.py")], check=True)
+subprocess.run(
+    ["sudo", "python", os.path.join(os.path.dirname(__file__), "helpers.py")],
+    check=True,
+)
 
 fix_ignored_packages()
 mirrors = blackarch_repos.fetch_mirrors()
 
 current_country = get_current_country()
-
 
 for mirror in mirrors:
     logging.info("Trying mirror: %s", mirror)
@@ -155,14 +159,23 @@ for mirror in mirrors:
             continue
 
         print(f"Trying AUR helper: {helper}")
-        install_command = command + blackarch_packages.PACKAGES_TO_INSTALL + ["--needed", "--noconfirm", "--disable-download-timeout", "--noprogressbar"]
+        install_command = (
+            command
+            + blackarch_packages.PACKAGES_TO_INSTALL
+            + [
+                "--needed",
+                "--noconfirm",
+                "--disable-download-timeout",
+                "--noprogressbar",
+            ]
+        )
 
         try:
             run_command(install_command, suppress_output=True)
             print("All packages installed successfully!")
 
             verify_blackarch_categories()
-            
+
             reflector.update_mirrorlist(current_country)
             return  # Exit if installation is successful
         except subprocess.CalledProcessError:
@@ -170,4 +183,3 @@ for mirror in mirrors:
 
 logging.error("No working mirror found. Check mirrorlist & connection.")
 print("No working mirror found. Check the log file for details.")
-

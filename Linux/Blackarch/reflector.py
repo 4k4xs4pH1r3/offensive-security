@@ -1,11 +1,26 @@
-import subprocess
 import logging
+import subprocess
+
 
 def update_mirrorlist(country=None):
     """Updates the pacman mirrorlist using reflector."""
     reflector_args = [
-        "--latest", "10", "--sort", "rate", "--save", "/etc/pacman.d/mirrorlist",
-        "--protocol", "https", "--age", "24", "--score", "100", "--fastest", "100", "--latest", "50"
+        "--latest",
+        "10",
+        "--sort",
+        "rate",
+        "--save",
+        "/etc/pacman.d/mirrorlist",
+        "--protocol",
+        "https",
+        "--age",
+        "24",
+        "--score",
+        "100",
+        "--fastest",
+        "100",
+        "--latest",
+        "50",
     ]
     if country:
         reflector_args.extend(["--country", country])
@@ -15,4 +30,3 @@ def update_mirrorlist(country=None):
         logging.info("Mirrorlist updated successfully.")
     except subprocess.CalledProcessError as e:
         logging.error("Error updating mirrorlist: %s", e)
-

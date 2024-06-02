@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Installs required AUR helpers if they are not already present."""
 
-import subprocess
 import logging
+import subprocess
 
 # Dictionary of AUR helpers and their corresponding install commands
 AUR_HELPERS = {
@@ -10,6 +10,7 @@ AUR_HELPERS = {
     "bauh": ["yay", "-S", "--needed", "bauh"],
     "pacaur": ["yay", "-S", "--needed", "pacaur"],
 }
+
 
 def run_command(command: list[str]) -> bool:
     """Runs a shell command and returns True if successful, False otherwise."""
@@ -20,6 +21,7 @@ def run_command(command: list[str]) -> bool:
         logging.error(f"Command failed: {' '.join(command)}")
         return False
 
+
 def is_helper_installed(helper: str) -> bool:
     """Checks if the given AUR helper is installed."""
     try:
@@ -27,6 +29,7 @@ def is_helper_installed(helper: str) -> bool:
         return True
     except FileNotFoundError:
         return False
+
 
 def install_helper_if_missing(helper: str, command: list[str]):
     """Installs a helper if it's not found on the system."""
@@ -36,6 +39,7 @@ def install_helper_if_missing(helper: str, command: list[str]):
             logging.info(f"Successfully installed '{helper}'.")
         else:
             logging.error(f"Failed to install '{helper}'. Check the logs for details.")
+
 
 def main():
     """Main function to install missing helpers."""

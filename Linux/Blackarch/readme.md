@@ -18,23 +18,24 @@ This Python script automates the installation of BlackArch tools on an existing 
 - **Arch Linux:** This script is designed for Arch Linux or Arch-based distributions.
 - **Python 3 and Anaconda:** You'll need Python 3 and Anaconda installed on your system.
 - **Python Libraries:**
-    - `requests`
-    - `geocoder`
-    - `configparser`
+  - `requests`
+  - `geocoder`
+  - `configparser`
 - **AUR Helper:** Will use the following AUR helpers:
-    - `pacman`
-    - `yay`
-    - `paru`
-    - `pacaur`
+  - `pacman`
+  - `yay`
+  - `paru`
+  - `pacaur`
 
 ## Usage
 
 1. **Clone/Download the Repository:** Clone or download the repository containing this script and the required `blackarch_packages.py` file.
 
-2. **`blackarch_packages.py`:**  In this file, are all the BlackArch packages and categories to be installed.
+2. **`blackarch_packages.py`:** In this file, are all the BlackArch packages and categories to be installed.
 
 3. **Run the Script:** Make the script executable and run it using `sudo`:
 
    ```bash
    chmod +x blackarch_installer.py
    sudo ./blackarch_installer.py
+   ```
