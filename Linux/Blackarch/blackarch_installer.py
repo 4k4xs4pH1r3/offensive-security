@@ -6,6 +6,7 @@ Handles problematic packages, mirror selection, and dependency resolution.
 
 import configparser
 import logging
+import os
 import subprocess
 import time
 import typing
@@ -15,17 +16,14 @@ import requests  # HTTP library for geolocation
 
 import blackarch_packages
 import blackarch_repos
+import helpers
+import reflector  # Import the reflector module
 
 # --- Global Variables ---
 PACMAN_CONF = "/etc/pacman.conf"
 LOG_FILE = "/tmp/blackarch_installer.log"
 
-AUR_HELPERS = {
-    "yay": ["yay", "-S"],
-    "paru": ["paru", "-S"],
-    "bauh": ["bauh", "-c"],
-    "pacaur": ["pacaur", "-S"],
-}
+AUR_HELPERS = helpers.AUR_HELPERS
 
 # --- Functions ---
 def run_command(
@@ -47,9 +45,7 @@ def run_command(
         except subprocess.CalledProcessError as e:
             logging.warning(
                 "Command '%s' failed (attempt %d/%d):",
-                " ".join(command),
-                attempt + 1,
-                retries,
+                " ".join(command), attempt + 1, retries
             )
             logging.warning("Error output:\n%s", e.stdout)  # Log error output
 
@@ -61,6 +57,8 @@ def run_command(
 
 def is_helper_installed(helper: str) -> bool:
     """Checks if the given AUR helper is installed."""
+    if helper == "pacman":
+        return True
     try:
         subprocess.run([helper, "--version"], check=True, stdout=subprocess.DEVNULL)
         return True
@@ -92,7 +90,7 @@ def fix_ignored_packages():
                 with open(PACMAN_CONF, "w", encoding="utf-8") as configfile:
                     config.write(configfile)
             except subprocess.CalledProcessError:
-                pass  # Move on to the next helper if this one fails
+                pass  
 
 
 def verify_blackarch_categories():
@@ -111,7 +109,6 @@ def verify_blackarch_categories():
             print(msg)
             logging.warning(msg)
 
-
 def get_current_country():
     """Attempts to determine the user's current country using geolocation."""
     try:
@@ -120,9 +117,8 @@ def get_current_country():
     except requests.exceptions.RequestException as e:
         logging.error("Error getting location: %s", e)
         return None
-
-
-# Main Execution
+    
+# --- Main Execution ---
 with open(LOG_FILE, "w"):  # Clear log file
     pass
 
@@ -132,20 +128,14 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
+# Install any missing helpers
+subprocess.run(["sudo", "python", os.path.join(os.path.dirname(__file__), "helpers.py")], check=True)
+
 fix_ignored_packages()
 mirrors = blackarch_repos.fetch_mirrors()
 
 current_country = get_current_country()
 
-# Reflector arguments
-reflector_args = [
-    "--latest", "10", "--sort", "rate", "--save", blackarch_repos.MIRRORLIST_FILE,
-    "--protocol", "https", "--age", "24", "--score", "100", "--fastest", "100", "--latest", "50"
-]
-
-# Add country to reflector arguments if detected
-if current_country:
-    reflector_args.extend(["--country", current_country])
 
 for mirror in mirrors:
     logging.info("Trying mirror: %s", mirror)
@@ -165,32 +155,19 @@ for mirror in mirrors:
             continue
 
         print(f"Trying AUR helper: {helper}")
-        install_command = (
-            command
-            + blackarch_packages.PACKAGES_TO_INSTALL
-            + [
-                "--needed",
-                "--noconfirm",
-                "--disable-download-timeout",
-                "--noprogressbar",
-            ]
-        )
+        install_command = command + blackarch_packages.PACKAGES_TO_INSTALL + ["--needed", "--noconfirm", "--disable-download-timeout", "--noprogressbar"]
 
         try:
             run_command(install_command, suppress_output=True)
             print("All packages installed successfully!")
 
             verify_blackarch_categories()
-
-            # Run reflector to update the mirrorlist using the current country
-            run_command(["sudo", "reflector"] + reflector_args)
-
+            
+            reflector.update_mirrorlist(current_country)
             return  # Exit if installation is successful
         except subprocess.CalledProcessError:
             pass  # Move on to the next helper if this one fails
 
-logging.error(
-    "No working mirror found. Please check your mirrorlist and internet connection."
-)
+logging.error("No working mirror found. Check mirrorlist & connection.")
 print("No working mirror found. Check the log file for details.")
 
