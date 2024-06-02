@@ -35,6 +35,6 @@ This Python script automates the installation of BlackArch tools on an existing 
 
 3. **Run the Script:** Make the script executable and run it using `sudo`:
 
-   ```bash
+   ```ShellSession
    chmod +x blackarch_installer.py && sudo ./blackarch_installer.py
    ```
