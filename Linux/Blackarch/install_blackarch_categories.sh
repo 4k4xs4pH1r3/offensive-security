@@ -55,5 +55,5 @@ categories=(
 
 # Install each category with the specified pacman options
 for category in "${categories[@]}"; do
-  sudo pacman -S --needed --disable-download-timeout --noprogressbar --overwrite '*' $category --ignore aws-extender-cli
+  sudo pacman -S --needed --disable-download-timeout --noprogressbar --overwrite --noconfirm '*' $category --ignore aws-extender-cli
 done
