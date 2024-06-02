@@ -11,18 +11,18 @@ import subprocess
 import time
 import typing
 
-import geocoder  # Geolocation library
-import requests  # HTTP library for geolocation
-
 import blackarch_packages
 import blackarch_repos
-import helpers #Import Helpers
+import geocoder  # Geolocation library
+import helpers  # Import Helpers
+import requests  # HTTP library for geolocation
 
 # --- Global Variables ---
 PACMAN_CONF = "/etc/pacman.conf"
 LOG_FILE = "/tmp/blackarch_installer.log"
 
 AUR_HELPERS = helpers.AUR_HELPERS
+
 
 # --- Functions ---
 def run_command(
@@ -104,9 +104,7 @@ def verify_blackarch_categories():
             )
             print(f"Category '{category}' installed.")
         except subprocess.CalledProcessError:
-            msg = (
-                f"WARNING: Category '{category}' not installed or incomplete."
-            )
+            msg = f"WARNING: Category '{category}' not installed or incomplete."
             print(msg)
             logging.warning(msg)
 
@@ -132,7 +130,10 @@ logging.basicConfig(
 )
 
 # Install any missing helpers
-subprocess.run(["sudo", "python", os.path.join(os.path.dirname(__file__), "helpers.py")], check=True)
+subprocess.run(
+    ["sudo", "python", os.path.join(os.path.dirname(__file__), "helpers.py")],
+    check=True,
+)
 
 fix_ignored_packages()
 mirrors = blackarch_repos.fetch_mirrors()
@@ -181,14 +182,23 @@ for mirror in mirrors:
             continue
 
         print(f"Trying AUR helper: {helper}")
-        install_command = command + blackarch_packages.PACKAGES_TO_INSTALL + ["--needed", "--noconfirm", "--disable-download-timeout", "--noprogressbar"]
+        install_command = (
+            command
+            + blackarch_packages.PACKAGES_TO_INSTALL
+            + [
+                "--needed",
+                "--noconfirm",
+                "--disable-download-timeout",
+                "--noprogressbar",
+            ]
+        )
 
         try:
             run_command(install_command, suppress_output=True)
             print("All packages installed successfully!")
 
             verify_blackarch_categories()
-            run_command(["sudo", "reflector"] + reflector_args)  
+            run_command(["sudo", "reflector"] + reflector_args)
             return  # Exit if installation is successful
         except subprocess.CalledProcessError:
             pass  # Move on to the next helper if this one fails
