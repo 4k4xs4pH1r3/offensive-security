@@ -11,6 +11,15 @@ AUR_HELPERS = {
     "pacaur": ["yay", "-S", "--needed", "pacaur"],
 }
 
+def get_current_country():
+    """Attempts to determine the user's current country using geolocation."""
+    try:
+        g = geocoder.ip("me")
+        return g.country
+    except requests.exceptions.RequestException as e:
+        logging.error("Error getting location: %s", e)
+        return None
+
 def run_command(command: list[str]) -> bool:
     """Runs a shell command and returns True if successful, False otherwise."""
     try:

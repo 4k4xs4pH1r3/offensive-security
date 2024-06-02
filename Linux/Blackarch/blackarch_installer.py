@@ -4,6 +4,7 @@
 Handles problematic packages, mirror selection, and dependency resolution.
 """
 
+import configparser
 import logging
 import os
 import subprocess
@@ -12,21 +13,17 @@ import typing
 
 import blackarch_packages
 import blackarch_repos
+import helpers
 import missing_helpers
 import problematic_packages
-import reflector  # Import the reflector module
+import reflector
 
-# --- Global Variables ---
+# --- Constants ---
+PACMAN_CONF = "/etc/pacman.conf"
 LOG_FILE = "/tmp/blackarch_installer.log"
 
-AUR_HELPERS = missing_helpers.AUR_HELPERS
-
 # --- Functions ---
-def run_command(
-    command: list[str],
-    suppress_output: bool = False,
-    retries: int = 3,
-) -> typing.Optional[str]:
+def run_command(command: list[str], suppress_output=False, retries=3) -> typing.Optional[str]:
     """Runs a shell command with optional retries and output suppression."""
     for attempt in range(retries):
         try:
@@ -46,7 +43,6 @@ def run_command(
                 retries,
             )
             logging.warning("Error output:\n%s", e.stdout)  # Log error output
-
             if attempt < retries - 1:
                 time.sleep(5)
             else:
@@ -63,34 +59,41 @@ def is_helper_installed(helper: str) -> bool:
     except FileNotFoundError:
         return False
 
-def verify_blackarch_categories():
-    """Verifies BlackArch category installations."""
 
-    for category in blackarch_packages.CATEGORIES:
-        try:
-            subprocess.run(
-                ["pacman", "-Qs", category], check=True, stdout=subprocess.DEVNULL
-            )
-            print(f"Category '{category}' installed.")
-        except subprocess.CalledProcessError:
-            msg = (
-                f"WARNING: Category '{category}' not installed or incomplete."
-            )
-            print(msg)
-            logging.warning(msg)
-
-
-def get_current_country():
+def get_current_country() -> typing.Optional[str]:
     """Attempts to determine the user's current country using geolocation."""
     try:
         g = geocoder.ip("me")
         return g.country
-    except requests.exceptions.RequestException as e:
+    except (requests.exceptions.RequestException, geocoder.api.exceptions.GeocoderError) as e:
         logging.error("Error getting location: %s", e)
         return None
 
 
+def install_with_mirror_and_helper(mirror: str, helper: str) -> bool:
+    """Attempts to install BlackArch packages using a specific mirror and helper."""
+    with open(blackarch_repos.MIRRORLIST_FILE, "w", encoding="utf-8") as file:
+        file.write(f"Server = {mirror}\n")
+
+    try:
+        run_command(["sudo", "pacman", "-Sy"], retries=3)
+        run_command(
+            helpers.AUR_HELPERS[helper]
+            + blackarch_packages.PACKAGES_TO_INSTALL
+            + ["--needed", "--noconfirm", "--disable-download-timeout", "--noprogressbar"],
+            suppress_output=True,
+        )
+        print("All packages installed successfully!")
+        verify_blackarch_categories()
+        reflector.update_mirrorlist(get_current_country())
+        return True  
+    except subprocess.CalledProcessError:
+        return False  
+
+
+
 # --- Main Execution ---
+
 with open(LOG_FILE, "w"):  # Clear log file
     pass
 
@@ -100,43 +103,18 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
-# Install any missing helpers
-missing_helpers.main()
-problematic_packages.fix_problematic_packages()
+missing_helpers.main()  # Install any missing helpers
+problematic_packages.fix_problematic_packages()  # Fix problematic packages first
 mirrors = blackarch_repos.fetch_mirrors()
-
-current_country = get_current_country()
 
 
 for mirror in mirrors:
     logging.info("Trying mirror: %s", mirror)
-    with open(blackarch_repos.MIRRORLIST_FILE, "w", encoding="utf-8") as file:
-        file.write(f"Server = {mirror}\n")  # Use only the current mirror
-
-    try:
-        run_command(["sudo", "pacman", "-Sy"], retries=3)
-    except subprocess.CalledProcessError:
-        logging.warning("Mirror %s failed, trying next...", mirror)
-        continue  # Go to the next mirror if this one fails
-
-    # If the mirror works, proceed with installations
-    for helper in missing_helpers.AUR_HELPERS: 
-        if not is_helper_installed(helper):
-            logging.warning("Helper %s not installed...", helper)
-            continue
-
-        print(f"Trying AUR helper: {helper}")
-        install_command = missing_helpers.AUR_HELPERS[helper] + blackarch_packages.PACKAGES_TO_INSTALL + ["--needed", "--noconfirm", "--disable-download-timeout", "--noprogressbar"]
-
-        try:
-            run_command(install_command, suppress_output=True)
-            print("All packages installed successfully!")
-
-            verify_blackarch_categories()
-            reflector.update_mirrorlist(current_country)
-            return  # Exit if installation is successful
-        except subprocess.CalledProcessError:
-            pass  # Move on to the next helper if this one fails
+    for helper in AUR_HELPERS:
+        if is_helper_installed(helper):
+            print(f"Trying AUR helper: {helper}")
+            if install_with_mirror_and_helper(mirror, helper):
+                exit(0)  
 
 logging.error("No working mirror found. Check mirrorlist & connection.")
 print("No working mirror found. Check the log file for details.")
