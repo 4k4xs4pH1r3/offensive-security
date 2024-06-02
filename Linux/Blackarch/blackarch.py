@@ -10,11 +10,10 @@ import subprocess
 import time
 import typing
 
-import geocoder  # Geolocation library
-import requests  # HTTP library for geolocation
-
 import blackarch_packages
 import blackarch_repos
+import geocoder  # Geolocation library
+import requests  # HTTP library for geolocation
 
 # --- Global Variables ---
 PACMAN_CONF = "/etc/pacman.conf"
@@ -26,6 +25,7 @@ AUR_HELPERS = {
     "bauh": ["bauh", "-c"],
     "pacaur": ["pacaur", "-S"],
 }
+
 
 # --- Functions ---
 def run_command(
@@ -105,9 +105,7 @@ def verify_blackarch_categories():
             )
             print(f"Category '{category}' installed.")
         except subprocess.CalledProcessError:
-            msg = (
-                f"WARNING: Category '{category}' not installed or incomplete."
-            )
+            msg = f"WARNING: Category '{category}' not installed or incomplete."
             print(msg)
             logging.warning(msg)
 
@@ -139,8 +137,22 @@ current_country = get_current_country()
 
 # Reflector arguments
 reflector_args = [
-    "--latest", "10", "--sort", "rate", "--save", blackarch_repos.MIRRORLIST_FILE,
-    "--protocol", "https", "--age", "24", "--score", "100", "--fastest", "100", "--latest", "50"
+    "--latest",
+    "10",
+    "--sort",
+    "rate",
+    "--save",
+    blackarch_repos.MIRRORLIST_FILE,
+    "--protocol",
+    "https",
+    "--age",
+    "24",
+    "--score",
+    "100",
+    "--fastest",
+    "100",
+    "--latest",
+    "50",
 ]
 
 # Add country to reflector arguments if detected
@@ -193,4 +205,3 @@ logging.error(
     "No working mirror found. Please check your mirrorlist and internet connection."
 )
 print("No working mirror found. Check the log file for details.")
-
