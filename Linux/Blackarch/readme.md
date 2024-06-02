@@ -38,3 +38,5 @@ This Python script automates the installation of BlackArch tools on an existing 
    ```bash
    chmod +x blackarch_installer.py
    sudo ./blackarch_installer.py
+   ```
+ 
