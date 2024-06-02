@@ -2,6 +2,7 @@
 
 # List of BlackArch categories to install
 categories=(
+  blackarch
   blackarch-webapp
   blackarch-fuzzer
   blackarch-scanner
@@ -55,5 +56,5 @@ categories=(
 
 # Install each category with the specified pacman options
 for category in "${categories[@]}"; do
-  yes "" | sudo pacman -S --needed --disable-download-timeout --noprogressbar --overwrite --noconfirm $category --ignore aws-extender-cli
+  yes "" | sudo pacman -S --needed --disable-download-timeout --noprogressbar --overwrite --noconfirm $category --ignore aws-extender-cli blackarch-config-calamares
 done
