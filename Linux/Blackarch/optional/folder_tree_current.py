@@ -1,5 +1,6 @@
 import os
 
+
 def print_directory_tree(path):
     """Prints the immediate contents of a directory."""
     entries = list(os.scandir(path))  # Convert to list to get the last entry
@@ -10,6 +11,7 @@ def print_directory_tree(path):
         elif entry.is_dir():
             pipe = "└── " if index == len(entries) - 1 else "├── "
             print(f"{pipe}{entry.name}/")
+
 
 if __name__ == "__main__":
     current_directory = os.getcwd()
