@@ -13,6 +13,7 @@ def fetch_mirrors():
     mirrors = []
     for line in response.text.splitlines():
         if line.startswith("Server = "):
-            mirrors.append(line.split("#")[0].strip()[8:])  # Remove comments and leading/trailing spaces
+            mirrors.append(
+                line.split("#")[0].strip()[8:]
+            )  # Remove comments and leading/trailing spaces
     return mirrors
-

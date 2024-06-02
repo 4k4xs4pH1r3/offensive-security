@@ -1,6 +1,4 @@
-PACKAGES_TO_INSTALL = [
-    "blackarch"
-]
+PACKAGES_TO_INSTALL = ["blackarch"]
 
 CATEGORIES = [
     "blackarch-anti-forensic",
@@ -49,5 +47,5 @@ CATEGORIES = [
     "blackarch-webap",
     "blackarch-webapp",
     "blackarch-windows",
-    "blackarch-wireless"
+    "blackarch-wireless",
 ]

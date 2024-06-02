@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
+import configparser
+import logging
 import subprocess
 import time
-import logging
-import configparser
-import blackarch_repos
+
 import blackarch_packages
+import blackarch_repos
 
 PACMAN_CONF_FILE = "/etc/pacman.conf"
 LOG_FILE = "/tmp/blackarch_installer.log"
@@ -21,6 +22,7 @@ logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
+
 
 def run_command(command, suppress_output=False, retries=3):
     for attempt in range(retries):
@@ -145,8 +147,11 @@ def main():
             except subprocess.CalledProcessError:
                 pass  # Move on to the next helper if this one fails
 
-    logging.error("No working mirror found. Please check your mirrorlist and internet connection.")
+    logging.error(
+        "No working mirror found. Please check your mirrorlist and internet connection."
+    )
     print("No working mirror found. Check the log file for details.")
+
 
 if __name__ == "__main__":
     main()
