@@ -16,7 +16,7 @@ This Python script automates the installation of BlackArch tools on an existing 
 ## Requirements
 
 - **Arch Linux:** This script is designed for Arch Linux or Arch-based distributions.
-- **Python 3 and Anaconda:** You'll need Python 3 and Anaconda installed on your system.
+- **Python 3 and Anaconda:** You'll need Python 3 and Anaconda (https://www.anaconda.com/download) installed on your system.
 - **Python Libraries:**
     - `requests`
     - `geocoder`
