@@ -2,7 +2,13 @@ import configparser
 import logging
 
 import blackarch_packages
-from blackarch_installer import AUR_HELPERS, is_helper_installed, run_command, PACMAN_CONF  # Assuming blackarch_installer.py is in the same directory
+from blackarch_installer import (  # Assuming blackarch_installer.py is in the same directory
+    AUR_HELPERS,
+    PACMAN_CONF,
+    is_helper_installed,
+    run_command,
+)
+
 
 def fix_problematic_packages():
     """
@@ -20,12 +26,14 @@ def fix_problematic_packages():
 
             install_command = command + [package] + ["--needed", "--noconfirm"]
             try:
-                run_command(install_command)  
+                run_command(install_command)
                 break  # If successful, move to the next package
             except subprocess.CalledProcessError as e:
-                logging.warning(f"Error installing '{package}' with {helper}: {e.stdout}")
-                problematic_packages.append(package)  
-    
+                logging.warning(
+                    f"Error installing '{package}' with {helper}: {e.stdout}"
+                )
+                problematic_packages.append(package)
+
     # If there are problematic packages, add them to IgnorePkg
     if problematic_packages:
         print(f"Found problematic packages: {problematic_packages}")

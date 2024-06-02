@@ -1,7 +1,9 @@
-import subprocess
 import logging
+import subprocess
+
 import geocoder
 import requests
+
 
 def update_mirrorlist(country=None):
     """Updates the pacman mirrorlist using reflector, optionally filtering by country."""
@@ -11,8 +13,11 @@ def update_mirrorlist(country=None):
             g = geocoder.ip("me")
             country = g.country
             logging.info("Detected country: %s", country)
-        except (requests.exceptions.RequestException, geocoder.api.exceptions.GeocoderError) as e:
-            logging.warning("Error getting location, using all mirrors: %s", e)  
+        except (
+            requests.exceptions.RequestException,
+            geocoder.api.exceptions.GeocoderError,
+        ) as e:
+            logging.warning("Error getting location, using all mirrors: %s", e)
 
     reflector_args = [
         "--latest",
@@ -36,14 +41,16 @@ def update_mirrorlist(country=None):
     if country:
         reflector_args.extend(["--country", country])
 
-    logging.info("Updating mirrorlist with arguments: %s", reflector_args) # Log the arguments
-    
+    logging.info(
+        "Updating mirrorlist with arguments: %s", reflector_args
+    )  # Log the arguments
+
     try:
         result = subprocess.run(
-            ["sudo", "reflector"] + reflector_args, 
-            capture_output=True, 
+            ["sudo", "reflector"] + reflector_args,
+            capture_output=True,
             text=True,
-            check=True
+            check=True,
         )
         logging.info("Mirrorlist updated successfully. Output:\n%s", result.stdout)
     except subprocess.CalledProcessError as e:

@@ -21,6 +21,7 @@ LOG_FILE = "/tmp/blackarch_installer.log"
 
 AUR_HELPERS = missing_helpers.AUR_HELPERS
 
+
 # --- Functions ---
 def run_command(
     command: list[str],
@@ -63,6 +64,7 @@ def is_helper_installed(helper: str) -> bool:
     except FileNotFoundError:
         return False
 
+
 def verify_blackarch_categories():
     """Verifies BlackArch category installations."""
 
@@ -73,9 +75,7 @@ def verify_blackarch_categories():
             )
             print(f"Category '{category}' installed.")
         except subprocess.CalledProcessError:
-            msg = (
-                f"WARNING: Category '{category}' not installed or incomplete."
-            )
+            msg = f"WARNING: Category '{category}' not installed or incomplete."
             print(msg)
             logging.warning(msg)
 
@@ -107,7 +107,6 @@ mirrors = blackarch_repos.fetch_mirrors()
 
 current_country = get_current_country()
 
-
 for mirror in mirrors:
     logging.info("Trying mirror: %s", mirror)
     with open(blackarch_repos.MIRRORLIST_FILE, "w", encoding="utf-8") as file:
@@ -120,13 +119,22 @@ for mirror in mirrors:
         continue  # Go to the next mirror if this one fails
 
     # If the mirror works, proceed with installations
-    for helper in missing_helpers.AUR_HELPERS: 
+    for helper in missing_helpers.AUR_HELPERS:
         if not is_helper_installed(helper):
             logging.warning("Helper %s not installed...", helper)
             continue
 
         print(f"Trying AUR helper: {helper}")
-        install_command = missing_helpers.AUR_HELPERS[helper] + blackarch_packages.PACKAGES_TO_INSTALL + ["--needed", "--noconfirm", "--disable-download-timeout", "--noprogressbar"]
+        install_command = (
+            missing_helpers.AUR_HELPERS[helper]
+            + blackarch_packages.PACKAGES_TO_INSTALL
+            + [
+                "--needed",
+                "--noconfirm",
+                "--disable-download-timeout",
+                "--noprogressbar",
+            ]
+        )
 
         try:
             run_command(install_command, suppress_output=True)
@@ -140,4 +148,3 @@ for mirror in mirrors:
 
 logging.error("No working mirror found. Check mirrorlist & connection.")
 print("No working mirror found. Check the log file for details.")
-
