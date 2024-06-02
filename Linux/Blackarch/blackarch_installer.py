@@ -22,8 +22,11 @@ LOG_FILE = "/tmp/blackarch_installer.log"
 
 AUR_HELPERS = helpers.AUR_HELPERS
 
+
 # --- Functions ---
-def run_command(command: list[str], suppress_output: bool = False, retries: int = 3) -> typing.Optional[str]:
+def run_command(
+    command: list[str], suppress_output: bool = False, retries: int = 3
+) -> typing.Optional[str]:
     """Runs a shell command with optional retries and output suppression."""
     for attempt in range(retries):
         try:
@@ -98,9 +101,7 @@ def verify_blackarch_categories():
             )
             print(f"Category '{category}' installed.")
         except subprocess.CalledProcessError:
-            msg = (
-                f"WARNING: Category '{category}' not installed or incomplete."
-            )
+            msg = f"WARNING: Category '{category}' not installed or incomplete."
             print(msg)
             logging.warning(msg)
 
@@ -116,7 +117,10 @@ logging.basicConfig(
 )
 
 # Install any missing helpers
-subprocess.run(["sudo", "python", os.path.join(os.path.dirname(__file__), "helpers.py")], check=True)
+subprocess.run(
+    ["sudo", "python", os.path.join(os.path.dirname(__file__), "helpers.py")],
+    check=True,
+)
 
 fix_ignored_packages()
 mirrors = blackarch_repos.fetch_mirrors()
@@ -139,14 +143,23 @@ for mirror in mirrors:
             continue
 
         print(f"Trying AUR helper: {helper}")
-        install_command = command + blackarch_packages.PACKAGES_TO_INSTALL + ["--needed", "--noconfirm", "--disable-download-timeout", "--noprogressbar"]
+        install_command = (
+            command
+            + blackarch_packages.PACKAGES_TO_INSTALL
+            + [
+                "--needed",
+                "--noconfirm",
+                "--disable-download-timeout",
+                "--noprogressbar",
+            ]
+        )
 
         try:
             run_command(install_command, suppress_output=True)
             print("All packages installed successfully!")
 
             verify_blackarch_categories()
-            
+
             # Update mirrorlist using reflector
             reflector.update_mirrorlist()
 

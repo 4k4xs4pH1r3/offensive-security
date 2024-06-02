@@ -1,21 +1,37 @@
-import subprocess
 import logging
+import subprocess
+
 import geocoder
 import requests
+
 
 def update_mirrorlist(country=None):
     """Updates the pacman mirrorlist using reflector."""
     if not country:  # If country is not provided, try to detect it
         try:
-            g = geocoder.ip('me')
+            g = geocoder.ip("me")
             country = g.country
             logging.info("Detected country: %s", country)
         except requests.exceptions.RequestException as e:
             logging.error("Error getting location: %s", e)
 
     reflector_args = [
-        "--latest", "10", "--sort", "rate", "--save", "/etc/pacman.d/mirrorlist",
-        "--protocol", "https", "--age", "24", "--score", "100", "--fastest", "100", "--latest", "50"
+        "--latest",
+        "10",
+        "--sort",
+        "rate",
+        "--save",
+        "/etc/pacman.d/mirrorlist",
+        "--protocol",
+        "https",
+        "--age",
+        "24",
+        "--score",
+        "100",
+        "--fastest",
+        "100",
+        "--latest",
+        "50",
     ]
     if country:
         reflector_args.extend(["--country", country])
