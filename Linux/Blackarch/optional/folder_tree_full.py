@@ -1,5 +1,6 @@
 import os
 
+
 def print_directory_tree(path, prefix=""):
     """Prints the directory tree structure starting from the given path.
 
