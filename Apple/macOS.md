@@ -35,13 +35,13 @@ brew install --cask gitfinder powershell dotnet && brew install cask && brew ins
 4. Upgrade Apple Store + Apple Developer + Brew packages
 
 ```ShellSession
-softwareupdate --all --install --force && brew update-reset && brew update -q && brew upgrade
+softwareupdate --all --install --force && brew update-reset && brew update -q && brew upgrade --greedy
 ```
 
 5. Install Terraform with Tfenv / amd64 for chip Mac + Terragrunt with Tgenv
 
 ```ShellSession
-TFENV_ARCH=amd64 tfenv install latest && tfenv use latest && tfenv list && tfenv list && terraform -v && tgenv install latest && tgenv use latest && terragrunt -version && terraform -version 
+TFENV_ARCH=amd64 tfenv install latest && tfenv use latest && tfenv list && tfenv list && terraform -v && tgenv install latest && tgenv use latest && terragrunt -version && terraform -version
 
 ```
 
