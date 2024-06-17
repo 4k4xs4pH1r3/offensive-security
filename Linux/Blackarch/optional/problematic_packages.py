@@ -40,4 +40,5 @@ def fix_problematic_packages():
         with open(utils.PACMAN_CONF, "w", encoding="utf-8") as configfile:
             config.write(configfile)
 
-        fix_problematic_packages()  # Recursively call fix_ignored_packages to attempt fixing them
+        # Recursively call fix_ignored_packages to attempt fixing them
+        fix_problematic_packages()
