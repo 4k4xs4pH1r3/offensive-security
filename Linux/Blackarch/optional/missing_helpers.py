@@ -1,12 +1,13 @@
-import subprocess
 import logging
 import os
+import subprocess
 
 AUR_HELPERS = {
     "yay": ["sudo", "pacman", "-S", "--needed", "yay"],
     "paru": ["yay", "-S", "--needed", "paru"],
     "pacaur": ["yay", "-S", "--needed", "pacaur"],
 }
+
 
 def run_command(command: list[str]) -> bool:
     """Runs a shell command and returns True if successful, False otherwise."""
@@ -17,6 +18,7 @@ def run_command(command: list[str]) -> bool:
         logging.error(f"Command failed: {' '.join(command)}")
         return False
 
+
 def is_helper_installed(helper: str) -> bool:
     """Checks if the given AUR helper is installed."""
     if helper == "pacman":
@@ -26,6 +28,7 @@ def is_helper_installed(helper: str) -> bool:
         return True
     except FileNotFoundError:
         return False
+
 
 def install_helper_if_missing(helper: str, command: list[str]):
     """Installs a helper if it's not found on the system."""

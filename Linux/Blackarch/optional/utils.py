@@ -1,6 +1,6 @@
+import logging
 import subprocess
 import time
-import logging
 import typing
 
 # --- Global Variables ---
@@ -11,7 +11,7 @@ AUR_HELPERS = {
     "yay": ["yay", "-S"],
     "paru": ["paru", "-S"],
     "pacaur": ["pacaur", "-S"],
-    "pacman": ["sudo", "pacman", "-S"]
+    "pacman": ["sudo", "pacman", "-S"],
 }
 
 
@@ -30,7 +30,7 @@ def run_command(
     Returns:
         The command's output if successful, otherwise None.
     """
-    
+
     for attempt in range(retries):
         try:
             result = subprocess.run(
