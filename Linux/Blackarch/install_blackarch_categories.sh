@@ -52,6 +52,7 @@ categories=(
   blackarch-anti-forensic
   blackarch-ids
   blackarch-gpu
+  fwupd
 )
 
 # Install each category with the specified pacman options
