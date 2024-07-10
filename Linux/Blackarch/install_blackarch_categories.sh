@@ -55,7 +55,12 @@ categories=(
   fwupd
 )
 
+# Install the core 'blackarch' metapackage with overwrite
+echo "Installing core BlackArch metapackage..."
+yes "" | sudo pacman -S blackarch --overwrite '*'
+
 # Install each category with the specified pacman options
 for category in "${categories[@]}"; do
+  echo "Installing category: $category"
   yes "" | sudo pacman -S --needed --disable-download-timeout --noprogressbar --overwrite --noconfirm $category --ignore aws-extender-cli blackarch-config-calamares
 done
