@@ -15,26 +15,29 @@ This package will install the most recent version of the WSL 2 Linux kernel
 
       https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
 
-3. Set WSL version 2 as the default
+
+3. Restart the Operating System to apply the changes
+
+4. Set WSL version 2 as the default
 
        wsl --set-default-version 2
    
 
-4. Update WSL to the latest version
+5. Update WSL to the latest version
 
        wsl --update
    
-5. Install Kali Linux WSL from the Windows Store
+6. Install Kali Linux WSL from the Windows Store
 
 https://www.microsoft.com/store/apps/9PKR34TNCV07
 
-6. Restart Windows Operating System to apply changes   
+7. Restart Windows Operating System to apply changes   
     
-7. Open Kali Linux, follow the wizard for installation define your username and password, and reset the root password
+8. Open Kali Linux, follow the wizard for installation define your username and password, and reset the root password
 
        sudo -i
 
-8. Add this path to Windows Defender as an exception
+9. Add this path to Windows Defender as an exception
 
        C:\Users\yourusername\AppData\Local\Packages\KaliLinux.*
 
@@ -71,13 +74,13 @@ https://www.microsoft.com/store/apps/9PKR34TNCV07
 #       
 #
 
-# 7. Add GUI xfce
+# 10. Add GUI xfce
 
     sudo apt install xfce4 xrdp -y && sudo /etc/init.d/xrdp start
 
-1. Select lightdm and allow in the Windows firewall the traffic on port 3389 in your private network to grant RDP access.
+a. Select lightdm and allow in the Windows firewall the traffic on port 3389 in your private network to grant RDP access.
 
-2. In the Mobaxterm application, edit the "WSL-Kali" session, go to "Advanced WSL settings" and select "XFCE4 desktop"
+b. In the Mobaxterm application, edit the "WSL-Kali" session, go to "Advanced WSL settings" and select "XFCE4 desktop"
 
 3. Open a new session for access Kali Linux WSL via RDP.
 
