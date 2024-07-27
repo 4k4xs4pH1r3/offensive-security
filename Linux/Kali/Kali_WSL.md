@@ -2,7 +2,8 @@
 
 0. Enable WSL feature, executing this in Powershell as Administrator
 
-       Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+       dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
 
 1. Enable the Virtual Machine feature executing this in Powershell as Administrator
 
