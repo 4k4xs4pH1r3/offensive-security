@@ -57,7 +57,7 @@ sudo apt install dirmngr -y && wget -O - https://archive.kali.org/archive-key.as
 ### Convert Debian Bookworm Ninja to Kali Ninja
 
 ```
-sudo apt install aptitude -y && apt-get autoclean && apt-get clean cache && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get update -y && apt-get dist-upgrade -y && apt-get full-upgrade -y && sudo apt-get update -y && apt-get full-upgrade -y && apt-get autoremove -y && apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig
+sudo apt --fix-broken install && sudo apt autoremove -y && sudo apt update -y && sudo apt full-upgrade -y && sudo apt install aptitude -y && apt-get autoclean && apt-get clean cache && sudo aptitude safe-upgrade --full-resolver -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get update -y && apt-get dist-upgrade -y && apt-get full-upgrade -y && sudo apt-get update -y && apt-get full-upgrade -y && sudo apt-get autoremove -y && apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig
 ```
 
 Now reboot your machine to complete the conversion of Debian to Kali
