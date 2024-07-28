@@ -48,7 +48,7 @@ TFENV_ARCH=amd64 tfenv install latest && tfenv use latest && tfenv list && tfenv
 (Optional) Install Apple 🍏 Developer Beta + Apple Simulators for iOS, watchOS and tvOS
 
 ```ShellSession
-sudo gem pristine digest-crc --version 0.6.4 && sudo gem pristine unf_ext --version 0.0.8.2 && sudo gem install xcode-install && xcversion install 15.3 && xcversion update && xcversion list && xcversion simulators
+sudo gem update --system && sudo gem install digest-crc unf_ext && sudo gem pristine digest-crc unf_ext && curl -sL -O https://github.com/neonichu/ruby-domain_name/releases/download/v0.5.99999999/domain_name-0.5.99999999.gem && sudo gem install domain_name-0.5.99999999.gem && sudo gem install --conservative xcode-install && rm -f domain_name-0.5.99999999.gem && xcversion install 15.3 && xcversion update && xcversion list && xcversion simulators
 ```
 
 Enjoy ✅ 🎧
