@@ -1,6 +1,6 @@
 # Kali Linux WSL 2 Ninja
 
-0. Enable WSL feature, executing this in Powershell as Administrator
+0. Enable the WSL feature, executing this in Powershell as Administrator
 
    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 
@@ -14,30 +14,32 @@ This package will install the most recent version of the WSL 2 Linux kernel
 
       https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
 
-3. Set WSL version 2 as the default
+3. Restart the Operating System to apply the changes
+
+4. Set WSL version 2 as the default
 
    wsl --set-default-version 2
 
-4. Update WSL to the latest version
+5. Update WSL to the latest version
 
    wsl --update
 
-5. Install Kali Linux WSL from the Windows Store
+6. Install Kali Linux WSL from the Windows Store
 
 https://www.microsoft.com/store/apps/9PKR34TNCV07
 
-6. Restart Windows Operating System to apply changes
-7. Open Kali Linux, follow the wizard for installation define your username and password, and reset the root password
+7. Restart Windows Operating System to apply changes
+8. Open Kali Linux, follow the wizard for installation define your username and password, and reset the root password
 
    sudo -i
 
-8. Add this path to Windows Defender as an exception
+9. Add this path to Windows Defender as an exception
 
    C:\Users\yourusername\AppData\Local\Packages\KaliLinux.\*
 
 #
 
-33.37 GB of free space is required on your disk. \*\*\*Repeat it until you see that was installed successfully at 100% as root.
+33.37 GB of free space is required on your disk. \*\*\*Repeat it until you see that it was installed successfully at 100% as root.
 
     apt-get update -y && apt-get full-upgrade -y && apt-get install sudo wget aptitude -y && sudo apt-get autoclean && apt-get clean cache && sudo apt update -y && apt-get full-upgrade -y
 
@@ -79,15 +81,15 @@ https://www.microsoft.com/store/apps/9PKR34TNCV07
 
 #
 
-# 7. Add GUI xfce
+# 10. Add GUI xfce
 
-    sudo apt install xfce4 xrdp -y && sudo /etc/init.d/xrdp start
+    sudo apt install xfce4 xfce4-goodies -y && sudo apt install lightdm -y && sudo apt install xfce4 xrdp -y && echo "xfce4-session" >~/.xsession && sudo systemctl enable xrdp && sudo /etc/init.d/xrdp start && sudo systemctl start xrdp
 
-1. Select lightdm and allow in the Windows firewall the traffic on port 3389 in your private network to grant RDP access.
+a. Select lightdm and allow the traffic on port 3389 in your private network in the Windows firewall to grant RDP access.
 
-2. In the Mobaxterm application, edit the "WSL-Kali" session, go to "Advanced WSL settings" and select "XFCE4 desktop"
+b. In the Mobaxterm application, edit the "WSL-Kali" session, go to "Advanced WSL settings" and select "XFCE4 desktop"
 
-3. Open a new session for access Kali Linux WSL via RDP.
+3. Open a new session to access Kali Linux WSL via RDP.
 
 enjoy
 :)

@@ -57,7 +57,7 @@ sudo apt install dirmngr -y && wget -O - https://archive.kali.org/archive-key.as
 ### Convert Debian Bookworm Ninja to Kali Ninja
 
 ```
-sudo apt install aptitude -y && apt-get autoclean && apt-get clean cache && sudo aptitude safe-upgrade -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get update -y && apt-get dist-upgrade -y && apt-get full-upgrade -y && sudo apt-get update -y && apt-get full-upgrade -y && apt-get autoremove -y && apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig
+sudo apt --fix-broken install && sudo apt autoremove -y && sudo apt update -y && sudo apt full-upgrade -y && sudo apt install aptitude -y && apt-get autoclean && apt-get clean cache && sudo aptitude safe-upgrade --full-resolver -y && sudo apt-get install --fix-broken && apt-get update --fix-missing && sudo apt-get update -y && apt-get dist-upgrade -y && apt-get full-upgrade -y && sudo apt-get update -y && apt-get full-upgrade -y && sudo apt-get autoremove -y && apt-get install apt-file -y && apt-get install -y && sudo dpkg --configure -a && sudo grub-mkconfig
 ```
 
 Now reboot your machine to complete the conversion of Debian to Kali
@@ -67,3 +67,14 @@ Now reboot your machine to complete the conversion of Debian to Kali
 ```
 sudo apt-get autoclean && sudo apt-get clean cache && sudo apt autoremove -y && sudo apt install aptitude -y && aptitude install locales -y && locale-gen en_US.UTF-8 && localedef -i en_US -f UTF-8 en_US.UTF-8 && export LANGUAGE=en_US.UTF-8 && export LANG=en_US.UTF-8 && export LC_ALL=en_US.UTF-8 && locale-gen en_US.UTF-8 && apt-get update -y && apt-get full-upgrade -y && aptitude install wget ncdu -y && apt-get autoclean && apt-get clean cache && apt update -y && aptitude install kali-linux-default kali-linux-everything kali-linux-large -y && apt-get full-upgrade -y
 ```
+
+# Add GUI & XFCE4 desktop
+
+Select lightdm=
+
+    sudo apt install xfce4 xfce4-goodies -y && sudo apt install lightdm -y && sudo apt install xfce4 xrdp -y && echo "xfce4-session" >~/.xsession && sudo systemctl enable xrdp && sudo /etc/init.d/xrdp start && sudo systemctl start xrdp
+
+Now you can open a new session for access Kali Linux Dockerized via RDP.
+
+enjoy
+:)
