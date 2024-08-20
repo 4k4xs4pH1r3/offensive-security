@@ -82,7 +82,7 @@ ml-dtypes
 msgpack
 multidict
 Naked
-numpy==2.0.1
+numpy==2.1.0
 openai
 opt-einsum
 packageurl-python
