@@ -45,7 +45,7 @@ https://gist.github.com/4k4xs4pH1r3/2196035667b41107d903ebc5a771d956
 ## Start & Monitoring of the Pipeline CI/CD
 
        cd ~/SA/ad/ && chmod +x SA_sqli.sh && ./SA_sqli.sh
-       
+#       
        tail -f /root/.sqlmap/output/sqlmap_scan
                
 ## 3. Analize/Purge the Injections Results
