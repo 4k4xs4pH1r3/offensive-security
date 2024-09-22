@@ -121,4 +121,4 @@ How to Mount NTFS Partition in Linux as read-write permissions
 
 ## Windows
 
-https://www.vmware.com/go/getworkstation-win
+https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware+Workstation+Pro
