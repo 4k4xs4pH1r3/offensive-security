@@ -71,7 +71,7 @@ Select lightdm=
 
     sudo apt install xfce4 xfce4-goodies -y && sudo apt install lightdm -y && sudo apt install xfce4 xrdp -y && echo "xfce4-session" >~/.xsession && sudo systemctl enable xrdp && sudo /etc/init.d/xrdp start && sudo systemctl start xrdp
 
-Now you can open a new session for access Kali Linux Dockerized via RDP.
+Now you can access Kali Linux via SSH and RDP as well.
 
 enjoy
 :)
