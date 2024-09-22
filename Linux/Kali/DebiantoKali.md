@@ -44,7 +44,9 @@ sudo nano /etc/apt/sources.list.d/parrot.list
 ```
 
 #
+
     deb https://kali.download/kali kali-rolling main contrib non-free non-free-firmware
+
 #
 
 ```
