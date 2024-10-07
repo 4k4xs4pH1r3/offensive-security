@@ -9,11 +9,7 @@ This will take up to a few minutes, now is a great time to go for a coffee ☕..
 1. Install Homebrew
 
 ```ShellSession
-/bin/bash -c "$(curl -fsSL https://
-raw.githubusercontent.com
-/Homebrew/install/master/
-install.sh
-)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 #
