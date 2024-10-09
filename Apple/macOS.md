@@ -43,7 +43,6 @@ TFENV_ARCH=amd64 tfenv install latest && tfenv use latest && tfenv list && tfenv
 
 (Optional) Install Apple 🍏 Developer Beta + Apple Simulators for iOS, watchOS and tvOS
 
-
 ```ShellSession
 \curl -sSL https://get.rvm.io | bash -s stable --ruby=jruby --gems=rails,puma && rvm install 3.3.5 && rvm --default use 3.3.5 && ruby -v
 ```
