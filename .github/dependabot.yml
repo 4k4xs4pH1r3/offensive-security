@@ -6,42 +6,12 @@
 
 version: 2
 updates:
-  - package-ecosystem: "" # See documentation for possible values
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "daily"
-
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: daily
 
   - package-ecosystem: pip
-    directory: /SuperCluster/Python
-    schedule:
-      interval: daily
-
-  - package-ecosystem: pip
-    directory: /Linux/Blackarch
-    schedule:
-      interval: daily
-
-  - package-ecosystem: pip
-    directory: /Linux/Python
-    schedule:
-      interval: daily
-
-  - package-ecosystem: pip
-    directory: /SuperCluster/ArchLinux/Python
-    schedule:
-      interval: daily
-
-  - package-ecosystem: pip
-    directory: /SuperCluster/Kali/Python
-    schedule:
-      interval: daily
-
-  - package-ecosystem: pip
-    directory: /SuperCluster/macOS/Python
+    directory: /
     schedule:
       interval: daily
