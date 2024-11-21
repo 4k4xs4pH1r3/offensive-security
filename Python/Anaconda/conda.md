@@ -6,9 +6,8 @@ onda update -n base -c conda-forge conda && conda config --add channels conda-fo
 onda update -n base -c conda-forge conda && conda update --all && conda upgrade --all
 ```
 
-
 ```
-python -m ensurepip --upgrade 
+python -m ensurepip --upgrade
 ```
 
 ```
