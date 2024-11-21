@@ -7,7 +7,11 @@ conda env update -n x -f environment.yml && conda update --all && conda upgrade 
 ```
 
 ```
-conda update -n base -c conda-forge conda && conda update -n x -c conda-forge conda conda update --all && conda upgrade --all
+conda update -n base -c conda-forge conda && conda conda update --all && conda upgrade --all
+```
+
+```
+conda update -n x -c conda-forge && conda conda update --all && conda upgrade --all
 ```
 
 ```
