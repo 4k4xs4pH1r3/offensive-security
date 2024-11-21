@@ -1,9 +1,9 @@
 ```
-onda update -n base -c conda-forge conda && conda config --add channels conda-forge && conda create -n x python=3.13 && conda update --all && conda upgrade --all && conda env export > environment.yml && conda deactivate && conda activate x && conda install --file environment.yml && conda update --all && conda upgrade --all
+conda update -n base -c conda-forge conda && conda config --add channels conda-forge && conda create -n x python=3.13 && conda update --all && conda upgrade --all && conda env export > environment.yml && conda deactivate && conda activate x && conda install --file environment.yml && conda update --all && conda upgrade --all
 ```
 
 ```
-onda update -n base -c conda-forge conda && conda update --all && conda upgrade --all
+conda update -n base -c conda-forge conda && conda update --all && conda upgrade --all
 ```
 
 ```
