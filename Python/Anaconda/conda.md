@@ -3,6 +3,11 @@ conda config --add channels conda-forge && conda create -n x python=3.13 && cond
 ```
 
 ```
+conda update --all && conda upgrade --all
+```
+
+
+```
 python -m ensurepip --upgrade 
 ```
 
