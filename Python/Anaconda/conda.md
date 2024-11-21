@@ -1,5 +1,9 @@
 ```
-conda update -n base -c conda-forge conda && conda config --add channels conda-forge && conda create -n x python=3.13 && conda update --all && conda upgrade --all && conda env export > environment.yml && conda deactivate && conda activate x
+conda update -n base -c conda-forge conda && conda config --add channels conda-forge && conda update --all && conda upgrade --all
+```
+
+```
+conda env export > environment.yml && conda create -n x python=3.13 && conda deactivate && conda activate x
 ```
 
 ```
