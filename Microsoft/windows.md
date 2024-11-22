@@ -46,7 +46,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 #
 10. Open a new Powershell Windows without admin privileges and Install the DevSecOps tools
 ```bash
-scoop install wget curl adb apktool aws-iam-authenticator aws-vault aws azure-cli azure-functions-core-tools azure-ps circleci-cli cmake cmder-full composer kompose kubectl minikube docker git lua-for-windows make maven neofetch radare2 ruby s3deploy helm terraform youtube-dl docker-compose php go grep nano
+scoop install wget curl adb apktool aws-iam-authenticator aws-vault aws azure-cli azure-functions-core-tools azure-ps circleci-cli cmake cmder-full composer kompose kubectl minikube docker git lua-for-windows make maven neofetch radare2 ruby s3deploy helm terraform youtube-dl docker-compose php go grep nano winget
 ```
 
 #
