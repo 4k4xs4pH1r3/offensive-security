@@ -1,4 +1,8 @@
 ```
+conda config --set always_yes True && conda update --all -n base && conda upgrade --all base
+```
+
+```
 conda update -n base -c conda-forge conda && conda config --add channels conda-forge && conda update --all && conda upgrade --all
 ```
 
