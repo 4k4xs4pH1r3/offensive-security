@@ -27,7 +27,7 @@ conda install -n base conda=24.11.0 && conda install -n x conda=24.11.0
 ```
 
 ```
-python -m ensurepip --upgrade
+python -m ensurepip --upgrade && pip install --upgrade pip
 ```
 
 ```
@@ -36,10 +36,6 @@ sudo pip list --format=freeze | awk -F '==' '{print $1}' | xargs -n1 pip install
 
 ```
 conda config --set always_yes True && conda update --all -n x && conda upgrade --all
-```
-
-```
-pip install --upgrade pip
 ```
 
 ```
