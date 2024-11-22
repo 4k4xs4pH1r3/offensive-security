@@ -43,11 +43,13 @@ python -m ensurepip --upgrade; pip install --upgrade pip
 ```
 
 For macOS and Linux
+
 ```
 pip list --format=freeze | awk -F '==' '{print $1}' | xargs -n1 pip install -U
 ```
 
 Same of above for PowerShell in Windows
+
 ```
 pip list --format=freeze | ForEach-Object {$_.Split('==')[0]} | ForEach-Object {pip install -U $_}
 ```
