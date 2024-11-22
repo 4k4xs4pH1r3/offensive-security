@@ -1,5 +1,5 @@
 ```
-conda config --set always_yes True && conda update --all -n base && conda upgrade --all base
+conda config --set always_yes True && conda update --all -n base && conda upgrade --all
 ```
 
 ```
@@ -35,7 +35,7 @@ sudo pip list --format=freeze | awk -F '==' '{print $1}' | xargs -n1 pip install
 ```
 
 ```
-conda config --set always_yes True && conda update --all -n x && conda upgrade --all x
+conda config --set always_yes True && conda update --all -n x && conda upgrade --all
 ```
 
 ```
