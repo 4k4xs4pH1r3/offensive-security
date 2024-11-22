@@ -29,3 +29,13 @@ python -m ensurepip --upgrade
 ```
 sudo pip list --format=freeze | awk -F '==' '{print $1}' | xargs -n1 pip install -U
 ```
+
+```
+conda install anaconda-client
+```
+
+```
+anaconda login
+```
+
+https://github.com/conda/conda
