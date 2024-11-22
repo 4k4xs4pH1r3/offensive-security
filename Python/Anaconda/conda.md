@@ -19,6 +19,10 @@ conda update -n x -c conda-forge conda && conda conda update --all && conda upgr
 ```
 
 ```
+conda install -n base conda=24.11.0 && conda install -n x conda=24.11.0
+```
+
+```
 python -m ensurepip --upgrade
 ```
 
