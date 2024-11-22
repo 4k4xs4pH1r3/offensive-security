@@ -39,6 +39,10 @@ conda config --set always_yes True && conda update --all -n x && conda upgrade -
 ```
 
 ```
+pip install --upgrade pip
+```
+
+```
 conda install anaconda-client
 ```
 
