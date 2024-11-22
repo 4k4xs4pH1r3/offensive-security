@@ -1,4 +1,16 @@
 ```
+conda config --show solver
+```
+
+```
+conda config --set solver classic
+```
+
+```
+conda config --set solver libmamba
+```
+
+```
 conda config --set always_yes True; conda update --all -n base; conda upgrade --all
 ```
 
