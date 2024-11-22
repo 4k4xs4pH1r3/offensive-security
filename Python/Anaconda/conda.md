@@ -17,7 +17,6 @@ conda env update -n x -f environment.yml && conda update --all && conda upgrade 
 ```
 conda update -n base -c conda-forge conda && conda conda update --all && conda upgrade --all
 ```
-
 ```
 conda update -n x -c conda-forge conda && conda conda update --all && conda upgrade --all
 ```
@@ -49,4 +48,3 @@ anaconda login
 https://github.com/conda/conda
 
 https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf
-
