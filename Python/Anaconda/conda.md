@@ -1,4 +1,8 @@
 ```
+conda config --set always_yes True && conda update --all -n base && conda upgrade --all
+```
+
+```
 conda update -n base -c conda-forge conda && conda config --add channels conda-forge && conda update --all && conda upgrade --all
 ```
 
@@ -11,11 +15,11 @@ conda env update -n x -f environment.yml && conda update --all && conda upgrade 
 ```
 
 ```
-conda update -n base -c conda-forge conda && conda conda update --all && conda upgrade --all
+conda update -n base -c conda-forge conda && conda update --all && conda upgrade --all
 ```
 
 ```
-conda update -n x -c conda-forge conda && conda conda update --all && conda upgrade --all
+conda update -n x -c conda-forge conda && conda update --all && conda upgrade --all
 ```
 
 ```
@@ -23,11 +27,15 @@ conda install -n base conda=24.11.0 && conda install -n x conda=24.11.0
 ```
 
 ```
-python -m ensurepip --upgrade
+python -m ensurepip --upgrade && pip install --upgrade pip
 ```
 
 ```
 sudo pip list --format=freeze | awk -F '==' '{print $1}' | xargs -n1 pip install -U
+```
+
+```
+conda config --set always_yes True && conda update --all -n x && conda upgrade --all
 ```
 
 ```
