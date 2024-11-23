@@ -2,7 +2,9 @@
 
 ![Anaconda](https://www.anaconda.com/wp-content/uploads/2022/12/anaconda_secondary_logo.svg)
 
-[Install Anaconda](https://www.anaconda.com/download/success)
+[Install Anaconda Distribution](https://www.anaconda.com/download/success)
+
+Get started with the most fundamental DS, AI, and ML packages. Easily manage applications, packages, and environments using Navigator or command line. 
 
 # Optimize Your Conda Environment | Using Python 3.13 (in 10 Steps)
 
