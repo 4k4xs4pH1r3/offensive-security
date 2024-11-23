@@ -37,7 +37,7 @@
 
    ## macOS + Linux    
    ```bash
-   python -m ensurepip --upgrade; pip install --upgrade pip; pip list --format=freeze | awk -F '==' '{print $1}' | xargs -n1 pip install -U  # macOS/Linux
+   python -m ensurepip --upgrade; pip install --upgrade pip; pip list --format=freeze | awk -F '==' '{print $1}' | xargs -n1 pip install -U
    ```
  
    ## Windows PowerShell
