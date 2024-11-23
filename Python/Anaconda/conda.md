@@ -56,7 +56,7 @@
 
 9. **Conda GitHub repository:**
 
-   [https://github.com/conda/conda](https://github.com/conda/conda)
+   [conda](https://github.com/conda/conda)
 
 
 10. **Conda cheat sheet:**
