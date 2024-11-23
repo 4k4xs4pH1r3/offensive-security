@@ -1,5 +1,7 @@
 # Pre-Requiste
 
+![Anaconda](https://www.anaconda.com/wp-content/uploads/2022/12/anaconda_secondary_logo.svg)
+
 [Install Anaconda](https://www.anaconda.com/download/success)
 
 # Optimize Your Conda Environment | Using Python 3.13 (in 10 Steps)
