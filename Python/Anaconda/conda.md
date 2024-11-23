@@ -1,3 +1,6 @@
+# Pre-Requiste
+  [Install Anaconda](https://www.anaconda.com/download/success)
+
 # Optimize Your Conda Environment | Using Python 3.13 (in 10 Steps)
 
 1. **Remember to adjust environment names and commands as needed for your specific setup.**
@@ -40,7 +43,7 @@
    ## macOS + Linux
 
    ```bash
-   python -m ensurepip --upgrade; pip install --upgrade pip; pip list --format=freeze | awk -F '==' '{print $1}' | xargs -n1 pip install -U  # macOS/Linux
+   python -m ensurepip --upgrade; pip install --upgrade pip; pip list --format=freeze | awk -F '==' '{print $1}' | xargs -n1 pip install -U
    ```
 
    ## Windows PowerShell
@@ -64,7 +67,7 @@
 
 9. **Conda GitHub repository:**
 
-   [https://github.com/conda/conda](https://github.com/conda/conda)
+   [conda](https://github.com/conda/conda)
 
 10. **Conda cheat sheet:**
 
