@@ -8,8 +8,8 @@
 
 **Remember to adjust environment names and commands as needed for your specific setup.**
 
-   In the next step You can use the "classic" solver or "libmamba." This is a good approach because sometimes "libmamba" might have compatibility issues or might not be the best choice for all situations.
-   Using "classic" may provides a more reliable fallback option.
+In the next step You can use the "classic" solver or "libmamba." This is a good approach because sometimes "libmamba" might have compatibility issues or might not be the best choice for all situations.
+Using "classic" may provides a more reliable fallback option.
 
 1. **Configure Solver & Update Base:** Set the solver to "classic" (in case "libmamba" has issues), then update Conda and all packages in the base environment (including from "conda-forge").
 
