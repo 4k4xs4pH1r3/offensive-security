@@ -1,3 +1,6 @@
+# Pre-Requiste
+  [Install Anaconda](https://www.anaconda.com/download/success)
+
 # Optimize Your Conda Environment | Using Python 3.13 (in 10 Steps)
 
 1. **Remember to adjust environment names and commands as needed for your specific setup.**
