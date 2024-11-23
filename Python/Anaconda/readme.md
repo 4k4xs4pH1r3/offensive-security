@@ -4,7 +4,7 @@
 
 [Install Anaconda Distribution](https://www.anaconda.com/download/success)
 
-Get started with the most fundamental DS, AI, and ML packages. Easily manage applications, packages, and environments using Navigator instead of the command line. 
+Get started with the most fundamental DS, AI, and ML packages. Easily manage applications, packages, and environments using Navigator or command line. 
 
 # Optimize Your Conda Environment | Using Python 3.13 (in 10 Steps)
 
