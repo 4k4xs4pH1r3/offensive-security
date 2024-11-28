@@ -6,12 +6,12 @@
 
 Get started with the most fundamental DS, AI, and ML packages. Easily manage applications, packages, and environments using Navigator or command line.
 
-# Install Conda Environment | Python 3.13.0 (in 10 Steps)
+# Install Conda Environment | Python 3.13 (in 10 Steps)
 
-**Remember to adjust environment names and commands as needed for your specific setup.**
+**Adjust environment names and commands as needed for your specific setup.**
 
-In the next step You can use the "classic" solver or "libmamba." This is a good approach because sometimes "libmamba" might have compatibility issues or might not be the best choice for all situations.
-Using "classic" may provides a more reliable fallback option.
+In the next step, use the "classic" solver or "libmamba." This is a good approach because sometimes "libmamba" might have compatibility issues or might not be the best choice for all situations.
+Using "classic" may provide a more reliable fallback option.
 
 1. **Configure Solver & Update Base:** Set the solver to "classic" (in case "libmamba" has issues), then update Conda and all packages in the base environment (including from "conda-forge").
 
@@ -25,10 +25,10 @@ Using "classic" may provides a more reliable fallback option.
    conda config --show solver; conda config --set solver libmamba; conda update -n base -c conda-forge conda; conda config --add channels conda-forge; conda update --all -n base; conda upgrade --all
    ```
 
-2. **Create & Update New Environment:** Create a new environment named "x" with Python 3.13.0, then update it to match your base environment (using an exported environment file if needed).
+2. **Create & Update New Environment:** Create a new environment named "x" with Python 3.13, then update it to match your base environment (using an exported environment file if needed).
 
    ```bash
-   conda create -n x python=3.13.0; conda activate x; conda env export > environment.yml; conda env update -n x -f environment.yml
+   conda create -n x python=3.13; conda activate x; conda env export > environment.yml; conda env update -n x -f environment.yml
    ```
 
 3. **Fully Update All Environments:** Ensure Conda, all packages, and any outdated components are updated in both the "base" and "x" environments.
@@ -57,7 +57,7 @@ Using "classic" may provides a more reliable fallback option.
    python -m ensurepip --upgrade; pip list --format=freeze | ForEach-Object {$_.Split('==')[0]} | ForEach-Object {pip install -U $_}
    ```
 
-6. **Install Anaconda Client:** Install the client for interacting with Anaconda Cloud.
+6. **Install Anaconda Client:** Install the client to interact with Anaconda Cloud.
 
    ```bash
    conda install anaconda-client
