@@ -1,4 +1,4 @@
-# Pre-Requiste
+# Pre-Requisite
 
 ![Anaconda](https://www.anaconda.com/wp-content/uploads/2022/12/anaconda_secondary_logo.svg)
 
@@ -6,7 +6,7 @@
 
 Get started with the most fundamental DS, AI, and ML packages. Easily manage applications, packages, and environments using Navigator or command line.
 
-# Optimize Your Conda Environment | Using Python 3.13 (in 10 Steps)
+# Optimize Your Conda Environment | Using Python 3.13.0 (in 10 Steps)
 
 **Remember to adjust environment names and commands as needed for your specific setup.**
 
@@ -25,10 +25,10 @@ Using "classic" may provides a more reliable fallback option.
    conda config --show solver; conda config --set solver libmamba; conda update -n base -c conda-forge conda; conda config --add channels conda-forge; conda update --all -n base; conda upgrade --all
    ```
 
-2. **Create & Update New Environment:** Create a new environment named "x" with Python 3.13, then update it to match your base environment (using an exported environment file if needed).
+2. **Create & Update New Environment:** Create a new environment named "x" with Python 3.13.0, then update it to match your base environment (using an exported environment file if needed).
 
    ```bash
-   conda create -n x python=3.13; conda activate x; conda env export > environment.yml; conda env update -n x -f environment.yml
+   conda create -n x python=3.13.0; conda activate x; conda env export > environment.yml; conda env update -n x -f environment.yml
    ```
 
 3. **Fully Update All Environments:** Ensure Conda, all packages, and any outdated components are updated in both the "base" and "x" environments.
