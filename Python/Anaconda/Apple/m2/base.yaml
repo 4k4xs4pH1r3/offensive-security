@@ -20,12 +20,10 @@ dependencies:
   - aioitertools=0.12.0=pyhd8ed1ab_0
   - aiosignal=1.3.1=pyhd8ed1ab_0
   - alabaster=1.0.0=pyhd8ed1ab_0
-  - altair=5.4.1=pyhd8ed1ab_2
   - anaconda-anon-usage=0.4.4=py312hd6b623d_100
   - anaconda-catalogs=0.2.0=pyhd8ed1ab_0
   - anaconda-cli-base=0.4.1=pyhd8ed1ab_0
   - anaconda-client=1.13.0=py312hca03da5_0
-  - anaconda-cloud-auth=0.6.0=pyhd8ed1ab_0
   - anaconda-navigator=2.6.3=py312hca03da5_0
   - anaconda-project=0.11.1=pyhd8ed1ab_0
   - anaconda-toolbox=4.0.15=py312hca03da5_0
@@ -42,8 +40,6 @@ dependencies:
   - arrow-cpp=16.1.0=hbc20fb2_0
   - astor=0.8.1=pyh9f0ad1d_0
   - astroid=3.3.5=py312h81bd7bf_0
-  - astropy=6.1.6=py312he0011b7_0
-  - astropy-iers-data=0.2024.11.18.0.35.2=pyhd8ed1ab_0
   - asttokens=2.4.1=pyhd8ed1ab_0
   - async-lru=2.0.4=pyhd8ed1ab_0
   - asyncssh=2.18.0=pyhd8ed1ab_0
@@ -105,7 +101,7 @@ dependencies:
   - colorama=0.4.6=pyhd8ed1ab_0
   - colorcet=3.1.0=pyhd8ed1ab_0
   - comm=0.2.2=pyhd8ed1ab_0
-  - conda=24.11.0=py312hca03da5_0
+  - conda=24.11.0=py312h81bd7bf_0
   - conda-build=24.9.0=py312h81bd7bf_0
   - conda-content-trust=0.2.0=pyhd8ed1ab_0
   - conda-index=0.5.0=pyhd8ed1ab_0
@@ -118,7 +114,6 @@ dependencies:
   - constantly=23.10.4=py312hca03da5_0
   - contourpy=1.3.1=py312hb23fbb9_0
   - cookiecutter=2.6.0=pyhca7485f_0
-  - cryptography=43.0.3=py312h5fad481_0
   - cssselect=1.2.0=pyhd8ed1ab_0
   - curl=8.9.1=h02f6b3c_0
   - cycler=0.12.1=pyhd8ed1ab_0
@@ -207,7 +202,6 @@ dependencies:
   - joblib=1.4.2=pyhd8ed1ab_0
   - jpeg=9e=h1a8c8d9_3
   - jq=1.7.1=h93a5062_0
-  - json5=0.9.28=pyhff2d567_0
   - jsonpatch=1.33=pyhd8ed1ab_0
   - jsonpointer=3.0.0=py312h81bd7bf_1
   - jsonschema=4.23.0=pyhd8ed1ab_0
@@ -221,6 +215,7 @@ dependencies:
   - jupyter_events=0.10.0=pyhd8ed1ab_0
   - jupyter_server=2.14.2=pyhd8ed1ab_0
   - jupyter_server_terminals=0.5.3=pyhd8ed1ab_0
+  - jupyterlab=4.2.6=pyhff2d567_0
   - jupyterlab-variableinspector=3.2.4=pyhd8ed1ab_0
   - jupyterlab_pygments=0.3.0=pyhd8ed1ab_1
   - jupyterlab_server=2.27.3=pyhd8ed1ab_0
@@ -322,7 +317,6 @@ dependencies:
   - mypy=1.13.0=py312h0bf5046_0
   - mypy_extensions=1.0.0=pyha770c72_0
   - mysql=8.4.0=h3a6587f_1
-  - narwhals=1.14.1=pyhff2d567_0
   - navigator-updater=0.5.1=py312hca03da5_0
   - nbclassic=1.1.0=pyhd8ed1ab_0
   - nbclient=0.10.0=pyhd8ed1ab_0
@@ -337,7 +331,6 @@ dependencies:
   - notebook=7.2.2=pyhd8ed1ab_0
   - notebook-shim=0.2.4=pyhd8ed1ab_0
   - numba=0.60.0=py312h41cea2d_0
-  - numexpr=2.10.1=py312hd9debc8_3
   - numpydoc=1.8.0=pyhd8ed1ab_0
   - oniguruma=6.9.9=h93a5062_0
   - openblas=0.3.23=openmp_hf78f355_0
@@ -388,15 +381,12 @@ dependencies:
   - pycparser=2.22=pyhd8ed1ab_0
   - pyct=0.5.0=pyhd8ed1ab_0
   - pycurl=7.45.3=py312h9b3a80d_2
-  - pydantic=2.10.0=pyh10f6f8f_0
-  - pydantic-core=2.27.0=py312hcd83bfe_0
   - pydantic-settings=2.6.1=pyh3cfb1c2_0
   - pydocstyle=6.3.0=pyhd8ed1ab_0
   - pyerfa=2.0.1.5=py312he0011b7_0
   - pyflakes=3.2.0=pyhd8ed1ab_0
   - pygithub=2.5.0=pyhd8ed1ab_0
   - pygments=2.18.0=pyhd8ed1ab_0
-  - pyjwt=2.10.0=pyhff2d567_0
   - pylint=3.3.1=pyhd8ed1ab_0
   - pylint-venv=3.0.4=pyhd8ed1ab_0
   - pyls-spyder=0.4.0=pyhd8ed1ab_0
@@ -407,7 +397,6 @@ dependencies:
   - pyobjc-framework-coreservices=10.3.1=py312h024a12e_1
   - pyobjc-framework-fsevents=10.3.1=py312h81bd7bf_1
   - pyodbc=5.2.0=py312hf02c72a_0
-  - pyopenssl=24.2.1=pyhd8ed1ab_2
   - pyparsing=3.2.0=pyhd8ed1ab_1
   - pysocks=1.7.1=pyha2e5f31_6
   - pytables=3.10.1=py312h905a39b_0
@@ -415,7 +404,6 @@ dependencies:
   - python=3.12.3=h4a7b5fc_0_cpython
   - python-dateutil=2.9.0post0=py312hca03da5_2
   - python-dotenv=1.0.1=pyhd8ed1ab_0
-  - python-fastjsonschema=2.20.0=pyhd8ed1ab_0
   - python-json-logger=2.0.7=pyhd8ed1ab_0
   - python-libarchive-c=5.1=py312h81bd7bf_1
   - python-lmdb=1.5.1=py312he6b9f90_1
@@ -427,7 +415,6 @@ dependencies:
   - python-tzdata=2024.2=pyhd8ed1ab_0
   - python.app=3=py312h80987f9_1
   - python_abi=3.12=5_cp312
-  - pytz=2024.1=pyhd8ed1ab_0
   - pyuca=1.2=py_1
   - pyviz_comms=3.0.3=pyhd8ed1ab_0
   - pywavelets=1.7.0=py312h147345f_2
@@ -492,7 +479,6 @@ dependencies:
   - sqlalchemy=2.0.36=py312h0bf5046_0
   - sqlite=3.46.0=h5838104_0
   - statsmodels=0.14.4=py312h755e627_0
-  - streamlit=1.40.1=pyhd8ed1ab_0
   - superqt=0.6.7=pyh9208f05_0
   - sympy=1.13.3=pypyh2585a3b_103
   - tabulate=0.9.0=pyhd8ed1ab_1
@@ -509,11 +495,8 @@ dependencies:
   - tk=8.6.14=h6ba3021_0
   - tldextract=5.1.3=pyhd8ed1ab_0
   - toml=0.10.2=pyhd8ed1ab_0
-  - tomli=2.1.0=pyhff2d567_0
   - tomlkit=0.13.2=pyha770c72_0
   - toolz=1.0.0=pyhd8ed1ab_0
-  - tornado=6.4.1=py312h024a12e_1
-  - tqdm=4.67.0=pyhd8ed1ab_0
   - traitlets=5.14.3=pyhd8ed1ab_0
   - truststore=0.10.0=pyhd8ed1ab_0
   - twisted=24.10.0=py312h0bf5046_0
@@ -543,12 +526,8 @@ dependencies:
   - websocket-client=1.8.0=pyhd8ed1ab_0
   - werkzeug=3.1.3=pyhff2d567_0
   - whatthepatch=1.0.7=pyhff2d567_0
-  - wheel=0.45.0=pyhd8ed1ab_0
   - widgetsnbextension=4.0.13=pyhd8ed1ab_0
-  - wrapt=1.16.0=py312h024a12e_1
   - wurlitzer=3.1.1=pyhd8ed1ab_0
-  - xarray=2024.10.0=pyhd8ed1ab_0
-  - xlwings=0.33.3=py312h81bd7bf_0
   - xyzservices=2024.9.0=pyhd8ed1ab_0
   - xz=5.4.6=h80987f9_1
   - yaml=0.2.5=h3422bc3_2
@@ -564,64 +543,78 @@ dependencies:
   - zstandard=0.23.0=py312h15fbf35_1
   - zstd=1.5.6=hb46c0d2_0
   - pip:
-      - aiohttp==3.11.6
+      - aiohttp==3.11.8
+      - altair==5.5.0
       - amqp==5.3.1
-      - anticaptchaofficial==1.0.61
+      - anaconda-cloud-auth==0.7.2
+      - anticaptchaofficial==1.0.62
       - archspec==0.2.5
       - asn1crypto==1.5.1
-      - autopep8==2.3.1
-      - aws-sam-translator==1.92.0
+      - astropy==7.0.0
+      - astropy-iers-data==0.2024.11.25.0.34.48
+      - autopep8==2.0.4
+      - aws-sam-translator==1.94.0
       - awscli==1.36.7
       - bc-detect-secrets==1.5.22
       - boltons==24.1.0
-      - boto3==1.35.66
-      - botocore==1.23.54
+      - boto3==1.20.30
+      - botocore==1.35.71
       - brotli==1.1.0
       - cached-property==2.0.1
       - cfgv==3.4.0
       - cfn-lint==1.20.0
       - configparser==7.1.0
       - convertdate==2.4.0
+      - cryptography==44.0.0
       - cyclonedx-python-lib==8.5.0
       - distlib==0.3.9
       - dmglib==0.9.6
       - dpath==2.2.0
+      - fastjsonschema==2.21.0
       - gensim==4.3.3
       - gitdb==4.0.11
       - gmpy2==2.2.1
       - gssapi==1.9.0
       - hijri-converter==2.3.1
       - holidays==0.61
-      - identify==2.6.2
+      - identify==2.6.3
       - imagecodecs==2024.9.22
       - importlib-metadata==8.5.0
       - jaraco-context==6.0.1
       - jaraco-functools==4.1.0
       - jeepney==0.8.0
-      - jiter==0.7.1
+      - jiter==0.8.0
       - jmespath==0.10.0
-      - jupyterlab==4.3.1
+      - json5==0.10.0
       - kombu==5.4.2
       - korean-lunar-calendar==0.3.1
       - lief==0.15.1
       - lxml==5.3.0
       - markdown==3.7
       - multipledispatch==1.0.0
+      - narwhals==1.14.2
       - nodeenv==1.9.1
+      - numexpr==2.10.2
       - numpy==2.1.3
-      - openai==1.54.4
+      - openai==1.55.2
+      - orjson==3.10.12
       - outcome==1.3.0.post0
       - packageurl-python==0.16.0
       - pandocfilters==1.5.1
       - pre-commit==4.0.1
-      - protobuf==5.28.3
+      - protobuf==5.29.0
       - psycopg2-binary==2.9.10
       - py==1.11.0
       - py4j==0.10.9.7
-      - pyarrow==18.0.0
+      - pyarrow==18.1.0
+      - pycares==4.5.0
+      - pydantic==2.10.2
+      - pydantic-core==2.27.1
       - pydeck==0.9.1
       - pydispatcher==2.0.7
+      - pyjwt==2.10.1
       - pymeeus==0.5.12
+      - pyopenssl==24.3.0
       - pyqt5==5.15.11
       - pyqt5-qt5==5.15.15
       - pyqt5-sip==12.15.0
@@ -630,6 +623,7 @@ dependencies:
       - pyspark==3.5.3
       - pytesseract==0.3.13
       - pytoolconfig==1.3.1
+      - pytz==2024.2
       - readchar==4.2.1
       - rsa==4.9
       - ruamel-yaml-clib==0.2.12
@@ -637,7 +631,7 @@ dependencies:
       - s3transfer==0.5.2
       - schema==0.7.7
       - secretstorage==3.3.3
-      - selenium==4.26.1
+      - selenium==4.27.1
       - setuptools==75.6.0
       - sip==6.8.6
       - smmap==5.0.1
@@ -645,12 +639,20 @@ dependencies:
       - sphinxcontrib-serializinghtml==2.0.0
       - sql==2022.4.0
       - stack-data==0.6.3
+      - streamlit==1.40.2
       - termcolor==2.5.0
       - tifffile==2024.9.20
+      - tomli==2.2.1
+      - tornado==6.4.2
+      - tqdm==4.67.1
       - trio==0.27.0
       - trio-websocket==0.11.1
-      - virtualenv==20.27.1
+      - virtualenv==20.28.0
       - webcolors==24.11.1
+      - wheel==0.45.1
+      - wrapt==1.17.0
       - wsproto==1.2.0
+      - xarray==2024.11.0
+      - xlwings==0.33.4
       - yapf==0.43.0
       - yarl==1.17.2
