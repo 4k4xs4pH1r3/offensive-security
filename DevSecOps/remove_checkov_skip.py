@@ -1,4 +1,4 @@
-"""Removes lines containing or starting with '# checkov' (with or without 
+"""Removes lines containing or starting with '# checkov' (with or without
 a space after #) from YAML files."""
 
 import os
