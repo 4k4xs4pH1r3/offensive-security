@@ -4,6 +4,8 @@
 
 # Pre-Requisite
 
+Install Python https://www.python.org/downloads/
+
 This will take up to a few minutes, now is a great time to go for a coffee ☕...
 
 1. Install Homebrew
@@ -14,7 +16,7 @@ This will take up to a few minutes, now is a great time to go for a coffee ☕..
 
 #
 
-3. Install Rosetta, Xcode, and Brew including Formulae and Casks (291 packages)
+3. Install Rosetta, Xcode, and Brew including Formulae and Casks (291 packages), and Upgrade Pip packages
 
 ```ShellSession
 sudo softwareupdate --install-rosetta --agree-to-license
@@ -32,6 +34,10 @@ brew install --cask gitfinder powershell dotnet keepassxc && brew install cask &
 
 ```ShellSession
 brew unlink tfenv && softwareupdate --all --install --force && brew update-reset && brew update && brew upgrade && brew unlink terraform && brew link tfenv && tfenv install && tfenv list && tfenv install latest && tfenv install 1.10.2 && tfenv use 1.10.2 && tfenv list && terraform -v && bower update --allow-root && pipx upgrade-all --force
+```
+
+```ShellSession
+pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip install -U -q --no-warn-script-location --ignore-installed --force-reinstall > /dev/null 2>&1 && pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U -q --no-warn-script-location --ignore-installed --force-reinstall > /dev/null 
 ```
 
 #
