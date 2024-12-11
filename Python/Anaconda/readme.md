@@ -34,13 +34,13 @@ Using "classic" may provide a more reliable fallback option.
 3. **Fully Update All Environments:** Ensure Conda, all packages, and any outdated components are updated in both the "base" and "x" environments.
 
    ```bash
-   conda update -n base -c conda-forge conda; conda update --all -n base; conda upgrade --all; conda update -n x -c conda-forge conda; conda update --all -n x; conda upgrade --all
+   conda update -n base -c conda-forge conda; conda update --all -n base; conda upgrade --all; conda update -n x -c conda-forge conda; conda update --all -n x; conda upgrade --all; conda update -n base -c defaults conda; conda update -n base -c defaults anaconda-navigator; conda list anaconda-navigator
    ```
 
 4. **Install Specific Conda Version (Optional):** If you need a specific Conda version, install it in both environments.
 
    ```bash
-   conda install -n base conda=24.11.0; conda install -n x conda=24.11.0
+   conda install -n base conda=24.11.1; conda install -n x conda=24.11.1
    ```
 
 5. **Upgrade Pip:** Upgrade the Pip package manager and all installed Pip packages.
