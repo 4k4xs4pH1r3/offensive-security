@@ -31,7 +31,7 @@ brew install --cask gitfinder powershell dotnet keepassxc && brew install cask &
 ```
 
 ```ShellSession
-brew unlink tfenv && softwareupdate --all --install --force && brew update-reset && brew update && brew upgrade && brew unlink terraform && brew link tfenv && tfenv install && tfenv list && tfenv install latest && tfenv install 1.7.5 && tfenv use 1.7.5 && tfenv list && terraform -v && bower update --allow-root && pipx upgrade-all --force && pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip install -U -q --no-warn-script-location --ignore-installed --force-reinstall > /dev/null 2>&1 && pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U -q --no-warn-script-location --ignore-installed --force-reinstall > /dev/null 2>&1
+brew unlink tfenv && softwareupdate --all --install --force && brew update-reset && brew update && brew upgrade && brew unlink terraform && brew link tfenv && tfenv install && tfenv list && tfenv install latest && tfenv install 1.7.5 && tfenv use 1.10.2 && tfenv list && terraform -v && bower update --allow-root && pipx upgrade-all --force
 ```
 
 #
