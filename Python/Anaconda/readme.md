@@ -16,13 +16,13 @@ Using "classic" may provide a more reliable fallback option.
 1. **Configure Solver & Update Base:** Set the solver to "classic" (in case "libmamba" has issues), then update Conda and all packages in the base environment (including from "conda-forge").
 
    ```bash
-   conda clean --all -y; conda config --show solver; conda config --set solver classic; conda update -n base -c conda-forge conda; conda config --add channels conda-forge; conda update --all -n base; conda upgrade --all
+   conda config --show solver; conda config --set solver classic; conda update -n base -c conda-forge conda; conda config --add channels conda-forge; conda update --all -n base; conda upgrade --all
    ```
 
    **Configure Solver & Update Base:** Set the solver to "libmamba"), then update Conda and all packages in the base environment (including from "conda-forge").
 
    ```bash
-   conda clean --all -y; conda config --show solver; conda config --set solver libmamba; conda update -n base -c conda-forge conda; conda config --add channels conda-forge; conda update --all -n base; conda upgrade --all
+   conda config --show solver; conda config --set solver libmamba; conda update -n base -c conda-forge conda; conda config --add channels conda-forge; conda update --all -n base; conda upgrade --all
    ```
 
 2. **Create & Update New Environment:** Create a new environment named "x" with Python 3.13, then update it to match your base environment (using an exported environment file if needed).
@@ -69,6 +69,12 @@ Using "classic" may provide a more reliable fallback option.
    ```
 
 # Resources
+
+   In case need to clean the conda cache
+   
+   ```bash
+   conda clean --all -y
+   ```
 
 8. **Conda GitHub repository:**
 
