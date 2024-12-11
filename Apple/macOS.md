@@ -16,7 +16,7 @@ This will take up to a few minutes, now is a great time to go for a coffee ☕..
 
 #
 
-3. Install Rosetta, Xcode, and Brew including Formulae and Casks (294 packages), and Upgrade Pip packages
+3. Install Rosetta, Xcode, and Brew including Formulae and Casks (276 packages), and Upgrade Pip packages
 
 ```ShellSession
 sudo softwareupdate --install-rosetta --agree-to-license
