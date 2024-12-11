@@ -70,11 +70,11 @@ Using "classic" may provide a more reliable fallback option.
 
 # Resources
 
-   In case need to clean the conda cache
-   
-   ```bash
-   conda clean --all -y
-   ```
+In case need to clean the conda cache
+
+```bash
+conda clean --all -y
+```
 
 8. **Conda GitHub repository:**
 
