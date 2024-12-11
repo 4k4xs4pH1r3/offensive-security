@@ -4,25 +4,25 @@
 
 [Install Anaconda Distribution](https://www.anaconda.com/download/success)
 
-Get started with the most fundamental DS, AI, and ML packages. Easily manage applications, packages, and environments using Navigator or command line.
+You can start with the most fundamental DS, AI, and ML packages. Using Navigator or the command line, you can easily manage applications, packages, and environments.
 
 # Install Conda Environment | Python 3.13 (in 10 Steps)
 
 **Adjust environment names and commands as needed for your specific setup.**
 
-In the next step, use the "classic" solver or "libmamba." This is a good approach because sometimes "libmamba" might have compatibility issues or might not be the best choice for all situations.
+Use the "classic" solver or "libmamba." This is a good approach because sometimes "libmamba" might have compatibility issues or might not be the best choice for all situations.
 Using "classic" may provide a more reliable fallback option.
 
 1. **Configure Solver & Update Base:** Set the solver to "classic" (in case "libmamba" has issues), then update Conda and all packages in the base environment (including from "conda-forge").
 
    ```bash
-   conda config --show solver; conda config --set solver classic; conda update -n base -c conda-forge conda; conda config --add channels conda-forge; conda update --all -n base; conda upgrade --all
+   conda clean --all -y; conda config --show solver; conda config --set solver classic; conda update -n base -c conda-forge conda; conda config --add channels conda-forge; conda update --all -n base; conda upgrade --all
    ```
 
    **Configure Solver & Update Base:** Set the solver to "libmamba"), then update Conda and all packages in the base environment (including from "conda-forge").
 
    ```bash
-   conda config --show solver; conda config --set solver libmamba; conda update -n base -c conda-forge conda; conda config --add channels conda-forge; conda update --all -n base; conda upgrade --all
+   conda clean --all -y; conda config --show solver; conda config --set solver libmamba; conda update -n base -c conda-forge conda; conda config --add channels conda-forge; conda update --all -n base; conda upgrade --all
    ```
 
 2. **Create & Update New Environment:** Create a new environment named "x" with Python 3.13, then update it to match your base environment (using an exported environment file if needed).
