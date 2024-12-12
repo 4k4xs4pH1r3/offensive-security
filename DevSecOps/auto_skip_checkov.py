@@ -7,8 +7,9 @@ from typing import Dict, Set
 from tqdm import tqdm  # type: ignore
 
 # Configure logging.
-logging.basicConfig(level=logging.INFO,
-                    format="%(asctime)s - %(levelname)s - %(message)s")
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 # Global aliases and variables.
 PROCESSED_FINDINGS: Dict[str, Set[str]] = {}
@@ -32,14 +33,15 @@ def add_checkov_skip(filename: str, checkov_id: str, lineno: int):
             with open(filename, "w", encoding="utf-8") as f:
                 f.writelines(lines)
         else:
-            logging.info("Skip comment already exists in %s for %s", filename,
-                         checkov_id)
+            logging.info(
+                "Skip comment already exists in %s for %s", filename, checkov_id
+            )
     except OSError as e:
         logging.exception("Error adding Checkov skip to %s: %s", filename, e)
 
 
 def extract_finding_info(
-        lines: list[str], lineno: int
+    lines: list[str], lineno: int
 ) -> tuple[str | None, str | None, int | None]:
     """Extract finding info."""
     check_line = lines[lineno - 1]
@@ -59,8 +61,7 @@ def extract_finding_info(
 def process_finding(filename: str, lines: list[str], lineno: int):
     """Process finding."""
     try:
-        checkov_id, file_path, start_line = extract_finding_info(
-            lines, lineno)
+        checkov_id, file_path, start_line = extract_finding_info(lines, lineno)
         if not checkov_id or not file_path or not start_line:
             return
 
@@ -68,8 +69,9 @@ def process_finding(filename: str, lines: list[str], lineno: int):
         finding_id = f"{file_path}:{checkov_id}:{start_line}"
 
         if finding_id in PROCESSED_FINDINGS[filename]:
-            logging.debug("Skipping already processed finding: %s in %s",
-                          finding_id, filename)
+            logging.debug(
+                "Skipping already processed finding: %s in %s", finding_id, filename
+            )
             return
 
         add_checkov_skip(file_path, checkov_id, start_line - 1)
@@ -87,9 +89,7 @@ def process_file(filename: str):
         if filename not in PROCESSED_FINDINGS:
             PROCESSED_FINDINGS[filename] = set()
         total_findings = lines.count(FAILED_RESOURCE_STR)
-        with tqdm(total=total_findings,
-                  desc="Adding skips",
-                  unit="finding") as pbar:
+        with tqdm(total=total_findings, desc="Adding skips", unit="finding") as pbar:
             for lineno, line in enumerate(lines):
                 if FAILED_RESOURCE_STR in line:
                     process_finding(filename, lines, lineno)
@@ -113,10 +113,10 @@ def validate_findings(files):
                         file_path = file_line.split(":")[1].strip()
                         checkov_id = check_line.split(":")[1].strip()
                         finding_id = f"{file_path}:{checkov_id}"
-                        if finding_id not in PROCESSED_FINDINGS.get(
-                                filename, set()):
-                            logging.error("Finding not processed: %s in %s",
-                                          finding_id, filename)
+                        if finding_id not in PROCESSED_FINDINGS.get(filename, set()):
+                            logging.error(
+                                "Finding not processed: %s in %s", finding_id, filename
+                            )
                             all_findings_processed = False
                     except IndexError:
                         # Suppress the error message
