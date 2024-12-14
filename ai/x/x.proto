@@ -1,42 +1,78 @@
 syntax = "proto3";
 
-package gemini.ollama;
+package gemini.auth;
 
-// Service definition for interacting with Ollama within Gemini.
-service OllamaService {
-  // Sets up the Ollama environment in Google Colab.
-  rpc SetupOllama (SetupOllamaRequest) returns (SetupOllamaResponse);
-
-  // Generates a response from Ollama based on a given prompt.
-  rpc GenerateResponse (GenerateResponseRequest) returns (GenerateResponseResponse);
+// Service for authenticating users with Google OAuth2 within Gemini.
+service AuthService {
+  // Initiates the Google OAuth2 authentication flow.
+  rpc Authenticate (AuthenticateRequest) returns (AuthenticateResponse) {}
 }
 
-// Request message for setting up Ollama.
-message SetupOllamaRequest {
-  // The name of the Ollama model to use (e.g., "llama2").
-  string model_name = 1;
+// Request message for initiating authentication.
+message AuthenticateRequest {
+  // The client ID of the Gemini application registered with Google.
+  string client_id = 1;
+  // The redirect URI where Google should redirect the user after authentication.
+  string redirect_uri = 2;
+  // (Optional) The scopes of access being requested from the user.
+  repeated string scopes = 3;
 }
 
-// Response message for setting up Ollama.
-message SetupOllamaResponse {
-  // Indicates whether the setup was successful.
-  bool success = 1;
-  // Error message, if any.
-  string error_message = 2;
+// Response message containing the OAuth2 authorization URL.
+message AuthenticateResponse {
+  // The URL the user should be redirected to for authorization.
+  string authorization_url = 1;
 }
 
-// Request message for generating a response from Ollama.
-message GenerateResponseRequest {
-  // The prompt to send to Ollama.
-  string prompt = 1;
-  // The name of the Ollama model to use (e.g., "llama2").
-  string model_name = 2;
+// Service for exchanging an authorization code for access and refresh tokens.
+service TokenService {
+  // Exchanges the authorization code for tokens.
+  rpc ExchangeCode (ExchangeCodeRequest) returns (ExchangeCodeResponse) {}
+  
+  // Refreshes the access token using the refresh token.
+  rpc RefreshToken (RefreshTokenRequest) returns (RefreshTokenResponse) {}
 }
 
-// Response message for generating a response from Ollama.
-message GenerateResponseResponse {
-  // The generated response from Ollama.
-  string response = 1;
-  // Error message, if any.
-  string error_message = 2;
+// Request message for exchanging the authorization code.
+message ExchangeCodeRequest {
+  // The authorization code received from Google.
+  string code = 1;
+  // The client ID of the Gemini application.
+  string client_id = 2;
+  // The client secret of the Gemini application.
+  string client_secret = 3;
+  // The redirect URI used in the initial request.
+  string redirect_uri = 4;
+}
+
+// Response message containing the access and refresh tokens.
+message ExchangeCodeResponse {
+  // The access token granted by Google.
+  string access_token = 1;
+  // The refresh token used to obtain new access tokens.
+  string refresh_token = 2;
+  // The type of token granted (e.g., "Bearer").
+  string token_type = 3;
+  // The number of seconds the access token is valid for.
+  int32 expires_in = 4;
+}
+
+// Request message for refreshing the access token.
+message RefreshTokenRequest {
+  // The refresh token obtained during the initial token exchange.
+  string refresh_token = 1;
+  // The client ID of the Gemini application.
+  string client_id = 2;
+  // The client secret of the Gemini application.
+  string client_secret = 3;
+}
+
+// Response message containing the refreshed access token.
+message RefreshTokenResponse {
+  // The new access token granted by Google.
+  string access_token = 1;
+  // The type of token granted (e.g., "Bearer").
+  string token_type = 2;
+  // The number of seconds the access token is valid for.
+  int32 expires_in = 3;
 }
