@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package gemini.ollama;
+
+// Service definition for interacting with Ollama within Gemini.
+service OllamaService {
+  // Sets up the Ollama environment in Google Colab.
+  rpc SetupOllama (SetupOllamaRequest) returns (SetupOllamaResponse);
+
+  // Generates a response from Ollama based on a given prompt.
+  rpc GenerateResponse (GenerateResponseRequest) returns (GenerateResponseResponse);
+}
+
+// Request message for setting up Ollama.
+message SetupOllamaRequest {
+  // The name of the Ollama model to use (e.g., "llama2").
+  string model_name = 1;
+}
+
+// Response message for setting up Ollama.
+message SetupOllamaResponse {
+  // Indicates whether the setup was successful.
+  bool success = 1;
+  // Error message, if any.
+  string error_message = 2;
+}
+
+// Request message for generating a response from Ollama.
+message GenerateResponseRequest {
+  // The prompt to send to Ollama.
+  string prompt = 1;
+  // The name of the Ollama model to use (e.g., "llama2").
+  string model_name = 2;
+}
+
+// Response message for generating a response from Ollama.
+message GenerateResponseResponse {
+  // The generated response from Ollama.
+  string response = 1;
+  // Error message, if any.
+  string error_message = 2;
+}
