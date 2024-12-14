@@ -1,3 +1,9 @@
 {
-    "sarif-viewer.connectToGithubCodeScanning": "on"
+    "sarif-viewer.connectToGithubCodeScanning": "on",
+    "cSpell.words": [
+        "colab",
+        "notebooklm",
+        "ollama",
+        "Ollama"
+    ]
 }

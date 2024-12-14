@@ -2,13 +2,14 @@ syntax = "proto3";
 
 package google.ollama.v1;
 
+// Assuming the 'google' directory is in the same directory as x.proto
 import "google/api/annotations.proto";
 import "google/api/client.proto";
 import "google/api/field_behavior.proto";
 
 service Ollama {
   // Generates a text completion from the given prompt and model.
-  rpc GenerateTextCompletion (GenerateTextCompletionRequest) returns (GenerateTextCompletionResponse) {
+  rpc GenerateTextCompletion (GenerateTextCompletionRequest) returns (stream GenerateTextCompletionResponse) {
     option (google.api.http) = {
       post: "/v1/projects/{project}/models/{model}:generateText"
       body: "*"
@@ -32,7 +33,8 @@ message GenerateTextCompletionRequest {
   // - "gemini-extensions"
   // - "gemini-gems"
   // - "colab.research.google.com"
-  // - "idx.google.com" 
+  // - "idx.google.com"
+  // - "aistudio.google.com"  
   string project = 1 [(google.api.field_behavior) = REQUIRED];
 
   // Required. The ID of the model to use for the request.
