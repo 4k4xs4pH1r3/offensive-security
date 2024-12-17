@@ -1,4 +1,5 @@
 """Add Checkov skip as comments."""
+
 import logging
 import sys
 
@@ -45,8 +46,7 @@ def add_checkov_skip(
 
     # Find the line number containing "Type: AWS::Lambda::Function"
     logging.debug(
-        "Searching for line containing "
-        '"Type: \\"AWS::Lambda::Function\\"" in %s',
+        "Searching for line containing " '"Type: \\"AWS::Lambda::Function\\"" in %s',
         file_path_1,
     )
 
@@ -54,9 +54,7 @@ def add_checkov_skip(
     target_line -= 1
 
     try:
-        type_line_number = lines_1.index(
-            "Type: \"AWS::Lambda::Function\"\n", target_line
-        )
+        type_line_number = lines_1.index('Type: "AWS::Lambda::Function"\n', target_line)
     except ValueError:
         logging.warning(
             "Could not find the line containing "
@@ -68,8 +66,7 @@ def add_checkov_skip(
         return
 
     logging.debug(
-        'Found "Type: \\"AWS::Lambda::Function\\"" '
-        "at line: %s",
+        'Found "Type: \\"AWS::Lambda::Function\\"" ' "at line: %s",
         type_line_number,
     )
 
@@ -77,8 +74,9 @@ def add_checkov_skip(
     ckv_aws_363_found = False
     new_lines = []
     for line_2 in lines_1:
-        if line_2.startswith(("# checkov:skip=CKV_AWS_363:",
-                             "#checkov:skip=CKV_AWS_363")):
+        if line_2.startswith(
+            ("# checkov:skip=CKV_AWS_363:", "#checkov:skip=CKV_AWS_363")
+        ):
             if not ckv_aws_363_found:
                 ckv_aws_363_found = True
             else:
@@ -101,8 +99,7 @@ def add_checkov_skip(
         logging.debug("Writing changes to file: %s", file_path_1)
         with open(file_path_1, "w", encoding="utf-8") as f2:
             f2.writelines(lines_1)
-        logging.debug("Changes written successfully to file: %s",
-                      file_path_1)
+        logging.debug("Changes written successfully to file: %s", file_path_1)
     except OSError as e:
         # Log an error if there is an issue writing to the file.
         logging.error(
@@ -120,14 +117,14 @@ if __name__ == "__main__":
         logging.debug("Opening Checkov report: %s", CHECKOV_REPORT)
         with open(CHECKOV_REPORT, "r", encoding="utf-8") as f3:
             lines_2 = f3.readlines()
-        logging.debug("Checkov report opened successfully: %s",
-                      CHECKOV_REPORT)
+        logging.debug("Checkov report opened successfully: %s", CHECKOV_REPORT)
     except FileNotFoundError:
         logging.error("File not found: %s", CHECKOV_REPORT)
         sys.exit(1)
     except OSError as e:
-        logging.error("An error occurred while reading the file %s: %s",
-                      CHECKOV_REPORT, e)
+        logging.error(
+            "An error occurred while reading the file %s: %s", CHECKOV_REPORT, e
+        )
         sys.exit(1)
 
     # This part makes assumptions about the file structure
@@ -146,14 +143,10 @@ if __name__ == "__main__":
             logging.debug("Found file path at line %d: %s", i, FILE_PATH_VAR)
         elif line_3.startswith(START_LINE + ":"):
             try:
-                START_LINE_VAR = int(
-                    line_3.split(":")[1].strip().strip("[]")
-                )
-                logging.debug("Found start line at line %d: %s", i,
-                              START_LINE_VAR)
+                START_LINE_VAR = int(line_3.split(":")[1].strip().strip("[]"))
+                logging.debug("Found start line at line %d: %s", i, START_LINE_VAR)
             except ValueError:
-                logging.warning("Invalid line number format at line %d: %s",
-                                i, line_3)
+                logging.warning("Invalid line number format at line %d: %s", i, line_3)
                 i += 1
                 continue
 
