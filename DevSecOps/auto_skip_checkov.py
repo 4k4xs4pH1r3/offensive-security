@@ -1,4 +1,5 @@
 """Add Checkov skip as comments."""
+
 import glob
 import logging
 import os
@@ -41,18 +42,13 @@ def remove_duplicate_skips(lines: List[str]) -> List[str]:
     return result
 
 
-def add_skip_comment(
-    filename: str, checkov_id: str, start_line: int
-) -> None:
+def add_skip_comment(filename: str, checkov_id: str, start_line: int) -> None:
     """Add skip comment to file."""
     try:
         with open(filename, "r+", encoding="utf-8") as file:
             lines = file.readlines()
             skip_comment = f"{SKIP_COMMENT_PREFIX}{checkov_id}\n"
-            if (
-                skip_comment
-                not in lines[start_line: start_line + 1]
-            ):
+            if skip_comment not in lines[start_line : start_line + 1]:
                 lines.insert(start_line, skip_comment)
                 logging.info(
                     "Updated: %s - line %s",
@@ -60,16 +56,12 @@ def add_skip_comment(
                     start_line + 1,
                 )
             else:
-                logging.info(
-                    "Skip exists: %s - %s", filename, checkov_id
-                )
+                logging.info("Skip exists: %s - %s", filename, checkov_id)
             file.seek(0)
             file.writelines(lines)
             file.truncate()
     except (OSError, IndexError) as error:
-        logging.exception(
-            "Add skip error: %s - %s", filename, error
-        )
+        logging.exception("Add skip error: %s - %s", filename, error)
 
 
 def extract_finding_info(
@@ -78,17 +70,11 @@ def extract_finding_info(
     """Extract finding info from log."""
     try:
         _, checkov_id = lines[lineno - 1].split(":", 1)
-        file_path, line_range = lines[lineno + 1].split(":")[
-            1:3
-        ]
+        file_path, line_range = lines[lineno + 1].split(":")[1:3]
         start_line = int(line_range.split("-")[0])
         return checkov_id.strip(), file_path.strip(), start_line
     except (IndexError, ValueError) as error:
-        log_line = (
-            lines[lineno]
-            if 0 <= lineno < len(lines)
-            else "Out of range"
-        )
+        log_line = lines[lineno] if 0 <= lineno < len(lines) else "Out of range"
         logging.error(
             "Extract info error: %s - %s - %s",
             lineno,
@@ -110,16 +96,10 @@ def process_findings(filename: str, lines: List[str]) -> None:
             process_finding(filename, lines, lineno)
 
 
-def process_finding(
-    filename: str, lines: List[str], lineno: int
-) -> None:
+def process_finding(filename: str, lines: List[str], lineno: int) -> None:
     """Process a single finding."""
-    checkov_id, file_path, start_line = extract_finding_info(
-        lines, lineno
-    )
-    if checkov_id == "CKV_AWS_363" and all(
-        [checkov_id, file_path, start_line]
-    ):
+    checkov_id, file_path, start_line = extract_finding_info(lines, lineno)
+    if checkov_id == "CKV_AWS_363" and all([checkov_id, file_path, start_line]):
         process_ckv_aws_363_finding(filename)
 
 
@@ -148,18 +128,14 @@ def process_file_finding(filename: str, file: str) -> None:
                 file_lines.insert(i + 2, line)
                 i += 2
             except IndexError:
-                logging.error(
-                    "Shift line error: %s - %s", file, i
-                )
+                logging.error("Shift line error: %s - %s", file, i)
         else:
             i += 1
     try:
         with open(file, "w", encoding="utf-8") as f:
             f.writelines(file_lines)
     except (OSError, IndexError) as error:
-        logging.exception(
-            "Write line error: %s - %s", file, error
-        )
+        logging.exception("Write line error: %s - %s", file, error)
 
 
 def process_file(filename: str) -> None:
@@ -205,9 +181,7 @@ def reprocess_from_log(log_file: str) -> None:
 def reprocess_line(line: str) -> None:
     """Reprocess a single line from the log."""
     try:
-        _, file_path, checkov_id, start_line_str = (
-            line.split(":")
-        )
+        _, file_path, checkov_id, start_line_str = line.split(":")
         start_line = int(start_line_str.split()[0])
         add_skip_comment(
             cast(str, file_path.strip()),
