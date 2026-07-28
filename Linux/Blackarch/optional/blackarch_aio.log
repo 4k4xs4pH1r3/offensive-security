@@ -1,0 +1,449 @@
+2026-07-09 10:03:57,678 - INFO - Ensuring database lock is released...
+2026-07-09 10:03:57,865 - INFO - --- [Auto-Detect & Fix Phase] ---
+2026-07-09 10:03:57,997 - INFO - Snapper PRE-snapshot #1070 created: aio-update-full [pre]
+2026-07-09 10:03:58,402 - INFO - Snapper PRE-snapshot #1071 created: ensure-helpers [pre]
+2026-07-09 10:03:58,403 - INFO - Checking prerequisites...
+2026-07-09 10:03:58,778 - INFO - Snapper POST-snapshot #1072 (paired with pre #1071): ensure-helpers [post-OK]
+2026-07-09 10:03:59,084 - INFO - Snapper PRE-snapshot #1073 created: mirror-optimization [pre]
+2026-07-09 10:03:59,085 - INFO - Requested https://ipinfo.io/json
+2026-07-09 10:03:59,085 - WARNING - Geolocation lookup failed: name 'requests' is not defined
+2026-07-09 10:03:59,085 - INFO - Optimizing mirrors for location: Global (?, ?)
+2026-07-09 10:03:59,085 - INFO - Tier 3: global fastest with health thresholds
+2026-07-09 10:03:59,086 - INFO - Running: sudo reflector --age 12 --score 15 --completion-percent 95 --fastest 20 --sort rate --protocol https --connection-timeout 3 --download-timeout 5 --threads 4 --save /etc/pacman.d/mirrorlist
+2026-07-09 10:04:02,296 - INFO - Mirrorlist optimized via global fastest.
+2026-07-09 10:04:02,641 - INFO - Snapper POST-snapshot #1074 (paired with pre #1073): mirror-optimization [post-OK]
+2026-07-09 10:04:02,641 - INFO - Ensuring database lock is released...
+2026-07-09 10:04:02,855 - INFO - Pinning known downgrade conflicts...
+2026-07-09 10:04:02,856 - INFO - Ensuring database lock is released...
+2026-07-09 10:04:03,059 - INFO - Trying substitute dep: 'linenoise-ng' for 'linenoise'
+2026-07-09 10:04:03,059 - INFO - Running: Install substitute dep linenoise-ng
+2026-07-09 10:04:03,335 - INFO - Snapper POST-snapshot #1075 (paired with pre #1070): aio-update-full [post-OK]
+2026-07-09 10:04:03,337 - INFO - Process finished with status: pending
+2026-07-09 10:04:11,566 - INFO - Ensuring database lock is released...
+2026-07-09 10:04:11,757 - INFO - --- [Auto-Detect & Fix Phase] ---
+2026-07-09 10:04:11,920 - INFO - Snapper PRE-snapshot #1076 created: aio-update-full [pre]
+2026-07-09 10:04:12,255 - INFO - Snapper PRE-snapshot #1077 created: ensure-helpers [pre]
+2026-07-09 10:04:12,255 - INFO - Checking prerequisites...
+2026-07-09 10:04:12,598 - INFO - Snapper POST-snapshot #1078 (paired with pre #1077): ensure-helpers [post-OK]
+2026-07-09 10:04:12,908 - INFO - Snapper PRE-snapshot #1079 created: mirror-optimization [pre]
+2026-07-09 10:04:12,909 - INFO - Requested https://ipinfo.io/json
+2026-07-09 10:04:12,909 - WARNING - Geolocation lookup failed: name 'requests' is not defined
+2026-07-09 10:04:12,909 - INFO - Optimizing mirrors for location: Global (?, ?)
+2026-07-09 10:04:12,909 - INFO - Tier 3: global fastest with health thresholds
+2026-07-09 10:04:12,909 - INFO - Running: sudo reflector --age 12 --score 15 --completion-percent 95 --fastest 20 --sort rate --protocol https --connection-timeout 3 --download-timeout 5 --threads 4 --save /etc/pacman.d/mirrorlist
+2026-07-09 10:04:23,258 - INFO - Mirrorlist optimized via global fastest.
+2026-07-09 10:04:23,612 - INFO - Snapper POST-snapshot #1080 (paired with pre #1079): mirror-optimization [post-OK]
+2026-07-09 10:04:23,613 - INFO - Ensuring database lock is released...
+2026-07-09 10:04:23,814 - INFO - Pinning known downgrade conflicts...
+2026-07-09 10:04:23,815 - INFO - Ensuring database lock is released...
+2026-07-09 10:04:24,024 - INFO - Trying substitute dep: 'linenoise-ng' for 'linenoise'
+2026-07-09 10:04:24,024 - INFO - Running: Install substitute dep linenoise-ng
+2026-07-09 10:04:24,616 - INFO - Running: Retry wcc after substitute
+2026-07-09 10:04:25,808 - INFO - Running: Query repos for wcc
+2026-07-09 10:04:26,493 - INFO - Trying 'wcc' from repo 'chaotic-aur'
+2026-07-09 10:04:26,493 - INFO - Running: Install wcc from chaotic-aur
+2026-07-09 10:04:27,350 - INFO - Trying 'wcc' from repo 'blackarch'
+2026-07-09 10:04:27,350 - INFO - Running: Install wcc from blackarch
+2026-07-09 10:04:27,595 - INFO - Resolved 'wcc' from alternate repo 'blackarch'
+2026-07-09 10:04:27,595 - INFO - Pinned 'wcc' + 'linenoise' — immutable for this update
+2026-07-09 10:04:27,595 - INFO - Immutable packages: {'wcc', 'linenoise'}
+2026-07-09 10:04:27,595 - INFO - Ensuring database lock is released...
+2026-07-09 10:04:27,903 - INFO - Snapper PRE-snapshot #1081 created: system-fixes [pre]
+2026-07-09 10:04:27,904 - INFO - --- Applying preventive system fixes ---
+2026-07-09 10:04:27,926 - INFO - Dracut configuration already exists — skipping.
+2026-07-09 10:04:27,926 - INFO - Kernel install configuration already exists — skipping.
+2026-07-09 10:04:27,926 - INFO - Scanning for packages with missing shared library deps...
+2026-07-09 10:05:04,950 - INFO - Found 2 packages with missing files — upgrading: ['perl-test-nowarnings', 'warning']
+2026-07-09 10:05:04,950 - INFO - Upgrading broken package: perl-test-nowarnings
+2026-07-09 10:05:05,524 - INFO - Upgraded 'perl-test-nowarnings' via pacman
+2026-07-09 10:05:05,524 - INFO - Upgrading broken package: warning
+2026-07-09 10:05:10,060 - INFO - Upgraded 'warning' via yay
+2026-07-09 10:05:10,060 - INFO - Broken .so upgrade pass complete.
+2026-07-09 10:05:10,060 - INFO - Upgrading Python packages...
+2026-07-09 10:05:10,060 - INFO - Ensuring pip is up to date...
+2026-07-09 10:05:15,109 - INFO - Upgrading all pip packages in parallel (8 workers)...
+2026-07-09 10:05:16,996 - INFO - Pip parallel upgrade complete.
+2026-07-09 10:10:17,097 - WARNING - Python upgrade failed (non-critical): Command '['bash', '-c', 'pacman -Qq | xargs -I{} pacman -Ql {} 2>/dev/null | grep -oP \'^\\S+ /usr/lib/python3\\.\\d+/\' | awk \'{split($2,a,"/"); print $1, a[4]}\' | sort -u']' timed out after 300 seconds
+2026-07-09 10:10:17,097 - INFO - --- System fixes complete ---
+2026-07-09 10:10:17,220 - INFO - Snapper POST-snapshot #1082 (paired with pre #1081): system-fixes [post-OK]
+2026-07-09 10:10:18,071 - INFO - Kernel upgrade detected in pending updates: ['linux-hardened', 'linux-hardened-headers', 'linux-lts', 'linux-lts-headers', 'linux-zen', 'linux-zen-headers']
+2026-07-09 10:10:18,071 - INFO - Ensuring database lock is released...
+2026-07-09 10:10:18,340 - INFO - Snapper PRE-snapshot #1083 created: ensure-blackarch-repo [pre]
+2026-07-09 10:10:18,340 - INFO - Checking BlackArch repository configuration...
+2026-07-09 10:10:18,683 - INFO - Snapper POST-snapshot #1084 (paired with pre #1083): ensure-blackarch-repo [post-OK]
+2026-07-09 10:10:18,684 - INFO - Ensuring database lock is released...
+2026-07-09 10:10:18,987 - INFO - Snapper PRE-snapshot #1085 created: update-keyrings [pre]
+2026-07-09 10:10:18,988 - INFO - Updating keyrings...
+2026-07-09 10:10:18,988 - INFO - Running: Updating keyrings
+2026-07-09 10:10:20,095 - INFO - Snapper POST-snapshot #1086 (paired with pre #1085): update-keyrings [post-OK]
+2026-07-09 10:10:20,095 - INFO - Ensuring database lock is released...
+2026-07-09 10:10:20,428 - INFO - Snapper PRE-snapshot #1087 created: install-metapackages [pre]
+2026-07-09 10:10:20,429 - INFO - Ensuring essential metapackages...
+2026-07-09 10:10:20,429 - INFO - Running: Installing blackarch-officials
+2026-07-09 10:10:21,798 - INFO - Snapper POST-snapshot #1088 (paired with pre #1087): install-metapackages [post-OK]
+2026-07-09 10:10:22,388 - INFO - Snapper PRE-snapshot #1089 created: sync-categories [pre]
+2026-07-09 10:10:22,389 - INFO - Synchronizing BlackArch categories...
+2026-07-09 10:10:22,389 - INFO - Running: Fetching categories
+2026-07-09 10:10:23,136 - INFO - New categories detected and added: ['blackarch-wordlist', 'blackarch-defensive', 'blackarch-threat-model', 'blackarch-automobile', 'blackarch-reocn', 'blackarch-ai']
+2026-07-09 10:10:23,367 - INFO - Snapper POST-snapshot #1090 (paired with pre #1089): sync-categories [post-OK]
+2026-07-09 10:10:23,743 - INFO - Snapper PRE-snapshot #1091 created: download-updates [pre]
+2026-07-09 10:10:23,743 - INFO - Starting Parallel Download Phase...
+2026-07-09 10:10:23,743 - INFO - Ensuring database lock is released...
+2026-07-09 10:10:23,936 - INFO - Running: Downloading Pacman updates
+2026-07-09 10:10:23,937 - INFO - Running: Downloading AUR updates (paru)
+2026-07-09 10:19:56,902 - INFO - Analyzing error output for auto-fix...
+2026-07-09 10:19:56,904 - INFO - Starting Parallel Download Phase...
+2026-07-09 10:19:56,904 - INFO - Ensuring database lock is released...
+2026-07-09 10:19:57,095 - INFO - Running: Downloading Pacman updates
+2026-07-09 10:19:57,096 - INFO - Running: Downloading AUR updates (paru)
+2026-07-09 10:25:01,294 - INFO - Snapper POST-snapshot #1092 (paired with pre #1091): download-updates [post-OK]
+2026-07-09 10:25:01,658 - INFO - Snapper PRE-snapshot #1093 created: install-updates [pre]
+2026-07-09 10:25:01,659 - INFO - Starting Sequential Installation Phase...
+2026-07-09 10:25:01,659 - INFO - Ensuring database lock is released...
+2026-07-09 10:25:01,846 - INFO - Running: Installing Pacman updates
+2026-07-09 10:28:00,657 - ERROR - Command failed: Installing Pacman updates. Error: [1;33mwarning: [0mpaho-mqtt-c: downgrading from version 1.3.14-2 to version 1.3.10-1
+[1;33mwarning: [0mpython-grandalf: downgrading from version 0.8-5 to version 0.8-1
+[1;33mwarning: [0mwcc: ignoring package downgrade (1:v0.0.11.r34.gdced7e9-1 => 0.0.11-1)
+[1;33mwarning: [0mxray: downgrading from version 109.7e8cc67-1 to version 26.3.27-1
+[1;33mwarning: [0minsufficient columns available for table display
+[1;31merror: [0mfailed to commit transaction (conflicting files)
+metasploit: /usr/share/doc/metasploit exists in filesystem
+2026-07-09 10:28:00,657 - INFO - Analyzing error output for auto-fix...
+2026-07-09 10:28:00,657 - INFO - Starting Sequential Installation Phase...
+2026-07-09 10:28:00,657 - INFO - Ensuring database lock is released...
+2026-07-09 10:28:00,850 - INFO - Running: Installing Pacman updates
+2026-07-09 10:30:55,712 - ERROR - Command failed: Installing Pacman updates. Error: [1;33mwarning: [0mpaho-mqtt-c: downgrading from version 1.3.14-2 to version 1.3.10-1
+[1;33mwarning: [0mpython-grandalf: downgrading from version 0.8-5 to version 0.8-1
+[1;33mwarning: [0mwcc: ignoring package downgrade (1:v0.0.11.r34.gdced7e9-1 => 0.0.11-1)
+[1;33mwarning: [0mxray: downgrading from version 109.7e8cc67-1 to version 26.3.27-1
+[1;33mwarning: [0minsufficient columns available for table display
+[1;31merror: [0mfailed to commit transaction (conflicting files)
+metasploit: /usr/share/doc/metasploit exists in filesystem
+2026-07-09 10:30:55,832 - INFO - Snapper POST-snapshot #1094 (paired with pre #1093): install-updates [post-OK]
+2026-07-09 10:30:56,210 - INFO - Snapper PRE-snapshot #1095 created: cleanup-orphans [pre]
+2026-07-09 10:30:56,210 - INFO - Running: Orphan Cleanup
+2026-07-09 10:31:32,422 - INFO - Snapper POST-snapshot #1098 (paired with pre #1095): cleanup-orphans [post-OK]
+2026-07-09 10:31:32,423 - INFO - --- [Post-Update Kernel Tasks] ---
+2026-07-09 10:31:32,803 - INFO - Snapper PRE-snapshot #1099 created: dkms-rebuild [pre]
+2026-07-09 10:31:32,804 - INFO - DKMS modules detected (4), rebuilding...
+2026-07-09 10:31:32,804 - INFO - Rebuilding all DKMS modules...
+2026-07-09 10:31:53,436 - ERROR - DKMS autoinstall failed: Deprecated feature: CLEAN (/var/lib/dkms/rtl8814au/5.8.5.1.r206.gb1866ce/source/dkms.conf)
+
+Error! Bad return status for module build on kernel: 7.1.0-rc1-1-mainline (x86_64)
+Consult /var/lib/dkms/rtl8814au/5.8.5.1.r206.gb1866ce/build/make.log for more information.
+
+Error! Bad return status for module build on kernel: 7.1.0-rc1-1-mainline (x86_64)
+Consult /var/lib/dkms/tyton/80.56494f3/build/make.log for more information.
+
+Error! One or more modules failed to install during autoinstall.
+Refer to previous errors for more information.
+2026-07-09 10:31:53,437 - ERROR - DKMS rebuild had errors — check dkms status manually.
+2026-07-09 10:31:53,749 - INFO - Snapper POST-snapshot #1100 (paired with pre #1099): dkms-rebuild [post-OK]
+2026-07-09 10:31:54,105 - INFO - Snapper PRE-snapshot #1101 created: regenerate-initramfs [pre]
+2026-07-09 10:31:54,105 - INFO - Regenerating initramfs with dracut...
+2026-07-09 10:31:54,107 - INFO - Regenerating initramfs for kernel 6.18.25-1-lts...
+2026-07-09 10:31:56,920 - ERROR - Failed to regenerate initramfs for 6.18.25-1-lts: dracut[F]: Can't write to /boot/efi/dc502aedbc0d4149b7adbc9102a64605/6.18.25-1-lts: Directory /boot/efi/dc502aedbc0d4149b7adbc9102a64605/6.18.25-1-lts does not exist or is not accessible.
+2026-07-09 10:31:56,921 - INFO - Regenerating initramfs for kernel 6.19.10-hardened1-1-hardened...
+2026-07-09 10:31:59,259 - ERROR - Failed to regenerate initramfs for 6.19.10-hardened1-1-hardened: dracut[F]: Can't write to /boot/efi/dc502aedbc0d4149b7adbc9102a64605/6.19.10-hardened1-1-hardened: Directory /boot/efi/dc502aedbc0d4149b7adbc9102a64605/6.19.10-hardened1-1-hardened does not exist or is not accessible.
+2026-07-09 10:31:59,259 - INFO - Regenerating initramfs for kernel 7.0.14-arch1-1...
+2026-07-09 10:32:01,538 - ERROR - Failed to regenerate initramfs for 7.0.14-arch1-1: dracut[F]: /usr/lib/modules/7.0.14-arch1-1/modules.dep is missing. Did you run depmod?
+2026-07-09 10:32:01,538 - INFO - Regenerating initramfs for kernel 7.0.2-zen1-1-zen...
+2026-07-09 10:32:03,884 - ERROR - Failed to regenerate initramfs for 7.0.2-zen1-1-zen: dracut[F]: Can't write to /boot/efi/dc502aedbc0d4149b7adbc9102a64605/7.0.2-zen1-1-zen: Directory /boot/efi/dc502aedbc0d4149b7adbc9102a64605/7.0.2-zen1-1-zen does not exist or is not accessible.
+2026-07-09 10:32:03,885 - INFO - Regenerating initramfs for kernel 7.1.0-rc1-1-mainline...
+2026-07-09 10:32:06,643 - ERROR - Failed to regenerate initramfs for 7.1.0-rc1-1-mainline: dracut[F]: Can't write to /boot/efi/dc502aedbc0d4149b7adbc9102a64605/7.1.0-rc1-1-mainline: Directory /boot/efi/dc502aedbc0d4149b7adbc9102a64605/7.1.0-rc1-1-mainline does not exist or is not accessible.
+2026-07-09 10:32:07,056 - INFO - Snapper POST-snapshot #1102 (paired with pre #1101): regenerate-initramfs [post-OK]
+2026-07-09 10:32:07,444 - INFO - Snapper POST-snapshot #1103 (paired with pre #1076): aio-update-full [post-OK]
+2026-07-09 10:32:07,445 - INFO - Unified update complete!
+2026-07-09 10:32:07,446 - INFO - Process finished with status: success
+2026-07-14 09:18:29,774 - INFO - Ensuring database lock is released...
+2026-07-14 09:18:29,979 - INFO - --- [Auto-Detect & Fix Phase] ---
+2026-07-14 09:18:30,221 - INFO - Snapper PRE-snapshot #1106 created: aio-update-full [pre]
+2026-07-14 09:18:30,381 - INFO - Snapper PRE-snapshot #1107 created: ensure-helpers [pre]
+2026-07-14 09:18:30,382 - INFO - Checking prerequisites...
+2026-07-14 09:18:30,519 - INFO - Snapper POST-snapshot #1108 (paired with pre #1107): ensure-helpers [post-OK]
+2026-07-14 09:18:30,591 - INFO - Snapper PRE-snapshot #1109 created: mirror-optimization [pre]
+2026-07-14 09:18:30,592 - INFO - Requested https://ipinfo.io/json
+2026-07-14 09:18:30,592 - WARNING - Geolocation lookup failed: name 'requests' is not defined
+2026-07-14 09:18:30,592 - INFO - Optimizing mirrors for location: Global (?, ?)
+2026-07-14 09:18:30,592 - INFO - Tier 3: global fastest with health thresholds
+2026-07-14 09:18:30,592 - INFO - Running: sudo reflector --age 12 --score 15 --completion-percent 95 --fastest 20 --sort rate --protocol https --connection-timeout 3 --download-timeout 5 --threads 4 --save /etc/pacman.d/mirrorlist
+2026-07-14 09:18:45,739 - INFO - Mirrorlist optimized via global fastest.
+2026-07-14 09:18:45,939 - INFO - Snapper POST-snapshot #1110 (paired with pre #1109): mirror-optimization [post-OK]
+2026-07-14 09:18:45,940 - INFO - Ensuring database lock is released...
+2026-07-14 09:18:46,180 - INFO - Pinning known downgrade conflicts...
+2026-07-14 09:18:46,181 - INFO - Ensuring database lock is released...
+2026-07-14 09:18:46,409 - INFO - Trying substitute dep: 'linenoise-ng' for 'linenoise'
+2026-07-14 09:18:46,410 - INFO - Running: Install substitute dep linenoise-ng
+2026-07-14 09:18:47,032 - INFO - Running: Retry wcc after substitute
+2026-07-14 09:18:47,971 - INFO - Running: Query repos for wcc
+2026-07-14 09:18:48,644 - INFO - Trying 'wcc' from repo 'chaotic-aur'
+2026-07-14 09:18:48,644 - INFO - Running: Install wcc from chaotic-aur
+2026-07-14 09:18:49,523 - INFO - Trying 'wcc' from repo 'blackarch'
+2026-07-14 09:18:49,523 - INFO - Running: Install wcc from blackarch
+2026-07-14 09:18:49,774 - INFO - Resolved 'wcc' from alternate repo 'blackarch'
+2026-07-14 09:18:49,774 - INFO - Pinned 'wcc' + 'linenoise' — immutable for this update
+2026-07-14 09:18:49,774 - INFO - Immutable packages: {'wcc', 'linenoise'}
+2026-07-14 09:18:49,774 - INFO - Ensuring database lock is released...
+2026-07-14 09:18:50,095 - INFO - Snapper PRE-snapshot #1111 created: system-fixes [pre]
+2026-07-14 09:18:50,095 - INFO - --- Applying preventive system fixes ---
+2026-07-14 09:18:50,117 - INFO - Dracut configuration already exists — skipping.
+2026-07-14 09:18:50,117 - INFO - Kernel install configuration already exists — skipping.
+2026-07-14 09:18:50,117 - INFO - Scanning for packages with missing shared library deps...
+2026-07-14 09:19:31,842 - INFO - Found 2 packages with missing files — upgrading: ['perl-test-nowarnings', 'warning']
+2026-07-14 09:19:31,842 - INFO - Upgrading broken package: perl-test-nowarnings
+2026-07-14 09:19:32,403 - INFO - Upgraded 'perl-test-nowarnings' via pacman
+2026-07-14 09:19:32,404 - INFO - Upgrading broken package: warning
+2026-07-14 09:19:37,282 - INFO - Upgraded 'warning' via yay
+2026-07-14 09:19:37,282 - INFO - Broken .so upgrade pass complete.
+2026-07-14 09:19:37,282 - INFO - Upgrading Python packages...
+2026-07-14 09:19:37,282 - INFO - Ensuring pip is up to date...
+2026-07-14 09:19:42,384 - INFO - Upgrading all pip packages in parallel (8 workers)...
+2026-07-14 09:19:44,382 - INFO - Pip parallel upgrade complete.
+2026-07-14 09:24:44,484 - WARNING - Python upgrade failed (non-critical): Command '['bash', '-c', 'pacman -Qq | xargs -I{} pacman -Ql {} 2>/dev/null | grep -oP \'^\\S+ /usr/lib/python3\\.\\d+/\' | awk \'{split($2,a,"/"); print $1, a[4]}\' | sort -u']' timed out after 300 seconds
+2026-07-14 09:24:44,484 - INFO - --- System fixes complete ---
+2026-07-14 09:24:44,581 - INFO - Snapper POST-snapshot #1112 (paired with pre #1111): system-fixes [post-OK]
+2026-07-14 09:24:45,453 - INFO - Kernel upgrade detected in pending updates: ['linux', 'linux-hardened', 'linux-hardened-headers', 'linux-lts', 'linux-lts-headers', 'linux-zen', 'linux-zen-headers']
+2026-07-14 09:24:45,453 - INFO - Ensuring database lock is released...
+2026-07-14 09:24:45,732 - INFO - Snapper PRE-snapshot #1113 created: ensure-blackarch-repo [pre]
+2026-07-14 09:24:45,732 - INFO - Checking BlackArch repository configuration...
+2026-07-14 09:24:45,824 - INFO - Snapper POST-snapshot #1114 (paired with pre #1113): ensure-blackarch-repo [post-OK]
+2026-07-14 09:24:45,825 - INFO - Ensuring database lock is released...
+2026-07-14 09:24:46,117 - INFO - Snapper PRE-snapshot #1115 created: update-keyrings [pre]
+2026-07-14 09:24:46,118 - INFO - Updating keyrings...
+2026-07-14 09:24:46,118 - INFO - Running: Updating keyrings
+2026-07-14 09:25:14,940 - INFO - Snapper POST-snapshot #1118 (paired with pre #1115): update-keyrings [post-OK]
+2026-07-14 09:25:14,941 - INFO - Ensuring database lock is released...
+2026-07-14 09:25:15,244 - INFO - Snapper PRE-snapshot #1119 created: install-metapackages [pre]
+2026-07-14 09:25:15,245 - INFO - Ensuring essential metapackages...
+2026-07-14 09:25:15,245 - INFO - Running: Installing blackarch-officials
+2026-07-14 09:25:16,482 - INFO - Snapper POST-snapshot #1120 (paired with pre #1119): install-metapackages [post-OK]
+2026-07-14 09:25:16,688 - INFO - Snapper PRE-snapshot #1121 created: sync-categories [pre]
+2026-07-14 09:25:16,689 - INFO - Synchronizing BlackArch categories...
+2026-07-14 09:25:16,689 - INFO - Running: Fetching categories
+2026-07-14 09:25:17,462 - INFO - New categories detected and added: ['blackarch-defensive', 'blackarch-ai', 'blackarch-reocn', 'blackarch-threat-model', 'blackarch-wordlist', 'blackarch-automobile']
+2026-07-14 09:25:17,628 - INFO - Snapper POST-snapshot #1122 (paired with pre #1121): sync-categories [post-OK]
+2026-07-14 09:25:17,755 - INFO - Snapper PRE-snapshot #1123 created: download-updates [pre]
+2026-07-14 09:25:17,755 - INFO - Starting Parallel Download Phase...
+2026-07-14 09:25:17,755 - INFO - Ensuring database lock is released...
+2026-07-14 09:25:17,953 - INFO - Running: Downloading Pacman updates
+2026-07-14 09:25:17,954 - INFO - Running: Downloading AUR updates (paru)
+2026-07-14 09:25:45,706 - ERROR - Command failed: Downloading Pacman updates. Error: warning: paho-mqtt-c: downgrading from version 1.3.14-2 to version 1.3.10-1
+warning: python-grandalf: downgrading from version 0.8-5 to version 0.8-1
+warning: wcc: ignoring package downgrade (1:v0.0.11.r34.gdced7e9-1 => 0.0.11-1)
+warning: xray: downgrading from version 109.7e8cc67-1 to version 26.3.27-1
+error: failed to prepare transaction (could not satisfy dependencies)
+2026-07-14 09:26:15,889 - INFO - Analyzing error output for auto-fix...
+2026-07-14 09:26:15,891 - INFO - Starting Parallel Download Phase...
+2026-07-14 09:26:15,891 - INFO - Ensuring database lock is released...
+2026-07-14 09:26:16,186 - INFO - Running: Downloading Pacman updates
+2026-07-14 09:26:16,187 - INFO - Running: Downloading AUR updates (paru)
+2026-07-14 09:26:44,113 - ERROR - Command failed: Downloading Pacman updates. Error: warning: paho-mqtt-c: downgrading from version 1.3.14-2 to version 1.3.10-1
+warning: python-grandalf: downgrading from version 0.8-5 to version 0.8-1
+warning: wcc: ignoring package downgrade (1:v0.0.11.r34.gdced7e9-1 => 0.0.11-1)
+warning: xray: downgrading from version 109.7e8cc67-1 to version 26.3.27-1
+error: failed to prepare transaction (could not satisfy dependencies)
+2026-07-14 09:27:13,788 - INFO - Snapper POST-snapshot #1124 (paired with pre #1123): download-updates [post-OK]
+2026-07-14 09:27:13,872 - INFO - Snapper PRE-snapshot #1125 created: install-updates [pre]
+2026-07-14 09:27:13,872 - INFO - Starting Sequential Installation Phase...
+2026-07-14 09:27:13,873 - INFO - Ensuring database lock is released...
+2026-07-14 09:27:14,109 - INFO - Running: Installing Pacman updates
+2026-07-14 09:27:41,903 - ERROR - Command failed: Installing Pacman updates. Error: [1;33mwarning: [0mpaho-mqtt-c: downgrading from version 1.3.14-2 to version 1.3.10-1
+[1;33mwarning: [0mpython-grandalf: downgrading from version 0.8-5 to version 0.8-1
+[1;33mwarning: [0mwcc: ignoring package downgrade (1:v0.0.11.r34.gdced7e9-1 => 0.0.11-1)
+[1;33mwarning: [0mxray: downgrading from version 109.7e8cc67-1 to version 26.3.27-1
+[1;31merror: [0mfailed to prepare transaction (could not satisfy dependencies)
+2026-07-14 09:27:41,904 - INFO - Analyzing error output for auto-fix...
+2026-07-14 09:27:41,904 - INFO - Starting Sequential Installation Phase...
+2026-07-14 09:27:41,904 - INFO - Ensuring database lock is released...
+2026-07-14 09:27:42,104 - INFO - Running: Installing Pacman updates
+2026-07-14 09:28:10,364 - ERROR - Command failed: Installing Pacman updates. Error: [1;33mwarning: [0mpaho-mqtt-c: downgrading from version 1.3.14-2 to version 1.3.10-1
+[1;33mwarning: [0mpython-grandalf: downgrading from version 0.8-5 to version 0.8-1
+[1;33mwarning: [0mwcc: ignoring package downgrade (1:v0.0.11.r34.gdced7e9-1 => 0.0.11-1)
+[1;33mwarning: [0mxray: downgrading from version 109.7e8cc67-1 to version 26.3.27-1
+[1;31merror: [0mfailed to prepare transaction (could not satisfy dependencies)
+2026-07-14 09:28:10,425 - INFO - Snapper POST-snapshot #1126 (paired with pre #1125): install-updates [post-OK]
+2026-07-14 09:28:10,550 - INFO - Snapper PRE-snapshot #1127 created: cleanup-orphans [pre]
+2026-07-14 09:28:10,550 - INFO - Running: Orphan Cleanup
+2026-07-14 09:28:18,827 - INFO - Snapper POST-snapshot #1128 (paired with pre #1127): cleanup-orphans [post-OK]
+2026-07-14 09:28:18,828 - INFO - --- [Post-Update Kernel Tasks] ---
+2026-07-14 09:28:34,028 - INFO - Snapper PRE-snapshot #1129 created: dkms-rebuild [pre]
+2026-07-14 09:28:34,028 - INFO - DKMS modules detected (42), rebuilding...
+2026-07-14 09:28:34,029 - INFO - Rebuilding all DKMS modules...
+2026-07-14 09:29:06,750 - ERROR - DKMS autoinstall failed: Deprecated feature: CLEAN (/var/lib/dkms/rtl8814au/5.8.5.1.r206.gb1866ce/source/dkms.conf)
+
+Error! Bad return status for module build on kernel: 7.1.0-rc1-1-mainline (x86_64)
+Consult /var/lib/dkms/rtl8814au/5.8.5.1.r206.gb1866ce/build/make.log for more information.
+Deprecated feature: CLEAN (/var/lib/dkms/tyton/80.56494f3/source/dkms.conf)
+
+Error! Bad return status for module build on kernel: 7.1.0-rc1-1-mainline (x86_64)
+Consult /var/lib/dkms/tyton/80.56494f3/build/make.log for more information.
+
+Error! Bad return status for module build on kernel: 7.1.0-rc1-1-mainline (x86_64)
+Consult /var/lib/dkms/vboxhost/7.2.8_OSE/build/make.log for more information.
+
+Error! One or more modules failed to install during autoinstall.
+Refer to previous errors for more information.
+2026-07-14 09:29:06,750 - ERROR - DKMS rebuild had errors — check dkms status manually.
+2026-07-14 09:29:06,859 - INFO - Snapper POST-snapshot #1130 (paired with pre #1129): dkms-rebuild [post-OK]
+2026-07-14 09:29:06,929 - INFO - Snapper PRE-snapshot #1131 created: regenerate-initramfs [pre]
+2026-07-14 09:29:06,930 - INFO - Regenerating initramfs with dracut...
+2026-07-14 09:29:06,932 - INFO - Regenerating initramfs for kernel 6.18.25-1-lts...
+2026-07-14 09:29:09,660 - ERROR - Failed to regenerate initramfs for 6.18.25-1-lts: dracut[F]: Can't write to /boot/efi/dc502aedbc0d4149b7adbc9102a64605/6.18.25-1-lts: Directory /boot/efi/dc502aedbc0d4149b7adbc9102a64605/6.18.25-1-lts does not exist or is not accessible.
+2026-07-14 09:29:09,661 - INFO - Regenerating initramfs for kernel 6.19.10-hardened1-1-hardened...
+2026-07-14 09:29:12,274 - ERROR - Failed to regenerate initramfs for 6.19.10-hardened1-1-hardened: dracut[F]: Can't write to /boot/efi/dc502aedbc0d4149b7adbc9102a64605/6.19.10-hardened1-1-hardened: Directory /boot/efi/dc502aedbc0d4149b7adbc9102a64605/6.19.10-hardened1-1-hardened does not exist or is not accessible.
+2026-07-14 09:29:12,274 - INFO - Regenerating initramfs for kernel 7.0.2-arch1-1...
+2026-07-14 09:29:14,886 - ERROR - Failed to regenerate initramfs for 7.0.2-arch1-1: dracut[F]: Can't write to /boot/efi/dc502aedbc0d4149b7adbc9102a64605/7.0.2-arch1-1: Directory /boot/efi/dc502aedbc0d4149b7adbc9102a64605/7.0.2-arch1-1 does not exist or is not accessible.
+2026-07-14 09:29:14,886 - INFO - Regenerating initramfs for kernel 7.0.2-zen1-1-zen...
+2026-07-14 09:29:17,696 - ERROR - Failed to regenerate initramfs for 7.0.2-zen1-1-zen: dracut[F]: Can't write to /boot/efi/dc502aedbc0d4149b7adbc9102a64605/7.0.2-zen1-1-zen: Directory /boot/efi/dc502aedbc0d4149b7adbc9102a64605/7.0.2-zen1-1-zen does not exist or is not accessible.
+2026-07-14 09:29:17,696 - INFO - Regenerating initramfs for kernel 7.1.0-rc1-1-mainline...
+2026-07-14 09:29:20,007 - ERROR - Failed to regenerate initramfs for 7.1.0-rc1-1-mainline: dracut[F]: Can't write to /boot/efi/dc502aedbc0d4149b7adbc9102a64605/7.1.0-rc1-1-mainline: Directory /boot/efi/dc502aedbc0d4149b7adbc9102a64605/7.1.0-rc1-1-mainline does not exist or is not accessible.
+2026-07-14 09:29:20,198 - INFO - Snapper POST-snapshot #1132 (paired with pre #1131): regenerate-initramfs [post-OK]
+2026-07-14 09:29:20,290 - INFO - Snapper POST-snapshot #1133 (paired with pre #1106): aio-update-full [post-OK]
+2026-07-14 09:29:20,291 - INFO - Unified update complete!
+2026-07-14 09:29:20,292 - INFO - Process finished with status: success
+2026-07-22 09:57:25,828 - INFO - Ensuring database lock is released...
+2026-07-22 09:57:26,060 - INFO - --- [Auto-Detect & Fix Phase] ---
+2026-07-22 09:57:26,185 - INFO - Snapper PRE-snapshot #1138 created: aio-update-full [pre]
+2026-07-22 09:57:26,440 - INFO - Snapper PRE-snapshot #1139 created: ensure-helpers [pre]
+2026-07-22 09:57:26,440 - INFO - Checking prerequisites...
+2026-07-22 09:57:26,607 - INFO - Snapper POST-snapshot #1140 (paired with pre #1139): ensure-helpers [post-OK]
+2026-07-22 09:57:26,722 - INFO - Snapper PRE-snapshot #1141 created: mirror-optimization [pre]
+2026-07-22 09:57:26,724 - INFO - Requested https://ipinfo.io/json
+2026-07-22 09:57:26,724 - WARNING - Geolocation lookup failed: name 'requests' is not defined
+2026-07-22 09:57:26,724 - INFO - Optimizing mirrors for location: Global (?, ?)
+2026-07-22 09:57:26,725 - INFO - Tier 3: global fastest with health thresholds
+2026-07-22 09:57:26,725 - INFO - Running: sudo reflector --age 12 --score 15 --completion-percent 95 --fastest 20 --sort rate --protocol https --connection-timeout 3 --download-timeout 5 --threads 4 --save /etc/pacman.d/mirrorlist
+2026-07-22 09:57:53,864 - INFO - Mirrorlist optimized via global fastest.
+2026-07-22 09:57:54,096 - INFO - Snapper POST-snapshot #1142 (paired with pre #1141): mirror-optimization [post-OK]
+2026-07-22 09:57:54,097 - INFO - Ensuring database lock is released...
+2026-07-22 09:57:54,372 - INFO - Pinning known downgrade conflicts...
+2026-07-22 09:57:54,372 - INFO - Ensuring database lock is released...
+2026-07-22 09:57:54,638 - INFO - Trying substitute dep: 'linenoise-ng' for 'linenoise'
+2026-07-22 09:57:54,638 - INFO - Running: Install substitute dep linenoise-ng
+2026-07-22 09:57:55,348 - INFO - Running: Retry wcc after substitute
+2026-07-22 09:57:56,601 - INFO - Running: Query repos for wcc
+2026-07-22 09:57:57,324 - INFO - Trying 'wcc' from repo 'chaotic-aur'
+2026-07-22 09:57:57,324 - INFO - Running: Install wcc from chaotic-aur
+2026-07-22 09:57:58,277 - INFO - Trying 'wcc' from repo 'blackarch'
+2026-07-22 09:57:58,277 - INFO - Running: Install wcc from blackarch
+2026-07-22 09:57:58,550 - INFO - Resolved 'wcc' from alternate repo 'blackarch'
+2026-07-22 09:57:58,550 - INFO - Pinned 'wcc' + 'linenoise' — immutable for this update
+2026-07-22 09:57:58,550 - INFO - Immutable packages: {'wcc', 'linenoise'}
+2026-07-22 09:57:58,550 - INFO - Ensuring database lock is released...
+2026-07-22 09:57:58,863 - INFO - Snapper PRE-snapshot #1143 created: system-fixes [pre]
+2026-07-22 09:57:58,863 - INFO - --- Applying preventive system fixes ---
+2026-07-22 09:57:58,897 - INFO - Dracut configuration already exists — skipping.
+2026-07-22 09:57:58,897 - INFO - Kernel install configuration already exists — skipping.
+2026-07-22 09:57:58,897 - INFO - Scanning for packages with missing shared library deps...
+2026-07-22 09:58:42,904 - INFO - Found 2 packages with missing files — upgrading: ['perl-test-nowarnings', 'warning']
+2026-07-22 09:58:42,905 - INFO - Upgrading broken package: perl-test-nowarnings
+2026-07-22 09:58:43,695 - INFO - Upgraded 'perl-test-nowarnings' via pacman
+2026-07-22 09:58:43,696 - INFO - Upgrading broken package: warning
+2026-07-22 09:58:49,740 - INFO - Upgraded 'warning' via yay
+2026-07-22 09:58:49,740 - INFO - Broken .so upgrade pass complete.
+2026-07-22 09:58:49,740 - INFO - Upgrading Python packages...
+2026-07-22 09:58:49,740 - INFO - Ensuring pip is up to date...
+2026-07-22 09:59:54,831 - INFO - Upgrading all pip packages in parallel (8 workers)...
+2026-07-22 10:00:56,879 - INFO - Pip parallel upgrade complete.
+2026-07-22 10:05:56,980 - WARNING - Python upgrade failed (non-critical): Command '['bash', '-c', 'pacman -Qq | xargs -I{} pacman -Ql {} 2>/dev/null | grep -oP \'^\\S+ /usr/lib/python3\\.\\d+/\' | awk \'{split($2,a,"/"); print $1, a[4]}\' | sort -u']' timed out after 300 seconds
+2026-07-22 10:05:56,981 - INFO - --- System fixes complete ---
+2026-07-22 10:05:57,089 - INFO - Snapper POST-snapshot #1144 (paired with pre #1143): system-fixes [post-OK]
+2026-07-22 10:05:58,226 - INFO - Kernel upgrade detected in pending updates: ['linux', 'linux-hardened', 'linux-hardened-headers', 'linux-lts', 'linux-lts-headers', 'linux-zen', 'linux-zen-headers']
+2026-07-22 10:05:58,227 - INFO - Ensuring database lock is released...
+2026-07-22 10:05:58,647 - INFO - Snapper PRE-snapshot #1145 created: ensure-blackarch-repo [pre]
+2026-07-22 10:05:58,648 - INFO - Checking BlackArch repository configuration...
+2026-07-22 10:05:58,827 - INFO - Snapper POST-snapshot #1146 (paired with pre #1145): ensure-blackarch-repo [post-OK]
+2026-07-22 10:05:58,828 - INFO - Ensuring database lock is released...
+2026-07-22 10:05:59,259 - INFO - Snapper PRE-snapshot #1147 created: update-keyrings [pre]
+2026-07-22 10:05:59,260 - INFO - Updating keyrings...
+2026-07-22 10:05:59,260 - INFO - Running: Updating keyrings
+2026-07-22 10:06:00,562 - INFO - Snapper POST-snapshot #1148 (paired with pre #1147): update-keyrings [post-OK]
+2026-07-22 10:06:00,562 - INFO - Ensuring database lock is released...
+2026-07-22 10:06:01,048 - INFO - Snapper PRE-snapshot #1149 created: install-metapackages [pre]
+2026-07-22 10:06:01,049 - INFO - Ensuring essential metapackages...
+2026-07-22 10:06:01,049 - INFO - Running: Installing blackarch-officials
+2026-07-22 10:06:02,228 - INFO - Snapper POST-snapshot #1150 (paired with pre #1149): install-metapackages [post-OK]
+2026-07-22 10:06:02,361 - INFO - Snapper PRE-snapshot #1151 created: sync-categories [pre]
+2026-07-22 10:06:02,361 - INFO - Synchronizing BlackArch categories...
+2026-07-22 10:06:02,362 - INFO - Running: Fetching categories
+2026-07-22 10:06:03,329 - INFO - New categories detected and added: ['blackarch-automobile', 'blackarch-wordlist', 'blackarch-reocn', 'blackarch-threat-model', 'blackarch-ai', 'blackarch-defensive']
+2026-07-22 10:06:03,494 - INFO - Snapper POST-snapshot #1152 (paired with pre #1151): sync-categories [post-OK]
+2026-07-22 10:06:03,615 - INFO - Snapper PRE-snapshot #1153 created: download-updates [pre]
+2026-07-22 10:06:03,616 - INFO - Starting Parallel Download Phase...
+2026-07-22 10:06:03,616 - INFO - Ensuring database lock is released...
+2026-07-22 10:06:03,849 - INFO - Running: Downloading Pacman updates
+2026-07-22 10:06:03,850 - INFO - Running: Downloading AUR updates (paru)
+2026-07-22 10:06:36,751 - ERROR - Command failed: Downloading Pacman updates. Error: warning: paho-mqtt-c: downgrading from version 1.3.14-2 to version 1.3.10-1
+warning: python-grandalf: downgrading from version 0.8-5 to version 0.8-1
+warning: wcc: ignoring package downgrade (1:v0.0.11.r34.gdced7e9-1 => 0.0.11-1)
+warning: xray: downgrading from version 109.7e8cc67-1 to version 26.3.27-1
+error: failed to prepare transaction (could not satisfy dependencies)
+2026-07-22 10:07:09,370 - INFO - Analyzing error output for auto-fix...
+2026-07-22 10:07:09,372 - INFO - Starting Parallel Download Phase...
+2026-07-22 10:07:09,372 - INFO - Ensuring database lock is released...
+2026-07-22 10:07:09,593 - INFO - Running: Downloading Pacman updates
+2026-07-22 10:07:09,593 - INFO - Running: Downloading AUR updates (paru)
+2026-07-22 10:07:40,512 - ERROR - Command failed: Downloading Pacman updates. Error: warning: paho-mqtt-c: downgrading from version 1.3.14-2 to version 1.3.10-1
+warning: python-grandalf: downgrading from version 0.8-5 to version 0.8-1
+warning: wcc: ignoring package downgrade (1:v0.0.11.r34.gdced7e9-1 => 0.0.11-1)
+warning: xray: downgrading from version 109.7e8cc67-1 to version 26.3.27-1
+error: failed to prepare transaction (could not satisfy dependencies)
+2026-07-22 10:08:13,906 - INFO - Snapper POST-snapshot #1154 (paired with pre #1153): download-updates [post-OK]
+2026-07-22 10:08:14,021 - INFO - Snapper PRE-snapshot #1155 created: install-updates [pre]
+2026-07-22 10:08:14,022 - INFO - Starting Sequential Installation Phase...
+2026-07-22 10:08:14,022 - INFO - Ensuring database lock is released...
+2026-07-22 10:08:14,270 - INFO - Running: Installing Pacman updates
+2026-07-22 10:08:46,329 - ERROR - Command failed: Installing Pacman updates. Error: [1;33mwarning: [0mpaho-mqtt-c: downgrading from version 1.3.14-2 to version 1.3.10-1
+[1;33mwarning: [0mpython-grandalf: downgrading from version 0.8-5 to version 0.8-1
+[1;33mwarning: [0mwcc: ignoring package downgrade (1:v0.0.11.r34.gdced7e9-1 => 0.0.11-1)
+[1;33mwarning: [0mxray: downgrading from version 109.7e8cc67-1 to version 26.3.27-1
+[1;31merror: [0mfailed to prepare transaction (could not satisfy dependencies)
+2026-07-22 10:08:46,329 - INFO - Analyzing error output for auto-fix...
+2026-07-22 10:08:46,329 - INFO - Starting Sequential Installation Phase...
+2026-07-22 10:08:46,329 - INFO - Ensuring database lock is released...
+2026-07-22 10:08:46,563 - INFO - Running: Installing Pacman updates
+2026-07-22 10:09:18,132 - ERROR - Command failed: Installing Pacman updates. Error: [1;33mwarning: [0mpaho-mqtt-c: downgrading from version 1.3.14-2 to version 1.3.10-1
+[1;33mwarning: [0mpython-grandalf: downgrading from version 0.8-5 to version 0.8-1
+[1;33mwarning: [0mwcc: ignoring package downgrade (1:v0.0.11.r34.gdced7e9-1 => 0.0.11-1)
+[1;33mwarning: [0mxray: downgrading from version 109.7e8cc67-1 to version 26.3.27-1
+[1;31merror: [0mfailed to prepare transaction (could not satisfy dependencies)
+2026-07-22 10:09:18,222 - INFO - Snapper POST-snapshot #1156 (paired with pre #1155): install-updates [post-OK]
+2026-07-22 10:09:18,336 - INFO - Snapper PRE-snapshot #1157 created: cleanup-orphans [pre]
+2026-07-22 10:09:18,337 - INFO - Running: Orphan Cleanup
+2026-07-22 10:09:27,020 - INFO - Snapper POST-snapshot #1158 (paired with pre #1157): cleanup-orphans [post-OK]
+2026-07-22 10:09:27,020 - INFO - --- [Post-Update Kernel Tasks] ---
+2026-07-22 10:09:43,226 - INFO - Snapper PRE-snapshot #1159 created: dkms-rebuild [pre]
+2026-07-22 10:09:43,226 - INFO - DKMS modules detected (42), rebuilding...
+2026-07-22 10:09:43,227 - INFO - Rebuilding all DKMS modules...
+2026-07-22 10:10:20,878 - ERROR - DKMS autoinstall failed: Deprecated feature: CLEAN (/var/lib/dkms/rtl8814au/5.8.5.1.r206.gb1866ce/source/dkms.conf)
+
+Error! Bad return status for module build on kernel: 7.1.0-rc1-1-mainline (x86_64)
+Consult /var/lib/dkms/rtl8814au/5.8.5.1.r206.gb1866ce/build/make.log for more information.
+Deprecated feature: CLEAN (/var/lib/dkms/tyton/80.56494f3/source/dkms.conf)
+
+Error! Bad return status for module build on kernel: 7.1.0-rc1-1-mainline (x86_64)
+Consult /var/lib/dkms/tyton/80.56494f3/build/make.log for more information.
+
+Error! Bad return status for module build on kernel: 7.1.0-rc1-1-mainline (x86_64)
+Consult /var/lib/dkms/vboxhost/7.2.8_OSE/build/make.log for more information.
+
+Error! One or more modules failed to install during autoinstall.
+Refer to previous errors for more information.
+2026-07-22 10:10:20,878 - ERROR - DKMS rebuild had errors — check dkms status manually.
+2026-07-22 10:10:21,012 - INFO - Snapper POST-snapshot #1160 (paired with pre #1159): dkms-rebuild [post-OK]
+2026-07-22 10:10:21,168 - INFO - Snapper PRE-snapshot #1161 created: regenerate-initramfs [pre]
+2026-07-22 10:10:21,169 - INFO - Regenerating initramfs with dracut...
+2026-07-22 10:10:21,172 - INFO - Regenerating initramfs for kernel 6.18.25-1-lts...
+2026-07-22 10:10:24,526 - ERROR - Failed to regenerate initramfs for 6.18.25-1-lts: dracut[F]: Can't write to /boot/efi/dc502aedbc0d4149b7adbc9102a64605/6.18.25-1-lts: Directory /boot/efi/dc502aedbc0d4149b7adbc9102a64605/6.18.25-1-lts does not exist or is not accessible.
+2026-07-22 10:10:24,526 - INFO - Regenerating initramfs for kernel 6.19.10-hardened1-1-hardened...
+2026-07-22 10:10:26,949 - ERROR - Failed to regenerate initramfs for 6.19.10-hardened1-1-hardened: dracut[F]: Can't write to /boot/efi/dc502aedbc0d4149b7adbc9102a64605/6.19.10-hardened1-1-hardened: Directory /boot/efi/dc502aedbc0d4149b7adbc9102a64605/6.19.10-hardened1-1-hardened does not exist or is not accessible.
+2026-07-22 10:10:26,949 - INFO - Regenerating initramfs for kernel 7.0.2-arch1-1...
+2026-07-22 10:10:29,338 - ERROR - Failed to regenerate initramfs for 7.0.2-arch1-1: dracut[F]: Can't write to /boot/efi/dc502aedbc0d4149b7adbc9102a64605/7.0.2-arch1-1: Directory /boot/efi/dc502aedbc0d4149b7adbc9102a64605/7.0.2-arch1-1 does not exist or is not accessible.
+2026-07-22 10:10:29,338 - INFO - Regenerating initramfs for kernel 7.0.2-zen1-1-zen...
+2026-07-22 10:10:31,744 - ERROR - Failed to regenerate initramfs for 7.0.2-zen1-1-zen: dracut[F]: Can't write to /boot/efi/dc502aedbc0d4149b7adbc9102a64605/7.0.2-zen1-1-zen: Directory /boot/efi/dc502aedbc0d4149b7adbc9102a64605/7.0.2-zen1-1-zen does not exist or is not accessible.
+2026-07-22 10:10:31,744 - INFO - Regenerating initramfs for kernel 7.1.0-rc1-1-mainline...
+2026-07-22 10:10:34,115 - ERROR - Failed to regenerate initramfs for 7.1.0-rc1-1-mainline: dracut[F]: Can't write to /boot/efi/dc502aedbc0d4149b7adbc9102a64605/7.1.0-rc1-1-mainline: Directory /boot/efi/dc502aedbc0d4149b7adbc9102a64605/7.1.0-rc1-1-mainline does not exist or is not accessible.
+2026-07-22 10:10:34,321 - INFO - Snapper POST-snapshot #1162 (paired with pre #1161): regenerate-initramfs [post-OK]
+2026-07-22 10:10:34,461 - INFO - Snapper POST-snapshot #1163 (paired with pre #1138): aio-update-full [post-OK]
+2026-07-22 10:10:34,462 - INFO - Unified update complete!
+2026-07-22 10:10:34,464 - INFO - Process finished with status: success
